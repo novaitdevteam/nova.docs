@@ -1,72 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://novait.com.ua/checklist/</loc>
+         <loc>https://novait.com.ua/checklist.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/main/</loc>
+         <loc>https://novait.com.ua/main.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novabotconnector/</loc>
+         <loc>https://novait.com.ua/components/novabotconnector.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novabotflow/</loc>
+         <loc>https://novait.com.ua/components/novabotconnectornotices.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxy/</loc>
+         <loc>https://novait.com.ua/components/novabotflow.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxyciscoece/</loc>
+         <loc>https://novait.com.ua/components/novachatproxy.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxyciscouccx/</loc>
+         <loc>https://novait.com.ua/components/novachatproxyciscoece.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxygenesyspurecloud/</loc>
+         <loc>https://novait.com.ua/components/novachatproxyciscouccx.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxygenesyspureconnecticws/</loc>
+         <loc>https://novait.com.ua/components/novachatproxygenesyspurecloud.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxygenesyspureengagegmschatapiv2/</loc>
+         <loc>https://novait.com.ua/components/novachatproxygenesyspureconnecticws.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatproxynovaitchat24/</loc>
+         <loc>https://novait.com.ua/components/novachatproxygenesyspureengagegmschatapiv2.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatrouterdialogflow/</loc>
+         <loc>https://novait.com.ua/components/novachatproxynovaitchat24.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novachatrouteromilia/</loc>
+         <loc>https://novait.com.ua/components/novachatrouterdialogflow.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://novait.com.ua/components/novawebchat/</loc>
+         <loc>https://novait.com.ua/components/novachatrouteromilia.html</loc>
+         <lastmod>2021-11-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://novait.com.ua/components/novawebchat.html</loc>
          <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>

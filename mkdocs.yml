@@ -1,4 +1,4 @@
-site_name: NovaIT
+site_name: NovaIT Products Documentation
 # добавляет линк тег в голову страниц и берет путь для serve
 site_url: https://novait.com.ua/
 # добавляет мета тег в хеадер с информацией
@@ -14,7 +14,21 @@ site_author: NovaIt
 
 # Станицы документации
 nav:
-    - Home: main.md
+    - Features:
+        - Nova.ChatsConnector:
+            - Nova.BotConnector: components/novabotconnectornotices.md
+            - Nova.BotFlow: components/novabotflow.md
+            - Nova.ChatProxy:
+                - Cisco.ECE: components/novachatproxyciscoece.md
+                - Cisco.UCCX: components/novachatproxyciscouccx.md
+                - Genesys.PureCloud: components/novachatproxygenesyspurecloud.md
+                - Genesys.PureConnect.ICWS: components/novachatproxygenesyspureconnecticws.md
+                - Genesys.PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2.md
+                - NovaIT.Chat24: components/novachatproxynovaitchat24.md
+            - Nova.ChatRouter:
+                - Dialogflow: components/novachatrouterdialogflow.md
+                - Omilia: components/novachatrouteromilia.md
+            - Nova.WebChat: components/novawebchat.md
     - Release Notes:     
         - Nova.BotConnector: components/novabotconnector.md
         - Nova.BotFlow: components/novabotflow.md
@@ -28,7 +42,6 @@ nav:
         - Nova.ChatRouter.Dialogflow: components/novachatrouterdialogflow.md
         - Nova.ChatRouter.Omilia: components/novachatrouteromilia.md
         - Nova.WebChat: components/novawebchat.md
-    - Chatwoot: checklist.md
 
 theme:
   name: null
@@ -44,10 +57,13 @@ theme:
 
   # Default values, taken from mkdocs_theme.yml
   language: en
+  features:
+    - navigation.tabs
+    - navigation.instant
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
+#  favicon: assets/logo.png
 #  icon:
 #    logo: logo
   palette:
@@ -64,9 +80,9 @@ theme:
         icon: material/lightbulb
         name: Switch to light mode
   logo: assets/icon.png
-  favicon: images/favicon.png
+  favicon: assets/favicon.png
   icon:
-    logo: assets/icon.png
+    logo: assets/logo.png
 
 markdown_extensions:
   - admonition
@@ -81,13 +97,5 @@ markdown_extensions:
 
 extra:
   homepage: http://127.0.0.1:8000/components/novabotflow/#product-notices
-  alternate:
-    - name: English
-      link: /en/ 
-      lang: en
-    - name: Russian
-      link: /ru/
-      lang: ru
-    - name: Ukrainian
-      link: /uk/
-      lang: uk
+ 
+use_directory_urls: false

@@ -5,6 +5,9 @@
 ###2021R4-1 ([NOV-274](https://sd.novait.com.ua/browse/NOV-274))
 ####New Features
 - Facebook Wall Posts: pooling service ([NOV-271](https://sd.novait.com.ua/browse/NOV-271))
+
+####Bug Fixes
+- none
 ***
 ##2021R3
 ###New Features
@@ -13,6 +16,8 @@
 	* comment doesn't create conversation if it doesn't contain mention (**@groupname**) if it is not direct reply to group's post
 	* variable in payload for comments **CanReply** has value **false**
 	* payload has client's avatar url
+
+###Bug Fixes
 ***
 ##2021R2
 ###New Features
