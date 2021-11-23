@@ -1,6 +1,6 @@
 site_name: NovaIT Products Documentation
 # добавляет линк тег в голову страниц и берет путь для serve
-site_url: https://novait.com.ua/
+site_url: https://netheria.github.io/novadocs/
 # добавляет мета тег в хеадер с информацией
 site_description: NovaIt documentation site_description
 # добавляет мета тег в хеадер с информацией
@@ -96,6 +96,6 @@ markdown_extensions:
       permalink: true
 
 extra:
-  homepage: http://127.0.0.1:8000/components/novabotflow/#product-notices
+  homepage: https://netheria.github.io/novadocs/components/
  
 use_directory_urls: false
