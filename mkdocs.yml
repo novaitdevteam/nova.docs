@@ -2,10 +2,10 @@ site_name: NovaIT Products Documentation
 # добавляет линк тег в голову страниц и берет путь для serve
 site_url: https://netheria.github.io/novadocs/
 # добавляет мета тег в хеадер с информацией
-site_description: NovaIt documentation site_description
+site_description: NovaIt documentation about products
 # добавляет мета тег в хеадер с информацией
-site_author: NovaIt
-# copyright: инфа добавляется в документацию темой
+site_author: NovaIT
+# copyright: Owned by NovaIT
 
 #Repository
 # repo_url: делает линки на каждой странице
@@ -14,9 +14,25 @@ site_author: NovaIt
 
 # Станицы документации
 nav:
+    - components\botconnector\text.md
     - Features:
         - Nova.ChatsConnector:
             - Nova.BotConnector: components/novabotconnectornotices.md
+            - Nova.BotFlow: components/novabotflownotices.md
+            - Nova.ChatProxy:
+                - Cisco.ECE: components/novachatproxyciscoecenotices.md
+                - Cisco.UCCX: components/novachatproxyciscouccxnotices.md
+                - Genesys.PureCloud: components/novachatproxygenesyspurecloudnotices.md
+                - Genesys.PureConnect.ICWS: components/novachatproxygenesyspureconnecticwsnotices.md
+                - Genesys.PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2notices.md
+                - NovaIT.Chat24: components/novachatproxynovaitchat24notices.md
+            - Nova.ChatRouter:
+                - Dialogflow: components/novachatrouterdialogflownotices.md
+                - Omilia: components/novachatrouteromilianotices.md
+            - Nova.WebChat: components/novawebchatnotices.md
+    - Release Notes:       
+        - Nova.ChatsConnector:
+            - Nova.BotConnector: components/novabotconnector.md
             - Nova.BotFlow: components/novabotflow.md
             - Nova.ChatProxy:
                 - Cisco.ECE: components/novachatproxyciscoece.md
@@ -29,19 +45,6 @@ nav:
                 - Dialogflow: components/novachatrouterdialogflow.md
                 - Omilia: components/novachatrouteromilia.md
             - Nova.WebChat: components/novawebchat.md
-    - Release Notes:     
-        - Nova.BotConnector: components/novabotconnector.md
-        - Nova.BotFlow: components/novabotflow.md
-        - Nova.ChatProxy: components/novachatproxy.md
-        - Nova.ChatProxy.Cisco.ECE: components/novachatproxyciscoece.md
-        - Nova.ChatProxy.Cisco.UCCX: components/novachatproxyciscouccx.md
-        - Nova.ChatProxy.Genesys.PureCloud: components/novachatproxygenesyspurecloud.md
-        - Nova.ChatProxy.Genesys.PureConnect.ICWS: components/novachatproxygenesyspureconnecticws.md
-        - Nova.ChatProxy.Genesys.PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2.md
-        - Nova.ChatProxy.NovaIT.Chat24: components/novachatproxynovaitchat24.md
-        - Nova.ChatRouter.Dialogflow: components/novachatrouterdialogflow.md
-        - Nova.ChatRouter.Omilia: components/novachatrouteromilia.md
-        - Nova.WebChat: components/novawebchat.md
 
 theme:
   name: null
@@ -65,7 +68,7 @@ theme:
     code: Roboto Mono
 #  favicon: assets/logo.png
 #  icon:
-#    logo: logo
+#    logo: icon.png
   palette:
     - scheme: default
       primary: indigo
@@ -79,12 +82,18 @@ theme:
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
-  logo: assets/icon.png
-  favicon: assets/favicon.png
+  logo: components/assets/icon.png
+  favicon: components/assets/favicon.png
   icon:
-    logo: assets/logo.png
+    logo: components/assets/icon.png
 
 markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - admonition
   - abbr
   - attr_list
@@ -97,5 +106,6 @@ markdown_extensions:
 
 extra:
   homepage: https://netheria.github.io/novadocs/components/
+  generator: false
  
 use_directory_urls: false
