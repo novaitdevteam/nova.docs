@@ -1,29 +1,36 @@
 #Nova.BotFlow
-##Product Notices
+
+*Nova.BotFlow is a module for Nova.ChatsConnector and is a tool to not just connect messagers, but also create full fledged user scenarios*
+
+##Features
+###Channel Capabilities
+####Legend
+
+|:material-close:                   |:material-check:                       |-                                              |
+| :---:                             |     :---:                             |          :---:                                |
+|Feature is not supported by channel|Feature is implemented in the component|Feature is not yet implemented in the component|
+
 ***
-##2020R4
-###New Features
-- ABC: added support of Apple Business Chat ([NOV-102](https://sd.novait.com.ua/browse/NOV-102)):
-	* sending and receiving text messages
-	* receiving files
-	* sending picture files
-	* receiving **TypingIndicators** and identificators of chat's session ending (actions)
-***
-##2021R3
-###New Features
-- All channels: added outbound messages ([NOV-239](https://sd.novait.com.ua/browse/NOV-239)):
-	* without specific answer redirect on agent or workgroup\skillgroup 
-	* with reservation of agent or workgroup\skillgroup after outbound message and specific answer redirect on agent or workgroup\skillgroup
-	* with reservation of agent or workgroup\skillgroup after client's reply and specific answer redirect on agent or workgroup\skillgroup
-***
-##2021R2
-***
-##2021R1
-###New Features
-- ABC: added sending of **Rich Link** messages ([NOV-129](https://sd.novait.com.ua/browse/NOV-129))
-- ABC: added sending of **Interactive** messages ([NOV-130](https://sd.novait.com.ua/browse/NOV-130)): 
-	* **List Picker** in **Apple List Template** node
-	* **Time Picker** in **Apple List Template** node
-- ABC: added next nodes:
-	* **Apple Authentintification** for authentification
-	* **Apple Invoice** for Apple Pay
+
+####Channels
+| **Channel**                                                                                                                                                                                  |**Text**         |**Image **       |**File **        |**Emoji**        |**Typing**       |**Quick Replies**|**Card**         |**Button List**  |**Button Grid**  |**Carousel**     |
+| :---                                                                                                                                                                                         |:---:            |:---:            |:---:            |:---:            |:---:            |:---:            |:---:            |:---:            |:---:            |:---:            |
+|<figure> <a href="botflow/telegramflow.html"> <img src="/novadocs/components/assets/telegram.svg" title="Telegram" width="100" height"100"> </a> </figure>                  |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/viberflow.html"> <img src="/novadocs/components/assets/viber.svg" title="Viber" width="100" height"100"> </a> </figure>                           |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/fbflow.html"> <img src="/novadocs/components/assets/fbmesseger.svg" title="Facebook Messeger" width="100" height"100"> </a> </figure>             |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/twitterflow.html"> <img src="/novadocs/components/assets/twitter.svg" title="Twitter" width="100" height"100"> </a> </figure>                     |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/lineflow.html"> <img src="/novadocs/components/assets/line.svg" title="Line" width="100" height"100"> </a> </figure>                              |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/slackflow.html"> <img src="/novadocs/components/assets/slack.png" title="Slack" width="100" height"100"> </a> </figure>                           |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/abcflow.html"> <img src="/novadocs/components/assets/abc.svg" title="Apple Business Chat" width="100" height"100"> </a> </figure>                 |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-close: |:material-close: |:material-check: |:material-check: |:material-close: |
+|<figure> <a href="botflow/whatsappflow.html"> <img src="/novadocs/components/assets/whatsapp.svg" title="WhatsApp" width="100" height"100"> </a> </figure>                  |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |
+|<figure> <a href="botflow/kikflow.html"> <img src="/novadocs/components/assets/kik.svg" title="Kik" width="100" height"100"> </a> </figure>                                 |-                |-                |-                |-                |-                |-                |-                |-                |-                |-                |
+|<figure> <a href="botflow/smoochflow.html"> <img src="/novadocs/components/assets/smooch.jfif" title="Smooch" width="100" height"100"> </a> </figure>                       |:material-check: |:material-check: |:material-check: |:material-check: |-                |-                |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/vkflow.html"> <img src="/novadocs/components/assets/vk.svg" title="Vkontakte" width="100" height"100"> </a> </figure>                             |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/okflow.html"> <img src="/novadocs/components/assets/ok.svg" title="Odnoklassniki" width="100" height"100"> </a> </figure>                         |:material-check: |:material-check: |:material-check: |:material-check: |-                |:material-check: |:material-check: |:material-check: |:material-check: |:material-check: |
+|<figure> <a href="botflow/webchatflow.html"> <img src="/novadocs/components/assets/webchat.jpg" title="WebChat" width="100" height"100"> </a> </figure>                     |:material-check: |-                |-                |-                |-                |:material-check: |:material-check: |-                |-                |:material-check: |
+|<figure> <a href="botflow/novachatsflow.html"> <img src="/novadocs/components/assets/novachats.svg" title="NovaChats" width="100" height"200"> </a> </figure>               |:material-check: |-                |-                |-                |-                |:material-check: |-                |:material-close: |:material-close: |-                |
+|<figure> <a href="botflow/infobipflow.html"> <img src="/novadocs/components/assets/infobip.png" title="Infobip" width="100" height"100"> </a> </figure>                     |:material-check: |:material-check: |:material-check: |:material-check: |-                |-                |:material-close: |:material-close: |:material-close: |:material-close: |
+|<figure> <a href="botflow/fbwpflow.html"> <img src="/novadocs/components/assets/fbwallpost.png" title="Facebook Wallposts" width="100" height"100"> </a> </figure>          |:material-check: |:material-check: |:material-check: |:material-check: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |
+|<figure> <a href="botflow/twitterwpflow.html"> <img src="/novadocs/components/assets/twitterwallpost.png" title="Twitter Wallposts" width="100" height"100"> </a> </figure> |:material-check: |:material-check: |:material-check: |:material-check: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |
+|<figure> <a href="botflow/vkwpflow.html"> <img src="/novadocs/components/assets/vkwallpost.jpg" title="Vkontakte Wallposts" width="100" height"100"> </a> </figure>         |:material-check: |:material-check: |:material-check: |:material-check: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |
+|<figure> <a href="botflow/okwpflow.html"> <img src="/novadocs/components/assets/okwallpost.png" title="Odnoklassniki Wallposts" width="100" height"100"> </a> </figure>     |:material-check: |:material-check: |:material-check: |:material-check: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |:material-close: |

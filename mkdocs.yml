@@ -14,17 +14,60 @@ site_author: NovaIT
 
 # Станицы документации
 nav:
-    - components\botconnector\text.md
     - Features:
         - Nova.ChatsConnector:
-            - Nova.BotConnector: components/novabotconnectornotices.md
-            - Nova.BotFlow: components/novabotflownotices.md
+            - Nova.BotConnector:
+                - Channel Capabilities: components/novabotconnectornotices.md
+                - Channels:
+                    - Telegram: components/botconnector/telegramconnector.md
+                    - Viber: components/botconnector/viberconnector.md
+                    - Facebook Messeger: components/botconnector/fbconnector.md
+                    - Twitter: components/botconnector/twitterconnector.md
+                    - Line: components/botconnector/lineconnector.md
+                    - Slack: components/botconnector/slackconnector.md
+                    - Apple Business Chat: components/botconnector/abcconnector.md
+                    - WhatsApp: components/botconnector/whatsappconnector.md
+                    - Kik: components/botconnector/kikconnector.md
+                    - Smooch: components/botconnector/smoochconnector.md
+                    - Vkontakte: components/botconnector/vkconnector.md
+                    - Odnoklassniki: components/botconnector/okconnector.md
+                    - WebChat: components/botconnector/webchatconnector.md
+                    - NovaChats: components/botconnector/novachatsconnector.md
+                    - Infobip: components/botconnector/infobipconnector.md
+                    - Facebook Wallposts: components/botconnector/fbwpconnector.md
+                    - Twitter Wallposts: components/botconnector/twitterwpconnector.md
+                    - Vkontakte Wallposts: components/botconnector/vkwpconnector.md
+                    - Odnoklassniki Wallposts: components/botconnector/okwpconnector.md
+            - Nova.BotFlow: 
+                - Channel Capabilities: components/novabotflownotices.md
+                - Channels:
+                    - Telegram: components/botflow/telegramflow.md
+                    - Viber: components/botflow/viberflow.md
+                    - Facebook Messeger: components/botflow/fbflow.md
+                    - Twitter: components/botflow/twitterflow.md
+                    - Line: components/botflow/lineflow.md
+                    - Slack: components/botflow/slackflow.md
+                    - Apple Business Chat: components/botflow/abcflow.md
+                    - WhatsApp: components/botflow/whatsappflow.md
+                    - Kik: components/botflow/kikflow.md
+                    - Smooch: components/botflow/smoochflow.md
+                    - Vkontakte: components/botflow/vkflow.md
+                    - Odnoklassniki: components/botflow/okflow.md
+                    - WebChat: components/botflow/webchatflow.md
+                    - NovaChats: components/botflow/novachatsflow.md
+                    - Infobip: components/botflow/infobipflow.md
+                    - Facebook Wallposts: components/botflow/fbwpflow.md
+                    - Twitter Wallposts: components/botflow/twitterwpflow.md
+                    - Vkontakte Wallposts: components/botflow/vkwpflow.md
+                    - Odnoklassniki Wallposts: components/botflow/okwpflow.md
             - Nova.ChatProxy:
-                - Cisco.ECE: components/novachatproxyciscoecenotices.md
-                - Cisco.UCCX: components/novachatproxyciscouccxnotices.md
-                - Genesys.PureCloud: components/novachatproxygenesyspurecloudnotices.md
-                - Genesys.PureConnect.ICWS: components/novachatproxygenesyspureconnecticwsnotices.md
-                - Genesys.PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2notices.md
+                - Cisco:
+                    - ECE: components/novachatproxyciscoecenotices.md
+                    - UCCX: components/novachatproxyciscouccxnotices.md
+                - Genesys:
+                    - PureCloud: components/novachatproxygenesyspurecloudnotices.md
+                    - PureConnect.ICWS: components/novachatproxygenesyspureconnecticwsnotices.md
+                    - PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2notices.md
                 - NovaIT.Chat24: components/novachatproxynovaitchat24notices.md
             - Nova.ChatRouter:
                 - Dialogflow: components/novachatrouterdialogflownotices.md
@@ -35,16 +78,22 @@ nav:
             - Nova.BotConnector: components/novabotconnector.md
             - Nova.BotFlow: components/novabotflow.md
             - Nova.ChatProxy:
-                - Cisco.ECE: components/novachatproxyciscoece.md
-                - Cisco.UCCX: components/novachatproxyciscouccx.md
-                - Genesys.PureCloud: components/novachatproxygenesyspurecloud.md
-                - Genesys.PureConnect.ICWS: components/novachatproxygenesyspureconnecticws.md
-                - Genesys.PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2.md
+                - Cisco:
+                    - ECE: components/novachatproxyciscoece.md
+                    - UCCX: components/novachatproxyciscouccx.md
+                - Genesys:
+                    - PureCloud: components/novachatproxygenesyspurecloud.md
+                    - PureConnect.ICWS: components/novachatproxygenesyspureconnecticws.md
+                    - PureEngage.GMS.ChatAPIv2: components/novachatproxygenesyspureengagegmschatapiv2.md
                 - NovaIT.Chat24: components/novachatproxynovaitchat24.md
             - Nova.ChatRouter:
                 - Dialogflow: components/novachatrouterdialogflow.md
                 - Omilia: components/novachatrouteromilia.md
             - Nova.WebChat: components/novawebchat.md
+
+extra_css:
+    - ./css/extra.css
+    - ./css/sticky.css
 
 theme:
   name: null
@@ -88,6 +137,8 @@ theme:
     logo: components/assets/icon.png
 
 markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -95,12 +146,13 @@ markdown_extensions:
         custom_icons:
           - overrides/.icons
   - admonition
+  - md_in_html
   - abbr
   - attr_list
   - def_list
   - footnotes
   - meta
-  - md_in_html
+  - tables
   - toc:
       permalink: true
 

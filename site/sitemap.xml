@@ -1,78 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://netheria.github.io/novadocs/checklist.html</loc>
-         <lastmod>2021-11-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://netheria.github.io/novadocs/main.html</loc>
-         <lastmod>2021-11-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://netheria.github.io/novadocs/components/novabotconnector.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotconnectornotices.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotflow.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://netheria.github.io/novadocs/components/novachatproxy.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <loc>https://netheria.github.io/novadocs/components/novabotflownotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscoece.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxyciscoecenotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscouccx.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxyciscouccxnotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspurecloud.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspurecloudnotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureconnecticws.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureconnecticwsnotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureengagegmschatapiv2.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureengagegmschatapiv2notices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxynovaitchat24.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxynovaitchat24notices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouterdialogflow.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatrouterdialogflownotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouteromilia.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatrouteromilianotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novawebchat.html</loc>
-         <lastmod>2021-11-23</lastmod>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novawebchatnotices.html</loc>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/botconnector/text.html</loc>
+         <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
