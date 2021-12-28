@@ -1,6 +1,6 @@
 [NOV-12]: https://sd.novait.com.ua/browse/NOV-12
 
-#Nova.ChatProxy.Cisco.ECE
+#Nova.ChatProxy.Cisco.UCCX
 ##Product Notices
 ***
 ##2019R1

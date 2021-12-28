@@ -1,26 +1,33 @@
 #Nova.BotConnector Telegram
 ##Features
-###Text
-- [x] sending text from agent to client
-- [x] sending text from client to agent
+####Text
+- Both directions: agent->client, client->agent
 
-###Pictures
-- [x] sending pictures from agent to client
-- [x] sending pictures from client to agent
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Restriction 1
+• Restriction 2
+```
+</p>
+</details>
+####Pictures
+sending pictures from agent to client
+sending pictures from client to agent
 
-###Files
-- [x] sending attachments from client to agent
-- [x] sending attachments from agent to client
+####Files
+sending attachments from client to agent
+sending attachments from agent to client
 
-###Emoji
-- [x] sending emoji from client to agent
-- [x] sentding emoji from agent to client
+####Emoji
+sending emoji from client to agent
+sentding emoji from agent to client
 
-###Typing
-- [x] typing identificator is precent when agent writes a message
+####Typing
+typing identificator is precent when agent writes a message
 
-###Quick Replies
-- [x] Quick Replies are supported as a disappearing after click/tap buttons
+####Quick Replies
+Quick Replies are supported as a disappearing after click/tap buttons
 <details><summary>Known Restrictions</summary>
 <p>
 ```
@@ -36,7 +43,7 @@ Maximum 100 button rows
 ```
 </p>
 </details>
-###Card
+####Card
 - [x] Card is supported as a separate structure of *Picture*, *Title* with *Subtitle* and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
 <p>
@@ -46,7 +53,7 @@ More than 3 button rows will be sent as a keyboard layout
 ```
 </p>
 </details>
-###Button List
+####Button List
 - [x] Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
 <p>
@@ -55,7 +62,7 @@ Maximum 100 button rows
 ```
 </p>
 </details>
-###Button Grid
+####Button Grid
 - [x] Button Grid is supported as a Title with number of buttons positioned horizontally 
 <details><summary>Known Restrictions</summary>
 <p>
@@ -64,5 +71,5 @@ Maximum 8 buttons per row
 ```
 </p>
 </details>
-###Carousel
+####Carousel
 - [x] Carousel is supported as a number of Card type messages, where only last one will have buttons  

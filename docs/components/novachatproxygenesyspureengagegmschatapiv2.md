@@ -7,7 +7,7 @@
 [NOV-256]: https://sd.novait.com.ua/browse/NOV-256
 [NOV-259]: https://sd.novait.com.ua/browse/NOV-259
 
-#Nova.ChatProxy.Cisco.ECE
+#Nova.ChatProxy.Genesys.PureEngage.GMS.ChatAPIv2
 ##Product Notices
 ***
 ##2021R3
@@ -33,7 +33,7 @@
 
 - Added support of external configuration file [:clipboard: NOV-259] [NOV-259]
 
-	```Configuration file now can be outside component directory```
+	> • Configuration file now can be outside component directory
 
 ####Bug Fixes
 - none
@@ -67,7 +67,7 @@ WeChatUser_ImageURL	<headimgurl>
 ####Bug Fixes
 - Fixed sending pictures from agent workplace to messager [:clipboard: NOV-84] [NOV-84]
 
-	```PureEngage maximum allowed file size is 5Mb by default.```
+	> • PureEngage maximum allowed file size is 5Mb by default
 
 ***
 
@@ -96,7 +96,7 @@ WeChatUser_ImageURL	<headimgurl>
 ##2019R3
 ####New Features
 - Implemented sending media from agent to client and from client to agent [:clipboard: NOV-20] [NOV-20]
-- Integration with *Mongodb* with the help of *mongoose* driver [:clipboard: NOV-23] [NOV-23]
+- Integration with high-availability cluster *Mongodb* (on *mongoose* driver level) [:clipboard: NOV-23] [NOV-23]
 
 ####Bug Fixes
 - none

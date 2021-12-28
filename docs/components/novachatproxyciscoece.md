@@ -7,6 +7,7 @@
 [NOV-123]: https://sd.novait.com.ua/browse/NOV-123
 [NOV-125]: https://sd.novait.com.ua/browse/NOV-125
 [NOV-137]: https://sd.novait.com.ua/browse/NOV-137
+[NOV-166]: https://sd.novait.com.ua/browse/NOV-166
 [NOV-169]: https://sd.novait.com.ua/browse/NOV-169
 [NOV-256]: https://sd.novait.com.ua/browse/NOV-256
 [NOV-259]: https://sd.novait.com.ua/browse/NOV-259
@@ -37,7 +38,7 @@
 
 - Added support of external configuration file [:clipboard: NOV-259] [NOV-259]
 
-	```Configuration file now can be outside component directory```
+	> • Configuration file now can be outside component directory
 
 ####Bug Fixes
 - none
@@ -47,7 +48,11 @@
 ####New Features
 - Implemented showing conversation history with Omilia to agent as a separate message [:clipboard: NOV-169] [NOV-169]
 
-	```Coversation history has limitation of 800 symbols, therefore history with larger symbol number can be sent to agent in few messages```
+	> • Coversation history has limitation of 800 symbols, therefore history with larger symbol number can be sent to agent in few messages
+
+- Realized blocking of attachments sending from agent [:clipboard: NOV-166] [NOV-166]
+
+	> • In configuration **disableAgentAttachment** field
 
 ####Bug Fixes
 - none
@@ -92,7 +97,7 @@ conversationid
 ##2020R1
 ####New Features
 - Added Multiinstance support [:clipboard: NOV-25] [NOV-25]
-- Integration with *Mongodb* with the help of *mongoose* driver [:clipboard: NOV-25] [NOV-25]
+- Integration with high-availability cluster *Mongodb* (on *mongoose* driver level) [:clipboard: NOV-25] [NOV-25]
 - Routing on different EntryPoints for *BotConnector* [:clipboard: NOV-45] [NOV-45]
 - Implemented sending of conversation history with the chatbot [:clipboard: NOV-46] [NOV-46]
 

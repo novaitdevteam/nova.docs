@@ -17,6 +17,7 @@ nav:
     - Features:
         - Nova.ChatsConnector:
             - Nova.BotConnector:
+                - Features: components/botflow/botconnectorfeatures.md
                 - Channel Capabilities: components/novabotconnectornotices.md
                 - Channels:
                     - Telegram: components/botconnector/telegramconnector.md
@@ -38,7 +39,8 @@ nav:
                     - Twitter Wallposts: components/botconnector/twitterwpconnector.md
                     - Vkontakte Wallposts: components/botconnector/vkwpconnector.md
                     - Odnoklassniki Wallposts: components/botconnector/okwpconnector.md
-            - Nova.BotFlow: 
+            - Nova.BotFlow:
+                - Features: components/botflow/botflowfeatures.md
                 - Channel Capabilities: components/novabotflownotices.md
                 - Channels:
                     - Telegram: components/botflow/telegramflow.md
@@ -61,6 +63,7 @@ nav:
                     - Vkontakte Wallposts: components/botflow/vkwpflow.md
                     - Odnoklassniki Wallposts: components/botflow/okwpflow.md
             - Nova.ChatProxy:
+                - Features: components/botflow/chatproxyfeatures.md
                 - Cisco:
                     - ECE: components/novachatproxyciscoecenotices.md
                     - UCCX: components/novachatproxyciscouccxnotices.md
@@ -78,6 +81,7 @@ nav:
             - Nova.BotConnector: components/novabotconnector.md
             - Nova.BotFlow: components/novabotflow.md
             - Nova.ChatProxy:
+                - Nova.ChatProxy: components/novachatproxy.md
                 - Cisco:
                     - ECE: components/novachatproxyciscoece.md
                     - UCCX: components/novachatproxyciscouccx.md
