@@ -2,7 +2,6 @@
 
 *Nova.BotConnector is a JavaScript connector to connect messagers and unification of work with them*
 
-##Features
 ###Channel Capabilities
 ####Legend
 
