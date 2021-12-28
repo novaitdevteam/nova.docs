@@ -2,302 +2,307 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotconnectornotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novabotflownotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://netheria.github.io/novadocs/components/novachatproxy.html</loc>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscoece.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscoecenotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscouccx.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxyciscouccxnotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspurecloud.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspurecloudnotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureconnecticws.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureconnecticwsnotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureengagegmschatapiv2.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxygenesyspureengagegmschatapiv2notices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxynovaitchat24.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatproxynovaitchat24notices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouterdialogflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouterdialogflownotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouteromilia.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novachatrouteromilianotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novawebchat.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/novawebchatnotices.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/abcconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/fbconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/fbwpconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/infobipconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/kikconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/lineconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/novachatsconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/okconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/okwpconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/slackconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/smoochconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/telegramconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/twitterconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/twitterwpconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/viberconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/vkconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/vkwpconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/webchatconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botconnector/whatsappconnector.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/abcflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/fbflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/fbwpflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/infobipflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/kikflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/lineflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/novachatsflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/okflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/okwpflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/slackflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/smoochflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/telegramflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/twitterflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/twitterwpflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/viberflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/vkflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/vkwpflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/webchatflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://netheria.github.io/novadocs/components/botflow/whatsappflow.html</loc>
-         <lastmod>2021-12-21</lastmod>
+         <lastmod>2021-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -10,6 +10,7 @@
 [NOV-139]: https://sd.novait.com.ua/browse/NOV-139
 [NOV-149]: https://sd.novait.com.ua/browse/NOV-149
 [NOV-171]: https://sd.novait.com.ua/browse/NOV-171
+[NOV-186]: https://sd.novait.com.ua/browse/NOV-186
 [NOV-187]: https://sd.novait.com.ua/browse/NOV-187
 [NOV-222]: https://sd.novait.com.ua/browse/NOV-222
 [NOV-223]: https://sd.novait.com.ua/browse/NOV-223
@@ -69,6 +70,8 @@
 - Extended parameters in template [:clipboard: NOV-223] [NOV-223]
 
 	> • additionalAttributes: chatId, chatId, userId, channel
+
+- *Under Construction* [:clipboard: NOV-186] [NOV-186]
 
 ####Bug Fixes
 - Fixed problem with sending of conversation history to Genesis [:clipboard: NOV-187] [NOV-187]

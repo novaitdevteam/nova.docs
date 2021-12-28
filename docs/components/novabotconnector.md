@@ -4,6 +4,7 @@
 [NOV-271]: https://sd.novait.com.ua/browse/NOV-271
 [NOV-265]: https://sd.novait.com.ua/browse/NOV-265
 [NOV-260]: https://sd.novait.com.ua/browse/NOV-260
+[NOV-253]: https://sd.novait.com.ua/browse/NOV-253
 [NOV-245]: https://sd.novait.com.ua/browse/NOV-245
 [NOV-238]: https://sd.novait.com.ua/browse/NOV-238
 [NOV-215]: https://sd.novait.com.ua/browse/NOV-215
@@ -25,6 +26,7 @@
 [NOV-91]: https://sd.novait.com.ua/browse/NOV-91
 [NOV-86]: https://sd.novait.com.ua/browse/NOV-86
 [NOV-85]: https://sd.novait.com.ua/browse/NOV-85
+[NOV-80]: https://sd.novait.com.ua/browse/NOV-80
 [NOV-72]: https://sd.novait.com.ua/browse/NOV-72
 [NOV-71]: https://sd.novait.com.ua/browse/NOV-71
 [NOV-65]: https://sd.novait.com.ua/browse/NOV-65
@@ -60,7 +62,7 @@
 - *Facebook*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 - *Twitter*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 
-	> • If error ESOCKETTIMEDOUT occurs after sending media contentи, it is possible to increase timeout in config via variable setTimeoutForMedia.
+	> • If error ESOCKETTIMEDOUT occurs after sending media content, it is possible to increase timeout in config via variable setTimeoutForMedia.
 
 	> • Path: server.setTimeoutForMedia.
 
@@ -153,6 +155,8 @@
 
 	> • Typing indicators not supported for bots
 
+- Optimized deployment of new component versions with daemon process manager [:clipboard: NOV-253] [NOV-253]
+
 ####Bug Fixes
 - *WeChat*: changed processing of media data [:clipboard: NOV-39] [NOV-39]
 - *Facebook*: fixed receiving of additional user information from new users [:clipboard: NOV-215] [NOV-215]
@@ -181,6 +185,7 @@
 - *WhatsApp (Nexmo)*: added support of Omilia **Quick Replies** rich media [:clipboard: NOV-154] [NOV-154]
 - *All channels*: Extended Rich Content mapping documentation [:clipboard: NOV-163] [NOV-163]
 - Implemented mechanism to delete old conversations (bson cleanup) [:clipboard: NOV-65] [NOV-65]
+- *Under Construction* [:clipboard: NOV-80] [NOV-80]
 
 ####Bug Fixes
 - *Telegram*: any text that goes with **/start** command is inputed as a first message to Omilia[:clipboard: NOV-147] [NOV-147]

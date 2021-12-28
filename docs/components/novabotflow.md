@@ -6,6 +6,8 @@
 [NOV-282]: https://sd.novait.com.ua/browse/NOV-282
 [NOV-280]: https://sd.novait.com.ua/browse/NOV-280
 [NOV-272]: https://sd.novait.com.ua/browse/NOV-272
+[NOV-269]: https://sd.novait.com.ua/browse/NOV-269
+[NOV-264]: https://sd.novait.com.ua/browse/NOV-264
 [NOV-263]: https://sd.novait.com.ua/browse/NOV-263
 [NOV-239]: https://sd.novait.com.ua/browse/NOV-239
 [NOV-236]: https://sd.novait.com.ua/browse/NOV-236
@@ -20,6 +22,7 @@
 [NOV-219]: https://sd.novait.com.ua/browse/NOV-219
 [NOV-217]: https://sd.novait.com.ua/browse/NOV-217
 [NOV-210]: https://sd.novait.com.ua/browse/NOV-210
+[NOV-209]: https://sd.novait.com.ua/browse/NOV-209
 [NOV-208]: https://sd.novait.com.ua/browse/NOV-208
 [NOV-207]: https://sd.novait.com.ua/browse/NOV-207
 [NOV-206]: https://sd.novait.com.ua/browse/NOV-206
@@ -119,6 +122,7 @@
 	> • Vkontakte, Odnoklassniki, WhatsApp (Infobib)
 
 - Realised ChatWoot connector [:clipboard: NOV-298] [NOV-298]
+- *Under Construction* [:clipboard: NOV-264] [NOV-264]
 
 ####Bug Fixes
 - none
@@ -166,6 +170,7 @@
 - *Vkotankte*: added support of channel [:clipboard: NOV-230] [NOV-230]
 - *Odnoklassniki*: added support of channel [:clipboard: NOV-231] [NOV-231]
 - Realised parallel work of same channels (with different configuration) on separate flows [:clipboard: NOV-263] [NOV-263]
+- *Under Construction* [:clipboard: NOV-209] [NOV-209]
 
 ####Bug Fixes
 - *Viber*: fixed sending of attachments both ways [:clipboard: NOV-180] [NOV-180]
@@ -184,7 +189,7 @@
 - *WeChat*: added support of channel [:clipboard: NOV-159] [NOV-159]
 - Realized native attachment sending (no URL) for PureEngage [:clipboard: NOV-160] [NOV-160]
 - Created Rich Content Mapping documentation [:clipboard: NOV-156] [NOV-156]
-- Extended Rich Content Mapping documentation and added messagers support features[:clipboard: NOV-156] [NOV-156]
+- Extended Rich Content Mapping documentation and added messagers support features [:clipboard: NOV-162] [NOV-162]
 - Added support of Omilia buttons for Apple Chat [:clipboard: NOV-178] [NOV-178]
 - Made bufferization of media content for optimization of flow building [:clipboard: NOV-179] [NOV-179]
 
@@ -201,6 +206,7 @@
 - *ABC*: added the following nodes:
 	* **Apple Authentintification** for authentification
 	* **Apple Invoice** for Apple Pay
+- *Under Construction* [:clipboard: NOV-131] [NOV-131]
 
 ####Bug Fixes
 - none
