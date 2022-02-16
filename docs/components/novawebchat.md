@@ -1,6 +1,9 @@
-[NOV-10]: https://sd.novait.com.ua/browse/NOV-10
-[NOV-9]: https://sd.novait.com.ua/browse/NOV-9
-[NOV-8]: https://sd.novait.com.ua/browse/NOV-8
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.WebChat
 ##Product Notices

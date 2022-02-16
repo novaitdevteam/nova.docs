@@ -1,10 +1,9 @@
-[NOV-15]: https://sd.novait.com.ua/browse/NOV-15
-[NOV-24]: https://sd.novait.com.ua/browse/NOV-24
-[NOV-46]: https://sd.novait.com.ua/browse/NOV-46
-[NOV-90]: https://sd.novait.com.ua/browse/NOV-90
-[NOV-108]: https://sd.novait.com.ua/browse/NOV-108
-[NOV-135]: https://sd.novait.com.ua/browse/NOV-135
-[NOV-167]: https://sd.novait.com.ua/browse/NOV-167
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy.Genesys.PureCloud
 ##Product Notices
@@ -58,7 +57,7 @@
 
 ##2019R3
 ####New Features
-- Integration with high-availability cluster *Mongodb* (on *mongoose* driver level) [:clipboard: NOV-24] [NOV-24]
+- Integration with high-availability *Mongodb* cluster (on *mongoose* driver level) [:clipboard: NOV-24] [NOV-24]
 
 ####Bug Fixes
 - none

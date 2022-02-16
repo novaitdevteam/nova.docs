@@ -1,19 +1,35 @@
 #Nova.BotConnector Twitter Wallposts
 ##Features
-###Text
-- [x] sending text from agent to client
-- [x] sending text from client to agent
+####Text
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Pictures
-- [x] sending pictures from agent to client
-- [x] sending pictures from client to agent
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Tweets text character limit: 280
+```
+</p>
+</details>
+####Pictures
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Files
-- [x] sending .gif from client to agent
-- [x] sentding .gif from agent to client
-- [x] sentding video (.mp4) from agent to client
-- [x] sentding video (.mp4) from agent to client
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Maximum image upload size: 5 MB
+• Maximum image resolution: 1500 x 500 pixels
+```
+</p>
+</details>
+####Files
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Emoji
-- [x] sending emoji from client to agent
-- [x] sentding emoji from agent to client
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Files are limited only to inbuild GIF gallery
+```
+</p>
+</details>
+####Emoji
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*

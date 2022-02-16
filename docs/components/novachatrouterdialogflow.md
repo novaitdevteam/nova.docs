@@ -1,5 +1,9 @@
-[NOV-35]: https://sd.novait.com.ua/browse/NOV-35
-[NOV-259]: https://sd.novait.com.ua/browse/NOV-259
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatRouter.Dialogflow
 ##Product Notices

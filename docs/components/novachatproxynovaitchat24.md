@@ -1,4 +1,9 @@
-[NOV-64]: https://sd.novait.com.ua/browse/NOV-64
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy.NovaIT.Chat24
 ##Product Notices

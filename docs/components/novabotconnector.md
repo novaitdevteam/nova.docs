@@ -1,60 +1,23 @@
-[NOV-305]: https://sd.novait.com.ua/browse/NOV-305
-[NOV-304]: https://sd.novait.com.ua/browse/NOV-304
-[NOV-287]: https://sd.novait.com.ua/browse/NOV-287
-[NOV-271]: https://sd.novait.com.ua/browse/NOV-271
-[NOV-265]: https://sd.novait.com.ua/browse/NOV-265
-[NOV-260]: https://sd.novait.com.ua/browse/NOV-260
-[NOV-253]: https://sd.novait.com.ua/browse/NOV-253
-[NOV-245]: https://sd.novait.com.ua/browse/NOV-245
-[NOV-238]: https://sd.novait.com.ua/browse/NOV-238
-[NOV-215]: https://sd.novait.com.ua/browse/NOV-215
-[NOV-203]: https://sd.novait.com.ua/browse/NOV-203
-[NOV-199]: https://sd.novait.com.ua/browse/NOV-199
-[NOV-181]: https://sd.novait.com.ua/browse/NOV-181
-[NOV-172]: https://sd.novait.com.ua/browse/NOV-172
-[NOV-163]: https://sd.novait.com.ua/browse/NOV-163
-[NOV-154]: https://sd.novait.com.ua/browse/NOV-154
-[NOV-147]: https://sd.novait.com.ua/browse/NOV-147
-[NOV-141]: https://sd.novait.com.ua/browse/NOV-141
-[NOV-140]: https://sd.novait.com.ua/browse/NOV-140
-[NOV-122]: https://sd.novait.com.ua/browse/NOV-122
-[NOV-112]: https://sd.novait.com.ua/browse/NOV-112
-[NOV-111]: https://sd.novait.com.ua/browse/NOV-111
-[NOV-109]: https://sd.novait.com.ua/browse/NOV-109
-[NOV-107]: https://sd.novait.com.ua/browse/NOV-107
-[NOV-94]: https://sd.novait.com.ua/browse/NOV-94
-[NOV-91]: https://sd.novait.com.ua/browse/NOV-91
-[NOV-86]: https://sd.novait.com.ua/browse/NOV-86
-[NOV-85]: https://sd.novait.com.ua/browse/NOV-85
-[NOV-80]: https://sd.novait.com.ua/browse/NOV-80
-[NOV-72]: https://sd.novait.com.ua/browse/NOV-72
-[NOV-71]: https://sd.novait.com.ua/browse/NOV-71
-[NOV-65]: https://sd.novait.com.ua/browse/NOV-65
-[NOV-50]: https://sd.novait.com.ua/browse/NOV-50
-[NOV-42]: https://sd.novait.com.ua/browse/NOV-42
-[NOV-39]: https://sd.novait.com.ua/browse/NOV-39
-[NOV-36]: https://sd.novait.com.ua/browse/NOV-36
-[NOV-32]: https://sd.novait.com.ua/browse/NOV-32
-[NOV-28]: https://sd.novait.com.ua/browse/NOV-28
-[NOV-27]: https://sd.novait.com.ua/browse/NOV-27
-[NOV-21]: https://sd.novait.com.ua/browse/NOV-21
-[NOV-17]: https://sd.novait.com.ua/browse/NOV-17
-[NOV-14]: https://sd.novait.com.ua/browse/NOV-14
-[NOV-10]: https://sd.novait.com.ua/browse/NOV-10
-[NOV-9]: https://sd.novait.com.ua/browse/NOV-9
-[NOV-8]: https://sd.novait.com.ua/browse/NOV-8
-[NOV-7]: https://sd.novait.com.ua/browse/NOV-7
-[NOV-6]: https://sd.novait.com.ua/browse/NOV-6
-[NOV-5]: https://sd.novait.com.ua/browse/NOV-5
-[NOV-4]: https://sd.novait.com.ua/browse/NOV-4
-[NOV-3]: https://sd.novait.com.ua/browse/NOV-3
-[NOV-1]: https://sd.novait.com.ua/browse/NOV-1
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.BotConnector
 ##Product Notices
 ***
+##2022R1
+####New Features
+- none
+
+####Bug Fixes
+- none
+***
+
 ##2021R4
-###2021R4-5 :briefcase: Epic (unvalidated)
+###2021R4-5 :briefcase: Epic
 ####New Features
 - none
 
@@ -62,13 +25,13 @@
 - *Facebook*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 - *Twitter*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 
-	> • If error ESOCKETTIMEDOUT occurs after sending media content, it is possible to increase timeout in config via variable setTimeoutForMedia.
+	> • If error ESOCKETTIMEDOUT occurs after sending media content (for ex. with big size), it is possible to increase timeout in config via variable setTimeoutForMedia.
 
 	> • Path: server.setTimeoutForMedia.
 
 ***
 
-###2021R4-4 :briefcase: Epic (unvalidated)
+###2021R4-4 :briefcase: Epic
 ####New Features
 - *WhatsApp (Nexmo)*: migration from API v0.1 to API v1 [:clipboard: NOV-304] [NOV-304]
 
@@ -82,16 +45,7 @@
 - *WhatsApp (Infobip)*: fixed bug when downloading file created a hollow file [:clipboard: NOV-305] [NOV-305]
 ***
 
-
-###2021R4-3 :briefcase: Epic
-####New Features
-- none
-
-####Bug Fixes
-- none
-***
-
-###2021R4-2 :briefcase: Epic (unvalidated)
+###2021R4-2 :briefcase: Epic
 ####New Features
 - *Vkontakte Wall Posts*: added support of VK comments on posts [:clipboard: NOV-265] [NOV-265]
 	* comment creates new conversation with possibility of one reply from agent
@@ -138,7 +92,6 @@
 
 ####Bug Fixes
 - none
-
 ***
 
 ##2021R3
@@ -164,14 +117,56 @@
 
 ##2021R2
 ####New Features
-- *All channels*: added sending of REF context from uri to Omilia on the start of conversation [:clipboard: NOV-172] [NOV-172]
+- *All channels*: added sending of REF value from uri to Omilia context at the start of conversation [:clipboard: NOV-172] [NOV-172]
+
+	> • Facebook messenger:
+	
+	> https://m.me/<NAME>?ref=<REF>
+
+	> • Viber:
+	
+	> viber://pa?chatURI=<NAME>&context=<REF>
+
+	> • Telegram:
+
+	> https://t.me/<NAME>?start=<REF>
+
+	> • Variables:
+
+	> NAME - name of bot, page, or account in curresponding messengers
+	
+	> REF - any value
+	
 - *Facebook*: added receiving of additional user information (*firstname*, *lastname*, *username*) [:clipboard: NOV-181] [NOV-181]
 - *WebChat*: added receiving of additional user infogrmation (*firstname*, *lastname*) [:clipboard: NOV-199] [NOV-199]
 - *All channels*: deletion of user privacy related data from DB [:clipboard: NOV-203] [NOV-203]
-- *All channels*: added 3 types of outbound messages [:clipboard: NOV-238] [NOV-238]:
-	* without specific answer redirect on agent or workgroup\skillgroup 
-	* with reservation of agent or workgroup\skillgroup after outbound message and specific answer redirect on agent or workgroup\skillgroup
-	* with reservation of agent or workgroup\skillgroup after client's reply and specific answer redirect on agent or workgroup\skillgroup
+- *All channels*: added outbound messaging [:clipboard: NOV-238] [NOV-238]
+
+	> Three working algorithms:
+
+	> • without specific reply redirect on agent or workgroup\skillgroup (simple outbound message)
+
+	>	- sending of message to client, that has had a previous conversation, without awaiting for reply
+
+	> • with reservation of routing on agent or workgroup\skillgroup after outbound message and reply redirect on reserverd agent or workgroup\skillgroup (outbound message with agent or workgroup\skillgroup reservation for routing)
+
+	>	- sending of message to client, that has had a previous conversation, without awaiting for reply
+
+	>	- reservation of reply receiver (agent or workgroup\skillgroup)
+
+	> 	(reservation cleanup: field "Expiration Timeout" in config, value in minutes)
+
+	> 	- routing on agent or workgroup\skillgroup after reply
+	
+	>	(outbound message is sent as a first incoming message from agent)
+
+	> • with reservation of agent or workgroup\skillgroup after client's reply and specific answer redirect on agent or workgroup\skillgroup (outbound message with instant routing on agent or workgroup\skillgroup)
+
+	> 	- sending of message to client, that has had a previous conversation, without awaiting for reply
+
+	> 	- routing on agent or workgroup\skillgroup
+	
+	>	(outbound message is sent as a first incoming message from agent)
 
 ####Bug Fixes
 - *Slack*: fixed **oAuthUrl** field on channel registration in connector
@@ -183,18 +178,63 @@
 - *Viber*: added support of "**Request Contact**" button type [:clipboard: NOV-140] [NOV-140]
 - *Facebook*: added support of "**Request Contact**" button type [:clipboard: NOV-141] [NOV-141]
 - *WhatsApp (Nexmo)*: added support of Omilia **Quick Replies** rich media [:clipboard: NOV-154] [NOV-154]
-- *All channels*: Extended Rich Content mapping documentation [:clipboard: NOV-163] [NOV-163]
 - Implemented mechanism to delete old conversations (bson cleanup) [:clipboard: NOV-65] [NOV-65]
-- *Under Construction* [:clipboard: NOV-80] [NOV-80]
+
+	> Parameters in config file:
+	
+	> 	• cleanOlder: X, // X - number of days; messages older than this number of days will be cleaned up
+
+	> 	• cleanUpSessions: Y, // Y - true or false
+
+	> (Deletes records in database: connectors.conversations)
+
+<details><summary>Cleaning Service</summary>
+<p>
+```
+[Unit]
+Description=cURL Test request
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/usr/bin/curl -X DELETE "http://localhost:8080/connectors/{{Connector_Id}}/clean"
+
+[Install]
+WantedBy=multi-user.target
+```
+</p>
+</details>
+
+<details><summary>Timer Service</summary>
+<p>
+```
+[Unit]
+Description=Test
+
+[Timer]
+OnUnitInactiveSec=120
+#OnUnitInactiveSec - for this timer to work, cleaning service must be launched at least once
+
+#OnCalendar=--* ::00
+#OnCalendar - works periodically, the above example is for every minute launch
+
+[Install]
+WantedBy=timers.target
+```
+</p>
+</details>
+
 
 ####Bug Fixes
-- *Telegram*: any text that goes with **/start** command is inputed as a first message to Omilia[:clipboard: NOV-147] [NOV-147]
+- *Telegram*: any text that goes with **/start** command is inputed as a first message to Omilia [:clipboard: NOV-147] [NOV-147]
 - *All channels*: Carousel type error fix
 ***
 
 ##2020R4
 ####New Features
-- *Telegram*: added sending of **start** command text as REF parameter [:clipboard: NOV-112] [NOV-112]
+- *Telegram*: added sending of **/start** command following text as REF parameter [:clipboard: NOV-112] [NOV-112]
 
 	> • https://telegram.me/<BotName>?start=<**parameters**>
 
@@ -261,7 +301,7 @@
 ##2019R3
 ####New Features
 - Integration with high-availability cluster *Mongodb* (on *mongoose* driver level) [:clipboard: NOV-21] [NOV-21]
-- *Facebook*: added integration to channel [:clipboard: NOV-27] [NOV-27]
+- *Facebook*: added support of channel [:clipboard: NOV-27] [NOV-27]
 - *WhatsApp (Nexmo)*: added support of channel [:clipboard: NOV-28] [NOV-28]
 - *Smooch*: added integration to channel [:clipboard: NOV-32] [NOV-32]
 
@@ -282,7 +322,7 @@
 - none
 
 ####Bug Fixes
-- *Viber*: fixed sending message types like [:clipboard: NOV-14] [NOV-14]:
+- *Viber*: fixed sending message types of [:clipboard: NOV-14] [NOV-14]:
 	* text
 	* picture\photo
 	* video
@@ -300,6 +340,15 @@
 
 - *WhatsApp (Twillio)*: developed integration to channel [:clipboard: NOV-3] [NOV-3]
 - *All channels*: DELETE method for deletion of messages in database  [:clipboard: NOV-6] [NOV-6]
+
+	> Remove all conversations from the connector:
+
+	> curl -X DELETE "http://localhost:8080/connectors/${CONNECTOR_ID}/clean"
+
+	> Remove a single conversation from the connector:
+
+	> curl -X DELETE "http://localhost:8080/connectors/${CONNECTOR_ID}/conversations/${CONVERSATION_ID}"
+
 - Implemented logging [:clipboard: NOV-7] [NOV-7]
 
 ####Bug Fixes

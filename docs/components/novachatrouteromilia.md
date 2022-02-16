@@ -1,35 +1,23 @@
-[NOV-13]: https://sd.novait.com.ua/browse/NOV-13
-[NOV-16]: https://sd.novait.com.ua/browse/NOV-16
-[NOV-22]: https://sd.novait.com.ua/browse/NOV-22
-[NOV-34]: https://sd.novait.com.ua/browse/NOV-34
-[NOV-37]: https://sd.novait.com.ua/browse/NOV-37
-[NOV-38]: https://sd.novait.com.ua/browse/NOV-38
-[NOV-43]: https://sd.novait.com.ua/browse/NOV-43
-[NOV-44]: https://sd.novait.com.ua/browse/NOV-44
-[NOV-52]: https://sd.novait.com.ua/browse/NOV-52
-[NOV-79]: https://sd.novait.com.ua/browse/NOV-79
-[NOV-103]: https://sd.novait.com.ua/browse/NOV-103
-[NOV-110]: https://sd.novait.com.ua/browse/NOV-110
-[NOV-118]: https://sd.novait.com.ua/browse/NOV-118
-[NOV-124]: https://sd.novait.com.ua/browse/NOV-124
-[NOV-126]: https://sd.novait.com.ua/browse/NOV-126
-[NOV-136]: https://sd.novait.com.ua/browse/NOV-136
-[NOV-140]: https://sd.novait.com.ua/browse/NOV-140
-[NOV-141]: https://sd.novait.com.ua/browse/NOV-141
-[NOV-150]: https://sd.novait.com.ua/browse/NOV-150
-[NOV-151]: https://sd.novait.com.ua/browse/NOV-151
-[NOV-164]: https://sd.novait.com.ua/browse/NOV-164
-[NOV-165]: https://sd.novait.com.ua/browse/NOV-165
-[NOV-168]: https://sd.novait.com.ua/browse/NOV-168
-[NOV-170]: https://sd.novait.com.ua/browse/NOV-170
-[NOV-192]: https://sd.novait.com.ua/browse/NOV-192
-[NOV-196]: https://sd.novait.com.ua/browse/NOV-196
-[NOV-202]: https://sd.novait.com.ua/browse/NOV-202
-[NOV-253]: https://sd.novait.com.ua/browse/NOV-253
-[NOV-258]: https://sd.novait.com.ua/browse/NOV-258
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatRouter.Omilia
 ##Product Notices
+***
+##2022R1
+##2022R1-2
+####New Features
+- none
+
+####Bug Fixes
+- Fixed agent receiving "/chatrouterstart" command on transfer  [:clipboard: NOV-311] [NOV-311]
+
+	> Dialog start evoked wrong response or timeout in Omilia, in which situation "ignoreFailure" transferred chat without waiting for proper event
+
 ***
 ##2021R3
 ####New Features
@@ -61,7 +49,7 @@ Kik: support of Buttons
 
 ##2021R2
 ####New Features
-- Singled out DRT link into configuration (field URL) [:clipboard: NOV-168] [NOV-168]
+- Singled out DRT link into configuration (field **URL**) [:clipboard: NOV-168] [NOV-168]
 
 	> • Link to DRT can be different depending on assembling process
 
@@ -85,7 +73,7 @@ Kik: support of Buttons
 
 ##2020R4
 ####New Features
-- Added sending of Omilia custom data in ChatProxy [:clipboard: NOV-110] [NOV-110]
+- Added sending of Omilia custom data to ChatProxy [:clipboard: NOV-110] [NOV-110]
 - Implemented webservices to control Omilia conversation sessions [:clipboard: NOV-118] [NOV-118]
 
 	> • 1) Reset of conversation state on Omilia connector 
@@ -96,7 +84,7 @@ Kik: support of Buttons
 
 	> UPDATE /api/v1/conversationss?id=<some-interaction-id>&omiliaconfigurationid=<some-omilia-configuration-id>&custom-param-1=<some-custom-param-1=value>&custom-param-N=<some-custom-param-N=value>
 
-- Added support of "Request Contact" button type for *Telegram* channel [:clipboard: NOV-124] [NOV-124]
+- Added support of "Request Contact" button type for **Telegram** channel [:clipboard: NOV-124] [NOV-124]
 
 ####Bug Fixes
 - Fixed issue where sending unsupported by Omilia data cause error and does not create session  [:clipboard: NOV-126] [NOV-126]
@@ -104,7 +92,7 @@ Kik: support of Buttons
 
 ##2020R3
 ####New Features
-- Added support of new Omilia RichControls tag *DataModels* [:clipboard: NOV-79] [NOV-79]
+- Added support of Omilia RichControls tag **DataModels** [:clipboard: NOV-79] [NOV-79]
 
 ####Bug Fixes
 - none
@@ -112,7 +100,7 @@ Kik: support of Buttons
 
 ##2020R2
 ####New Features
-- Implemented sending of conversation history from *Omilia* to *PureConnect* [:clipboard: NOV-37] [NOV-37]
+- Implemented sending of conversation history from **Omilia** to **PureConnect** [:clipboard: NOV-37] [NOV-37]
 
 ####Bug Fixes
 - none
@@ -120,9 +108,9 @@ Kik: support of Buttons
 
 ##2020R1
 ####New Features
-- Implemented sending of conversation history from *Omilia* to *PureCloud* [:clipboard: NOV-38] [NOV-38]
+- Implemented sending of conversation history from **Omilia** to **PureCloud** [:clipboard: NOV-38] [NOV-38]
 - Added mechanism to send *NoInput* events from client [:clipboard: NOV-43] [NOV-43]
-- Realized connection of survey after ending of conversation in Omilia [:clipboard: NOV-44] [NOV-44] 
+- Realized connection of survey application after ending of conversation in Omilia [:clipboard: NOV-44] [NOV-44] 
 - Added sending of extra user date at the start of conversation to Omilia [:clipboard: NOV-52] [NOV-52]:
 
 <details><summary>Extra User Data</summary>
@@ -153,7 +141,7 @@ Kik: support of Buttons
 
 ##2019R3
 ####New Features
-- Integration with high-availability cluster *Mongodb* (on *mongoose* driver level) [:clipboard: NOV-22] [NOV-22]
+- Integration with high-availability *Mongodb* cluster (on *mongoose* driver level) [:clipboard: NOV-22] [NOV-22]
 
 ####Bug Fixes
 - none
@@ -161,7 +149,7 @@ Kik: support of Buttons
 
 ##2019R2
 ####New Features
-- Implemented mechanism for currect catching of chat session ending from ChatProxy and ending session in CharRouter the component [:clipboard: NOV-16] [NOV-16]
+- Implemented mechanism for currect catching of chat session ending from ChatProxy and ending session in CharRouter [:clipboard: NOV-16] [NOV-16]
 
 ####Bug Fixes
 - none

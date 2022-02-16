@@ -1,23 +1,41 @@
 #Nova.BotConnector Vkontakte Wallposts
 ##Features
-###Text
-- [x] sending text from agent to client
-- [x] sending text from client to agent
+####Text
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Pictures
-- [x] sending pictures from agent to client
-- [x] sending pictures from client to agent
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Post text character limit: 16384
+• Comment text recomended to be 280 characters, but can be more 
+```
+</p>
+</details>
+####Pictures
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Files
-- [x] sending .gif from client to agent
-- [x] sentding .gif from agent to client
-- [x] sentding video from client to agent
-- [x] sentding video from agent to client
-- [x] sending attachments from client to agent
-- [x] sending attachments from agent to client
-- [x] sending audio from client to agent
-- [x] sending audio from agent to client
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Picture size limit is: 5 MB
+• Possible to attach up to 5 images to a message 
+```
+</p>
+</details>
+####Files
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Emoji
-- [x] sending emoji from client to agent
-- [x] sentding emoji from agent to client
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• File size limit is: 200 MB
+• Main supported formats:
+	• Text documents: DOC, DOCX, XLS, XLSX, RTF
+	• Presentations, books: PPT, PPTX, PDF, DJVU, FB2
+	• Images: PNG, JPG, GIF, PSD, PS
+	• Music: MP3
+```
+</p>
+</details>
+####Emoji
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*

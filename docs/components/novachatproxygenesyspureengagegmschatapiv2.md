@@ -1,11 +1,9 @@
-[NOV-2]: https://sd.novait.com.ua/browse/NOV-2
-[NOV-20]: https://sd.novait.com.ua/browse/NOV-20
-[NOV-23]: https://sd.novait.com.ua/browse/NOV-23
-[NOV-58]: https://sd.novait.com.ua/browse/NOV-58
-[NOV-77]: https://sd.novait.com.ua/browse/NOV-77
-[NOV-84]: https://sd.novait.com.ua/browse/NOV-84
-[NOV-256]: https://sd.novait.com.ua/browse/NOV-256
-[NOV-259]: https://sd.novait.com.ua/browse/NOV-259
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy.Genesys.PureEngage.GMS.ChatAPIv2
 ##Product Notices

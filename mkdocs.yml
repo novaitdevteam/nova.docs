@@ -14,6 +14,7 @@ site_author: NovaIT
 
 # Станицы документации
 nav:
+    - Markup Legend: components/markup.md
     - Features:
         - Nova.ChatsConnector:
             - Nova.BotConnector:
@@ -22,19 +23,19 @@ nav:
                 - Channels:
                     - Telegram: components/botconnector/telegramconnector.md
                     - Viber: components/botconnector/viberconnector.md
-                    - Facebook Messeger: components/botconnector/fbconnector.md
+                    - Facebook Messenger: components/botconnector/fbconnector.md
                     - Twitter: components/botconnector/twitterconnector.md
                     - Line: components/botconnector/lineconnector.md
                     - Slack: components/botconnector/slackconnector.md
-                    - Apple Business Chat: components/botconnector/abcconnector.md
                     - WhatsApp: components/botconnector/whatsappconnector.md
                     - Kik: components/botconnector/kikconnector.md
-                    - Smooch: components/botconnector/smoochconnector.md
+                    - Nexmo (WhatsApp): components/botconnector/nexmoconnector.md
                     - Vkontakte: components/botconnector/vkconnector.md
                     - Odnoklassniki: components/botconnector/okconnector.md
                     - WebChat: components/botconnector/webchatconnector.md
                     - NovaChats: components/botconnector/novachatsconnector.md
-                    - Infobip: components/botconnector/infobipconnector.md
+                    - Infobip (WhatsApp): components/botconnector/infobipconnector.md
+                    - Twilio: components/botconnector/twilioconnector.md
                     - Facebook Wallposts: components/botconnector/fbwpconnector.md
                     - Twitter Wallposts: components/botconnector/twitterwpconnector.md
                     - Vkontakte Wallposts: components/botconnector/vkwpconnector.md
@@ -45,19 +46,18 @@ nav:
                 - Channels:
                     - Telegram: components/botflow/telegramflow.md
                     - Viber: components/botflow/viberflow.md
-                    - Facebook Messeger: components/botflow/fbflow.md
+                    - Facebook Messenger: components/botflow/fbflow.md
                     - Twitter: components/botflow/twitterflow.md
                     - Line: components/botflow/lineflow.md
                     - Slack: components/botflow/slackflow.md
                     - Apple Business Chat: components/botflow/abcflow.md
                     - WhatsApp: components/botflow/whatsappflow.md
                     - Kik: components/botflow/kikflow.md
-                    - Smooch: components/botflow/smoochflow.md
+                    - Nexmo (WhatsApp): components/botflow/nexmoflow.md
+                    - Smooch (WhatsApp): components/botflow/smoochflow.md
                     - Vkontakte: components/botflow/vkflow.md
                     - Odnoklassniki: components/botflow/okflow.md
-                    - WebChat: components/botflow/webchatflow.md
-                    - NovaChats: components/botflow/novachatsflow.md
-                    - Infobip: components/botflow/infobipflow.md
+                    - Infobip (WhatsApp): components/botflow/infobipflow.md
                     - Facebook Wallposts: components/botflow/fbwpflow.md
                     - Twitter Wallposts: components/botflow/twitterwpflow.md
                     - Vkontakte Wallposts: components/botflow/vkwpflow.md
@@ -76,8 +76,8 @@ nav:
                 - Dialogflow: components/novachatrouterdialogflownotices.md
                 - Omilia: components/novachatrouteromilianotices.md
             - Nova.WebChat: components/novawebchatnotices.md
+            - Nova.Talks: components/novatalksnotices.md
     - Release Notes:
-        - Markup Legend: components/markup.md
         - Nova.ChatsConnector:
             - Nova.BotConnector: components/novabotconnector.md
             - Nova.BotFlow: components/novabotflow.md
@@ -95,6 +95,7 @@ nav:
                 - Dialogflow: components/novachatrouterdialogflow.md
                 - Omilia: components/novachatrouteromilia.md
             - Nova.WebChat: components/novawebchat.md
+            - Nova.Talks: components/novatalks.md
 
 extra_css:
     - ./css/extra.css
@@ -117,12 +118,10 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.top
   font:
     text: Roboto
     code: Roboto Mono
-#  favicon: assets/logo.png
-#  icon:
-#    logo: icon.png
   palette:
     - scheme: default
       primary: indigo
@@ -150,6 +149,7 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+  - pymdownx.snippets
   - admonition
   - md_in_html
   - abbr
@@ -161,8 +161,17 @@ markdown_extensions:
   - toc:
       permalink: true
 
+plugins:
+  - include-markdown
+  - search
+  - redirects:
+      redirect_maps:
+        'path/old.md': 'path/new.md'
+        'index.md': 'markup.md'
+        'components/index.md': 'components/markup.md'
+
 extra:
-  homepage: https://netheria.github.io/novadocs/components/
+  homepage: components/markup.html
   generator: false
  
 use_directory_urls: false

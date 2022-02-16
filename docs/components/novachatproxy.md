@@ -1,4 +1,9 @@
-[NOV-253]: https://sd.novait.com.ua/browse/NOV-253
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy
 ##Product Notices

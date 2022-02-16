@@ -1,4 +1,9 @@
-[NOV-12]: https://sd.novait.com.ua/browse/NOV-12
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy.Cisco.UCCX
 ##Product Notices

@@ -1,55 +1,106 @@
 #Nova.BotFlow Telegram
 ##Features
-###Text
-- [x] sending text from agent to client
-- [x] sending text from client to agent
+####Text
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Pictures
-- [x] sending pictures from agent to client
-- [x] sending pictures from client to agent
-
-###Files
-- [x] sending attachments from client to agent
-- [x] sending attachments from agent to client
-
-###Emoji
-- [x] sending emoji from client to agent
-- [x] sentding emoji from agent to client
-
-###Typing
-- [x] typing identificator is precent when agent writes a message
-
-###Quick Replies
-- [x] Quick Replies are supported as a disappearing after click/tap buttons
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-Inline Keyboard:
-Maximum 8 buttons per row
-Maximum 100 button rows
+• Text character limit: 4096 UTF
 ```
 </p>
 </details>
-###Card
-- [x] Card is supported as a monolith structure with *Title*, *Subtitle*, *Subtitle*, and *Quick Replies* buttons
+####Pictures
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-###Button List
-- [x] Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-Maximum 100 button rows
+• Picture size limit is: 25 MB
+• Picture formats: jpeg, jpg, png, gif (only if type:"ANIMATION")
+• Description text: character limit 200
 ```
 </p>
 </details>
-###Button Grid
-- [x] Button Grid is supported as a Title with number of buttons positioned horizontally 
+####Files
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
+
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-Maximum 8 buttons per row
+• File (including video) size limit is: 2 GB
+• Video formats: any
 ```
 </p>
 </details>
-###Carousel
-- [x] Carousel is supported as a number of Card type messages, where only last one will have buttons 
+####Emoji
+- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
+
+####Typing
+- Typing identificator is precent when agent writes a message
+- Identificator is active whole time the message is written
+
+####Quick Replies
+- Quick Replies are supported as a disappearing after click/tap buttons
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Type: Inline Keyboard
+• Content: maximum of 4096 characters
+• Maximum 8 buttons per row
+• Maximum 100 button rows
+```
+</p>
+</details>
+<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowQuickReplies.png" title="Telegram Quick Replies" width="600" height"500"> </a> </figure>
+####Card
+- Card is supported as a monolith structure with *Title*, *Subtitle* and *Quick Replies* buttons
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Type: Inline Keyboard
+• Content: maximum of 4096 characters
+• Maximum 8 buttons per row
+• Maximum 100 button rows
+• Picture size limit is: 25 MB
+• Picture formats: jpeg, jpg, png
+```
+</p>
+</details>
+<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowCard.png" title="Telegram Card" width="600" height"500"> </a> </figure>
+####Button List
+- Button List is supported as a Title with number of buttons positioned vertically 
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Type: Inline Keyboard
+• Content: maximum of 4096 characters
+• Maximum 100 button rows
+```
+</p>
+</details>
+<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowButtonlist.png" title="Telegram Button List" width="600" height"500"> </a> </figure>
+####Button Grid
+- Button Grid is supported as a Title with number of buttons positioned horizontally 
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Type: Inline Keyboard
+• Content: maximum of 4096 characters
+• Maximum 8 buttons per row
+```
+</p>
+</details>
+<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowButtongrid.png" title="Telegram Button Grid" width="600" height"500"> </a> </figure>
+####Carousel
+- Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)
+<details><summary>Known Restrictions</summary>
+<p>
+```
+• Picture size limit is: 25 MB
+• Picture formats: jpeg, jpg, png
+• Maximum 3 buttons under every card
+```
+</p>
+</details>
+<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowCarousel.png" title="Telegram Carousel" width="600" height"500"> </a> </figure>

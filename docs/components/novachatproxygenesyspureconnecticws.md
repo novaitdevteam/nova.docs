@@ -1,23 +1,9 @@
-[NOV-29]: https://sd.novait.com.ua/browse/NOV-29
-[NOV-63]: https://sd.novait.com.ua/browse/NOV-63
-[NOV-66]: https://sd.novait.com.ua/browse/NOV-66
-[NOV-73]: https://sd.novait.com.ua/browse/NOV-73
-[NOV-78]: https://sd.novait.com.ua/browse/NOV-78
-[NOV-92]: https://sd.novait.com.ua/browse/NOV-92
-[NOV-100]: https://sd.novait.com.ua/browse/NOV-100
-[NOV-117]: https://sd.novait.com.ua/browse/NOV-117
-[NOV-119]: https://sd.novait.com.ua/browse/NOV-119
-[NOV-139]: https://sd.novait.com.ua/browse/NOV-139
-[NOV-149]: https://sd.novait.com.ua/browse/NOV-149
-[NOV-171]: https://sd.novait.com.ua/browse/NOV-171
-[NOV-186]: https://sd.novait.com.ua/browse/NOV-186
-[NOV-187]: https://sd.novait.com.ua/browse/NOV-187
-[NOV-222]: https://sd.novait.com.ua/browse/NOV-222
-[NOV-223]: https://sd.novait.com.ua/browse/NOV-223
-[NOV-256]: https://sd.novait.com.ua/browse/NOV-256
-[NOV-259]: https://sd.novait.com.ua/browse/NOV-259
-[NOV-286]: https://sd.novait.com.ua/browse/NOV-286
-[NOV-305]: https://sd.novait.com.ua/browse/NOV-305
+{%
+   include-markdown ".\links.md"
+   start="<!--tasklink-start-->"
+   end="<!--tasklink-end-->"
+   rewrite-relative-urls=false
+%}
 
 #Nova.ChatProxy.Genesys.PureConnect.ICWS
 ##Product Notices
@@ -69,14 +55,16 @@
 
 - Extended parameters in template [:clipboard: NOV-223] [NOV-223]
 
-	> • additionalAttributes: chatId, chatId, userId, channel
-
-- *Under Construction* [:clipboard: NOV-186] [NOV-186]
+	> • additionalAttributes: chatId, userId, channel
 
 ####Bug Fixes
 - Fixed problem with sending of conversation history to Genesis [:clipboard: NOV-187] [NOV-187]
 
 	> • ICWS API support receiving request body with up to 15230 bytes, therefore, all older history would not be sent
+
+####Known Issues
+
+- Attachments are not sent from agent ot client in Interaction Desktop [:clipboard: NOV-186] [NOV-186]
 ***
 
 ##2021R2
@@ -132,7 +120,7 @@
 ##2020R2
 ####New Features
 - Added support of second node and implemented switchover of load to the second active node in case of first node malfunctioning [:clipboard: NOV-63] [NOV-63]
-- Widened templete of userdata sent  [:clipboard: NOV-66] [NOV-66]:
+- Widened template of userdata sent  [:clipboard: NOV-66] [NOV-66]:
 
 <details><summary>Template</summary>
 <p>

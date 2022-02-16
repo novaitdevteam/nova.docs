@@ -1,21 +1,22 @@
+{%
+   include-markdown ".\links.md"
+   start="<!--datelink-chatproxynovaitchat24-start-->"
+   end="<!--datelink-chatproxynovaitchat24-end-->"
+   rewrite-relative-urls=true
+%}
+
+{%
+   include-markdown ".\glossary.md"
+   start="<!--glossary-start-->"
+   end="<!--glossary-end-->"
+   rewrite-relative-urls=true
+%}
+
 #Nova.ChatProxy.NovaIT.Chat24
 
 *Nova.ChatProxy.NovaIT.Chat24 is a module of Nova.ChatsConnector for online chats.* 
 
 ##Features
-####General
-- Support of *WhatsApp (Nexmo)*
-- ChatProxy session closes when agent session in his workplace
-- Messages sent in closed ChatProxy session are classified as **outbound** and are not supported
+###Component specific
 
-####Text
-- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
-
-####Pictures
-- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
-
-####Files
-- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
-
-####Emoji
-- Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
+- Connector from **WhatsApp (Nexmo)** to **Nova.Chats** [:material-location-enter:] [2020r2]
