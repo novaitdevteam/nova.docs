@@ -57,7 +57,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TwitterFlowQuickReplies.png" title="Twitter Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TwitterFlowQuickReplies.png" title="Twitter Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a separate structure of *Picture*, *Title* with *Subtitle* and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -70,7 +70,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TwitterFlowCard.png" title="Twitter Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TwitterFlowCard.png" title="Twitter Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title in form of message with a number of Quick Replies buttons 
 <details><summary>Known Restrictions</summary>
@@ -83,7 +83,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TwitterFlowButtonlist.png" title="Twitter Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TwitterFlowButtonlist.png" title="Twitter Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button List is supported as a Title in form of message with a number of Quick Replies buttons
 <details><summary>Known Restrictions</summary>
@@ -96,8 +96,8 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TwitterFlowButtongrid.png" title="Twitter Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TwitterFlowButtongrid.png" title="Twitter Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is not supported because it is rendered as image and text (buttons are transformed to text too)
 - Can be substituted with multiple Card templates, in which case, only the last Card will evoke Quick Reply buttons
-<figure> <img src="/novadocs/components/botflow/examples/TwitterFlowCarousel.png" title="Twitter Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TwitterFlowCarousel.png" title="Twitter Carousel" width="600" height"500"> </a> </figure>

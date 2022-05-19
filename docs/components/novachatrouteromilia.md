@@ -9,12 +9,16 @@
 ##Product Notices
 ***
 ##2022R1
-##2022R1-2
+##2022R1-2 :briefcase: Epic
 ####New Features
-- none
+- Extension of work with Sandblast API [:clipboard: NOV-310] [NOV-310]
+
+	> Ability to send API requests sequentially to one node, then to another 
+
+	> Doesn't support file types: .doc,.xls, .ppt, .msi, .csv, .svg
 
 ####Bug Fixes
-- Fixed agent receiving "/chatrouterstart" command on transfer  [:clipboard: NOV-311] [NOV-311]
+- Fixed agent receiving "/chatrouterstart" command on transfer [:clipboard: NOV-311] [NOV-311]
 
 	> Dialog start evoked wrong response or timeout in Omilia, in which situation "ignoreFailure" transferred chat without waiting for proper event
 

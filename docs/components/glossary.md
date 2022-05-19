@@ -33,5 +33,7 @@
 *[Normalization]: Deletion of special symbols and emoji from text.
 *[json]: JavaScript Object Notation. Open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays.
 *[JSON]: JavaScript Object Notation. Open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays.
+*[Sequelize Hooks]: Hooks (also known as lifecycle events), are functions which are called before and after calls in sequelize are executed. For example, if you want to always set a value on a model before saving it, you can add a beforeUpdate hook.
+*[Sequelize]: modern TypeScript and Node.js ORM for Postgres, MySQL, MariaDB, SQLite and SQL Server, and more. Featuring solid transaction support, relations, eager and lazy loading, read replication and more.
 
 <!--glossary-end-->

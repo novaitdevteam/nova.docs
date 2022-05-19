@@ -54,7 +54,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TelegramConnectorQuickReplies.png" title="Telegram Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TelegramConnectorQuickReplies.png" title="Telegram Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a separate structure of *Picture*, *Title* with *Subtitle* and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -69,7 +69,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TelegramConnectorCard.png" title="Telegram Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TelegramConnectorCard.png" title="Telegram Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -81,7 +81,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TelegramConnectorButtonlist.png" title="Telegram Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TelegramConnectorButtonlist.png" title="Telegram Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positioned horizontally 
 <details><summary>Known Restrictions</summary>
@@ -93,7 +93,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TelegramConnectorButtongrid.png" title="Telegram Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TelegramConnectorButtongrid.png" title="Telegram Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)
 <details><summary>Known Restrictions</summary>
@@ -105,4 +105,4 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TelegramConnectorCarousel.png" title="Telegram Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TelegramConnectorCarousel.png" title="Telegram Carousel" width="600" height"500"> </a> </figure>

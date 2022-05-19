@@ -55,7 +55,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/FacebookFlowQuickReplies.png" title="Facebook Messenger Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/FacebookFlowQuickReplies.png" title="Facebook Messenger Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a monolith structure of *Picture*, *Title*, *Subtitle*, and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -70,7 +70,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/FacebookFlowCard.png" title="Facebook Messenger Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/FacebookFlowCard.png" title="Facebook Messenger Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -85,7 +85,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/FacebookFlowButtonlist.png" title="Facebook Messenger Buttonlist" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/FacebookFlowButtonlist.png" title="Facebook Messenger Buttonlist" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -100,7 +100,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/FacebookFlowButtongrid.png" title="Facebook Messenger Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/FacebookFlowButtongrid.png" title="Facebook Messenger Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a monolith structure with *Picture*, *Header* (Title), *Details* (Subtitle), and not disappearing *Buttons*
 <details><summary>Known Restrictions</summary>
@@ -118,4 +118,4 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/FacebookFlowCarousel.png" title="Facebook Messenger Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/FacebookFlowCarousel.png" title="Facebook Messenger Carousel" width="600" height"500"> </a> </figure>

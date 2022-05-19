@@ -29,7 +29,7 @@
 <p>
 ```
 • File size limit is: 200 MB
-• Video size limit is: 50 MB
+• Video size limit is: 26 MB
 • Video formats: mp4, H264
 ```
 </p>
@@ -54,7 +54,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/ViberConnectorQuickReplies.png" title="Viber Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/ViberConnectorQuickReplies.png" title="Viber Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a monolith structure with *Title*, *Subtitle* and *Quick Replies* keyboard buttons
 <details><summary>Known Restrictions</summary>
@@ -70,7 +70,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/ViberConnectorCard.png" title="Viber Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/ViberConnectorCard.png" title="Viber Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of keyboard buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -83,7 +83,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/ViberConnectorButtonlist.png" title="Viber Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/ViberConnectorButtonlist.png" title="Viber Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of keyboard buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -97,7 +97,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/ViberConnectorButtongrid.png" title="Viber Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/ViberConnectorButtongrid.png" title="Viber Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a monolith structure with *Picture*, *Header* (Title), *Details* (Subtitle), and not disappearing *Buttons* (Call to Action)
 <details><summary>Known Restrictions</summary>
@@ -111,4 +111,4 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/ViberConnectorCarousel.png" title="Viber Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/ViberConnectorCarousel.png" title="Viber Carousel" width="600" height"500"> </a> </figure>

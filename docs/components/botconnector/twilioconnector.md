@@ -25,4 +25,4 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/TwilioConnectorQuickReplies.png" title="Twilio Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/TwilioConnectorQuickReplies.png" title="Twilio Quick Replies" width="600" height"500"> </a> </figure>

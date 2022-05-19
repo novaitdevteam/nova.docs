@@ -67,8 +67,8 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/ABCFlowQuickReplies1.png" title="Apple Bussines Chat Quick Replies" width="600" height"500"> </a> </figure>
-<figure> <img src="/novadocs/components/botflow/examples/ABCFlowQuickReplies2.png" title="Apple Bussines Chat Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/ABCFlowQuickReplies1.png" title="Apple Bussines Chat Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/ABCFlowQuickReplies2.png" title="Apple Bussines Chat Quick Replies" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a List Picker template (reference picture in Quick Replies)
 <details><summary>Known Restrictions</summary>

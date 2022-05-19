@@ -1,25 +1,22 @@
+# Project information
 site_name: NovaIT Products Documentation
-# добавляет линк тег в голову страниц и берет путь для serve
-site_url: https://netheria.github.io/novadocs/
-# добавляет мета тег в хеадер с информацией
-site_description: NovaIt documentation about products
-# добавляет мета тег в хеадер с информацией
+site_url: https://novaitdevteam.github.io/nova.docs/
+site_description: NovaIT documentation about products
 site_author: NovaIT
-# copyright: Owned by NovaIT
 
 #Repository
 # repo_url: делает линки на каждой странице
 # remote_branch: gh-pages (ветка, куда будет комитить с помощью gh-deploy GitHub Pages)
 # remote_name: origin (куда будет пушить с помощью gh-deploy)
 
-# Станицы документации
+#Navigation block
 nav:
     - Markup Legend: components/markup.md
     - Features:
         - Nova.ChatsConnector:
             - Nova.BotConnector:
-                - Features: components/botconnectorfeatures.md
-                - Channel Capabilities: components/novabotconnectornotices.md
+                - Features: components/botconnectornotices.md
+                - Channel Capabilities: components/novabotconnectorchannels.md
                 - Channels:
                     - Telegram: components/botconnector/telegramconnector.md
                     - Viber: components/botconnector/viberconnector.md
@@ -41,8 +38,8 @@ nav:
                     - Vkontakte Wallposts: components/botconnector/vkwpconnector.md
                     - Odnoklassniki Wallposts: components/botconnector/okwpconnector.md
             - Nova.BotFlow:
-                - Features: components/botflowfeatures.md
-                - Channel Capabilities: components/novabotflownotices.md
+                - Features: components/botflownotices.md
+                - Channel Capabilities: components/novabotflowchannels.md
                 - Channels:
                     - Telegram: components/botflow/telegramflow.md
                     - Viber: components/botflow/viberflow.md
@@ -95,11 +92,21 @@ nav:
                 - Dialogflow: components/novachatrouterdialogflow.md
                 - Omilia: components/novachatrouteromilia.md
             - Nova.WebChat: components/novawebchat.md
-            - Nova.Talks: components/novatalks.md
-
-extra_css:
-    - ./css/extra.css
-    - ./css/sticky.css
+            - Nova.Talks:
+                - Core: components/novatalkscore.md
+                - UI: components/novatalksui.md
+                - BotAgent: components/novatalksbotagent.md
+                - ChatWidget: components/novatalkswidget.md
+#                - Sys: components/novatalkssys.md
+                - Genesys.PureConnect:
+                    - Connector: components/novatalksgenesyspureconnectconnector.md
+                    - InteractionConnect: components/novatalksgenesyspureconnectinteractionconnect.md
+    - Documents:
+        - Table of content: components/documents/toc.md
+        - ChatsConnector: components/documents/chatsconnector/chatsconnectortoc.md
+        - BotConnector: components/documents/botconnector/botconnectortortoc.md
+        - BotFlow: components/documents/botflow/botflowtoc.md
+        - NovaTalks: components/documents/novatalks/novatalkstoc.md
 
 theme:
   name: null
@@ -140,6 +147,7 @@ theme:
   icon:
     logo: components/assets/icon.png
 
+#Markdown Extensions
 markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -149,6 +157,11 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.snippets
   - admonition
   - md_in_html
@@ -166,12 +179,28 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        'path/old.md': 'path/new.md'
+#example:   'path/old.md': 'path/new.md'
         'index.md': 'markup.md'
         'components/index.md': 'components/markup.md'
+        'components/botflow/index.md': 'components/botflow/telegramflow.md'
+        'components/botconnector/index.md': 'components/botconnector/telegramconnector.md'
+        'components/documents/index.md': 'components/documents/toc.md'
+        'components/documents/novatalks/index.md': 'components/documents/novatalks/novatalkstoc.md'
+        'components/documents/chatsconnector/index.md': 'components/documents/chatsconnector/chatsconnectortoc.md'
+        'components/documents/botflow/index.md': 'components/documents/botflow/botflowtoc.md'
+        'components/documents/botconnector/index.md': 'components/documents/botconnector/botconnectortortoc.md'
 
+#Homepage
 extra:
   homepage: components/markup.html
   generator: false
+
+#extra_javascript:
+#   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+#   - ./javascript/mermaid.min.js
+ 
+extra_css:
+   - ./css/extra.css
+   - ./css/sticky.css
  
 use_directory_urls: false

@@ -47,7 +47,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/OkFlowQuickReplies.png" title="Ok Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/OkFlowQuickReplies.png" title="Ok Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a separate structure of *Picture* message and text message (*Title* with *Subtitle*) with *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -59,7 +59,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/OkFlowCard.png" title="Ok Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/OkFlowCard.png" title="Ok Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -72,7 +72,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/OkFlowButtonlist.png" title="Ok Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/OkFlowButtonlist.png" title="Ok Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positioned horizontally  
 <details><summary>Known Restrictions</summary>
@@ -85,7 +85,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/OkFlowButtongrid.png" title="Ok Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/OkFlowButtongrid.png" title="Ok Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages with inline keyboard buttons (different buttons, if needed)
 <details><summary>Known Restrictions</summary>
@@ -98,4 +98,4 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 • Maximum label (text on button): 42 characters (the platform will cut off the rest and insert ellipsis)
 ```
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/OkFlowCarousel.png" title="Ok Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/OkFlowCarousel.png" title="Ok Carousel" width="600" height"500"> </a> </figure>

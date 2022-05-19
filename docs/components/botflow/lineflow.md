@@ -58,7 +58,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/LineFlowQuickReplies.png" title="Line Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/LineFlowQuickReplies.png" title="Line Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a monolith structure of *Picture*, *Title* with *Subtitle* and buttons
 <details><summary>Known Restrictions</summary>
@@ -71,7 +71,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/LineFlowCard.png" title="Line Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/LineFlowCard.png" title="Line Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Content with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -82,7 +82,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/LineFlowButtonlist.png" title="Line Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/LineFlowButtonlist.png" title="Line Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Content with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -93,7 +93,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/LineFlowButtongrid.png" title="Line Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/LineFlowButtongrid.png" title="Line Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)
 <details><summary>Known Restrictions</summary>
@@ -109,4 +109,4 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/LineFlowCarousel.png" title="Line Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/LineFlowCarousel.png" title="Line Carousel" width="600" height"500"> </a> </figure>

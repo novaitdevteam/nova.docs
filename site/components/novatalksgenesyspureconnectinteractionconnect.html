@@ -2,6 +2,8 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+  	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+	<script>mermaid.initialize({startOnLoad:true});</script>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,14 +15,14 @@
         <meta name="author" content="NovaIT">
       
       
-        <link rel="canonical" href="https://netheria.github.io/novadocs/components/botconnectorfeatures.html">
+        <link rel="canonical" href="https://netheria.github.io/novadocs/components/novatalksgenesyspureconnectinteractionconnect.html">
       
       <link rel="icon" href="assets/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Features - NovaIT Products Documentation</title>
+        <title>InteractionConnect - NovaIT Products Documentation</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#novabotconnector" class="md-skip">
+        <a href="#novatalksgenesyspureconnectinteractionconnect" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Features
+              InteractionConnect
             
           </span>
         </div>
@@ -201,8 +203,6 @@
         
   
   
-    
-  
 
 
   
@@ -219,7 +219,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="botconnectorfeatures.html" class="md-tabs__link md-tabs__link--active">
+      <a href="botconnectornotices.html" class="md-tabs__link">
         Features
       </a>
     </li>
@@ -233,6 +233,8 @@
         
   
   
+    
+  
 
 
   
@@ -244,12 +246,28 @@
   
   
     <li class="md-tabs__item">
-      <a href="novabotconnector.html" class="md-tabs__link">
+      <a href="novabotconnector.html" class="md-tabs__link md-tabs__link--active">
         Release Notes
       </a>
     </li>
   
 
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="documents/toc.html" class="md-tabs__link">
+        Documents
+      </a>
+    </li>
   
 
       
@@ -305,14 +323,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -333,14 +349,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       
       
@@ -361,14 +375,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
       
       
       
@@ -389,142 +401,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Features
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="botconnectorfeatures.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="botconnectornotices.html" class="md-nav__link">
         Features
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-    <nav class="md-nav" aria-label="Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#component-specific" class="md-nav__link">
-    Component specific
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#all-channels" class="md-nav__link">
-    All channels
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#channel-specific" class="md-nav__link">
-    Channel specific
-  </a>
-  
-    <nav class="md-nav" aria-label="Channel specific">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#telegram" class="md-nav__link">
-    Telegram
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#viber" class="md-nav__link">
-    Viber
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#facebook" class="md-nav__link">
-    Facebook
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#facebook-wall-posts" class="md-nav__link">
-    Facebook Wall Posts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#twitter" class="md-nav__link">
-    Twitter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whatsapp-nexmo" class="md-nav__link">
-    WhatsApp (Nexmo)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wechat" class="md-nav__link">
-    WeChat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webchat" class="md-nav__link">
-    WebChat
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -536,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="novabotconnectornotices.html" class="md-nav__link">
+      <a href="novabotconnectorchannels.html" class="md-nav__link">
         Channel Capabilities
       </a>
     </li>
@@ -882,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="botflowfeatures.html" class="md-nav__link">
+      <a href="botflownotices.html" class="md-nav__link">
         Features
       </a>
     </li>
@@ -896,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="novabotflownotices.html" class="md-nav__link">
+      <a href="novabotflowchannels.html" class="md-nav__link">
         Channel Capabilities
       </a>
     </li>
@@ -1501,12 +1382,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -1527,12 +1410,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -1853,11 +1738,300 @@
               
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6" type="checkbox" id="__nav_3_1_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_6">
+          Nova.Talks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nova.Talks" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Nova.Talks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="novatalks.html" class="md-nav__link">
-        Nova.Talks
+      <a href="novatalkscore.html" class="md-nav__link">
+        Core
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="novatalksui.html" class="md-nav__link">
+        UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="novatalksbotagent.html" class="md-nav__link">
+        BotAgent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="novatalkswidget.html" class="md-nav__link">
+        ChatWidget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_6_5" type="checkbox" id="__nav_3_1_6_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_6_5">
+          Genesys.PureConnect
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Genesys.PureConnect" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_1_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Genesys.PureConnect
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="novatalksgenesyspureconnectconnector.html" class="md-nav__link">
+        Connector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          InteractionConnect
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="novatalksgenesyspureconnectinteractionconnect.html" class="md-nav__link md-nav__link--active">
+        InteractionConnect
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#product-notices" class="md-nav__link">
+    Product Notices
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Notices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2021r4" class="md-nav__link">
+    2021R4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r4-5" class="md-nav__link">
+    2021R4-5
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R4-5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r4-3" class="md-nav__link">
+    2021R4-3
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R4-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r4-2" class="md-nav__link">
+    2021R4-2
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R4-2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r3" class="md-nav__link">
+    2021R3
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1865,6 +2039,124 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Documents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documents/toc.html" class="md-nav__link">
+        Table of content
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documents/chatsconnector/chatsconnectortoc.html" class="md-nav__link">
+        ChatsConnector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documents/botconnector/botconnectortortoc.html" class="md-nav__link">
+        BotConnector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documents/botflow/botflowtoc.html" class="md-nav__link">
+        BotFlow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documents/novatalks/novatalkstoc.html" class="md-nav__link">
+        NovaTalks
+      </a>
     </li>
   
 
@@ -1904,87 +2196,119 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#product-notices" class="md-nav__link">
+    Product Notices
   </a>
   
-    <nav class="md-nav" aria-label="Features">
+    <nav class="md-nav" aria-label="Product Notices">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#component-specific" class="md-nav__link">
-    Component specific
+  <a href="#2021r4" class="md-nav__link">
+    2021R4
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#all-channels" class="md-nav__link">
-    All channels
+  <a href="#2021r4-5" class="md-nav__link">
+    2021R4-5
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#channel-specific" class="md-nav__link">
-    Channel specific
-  </a>
-  
-    <nav class="md-nav" aria-label="Channel specific">
+    <nav class="md-nav" aria-label="2021R4-5">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#telegram" class="md-nav__link">
-    Telegram
+  <a href="#new-features" class="md-nav__link">
+    New Features
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#viber" class="md-nav__link">
-    Viber
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r4-3" class="md-nav__link">
+    2021R4-3
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R4-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#facebook" class="md-nav__link">
-    Facebook
+  <a href="#bug-fixes_1" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r4-2" class="md-nav__link">
+    2021R4-2
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R4-2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    New Features
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#facebook-wall-posts" class="md-nav__link">
-    Facebook Wall Posts
+  <a href="#bug-fixes_2" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021r3" class="md-nav__link">
+    2021R3
+  </a>
+  
+    <nav class="md-nav" aria-label="2021R3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    New Features
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#twitter" class="md-nav__link">
-    Twitter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whatsapp-nexmo" class="md-nav__link">
-    WhatsApp (Nexmo)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wechat" class="md-nav__link">
-    WeChat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webchat" class="md-nav__link">
-    WebChat
+  <a href="#bug-fixes_3" class="md-nav__link">
+    Bug Fixes
   </a>
   
 </li>
@@ -2012,91 +2336,404 @@
               
                 
                 
-                <!-- BEGIN INCLUDE .\links.md &lt;!--datelink-botconnector-start--&gt; &lt;!--datelink-botconnector-end--&gt; -->
+                <!-- BEGIN INCLUDE .\links.md &lt;!--tasklink-start--&gt; &lt;!--tasklink-end--&gt; -->
 
 <!-- END INCLUDE -->
 
-<!-- BEGIN INCLUDE .\glossary.md &lt;!--glossary-start--&gt; &lt;!--glossary-end--&gt; -->
-
-<!-- END INCLUDE -->
-
-<h1 id="novabotconnector">Nova.BotConnector<a class="headerlink" href="#novabotconnector" title="Permanent link">&para;</a></h1>
-<p><em>Nova.BotConnector is a JavaScript connector to connect messagers and unification of work with them</em></p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<h3 id="component-specific">Component specific<a class="headerlink" href="#component-specific" title="Permanent link">&para;</a></h3>
+<h1 id="novatalksgenesyspureconnectinteractionconnect">NovaTalks.Genesys.PureConnect.InteractionConnect<a class="headerlink" href="#novatalksgenesyspureconnectinteractionconnect" title="Permanent link">&para;</a></h1>
+<h2 id="product-notices">Product Notices<a class="headerlink" href="#product-notices" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="2021r4">2021R4<a class="headerlink" href="#2021r4" title="Permanent link">&para;</a></h3>
+<h3 id="2021r4-5">2021R4-5<a class="headerlink" href="#2021r4-5" title="Permanent link">&para;</a></h3>
+<h4 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h4>
 <ul>
-<li><abbr title="The Logging Framework for JavaScript with no runtime dependencies.">log4js</abbr> logging <a href="/novadocs/components/novabotconnector.html#2018r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li>High-availability cluster <em><abbr title="Source-available cross-platform document-oriented database program. Classified as a NoSQL database program and uses JSON-like documents with optional schemas.">Mongodb</abbr></em> support (on <em><abbr title="JavaScript object-oriented programming library that creates a connection between MongoDB and the Express web application framework.">mongoose</abbr></em> driver level) <a href="/novadocs/components/novabotconnector.html#2019r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li><abbr title="Server application that acts as an intermediary between a client requesting a resource and the server providing that resource.">Proxy Server</abbr> support <a href="/novadocs/components/novabotconnector.html#2020r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li>Conversations cleanup (<abbr title="Binary JSON. It is a binary form for representing simple or complex data structures including associative arrays (also known as name-value pairs), integer indexed arrays, and a suite of fundamental scalar types.">bson</abbr> cleanup) service with customizable launch timer <a href="/novadocs/components/novabotconnector.html#2021r1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>
+<p><em>NovaTalks.UI</em>: login using UID <a href="https://sd.novait.com.ua/browse/NC2-53"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-53</a></p>
+<blockquote>
+<p>Done for InteractionConnect NovaTalks widget</p>
+</blockquote>
+<p>• Logging in uses <em>UID</em> field instead of <em>email</em></p>
+<p>• Genesys auth when auth token exists will send it to a Core istead of login and password</p>
+</li>
+<li>
+<p><em>NovaTalks.InteractionConnect</em>: Sending of Genesys token on login in NovaTalks <a href="https://sd.novait.com.ua/browse/NC2-55"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-55</a></p>
+<blockquote>
+<p>Done for InteractionConnect NovaTalks widget</p>
+</blockquote>
+<p>• Catching of temporary token on login session start</p>
+<p>• Reaction on conversation change in InteractionConnect</p>
+</li>
+<li>
+<p><em>NovaTalks.Core</em>: authorization in Genesys using temporary token <a href="https://sd.novait.com.ua/browse/NC2-56"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-56</a></p>
+<blockquote>
+<p>Done for InteractionConnect NovaTalks widget</p>
+</blockquote>
+<p>When token parameter HTTP is present from UI, it will be used for authorization (jointly with login)</p>
+<blockquote>
+<p>Temporary token is valid for 7 seconds</p>
+</blockquote>
+</li>
+</ul>
+<details><summary>Request payload example</summary>
+<p>
+<div class="highlight"><pre><span></span><code>{
+&quot;username&quot;: &quot;1000&quot;,
+&quot;authToken&quot;: &quot;VDEwMDBYCUNoYXQgQXV0aFgkOThjYWRkZjEtYzEyYy00NzcwLWFlMWUtZDEzY2FhYzk1MTUxWAwzNy43My4xNjcuNDdYJGQxOTAxZjY1LTQ2OWItNGZjNi1iMzUwLTE3ZDU5OTYxNWQ4OQ==&quot;,
+&quot;authTokenSourceSession&quot;: &quot;3316227001&quot;,
+&quot;authTokenSeed&quot;: &quot;d1901f65-469b-4fc6-b350-17d599615d89&quot;,
+&quot;applicationName&quot;: &#39;Chat Auth&#39;
+}
+
+• authToken - token received from Genesys
+• authTokenSourceSession - Genesys session ID which is used for token generation
+• authTokenSeed - authTokenSeed which is used in token generation request
+</code></pre></div>
+</p>
+</details>
+
+<ul>
+<li>
+<p><em>NovaTalks.UI</em>,<em>NovaTalks.Core</em>: UI adaptation to work with solitary Engine <a href="https://sd.novait.com.ua/browse/NC2-57"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-57</a></p>
+<ul>
+<li>
+<p><strong>NovaTalks.UI</strong>:</p>
+<p>• login with "Genesys Settings" not checked in.</p>
+<blockquote>
+<p>When it is not checked in and it is Genesys auth, then "No Station" option will be choosen by default</p>
+</blockquote>
+<p>• user Activation\Deactivation </p>
+<p>• provider on Profile and Agents pages</p>
+<p>• user edditing for administrators</p>
+<p>• administrator creation (all providers, except genesys)</p>
+<p>• agent creation (only with genesys provider)</p>
+</li>
+<li>
+<p><strong>NovaTalks.Engine</strong>:</p>
+<p>• added provider on agents' synchronization</p>
+<p>• deleted custom attribute {"genesysSync": true} on agents' synchronization</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>none</li>
 </ul>
 <hr />
-<h3 id="all-channels">All channels<a class="headerlink" href="#all-channels" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Service with DELETE method for deletion of old messages from database <a href="/novadocs/components/novabotconnector.html#2018r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a> </li>
-<li>
-<p>Outbound messaging support <a href="/novadocs/components/novabotconnector.html#2021r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></p>
-<blockquote>
-<p>Three outbound messaging work algorithms:</p>
+<h3 id="2021r4-3">2021R4-3<a class="headerlink" href="#2021r4-3" title="Permanent link">&para;</a></h3>
+<h4 id="new-features_1">New Features<a class="headerlink" href="#new-features_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>simple outbound message</p>
+<p><em>NovaTalks.ChatProxy</em>: ChatProxy <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg></span> ChatWoot connector <a href="https://sd.novait.com.ua/browse/NC2-26"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-26</a></p>
 </li>
 <li>
-<p>outbound message with agent or workgroup\skillgroup reservation for routing</p>
+<p><em>Nova.Chats</em>: UI extension <a href="https://sd.novait.com.ua/browse/NC2-27"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-27</a></p>
+<ul>
+<li>
+<p><strong>Logo</strong>:</p>
+<p>Logo icon: on Login and Dashboard pages</p>
 </li>
 <li>
-<p>outbound message with instant routing on agent or workgroup\skillgroup</p>
+<p><strong>Left sidebar</strong>:</p>
+<p>Conversations tab</p>
+</li>
+<li>
+<p><strong>op right pannel</strong>:</p>
+<p>Icon: add "..." button to entry Settings</p>
+</li>
+<li>
+<p><strong>Account settings fields</strong>:</p>
+<p>Image: editable</p>
+<p>Full Name: non-editable</p>
+<p>Display Name: editable</p>
+<p>Email Address: non-editable</p>
+<p>Language: editable (only administrator)</p>
 </li>
 </ul>
+<blockquote>
+<p>Administrator changes system language for himself and his created agents</p>
 </blockquote>
 </li>
 <li>
-<p>Deletion of user privacy related data from database after conversation <a href="/novadocs/components/novabotconnector.html#2021r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></p>
+<p><em>NovaTalks.Core</em>: CRUD methods for Agents <a href="https://sd.novait.com.ua/browse/NC2-34"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-34</a></p>
+<p>• Login: check if "cofirmed_at" != NULL</p>
+<blockquote>
+<p>api/v1/accounts/accountId/agents/agentId/login</p>
+</blockquote>
+<p>• Delete: set "cofirmed_at" to NULL</p>
+<blockquote>
+<p>api/v1/accounts/accountId/agents/agentId/delete</p>
+</blockquote>
+<p>• Activate: activate Agent</p>
+<blockquote>
+<p>api/v1/accounts/accountId/agents/agentId/activate</p>
+</blockquote>
+<p>• Deactivate: deactivate Agent</p>
+<blockquote>
+<p>api/v1/accounts/accountId/agents/agentId/deactivate</p>
+</blockquote>
+<p>• PermanentDelete: delete Agent</p>
+<blockquote>
+<p>api/v1/accounts/accountId/agents/agentId/permanentDelete</p>
+</blockquote>
 </li>
-<li>Sending of <abbr title="variable sent with the means of url parametrization, can have any value.">REF</abbr> value from uri to Omilia context at the start of conversation <a href="/novadocs/components/novabotconnector.html#2021r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li>Sending of <strong>Avatar</strong> (local storage link on user's picture) parameter to ChatProxy <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li>Limitation on agent reply ability to comment\post <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>
+<p><em>Nova.Chats</em>: BotAgent development <a href="https://sd.novait.com.ua/browse/NC2-32"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-32</a> (The task has been extended with <a href="https://sd.novait.com.ua/browse/NOV-299"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NOV-299</a>)</p>
+<ul>
+<li>
+<p><strong>Implementation specifics</strong>:</p>
+<p>• BotAgent is a system agent</p>
+<p>• Realized as an additional Nova.Chats View in the agent workplace</p>
+<p>• Agent's credentials in Widget are the same as in workplace</p>
+<p>• Synchronization of actions made in widget and workplace</p>
+<blockquote>
+<p>actions with conversations: pickup, disconnect, transfer </p>
+<p>agent's statuses: online, busy, offline</p>
+</blockquote>
+<p>• Telegram plus BotAgent: works without problems on API Inbox</p>
+<p>• Telegram Inbox plus buttons: doest not have integrated buttons </p>
+<p>• Website Inbox plus buttons: widget uses his own endpoints (api/v1/widget) to send messages to ChatWoot</p>
+<p>• Rich Media are visible in agent's workplace as a title without buttons</p>
+<p>• Only one bot per inbox</p>
+<p>• "transfer" word transfers on operators' team</p>
+<blockquote>
+<p>default behaviour, if client didn't specify team's or agent's name</p>
+<p>transfer on agent or team can be initiated at any time</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Rich Media payloads available in ChatWoot</strong>:</p>
+<p>• "input_select": same as "quick replies" or "inline-buttons" in BotFlow</p>
+<p>• "cards": same as "generic-template" in BotFlow</p>
+<blockquote>
+<p>buttons can be added to the "card", but Web Widget would not react to them</p>
+</blockquote>
+<p>• "input_email": in BotFlow conform to text message asking to enter Email</p>
+<blockquote>
+<p>renders as a field to enter Email value in Web Widget </p>
+</blockquote>
+<p>• "article": same as "inline-button" (type: url) or "rich-link" in BotFlow</p>
+</li>
+</ul>
+<blockquote>
+<p>Inbox webhook will receive events with "content_type" and "content_attributes"</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="bug-fixes_1">Bug Fixes<a class="headerlink" href="#bug-fixes_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><em>Nova.Chats</em>: UI <a href="https://sd.novait.com.ua/browse/NC2-39"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-39</a></p>
+<p>• UI: hidden "Notifications" icon (bell)</p>
+<p>• UI: buttons intersection in Russian locale</p>
+<p>• User Sync: added Genesys user attribute to synchronized users </p>
+<p>• User Sync: synchronized users are added to Inbox</p>
+<blockquote>
+<p>configuration has "apiInboxId" which tie created user to Inbox</p>
+</blockquote>
+<p>• User Sync: all users synchronized as agents</p>
+<blockquote>
+<p>no relation to roles, only on "NovaTalks.sync": "true" attribute value</p>
+</blockquote>
+<p>• Admin UI: force Genesys user synchronization button</p>
+<p>• Admin UI: shows in "Agents" menu - "Provider" column if user is local or synchronized from Genesys</p>
+<p>• Admin UI: restriction on Genesys users edititng, only deletion</p>
+<p>• Admin UI: local administrators can change password and not reset password</p>
+<p>• User UI: "Change Password" option changes password Genesys (agents) or locally (administrators)</p>
+<p>• User UI: shows in "Profile Settings" - "Provider" if it is Genesys or local user</p>
+</li>
+<li>
+<p><em>Nova.Chats</em>: UI <a href="https://sd.novait.com.ua/browse/NC2-41"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-41</a></p>
+<ul>
+<li>
+<p>Genesys station droplist choose option (active only with Genesys Settings checkbox checked)</p>
+<p>• No Station</p>
+<p>• Workstation</p>
+<p>• Remote Workstation</p>
+<p>• Remote Number</p>
+</li>
+<li>
+<p>Dashboard redirect on zero conversations</p>
+</li>
+<li>
+<p>Genesys-ChatWoot mapping</p>
+<p>• config has "online" and "busy" statuses mapping</p>
+</li>
+</ul>
+</li>
+</ul>
+<details><summary>Envirounment variables in config</summary>
+<p>
+
+<div class="highlight"><pre><span></span><code>SERVER_HOST=0.0.0.0
+SERVER_PORT=3001
+RUBY_HOST=http://srv-captain--novachats2-demo-chatwoot-web:3000
+GENESYS_HOST=https://pureconnect.demo.novait.com.ua/api/192.168.124.160
+NOVA_CHATS_ENGINE_HOST=http://srv-captain--novachats2-demo-engine:3000
+NOVA_CHATS_PURECONNECT_CONNECTOR=http://srv-captain--novachats2-demo-pureconnect-connector:8000
+GENESYS_STATUS_ONLINE=Available
+GENESYS_STATUS_BUSY=Do Not disturb
+
+GENESYS_STATUS_ONLINE and GENESYS_STATUS_BUSY - statusId in Genesys.
+If does not exist, then sort by alphabet and choose first by isAcdStatus (true for &quot;ONLINE&quot; and false for &quot;BUSY&quot;)
+</code></pre></div>
+</p>
+</details>
+
+<hr />
+<h3 id="2021r4-2">2021R4-2<a class="headerlink" href="#2021r4-2" title="Permanent link">&para;</a></h3>
+<h4 id="new-features_2">New Features<a class="headerlink" href="#new-features_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><em>Nova.Chats</em>: Node.JS ChatWoot Backend expanding <a href="https://sd.novait.com.ua/browse/NC2-4"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-4</a></p>
+<p>• Operator synchronization with Genesys without email verification</p>
+<p>• Function to reset email verification after operator creation</p>
+</li>
+<li>
+<p><em>Genesys.PureConnect.Sync</em>: GenesysPureConnect<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg></span>Chatwoot user mapping and synchronization <a href="https://sd.novait.com.ua/browse/NC2-8"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-8</a></p>
+<blockquote>
+<p>Users in Genesys must have Custom Attribute "NovaTalks.sync" with value "true"</p>
+</blockquote>
+<ul>
+<li>
+<p>Import of parameters:</p>
+<p>• Parameter "Email" will be crated automatically as "{user.id}@chats.local", or it can be written manually in: "Mailbox User"<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg></span>"IMAP and/or SMTP"<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg></span>"SMTP Email Address To Send To:"</p>
+<p>• Parameter "Name" in IC user configuration is listed as "IC Privacy Name"</p>
+<p>• Parameter "Display Name" same as "Name" parameter</p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Genesys.PureConnect</em>: API integration <a href="https://sd.novait.com.ua/browse/NC2-30"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-30</a></p>
+<p>• Genesys checkbox on Login page</p>
+<p>• Chat "Pickup" button</p>
+<p>• Agent status</p>
+<p>• Limitation of message sending to one when "CanReply" parameter is equal to "false" </p>
+</li>
+</ul>
+<h4 id="bug-fixes_2">Bug Fixes<a class="headerlink" href="#bug-fixes_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>none</li>
 </ul>
 <hr />
-<h3 id="channel-specific">Channel specific<a class="headerlink" href="#channel-specific" title="Permanent link">&para;</a></h3>
-<h4 id="telegram">Telegram<a class="headerlink" href="#telegram" title="Permanent link">&para;</a></h4>
+<h3 id="2021r3">2021R3<a class="headerlink" href="#2021r3" title="Permanent link">&para;</a></h3>
+<h4 id="new-features_3">New Features<a class="headerlink" href="#new-features_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Sending of <strong>/start</strong> command following text as <abbr title="variable sent with the means of url parametrization, can have any value.">REF</abbr> parameter <a href="/novadocs/components/novabotconnector.html#2020r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li><abbr title="Bubles or any other idication that pops up when someone writes a message in massangers">Typing Indicator</abbr> when agent write a message <a href="/novadocs/components/novabotconnector.html#2021r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-</ul>
-<h4 id="viber">Viber<a class="headerlink" href="#viber" title="Permanent link">&para;</a></h4>
+<li>
+<p><em>Genesys.PureConnect.Widget</em>: Interaction Connect Widget development <a href="https://sd.novait.com.ua/browse/NC2-2"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-2</a></p>
+</li>
+<li>
+<p><em>Nova.Chats</em>: ChatWoot Frontend migration to Node.JS <a href="https://sd.novait.com.ua/browse/NC2-3"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-3</a></p>
+</li>
+<li>
+<p><em>Nova.Chats</em>: InteractionConnect Widget simplified UI <a href="https://sd.novait.com.ua/browse/NC2-5"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-5</a></p>
 <ul>
-<li>Sending of <em>userid</em> in <abbr title="A number of parameters listed in component config sent to ChatProxy.">template</abbr> <a href="/novadocs/components/novabotconnector.html#2020r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li><abbr title="Bubles or any other idication that pops up when someone writes a message in massangers">Typing Indicator</abbr> when agent write a message <a href="/novadocs/components/novabotconnector.html#2021r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>
+<p><strong>Contact card</strong>:</p>
+<p>• Deleted: <strong>Assign Agent</strong>, <strong>Assign Team</strong></p>
+<p>• Email now is non-editable</p>
+<p>• Deleted: <strong>Social Profiles</strong>, <strong>Company Name</strong></p>
+</li>
+<li>
+<p><strong>Conversations tab</strong>:</p>
+<p>• Deleted tabs: <strong>Unassigned</strong>, <strong>All</strong></p>
+<p>• Now status filters only have Open and Resolved</p>
+<p>• <strong>Resolve</strong> button is inactive if conversation has <strong>Resolved</strong> status</p>
+<p>• Deleted: "..." button (conversation settings)</p>
+</li>
+<li>
+<p><strong>Setting tab</strong>:</p>
+<p>• Not acessible to agents</p>
+</li>
+<li>
+<p><strong>Login page</strong>:</p>
+<p>• Deleted: <strong>Create New Account</strong> with the <strong>signupEnabled</strong> option in config</p>
+</li>
 </ul>
-<h4 id="facebook">Facebook<a class="headerlink" href="#facebook" title="Permanent link">&para;</a></h4>
+</li>
+<li>
+<p><em>NovaTalks.Core</em>: Outbound messages from BotFlow, BotConnector <a href="https://sd.novait.com.ua/browse/NC2-16"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-16</a></p>
+</li>
+<li>
+<p><em>Genesys.PureConnect.Connector</em>: Core development for outbound messages <a href="https://sd.novait.com.ua/browse/NC2-21"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-21</a></p>
 <ul>
-<li>Receiving of additional user information (<em>firstname</em>, <em>lastname</em>, <em>username</em>) <a href="/novadocs/components/novabotconnector.html#2021r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li><abbr title="Bubles or any other idication that pops up when someone writes a message in massangers">Typing Indicator</abbr> when agent write a message <a href="/novadocs/components/novabotconnector.html#2021r3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li>Customizable timeout limit for big media files sending <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>
+<p><strong>ChatProxy</strong>:</p>
+<p>• in config cunfigured sending of variable <strong>nova_chatid</strong> with value <strong>{chatid}</strong></p>
+<p>• in config sending of variables <strong>nova_userid</strong> with value <strong>{userid}</strong></p>
+<p>• in config sending of variables <strong>nova_source</strong> with value <strong>{source}</strong></p>
+</li>
+<li>
+<p><strong>Nova.PureConnect.Connector</strong>:</p>
+<p>• receiving <strong>nova_chatid</strong> value and sending it in <strong>AdditionalAttribute</strong> (entity <strong>Conversation</strong>) </p>
+<p>• receiving <strong>nova_userid</strong> value and sending it in <strong>AdditionalAttribute</strong> (entity <strong>Conversation</strong>) </p>
+<p>• receiving <strong>nova_source</strong> value and sending it in <strong>AdditionalAttribute</strong> (entity <strong>Conversation</strong>) </p>
+</li>
 </ul>
-<h4 id="facebook-wall-posts">Facebook Wall Posts<a class="headerlink" href="#facebook-wall-posts" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Limitation: one contact for one channel</p>
+<p>All client's interactions in one channel are stored in one conversation</p>
+<p>Conversations are linked by <strong>nova_chatid</strong>, <strong>nova_userid</strong>, <strong>nova_source</strong></p>
+</blockquote>
+</li>
+<li>
+<p><em>Nova.Chats</em>: UI extension <a href="https://sd.novait.com.ua/browse/NC2-23"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-23</a></p>
 <ul>
-<li><abbr title="Actively sampling the status of an external device by a client program as a synchronous activity.">Polling</abbr> service <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>
+<p><strong>Contact Card</strong>:</p>
+<p>• Icon: shows user's avatar </p>
+<p>• Icon: if user's avatar is not available, shows messanger icon by it's type stored in Conversation's attributes</p>
+<blockquote>
+<p>Channel name (source) extracted from field: <strong>additionalAttributes.contactSource</strong></p>
+<p>Icons are stored in ./assets/dashboard/images/channels</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Contact Card - contact header</strong>:</p>
+<p>• Mini icon: shows messanger icon by it's type stored in Conversation's attributes</p>
+<blockquote>
+<p>Icons are stored in ./assets/dashboard/images/channels</p>
+</blockquote>
+<p>• Mini title: prints messanger name from it's type stored in Conversation's attributes</p>
+<blockquote>
+<p>Channel name (source) extracted from field: <strong>additionalAttributes.contactSource</strong></p>
+</blockquote>
+</li>
+<li>
+<p><strong>Conversations tab</strong>:</p>
+<p>• Filters: added "All" option</p>
+</li>
 </ul>
-<h4 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>All conversations are realized as concatenation on <strong>Open</strong> and <strong>Resolved</strong> conversations</p>
+<p>Concatenation result is stored in Vue store</p>
+</blockquote>
+</li>
+</ul>
+<details><summary>"additionalAttributes"</summary>
+<p>
+<div class="highlight"><pre><span></span><code>Sent to genesys format:
+
+additionalAttributes: {
+      nova_contactName: &#39;{firstname} {lastname}&#39;,
+      nova_contactEmail: &#39;{userid}@{source}&#39;,
+      nova_contactChatId: &#39;{chatId}&#39;,
+      nova_contactUserId: &#39;{userid}&#39;,
+      nova_contactChannelId: &#39;{channel}&#39;,
+      nova_contactSource: &#39;{source}&#39;,
+
+      Restriction:
+      without &quot;contactSource&quot; parameter the avatar wouldn&#39;t showup
+   }
+</code></pre></div>
+</p>
+</details>
+
+<h4 id="bug-fixes_3">Bug Fixes<a class="headerlink" href="#bug-fixes_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Customizable timeout limit for big media files sending <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
+<li>none</li>
 </ul>
-<h4 id="whatsapp-nexmo">WhatsApp (Nexmo)<a class="headerlink" href="#whatsapp-nexmo" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Migration from API v0.1 to API v1 <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-<li><abbr title="JSON Web Token. Used for authorization and for securely transmitting information between parties as a JSON object.">JWT</abbr> authentification in compliance with the API v1 <a href="/novadocs/components/novabotconnector.html#2021r4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-</ul>
-<h4 id="wechat">WeChat<a class="headerlink" href="#wechat" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Sending of <em>first name</em> and <em>parential</em> (<em>ancestral</em>) <em>name</em> to PureEngage <a href="/novadocs/components/novabotconnector.html#2020r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-</ul>
-<h4 id="webchat">WebChat<a class="headerlink" href="#webchat" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Receiving of additional user information (<em>firstname</em>, <em>lastname</em>) <a href="/novadocs/components/novabotconnector.html#2021r2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12z"/></svg></span></a></li>
-</ul>
+<hr />
                 
               
               
@@ -2121,7 +2758,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="markup.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Markup Legend" rel="prev">
+        <a href="novatalksgenesyspureconnectconnector.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Connector" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2130,20 +2767,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Markup Legend
+              Connector
             </div>
           </div>
         </a>
       
       
         
-        <a href="novabotconnectornotices.html" class="md-footer__link md-footer__link--next" aria-label="Next: Channel Capabilities" rel="next">
+        <a href="documents/toc.html" class="md-footer__link md-footer__link--next" aria-label="Next: Table of content" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Channel Capabilities
+              Table of content
             </div>
           </div>
           <div class="md-footer__button md-icon">

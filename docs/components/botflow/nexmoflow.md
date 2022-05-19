@@ -49,7 +49,7 @@ Quick Replies are supported as a disappearing after click/tap **keyboard** butto
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/NexmoFlowQuickReplies.png" title="Nexmo Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/NexmoFlowQuickReplies.png" title="Nexmo Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is not supported, but can be replicated as Picture message then Quick Replies
 

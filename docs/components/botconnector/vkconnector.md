@@ -54,7 +54,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/VkConnectorQuickReplies.png" title="Vk Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/VkConnectorQuickReplies.png" title="Vk Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a separate structure of *Picture*, *Title* with *Subtitle* (just a message text) and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -70,7 +70,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/VkConnectorCard.png" title="Vk Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/VkConnectorCard.png" title="Vk Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -84,7 +84,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/VkConnectorButtonlist.png" title="Vk Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/VkConnectorButtonlist.png" title="Vk Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positioned horizontally 
 <details><summary>Known Restrictions</summary>
@@ -98,7 +98,7 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/VkConnectorButtongrid.png" title="Vk Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/VkConnectorButtongrid.png" title="Vk Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages with shared inline keyboard buttons
 <details><summary>Known Restrictions</summary>
@@ -114,4 +114,4 @@ Quick Replies are supported as a disappearing after click/tap **inline keyboard*
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botconnector/examples/VkConnectorCarousel.png" title="Vk Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botconnector/examples/VkConnectorCarousel.png" title="Vk Carousel" width="600" height"500"> </a> </figure>

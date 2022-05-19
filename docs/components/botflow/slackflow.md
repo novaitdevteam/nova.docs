@@ -51,7 +51,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/SlackFlowQuickReplies.png" title="Slack Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/SlackFlowQuickReplies.png" title="Slack Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a separate structure of *Picture*, *Title* with *Subtitle* and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -68,7 +68,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/SlackFlowCard.png" title="Slack Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/SlackFlowCard.png" title="Slack Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Content with number of buttons positioned vertically
 <details><summary>Known Restrictions</summary>
@@ -82,7 +82,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/SlackFlowButtonlist.png" title="Slack Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/SlackFlowButtonlist.png" title="Slack Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positiononed vertically
 <details><summary>Known Restrictions</summary>
@@ -96,7 +96,7 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/SlackFlowButtongrid.png" title="Slack Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/SlackFlowButtongrid.png" title="Slack Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages merged via blocks into one structure, where every card may have buttons (different, if needed)
 <details><summary>Known Restrictions</summary>
@@ -113,4 +113,4 @@ Quick Replies are supported as a disappearing after click/tap buttons
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/SlackFlowCarousel.png" title="Slack Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/SlackFlowCarousel.png" title="Slack Carousel" width="600" height"500"> </a> </figure>

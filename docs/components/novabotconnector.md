@@ -9,11 +9,13 @@
 ##Product Notices
 ***
 ##2022R1
+###2022R1-4 :briefcase: Epic
 ####New Features
 - none
 
 ####Bug Fixes
-- none
+- *Facebook Wall Posts*: fixed problem with registration of pooling service causing assertion errors [:clipboard: NOV-346] [NOV-346]
+- *Facebook Wall Posts*: changed short term token for non-expiring one [:clipboard: NOV-346] [NOV-346]
 ***
 
 ##2021R4
@@ -25,9 +27,9 @@
 - *Facebook*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 - *Twitter*: cleaned leftover logging [:clipboard: NOV-287] [NOV-287]
 
-	> • If error ESOCKETTIMEDOUT occurs after sending media content (for ex. with big size), it is possible to increase timeout in config via variable setTimeoutForMedia.
+	> If error ESOCKETTIMEDOUT occurs after sending media content (for ex. with big size), it is possible to increase timeout in config via variable setTimeoutForMedia.
 
-	> • Path: server.setTimeoutForMedia.
+	> Path: server.setTimeoutForMedia.
 
 ***
 
@@ -35,9 +37,9 @@
 ####New Features
 - *WhatsApp (Nexmo)*: migration from API v0.1 to API v1 [:clipboard: NOV-304] [NOV-304]
 
-	> • New version of API require usage of JWT authentification
+	- New version of API require usage of JWT authentification
 
-	> • headers: {  Authorization: Bearer <JWT> }
+	- headers: {  Authorization: Bearer <JWT> }
 
 	> • for generation of JWT, fields **application_id** and **private_key** are needed and must be generated in Nexmo dashboard
 
@@ -48,10 +50,14 @@
 ###2021R4-2 :briefcase: Epic
 ####New Features
 - *Vkontakte Wall Posts*: added support of VK comments on posts [:clipboard: NOV-265] [NOV-265]
-	* comment creates new conversation with possibility of one reply from agent
-	* comment doesn't create conversation if it doesn't contain mention (**@groupname**) if it is not direct reply to group's post
-	* variable in payload for comments **CanReply** has value **false**
-	* payload has client's avatar url
+	
+	- comment creates new conversation with possibility of one reply from agent
+
+	- comment doesn't create conversation if it doesn't contain mention (**@groupname**) if it is not direct reply to group's post
+
+	- variable in payload for comments **CanReply** has value **false**
+
+	- payload has client's avatar url
 
 ####Bug Fixes
 - none
@@ -62,33 +68,33 @@
 - *Facebook Wall Posts*: pooling service [:clipboard: NOV-271] [NOV-271]
 - *Facebook Wall Posts*: added support of channel [:clipboard: NOV-36] [NOV-36]
 
-	> • Posts and comments are sent to agent's workplace as a separate conversations 
+	- Posts and comments are sent to agent's workplace as a separate conversations 
 
-	> • Only direct comments to owner are sent to workplace 
+	- Only direct comments to owner are sent to workplace 
 
-	> • Comments between users (no owner mention) are not sent to workplace
+	- Comments between users (no owner mention) are not sent to workplace
 
-	> • If agents aren't available at the moment, then conversation will "wait" for first available agent
+	- If agents aren't available at the moment, then conversation will "wait" for first available agent
 
 - *All channels*: added channel variable *Avatar* and config variable *CanReply* [:clipboard: NOV-36] [NOV-36]
 
-	> • CanReply has defult value *true* and is used only in Wallposts channels
+	- CanReply has defult value *true* and is used only in Wallposts channels
 	
-	> • With CanReply *false*, agent can reply to comment\post only once
+	- With CanReply *false*, agent can reply to comment\post only once
 
 - *Twitter Wall Posts*: added support of channel [:clipboard: NOV-42] [NOV-42]
 
-	> • Posts and comments are sent to agent's workplace as a separate conversations 
+	- Posts and comments are sent to agent's workplace as a separate conversations 
 
-	> • Only direct comments to owner are sent to workplace 
+	- Only direct comments to owner are sent to workplace 
 
-	> • Comments between users (no owner mention) are not sent to workplace
+	- Comments between users (no owner mention) are not sent to workplace
 
-	> • If agents aren't available at the moment, then conversation will "wait" for first available agent
+	- If agents aren't available at the moment, then conversation will "wait" for first available agent
 
 - *All channels*: added **Avatar** parameter to template [:clipboard: NOV-260] [NOV-260]
 
-	> • {avatar} - link on user's picture; stored locally
+	> {avatar} - link on user's picture; stored locally.
 
 ####Bug Fixes
 - none
@@ -98,15 +104,15 @@
 ####New Features
 - *Telegram*: Implemented *Typing Indicator* (agent writes a message idicator for clients to see) [:clipboard: NOV-107] [NOV-107]
 
-	> • The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status)
+	> The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status)
 
 - *Facebook*: Implemented *Typing Indicator* (agent writes a message idicator for clients to see) [:clipboard: NOV-107] [NOV-107]
 
-	> • Typing indicators are automatically turned off after 20 seconds, or when the bot sends a message.
+	> Typing indicators are automatically turned off after 20 seconds, or when the bot sends a message.
 
 - *Viber*: Implemented *Typing Indicator* (agent writes a message idicator for clients to see) [:clipboard: NOV-107] [NOV-107]
 
-	> • Typing indicators not supported for bots
+	> Typing indicators are not supported for bots
 
 - Optimized deployment of new component versions with daemon process manager [:clipboard: NOV-253] [NOV-253]
 
@@ -119,23 +125,23 @@
 ####New Features
 - *All channels*: added sending of REF value from uri to Omilia context at the start of conversation [:clipboard: NOV-172] [NOV-172]
 
-	> • Facebook messenger:
+	- Facebook messenger:
 	
 	> https://m.me/<NAME>?ref=<REF>
 
-	> • Viber:
+	- Viber:
 	
 	> viber://pa?chatURI=<NAME>&context=<REF>
 
-	> • Telegram:
+	- Telegram:
 
 	> https://t.me/<NAME>?start=<REF>
 
-	> • Variables:
+	- Variables:
 
-	> NAME - name of bot, page, or account in curresponding messengers
+		• NAME - name of bot, page, or account in curresponding messengers
 	
-	> REF - any value
+		• REF - any value
 	
 - *Facebook*: added receiving of additional user information (*firstname*, *lastname*, *username*) [:clipboard: NOV-181] [NOV-181]
 - *WebChat*: added receiving of additional user infogrmation (*firstname*, *lastname*) [:clipboard: NOV-199] [NOV-199]
@@ -251,9 +257,9 @@ WantedBy=timers.target
 - *Viber*: added sending of *userid* in template [:clipboard: NOV-91] [NOV-91]
 - Added Proxy Server support [:clipboard: NOV-94] [NOV-94]
 
-	> • 2 environmental variables: 
+	- 2 environmental variables: 
 
-	> • *GLOBAL_AGENT_HTTP_PROXY* and *GLOBAL_AGENT_NO_PROXY*
+	• *GLOBAL_AGENT_HTTP_PROXY* and *GLOBAL_AGENT_NO_PROXY*
 
 	> • *GLOBAL_AGENT_HTTP_PROXY* - proxy server address
 

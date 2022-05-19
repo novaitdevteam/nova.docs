@@ -52,7 +52,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowQuickReplies.png" title="Telegram Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TelegramFlowQuickReplies.png" title="Telegram Quick Replies" width="600" height"500"> </a> </figure>
 ####Card
 - Card is supported as a monolith structure with *Title*, *Subtitle* and *Quick Replies* buttons
 <details><summary>Known Restrictions</summary>
@@ -67,7 +67,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowCard.png" title="Telegram Card" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TelegramFlowCard.png" title="Telegram Card" width="600" height"500"> </a> </figure>
 ####Button List
 - Button List is supported as a Title with number of buttons positioned vertically 
 <details><summary>Known Restrictions</summary>
@@ -79,7 +79,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowButtonlist.png" title="Telegram Button List" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TelegramFlowButtonlist.png" title="Telegram Button List" width="600" height"500"> </a> </figure>
 ####Button Grid
 - Button Grid is supported as a Title with number of buttons positioned horizontally 
 <details><summary>Known Restrictions</summary>
@@ -91,7 +91,7 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowButtongrid.png" title="Telegram Button Grid" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TelegramFlowButtongrid.png" title="Telegram Button Grid" width="600" height"500"> </a> </figure>
 ####Carousel
 - Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)
 <details><summary>Known Restrictions</summary>
@@ -103,4 +103,4 @@
 ```
 </p>
 </details>
-<figure> <img src="/novadocs/components/botflow/examples/TelegramFlowCarousel.png" title="Telegram Carousel" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/TelegramFlowCarousel.png" title="Telegram Carousel" width="600" height"500"> </a> </figure>

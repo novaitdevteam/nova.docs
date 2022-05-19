@@ -8,6 +8,27 @@
 #Nova.ChatProxy.Genesys.PureCloud
 ##Product Notices
 ***
+##2022R1
+###2021R1-5 :briefcase: Epic
+####New Features
+- none
+
+####Bug Fixes
+- Fixed Websocket hearbeat error [:clipboard: NOV-361] [NOV-361]
+
+	> • switched to new version of *ws* library for mongodb
+	
+	> • parameters *useFindAndModify* and *poolSize* were deleted
+***
+
+###2021R1-4 :briefcase: Epic
+####New Features
+- none
+
+####Bug Fixes
+- *Nexmo*: Fixed problem when text messages sent in quick order create a new dialogs [:clipboard: NOV-356] [NOV-356]
+***
+
 ##2021R4
 ###2021R4-1 :briefcase: Epic
 ####New Features
