@@ -9,9 +9,66 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-3 :briefcase: Epic
+####New Features
+- *NovaTalks.ChatWidget*: alternative Static Widget [:clipboard: NC2-158] [NC2-158]
+
+	> Alternative widget is not tied to the ChatWoot based widget
+
+	- Supports more that one channels of the same type 
+	
+	- Has transparent background 
+	
+<details><summary>Script example</summary>
+<p>
+```html
+<html>
+  <head>
+    <title>NovaTalks Demo Standalone Chat</title>
+  </head>
+  <body>
+    <script>
+      (function (d, t) {
+        var BASE_URL = 'http://localhost:3012';
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + '/packs/js/sdk.js';
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: 'FReCS3jYPvr8HsdLSpHU6DuT',
+            baseUrl: BASE_URL,
+            bubbleImage: 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg', // Optional
+            widgetControl: {
+              channels: [
+                {
+                  name: 'Telegram1', // Required
+                  type: 'telegram', // Required Enam: telegram, viber, messenger, twitter, facebook, whatsapp
+                  url: 'https://t.me/novachatsbot?start=clk-901008', // Required
+                  hint: 'telega 1 hint', // Optional
+                  enabled: true, // Optional. Boolean: true or false.
+                },
+              ],
+              imageSize: 'medium', // Optional. Enam: small, medium, large
+            },
+          });
+        };
+      })(document, 'script');
+    </script>
+  </body>
+</html>
+```
+</p>
+</details>
+####Bug Fixes
+- none
+***
+
 ###2022R2-2 :briefcase: Epic
 ####New Features
--none
+- none
 
 ####Bug Fixes
 - *NovaTalks.ChatWidget*: Fixed Webwidget auto close on mobile devices [:clipboard: NC2-134] [NC2-134]

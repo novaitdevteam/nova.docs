@@ -9,9 +9,93 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-4 :briefcase: Epic
+####New Features
+- *NovaTalks.Core*: 015 Client API Migration - Websocket Server NodeJS [:clipboard: NC2-96] [NC2-96]
+
+	> Library: [ws](https://www.npmjs.com/package/ws)
+	
+	- Messages that server sends to workplace:
+	
+		• message.created
+	
+		• message.updated
+	
+		• conversation.created
+	
+		• conversation.status_changed
+	
+		• user:logout
+	
+		• page:reload
+	
+		• assignee.changed
+	
+		• conversation.typing_on
+	
+		• conversation.typing_off
+	
+		• conversation.contact_changed
+	
+		• presence.update
+	
+		• contact.deleted
+	
+		• contact.updated
+	
+		• conversation.mentioned
+	
+		• notification.created
+
+- *NovaTalks.Core*: 004 Application API Migration - Conversation [:clipboard: NC2-85] [NC2-85]
+
+- *NovaTalks.Core*: 005 Application API Migration - Conversation Assignment [:clipboard: NC2-86] [NC2-86]
+
+- *NovaTalks.Core*: 007 Application API Migration - Messages [:clipboard: NC2-88] [NC2-88]
+
+- *NovaTalks.Core*: 011 Application API Migration - Conversation Labels [:clipboard: NC2-92] [NC2-92]
+
+- *NovaTalks.Core*: 001.002 Application API Migration - Application Jobs to Bulls MQ porting - Part 2 [:clipboard: NC2-123] [NC2-123]
+
+####Bug Fixes
+- none
+***
+
+###2022R2-3 :briefcase: Epic
+####New Features
+- *NovaTalks.Core*: 001.002 Application API Migration - Application Jobs to Bulls MQ porting - Part 1 [:clipboard: NC2-122] [NC2-122]
+
+	- Jobs list:
+	
+		• action_cable_broadcast_job.rb
+		
+		> (event broadcasting on workplace)
+
+		• contact_avatar_job.rb
+
+		• contact_ip_lookup_job.rb
+
+		• trigger_scheduled_items_job.rb
+
+		• conversations_resolution_scheduler_job.rb
+
+		• activity_message_job.rb
+
+		• reopen_snoozed_conversations_job.rb
+
+		• resolution_job.rb
+
+		• user_mention_job.rb
+
+		• labal_update_job.rb
+	
+####Bug Fixes
+- none
+***
+
 ###2022R2-2 :briefcase: Epic
 ####New Features
-- *NovaTalks.Core*: Mwchanism of events evoking on models [:clipboard: NC2-126] [NC2-126]
+- *NovaTalks.Core*: Mechanism of events evoking on models [:clipboard: NC2-126] [NC2-126]
 
 	> Sequalize v6 hooks [documentation](https://sequelize.org/docs/v6/other-topics/hooks/)
 

@@ -9,11 +9,125 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-4 :briefcase: Epic
+####New Features
+- *Facebook*: Facebook and Instagram [:clipboard: NOV-378] [NOV-378]
+
+	- Steps to receive client's application token:
+
+		• Step 1: Install App and Get long_lived_token
+		```json
+		Request:
+		https://www.facebook.com/v14.0/dialog/oauth?
+			client_id={app-id}&
+			scope={scope}&
+			response_type=token,granted_scopes&
+			redirect_uri={redirect-uri}&
+			state={state-param} 
+
+		Response:
+		access_token
+		data_access_expiration_time
+		expires_in
+		long_lived_token
+		granted_scopes
+		denied_scopes
+		state={state-param}
+		```
+		
+		• Step 2: Get User id
+		```json
+		Request:
+		https://graph.facebook.com/me?
+			fields=id&
+			access_token={access_token}
+
+		Response:
+		{
+		"id": "{user-id}"
+		} 
+		```
+
+		• Step 3: Get a Long-Lived Page Access Token
+		```json
+		Request:
+		https://graph.facebook.com/v14.0/{user-id}/accounts?
+			access_token={long-lived-user-access-token}   
+
+		Response :
+		{
+		"data": [
+			{
+				"access_token": "SOMETOKEN",
+				"category_list": [
+					{
+					"id": "SOMEID",
+					"name": "SOMENAME"
+					}
+				],
+				"name": "SOMENAME",
+				"id": "SOMEID",
+				"tasks": [
+					"ANALYZE",
+					"ADVERTISE",
+					"MESSAGING",
+					"MODERATE",
+					"CREATE_CONTENT",
+					"MANAGE"
+				]
+			}
+		],
+		"paging": {
+			"cursors": {
+				"before": "...",
+				"after": "..."
+			}
+		}
+		}   
+		```
+
+	- Documentation:
+	
+		• [Manually Build a Login Flow](https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow)
+		
+		• [Long-Lived Access Tokens](https://developers.facebook.com/docs/facebook-login/guides/access-tokens/get-long-lived)
+	
+	- [Access Token Debug Tool](https://developers.facebook.com/tools/debug/accesstoken/)
+	
+	- What does "Data Access Expires" mean for a page access token
+	
+		• [Question in Community](https://developers.facebook.com/community/threads/1269366593224536/)
+
+		• [Authentication Versus Data Access](https://developers.facebook.com/docs/facebook-login/auth-vs-data/)
+
+####Bug Fixes
+- none
+***
+
+###2022R2-3 :briefcase: Epic
+####New Features
+- *Telegram*: **parse_mode** for telegram [:clipboard: NOV-374] [NOV-374]
+
+	- added node in the standard flow to set **parseMode** value in message payload which is processed and sent as **parse_mode** in request to Telegram API
+
+	> value is set in **payload.params.parseMode**
+
+	> value can be **Markdown** or **HTML** (**MarkdownV2** is not working)
+
+####Bug Fixes
+- *Telegram*: Fixed BotAgent In done malfunctionin on Botflow start [:clipboard: NOV-375] [NOV-375]
+
+	> BotAgent In (chatbot-chatwoot-botagent-node) is not working at the start of Botflow when ChatWoot is inaccessible
+	
+	- Made via **polling**: will reask status every 1 minute until answered
+
+***
+
 ###2022R2-2 :briefcase: Epic
 ####New Features
 - *Genesys*: Genesys Open Messagin API connection node [:clipboard: NOV-345] [NOV-345]
 
-	> Genesys In and Genesys Out nodes (receiver and sender namely)
+	> **Genesys In** and **Genesys Out** nodes (receiver and sender namely)
 
 	- **Functionality**:
 	
@@ -88,7 +202,7 @@
 
 	> feature helps sending messages in currect order
 
-- Redis expiration parameter for keys [:clipboard: NOV-353] [NOV-353] 
+- *All channels*: Redis expiration parameter for keys [:clipboard: NOV-353] [NOV-353] 
 
 	> Value is listed in seconds
 

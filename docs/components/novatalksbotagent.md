@@ -9,6 +9,140 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-4 :briefcase: Epic
+####New Features
+-
+
+####Bug Fixes
+- none
+
+***
+
+###2022R2-3 :briefcase: Epic
+####New Features
+- *NovaTalks.BotAgent*: *contact center Work Schedule* functionality [:clipboard: NC2-130] [NC2-130]
+
+	> functionality is based on [Time Switch](https://github.com/jensrossbach/node-red-contrib-chronos/wiki/Time-Switch-Node) library
+
+	- **Work algorithm**:
+	
+		> Subflow has two outputs: **match** and **no match**
+	
+		1. **msg** object enters **chronos-switch** node to check for specific days
+	
+		> Base Time can be took from: message **ingress**, **global.** variable, **flow.** variable, **msg.** object
+
+		> specific days can be: holidays, corporate days or any other non-working dates
+
+		2. **msg** object enters next **chronos-switch** node to check for day of week
+	
+		3. **msg** object enters next **chronos-switch** node to check for work hour
+
+- *NovaTalks.BotAgent*: Statistics gathering with Google Analytics [:clipboard: NC2-154] [NC2-154]
+
+	> functionality is based on [Google Analytics 4 Measurement Protocol](https://github.com/adswerve/GA4-Measurement-Protocol-Typescript) library
+
+	> for work requires MEASUREMENT_ID and API_SECRET (can be taken from flow on Measurement Platform)
+
+	> (for node-red flows variables ga4measurementId (MEASUREMENT_ID) and ga4apiSecret (API_SECRET) must be set in global variables)
+
+	- Subflow input fields:
+	
+		1. **eventName**: name of the event which would be sent to Google Analytics
+
+		2. **messanger**: transport of the message; took from the **msg** object
+
+		3. **messangerChannel**: channel in which message was received; took from the **msg** object
+
+		4. **messangerUser**: user identifier (name, id, etc.); took from the **msg** object
+
+		5. **value**: event's value
+
+<details><summary>Limitations</summary>
+<p>
+```
+• Requests can have a maximum of 25 events.
+
+• Events can have a maximum of 25 parameters.
+
+• Events can have a maximum of 25 user properties.
+
+• User property names must be 24 characters or fewer.
+
+• User property values must be 36 characters or fewer.
+
+• Event names must be 40 characters or fewer, may only contain alpha-numeric characters and underscores, and must start with an alphabetic character.
+
+• Parameter names (including item parameters) must be 40 characters or fewer, may only contain alpha-numeric characters and underscores, and must start with an alphabetic character.
+
+• Parameter values (including item parameter values) must be 100 character or fewer.
+
+• Item parameters can have a maximum of 10 custom parameters.
+
+• The post body must be smaller than 130kB.
+```
+</p>
+</details>
+<details><summary>Code example</summary>
+<p>
+```js
+import ga4mp from "ga4-mp";
+let ga4 = ga4mp.createClient(
+  "jkEdpLiZTNuWi7EBhuQkcw",
+  "G-J7W82BDKNQ",
+  "11111111.4444444"
+);
+
+var events = [
+  {
+    name: "addtocart",
+    params: {
+      value: "4.99",
+    },
+  },
+];
+ga4.send(events);
+
+ga4.readClientInfo();
+
+import axios from "axios";
+
+var data = JSON.stringify({
+  client_id: "11111.55555",
+  events: [
+    {
+      name: "axios_event",
+      params: {},
+    },
+  ],
+});
+
+var config = {
+  method: "post",
+  url: "https://www.google-analytics.com/mp/collect?measurement_id=G-J7W82BDKNQ&api_secret=jkEpdLiZTNuWi7EBQkhucw",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+</p>
+</details>
+
+- *NovaTalks.BotAgent*: merge chat-platform repository with Nova.Botflow [:clipboard: NC2-155] [NC2-155]
+
+####Bug Fixes
+- none
+
+***
+
 ###2022R2-2 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent*: Chatbot for UA.Novaposhta [:clipboard: NC2-141] [NC2-141]
