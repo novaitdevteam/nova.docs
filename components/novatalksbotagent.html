@@ -1846,11 +1846,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2022r2-4-epic" class="md-nav__link">
-    2022R2-4  Epic
+  <a href="#2022r2-5-epic" class="md-nav__link">
+    2022R2-5  Epic
   </a>
   
-    <nav class="md-nav" aria-label="2022R2-4  Epic">
+    <nav class="md-nav" aria-label="2022R2-5  Epic">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2310,11 +2310,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2022r2-4-epic" class="md-nav__link">
-    2022R2-4  Epic
+  <a href="#2022r2-5-epic" class="md-nav__link">
+    2022R2-5  Epic
   </a>
   
-    <nav class="md-nav" aria-label="2022R2-4  Epic">
+    <nav class="md-nav" aria-label="2022R2-5  Epic">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2544,9 +2544,33 @@
 <h2 id="product-notices">Product Notices<a class="headerlink" href="#product-notices" title="Permanent link">&para;</a></h2>
 <hr />
 <h2 id="2022r2">2022R2<a class="headerlink" href="#2022r2" title="Permanent link">&para;</a></h2>
-<h3 id="2022r2-4-epic">2022R2-4 <img alt="💼" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4bc.svg" title=":briefcase:" /> Epic<a class="headerlink" href="#2022r2-4-epic" title="Permanent link">&para;</a></h3>
+<h3 id="2022r2-5-epic">2022R2-5 <img alt="💼" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4bc.svg" title=":briefcase:" /> Epic<a class="headerlink" href="#2022r2-5-epic" title="Permanent link">&para;</a></h3>
 <h4 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h4>
-<p>-</p>
+<ul>
+<li>
+<p><em>NovaTalks.BotAgent</em>: Omilia integration - DEMO chatbot <a href="https://sd.novait.com.ua/browse/NC2-65"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-65</a></p>
+<p><strong>Work flow</strong>:</p>
+<p>1) Greeting and choice between <strong>Omilia</strong> and <strong>Contact Agent</strong></p>
+<p>2) <strong>Omilia</strong></p>
+<pre><code>2.1. On entry user receive promt asking for user's question
+
+2.2. On trasfer user is sent on *Support* team
+
+2.3. Choice buttons are inactive until Omilia dialog transfer
+</code></pre>
+<p>3) <strong>Contact Agent</strong></p>
+<pre><code>2.1. Choice between agents and teams, with transfer on chosen one
+
+2.2. Promt to inform user that he is connected to an operator
+
+2.3. Buttons and other logic doesn't work when user speaks with operator
+
+2.4. On next user's message after conversation was resolved by operator, he will receive buttons with choice between Omilia and Contact Agent
+
+2.5. If previous conversation ended less that 5 minutes ago, then Contact Agent button will transfer to the same operator
+</code></pre>
+</li>
+</ul>
 <h4 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>none</li>
