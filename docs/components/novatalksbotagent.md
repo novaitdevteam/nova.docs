@@ -9,10 +9,34 @@
 ##Product Notices
 ***
 ##2022R2
-###2022R2-4 :briefcase: Epic
+###2022R2-5 :briefcase: Epic
 ####New Features
--
+- *NovaTalks.BotAgent*: Omilia integration - DEMO chatbot [:clipboard: NC2-65] [NC2-65]
 
+	**Work flow**:
+	
+	1) Greeting and choice between **Omilia** and **Contact Agent**
+		
+	2) **Omilia**
+
+		2.1. On entry user receive promt asking for user's question
+			
+		2.2. On trasfer user is sent on *Support* team
+		
+		2.3. Choice buttons are inactive until Omilia dialog transfer 
+		
+	3) **Contact Agent**
+		
+		2.1. Choice between agents and teams, with transfer on chosen one
+
+		2.2. Promt to inform user that he is connected to an operator
+
+		2.3. Buttons and other logic doesn't work when user speaks with operator
+
+		2.4. On next user's message after conversation was resolved by operator, he will receive buttons with choice between Omilia and Contact Agent
+			
+		2.5. If previous conversation ended less that 5 minutes ago, then Contact Agent button will transfer to the same operator
+			
 ####Bug Fixes
 - none
 

@@ -9,6 +9,25 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-5 :briefcase: Epic
+- *NovaTalks.Sys*: NovaTalks build with restrictions [:clipboard: NC2-162] [NC2-162]
+
+	> Settings file with resource limitations configuration for components
+	
+	Three levels of instalation:
+	
+	- small
+	
+	- medium
+		
+	- large
+
+- *NovaTalks.Sys*: NovaTalks instalation with Longhorn block storage and without binding to nodes [:clipboard: NC2-143] [NC2-143]
+
+####Bug Fixes
+- none
+***
+
 ###2022R2-4 :briefcase: Epic
 - *NovaTalks.Sys*: Evaluation of NovaTalks components memory consumption [:clipboard: NC2-107] [NC2-107]
 

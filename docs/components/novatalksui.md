@@ -9,6 +9,43 @@
 ##Product Notices
 ***
 ##2022R2
+###2022R2-5 :briefcase: Epic
+####New Features
+- *NovaTalks.UI*: UI upgrade for new WebSocket mechanism [:clipboard: NC2-150] [NC2-150]
+
+	• Migration from **Action** Cable to **WS lib**
+
+	• Authentification mechanism and **keepalive**
+
+- *NovaTalks.UI.BA*: Notifications support in UI [:clipboard: NC2-76] [NC2-76]
+
+[New table with agents' events](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- *NovaTalks.UI*: Visual bug fix [:clipboard: NC2-182] [NC2-182]
+
+	- *profile-settings-row* doesn't cover *dropdown-pane dropdown-pane–open*
+
+	- *Delete button* do response in *Conversation filters* if filter has only one value
+
+	- *Edit Contact* side menu do hide (gray out and inactivate) left side bar menus
+
+	- *Keyboard shortcuts (modal-container)* is covered by content
+
+	- In *Edit* menus (all) side bar menus are inactive
+
+	- Importing file with wrong extension or values in *Import Contacts* shows error
+	
+	- Teams description doesn't go out of workspace bounds
+	
+	- Changed *New Password* field type to *password*
+
+	- Added *Confirm New Password* to *Edit Agent* menu
+	
+	- Added *View Contact* button to *contact-info*
+
+***
+
 ###2022R2-2 :briefcase: Epic
 ####New Features
 - none
