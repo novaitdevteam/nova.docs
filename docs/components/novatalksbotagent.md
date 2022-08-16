@@ -8,6 +8,26 @@
 #NovaTalks.BotAgent
 ##Product Notices
 ***
+##2022R3
+###2022R3-1-2 :briefcase: Epic
+####New Features
+- *NovaTalks.BotAgent.BA*: Keyboard node *Reply buttons* functionality support [:clipboard: NC2-188] [NC2-188]
+
+	> done for viber and telegram channels
+
+[Keyboard reply buttons for viber channel](./documents/novatalks/NC2-188_Viber_Add_Reply_Buttons_Compability_v0.1(NovaTalks).docx.pdf)
+
+- *NovaTalks.BotAgent.BA*: Standard script modification [:clipboard: NC2-195] [NC2-195]
+
+[Standard script schematic](./documents/novatalks/NC2-000_Basic_Script_v0.2(NovaTalks).vsdx)
+
+- *NovaTalks.BotAgent*: Standard script develpment [:clipboard: NC2-214] [NC2-214]
+
+####Bug Fixes
+- none
+
+***
+
 ##2022R2
 ###2022R2-5 :briefcase: Epic
 ####New Features

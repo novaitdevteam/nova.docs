@@ -8,6 +8,76 @@
 #NovaTalks.Core
 ##Product Notices
 ***
+##2022R3
+###2022R3-1-2 :briefcase: Epic
+####New Features
+- *NovaTalks.Core.BA*: Post Call Survey (CSAT) [:clipboard: NC2-192] [NC2-192]
+
+[CSAT specification - stage 1](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+
+[CSAT specification - stage 2](./documents/novatalks/NC2-192_2_Post_Call_Suvey_v0.2(NovaTalks).docx.pdf)
+
+- *NovaTalks.Core.BA*: Porting *Mentions* to NovaTalks [:clipboard: NC2-210] [NC2-210]
+
+	> porting functionality in the same way in works in the ChatWoot
+
+- *NovaTalks.Core*: DB Script Migration [:clipboard: NC2-236] [NC2-236]
+
+	> migration of Old ChatWoot database with client's data to new the ChatWoot database
+
+- *NovaTalks.Core*: 016.002 Widget Frontend Refactoring [:clipboard: NC2-99] [NC2-99]
+
+	> Messages API: 3 methods were done
+
+- *NovaTalks.Core*: 016.002 Widget API Migration [:clipboard: NC2-98] [NC2-98]
+
+	> Contacts API: 3 methods were done
+
+	> Conversations API: 2 methods were done
+
+	> Messages API: 3 methods were done
+
+- *NovaTalks.Core*: Automated run of SQL migration script on service start [:clipboard: NC2-193] [NC2-193]
+
+- *NovaTalks.Core*: assignee_changed and team_changed events emission [:clipboard: NC2-233] [NC2-233]
+
+####Bug Fixes
+- *NovaTalks.Core*: Beta-version bug fix [:clipboard: NC2-196] [NC2-196]
+
+	- fixed various basic functionality items broken by migration
+
+	- fixed Contact filter evoking leftover */compaigns* request
+
+	- fixed doing Update Profile after deleting avatar requests deleted avatar from disk cache
+
+	- fixed manually created users always have Online status
+
+	- fixed WebSocket stability issues
+
+	- fixed wrong *sender_type* for messages in database
+
+	- fixed system messages not changing localization
+
+	- standalone ukrainian localization without usage of denmark substitution
+
+	- reports without data now visualize with 0 in metrics and can be downloaded currectly
+
+	- fixed *reporting_events* not showing currect *user_id*
+
+	- fixed system message in preview on media last message in dialogue
+
+	- system messages are now dynamic
+
+	- fixed wrong timezone in reports
+
+	- fixed error message on wrong format contact creation *csv* file
+
+	- fixed clean up of leftover elements in DB on contact deletion
+
+	> elements: private notes, labeling, system messages, attachments
+
+***
+
 ##2022R2
 ###2022R2-5 :briefcase: Epic
 ####New Features

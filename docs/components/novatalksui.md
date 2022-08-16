@@ -8,6 +8,35 @@
 #NovaTalks.UI
 ##Product Notices
 ***
+##2022R3
+###2022R3-1-2 :briefcase: Epic
+####New Features
+- *NovaTalks.UI*: Show password *eye* button [:clipboard: NC2-213] [NC2-213]
+
+	- Button locations:
+	
+		- *Log In* page
+		
+		> host/app/login
+
+		- *Profile Settings* menu for admin and for agent
+
+		> host/app/accounts/1/profile/settings
+
+		- Change agent's profile by administrator in *Agents* menu for **New Password** field and **Confirm New Password** field
+
+		> host/app/accounts/1/settings/agents/list -> **Edit** button
+
+####Bug Fixes
+- *NovaTalks.UI*: Deleted Contact View button in Contact View [:clipboard: NC2-234] [NC2-234]
+
+	> button direct in the same location
+
+- *NovaTalks.UI*: Fixed Team not being visible without Support agent [:clipboard: NC2-235] [NC2-235]
+
+	> team wouldn't be visible to users if the Support user is not in it 
+***
+
 ##2022R2
 ###2022R2-5 :briefcase: Epic
 ####New Features

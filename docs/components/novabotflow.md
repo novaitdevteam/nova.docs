@@ -8,6 +8,66 @@
 #Nova.BotFlow
 ##Product Notices
 ***
+##2022R3
+###2022R3-1-2 :briefcase: Epic
+####New Features
+- *All*: Add sender_type and sender_id for BotAgent messages ignoring [:clipboard: NOV-403] [NOV-403]
+
+	> added fields **sender_type** and **sender_id** for *outgoing* BotAgent messages
+
+- *Instagram*: Instagram messages support [:clipboard: NOV-380] [NOV-380]
+
+	- Connector In does support types:
+
+		- Message with text
+
+		- Message with media (image, video, file,audio)
+
+		- Shares (media/post shares) - same as image
+
+		- Story replies - same as image with caption
+
+		- Inline message replies
+
+		- Stickers (in .gif format)
+
+		- Quick Replies
+
+		- Icebreaker, Generic Template
+
+		- ig.me with referral parameter (**ref** parameter will be written in **payload.ref**)
+
+	- Connector Out does support types:
+
+		- Text
+
+		- Image
+
+		- Generic Template
+
+		- Quick replies
+
+		- Buttons - same as Quick Replies
+
+		- Icebreakers (in node config)
+
+####Bug Fixes
+- *Genesys*: fixed Genesis In node - Bad Request on sending attachments [:clipboard: NOV-399] [NOV-399]
+
+	> **Genesis In** took sessions by **payload.userId** and not by template
+
+	> Bad Request on sending attachments exist on 2+ Receiver nodes
+
+	> (all ChatPlatform exemplars (viber 1, viber 2, ...) have their own endpoint **/files**)
+
+- *All*,*ChatWoot*: fixed ChatWoot nodes dropping rich media formats [:clipboard: NOV-386] [NOV-386]
+
+	> made for old and new core
+
+	> rich media types are stored in the **items** json object 
+
+***
+
 ##2022R2
 ###2022R2-4 :briefcase: Epic
 ####New Features
