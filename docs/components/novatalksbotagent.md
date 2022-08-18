@@ -9,6 +9,37 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-3 :briefcase: Epic
+####New Features
+- *NovaTalks.BotAgent.BA*: Outgoing chat initialization in numbered WhatsApp for business [:clipboard: NC2-230] [NC2-230]
+
+[Outgoing chat functionality](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.1(NovaTalks).docx.pdf)
+
+- *NovaTalks.BotAgent*: Numbered WhatsApp for business Botflow nodes develpment [:clipboard: NC2-253] [NC2-253]
+
+	- Node supports following functionalities:
+	
+		• Text message - incoming and outgoing
+	
+		• Image message - incoming and outgoing 
+	
+		• Video message - incoming
+	
+		• File message (doc, docx, xls, xlsx, pdf, json, html, etc.) - incoming and outgoing
+	
+		• Location message - incoming
+
+		• Group chats - incoming
+	
+		• Typing indicators
+
+####Bug Fixes
+- *NovaTalks.BotAgent*: Meta-Router Plug fix [:clipboard: NC2-238] [NC2-238]
+
+	> wrong facebook client's route
+
+***
+
 ###2022R3-1-2 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent.BA*: Keyboard node *Reply buttons* functionality support [:clipboard: NC2-188] [NC2-188]

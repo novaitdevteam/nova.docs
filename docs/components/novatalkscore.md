@@ -9,6 +9,31 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-3 :briefcase: Epic
+####New Features
+- *NovaTalks.Core.BA*: Increase of dialog filtering parameters [:clipboard: NC2-192] [NC2-192]
+
+> The this task is unification of tasks:
+
+> [:clipboard: NC2-135] [NC2-135]
+
+> [:clipboard: NC2-136] [NC2-136]
+
+> [:clipboard: NC2-137] [NC2-137]
+
+> [:clipboard: NC2-138] [NC2-138]
+
+[Contact and Conversation filtering](./documents/novatalks/NC2-223_Додаткова_фільтрація_Зміни_в_розділі_Contacts_v0.1(NovaTalks).docx.pdf)
+
+- *NovaTalks.Core.BA*: Development of new transfer on agent methods [:clipboard: NC2-220] [NC2-220]
+
+[Most available agent (MAA) specification](./documents/novatalks/NC2-220_Додаткові_схеми_авторозподілу_діалогів_v0.1(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- none
+
+***
+
 ###2022R3-1-2 :briefcase: Epic
 ####New Features
 - *NovaTalks.Core.BA*: Post Call Survey (CSAT) [:clipboard: NC2-192] [NC2-192]

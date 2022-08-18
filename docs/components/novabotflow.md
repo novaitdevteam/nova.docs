@@ -9,6 +9,45 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-3 :briefcase: Epic
+####New Features
+- *Genesys*: Genesys In (Open Messaging API) improvement [:clipboard: NOV-400] [NOV-400]
+
+	- changed UserId template **{{value}}** to **{{{value}}}** because special symbols are translated into url encoding
+	
+	> client's data - id, name, etc. - is saved in global context
+
+- *WhatsApp*: R&D WhatsApp API Client via NodeJS Web Browser App [:clipboard: NOV-364] [NOV-364]
+
+	- Developed new channel of numbered whatsapp based on **whatsapp-web.js** library with support of:
+
+		• text
+
+		• image
+
+		• attachments
+
+		• video
+
+		• location
+
+		• client's contact information sharing
+
+- *Instagram*: Instagram Wallpost Support [:clipboard: NOV-381] [NOV-381]
+
+	> receive events on messages in post comments on client's page
+
+	> only text messages
+
+- *All*: ChatWoot migration to got.js library [:clipboard: NOV-405] [NOV-405]
+
+	> All send request methods (sendMedia, getMediaPayload) in nodes were migrated
+
+####Bug Fixes
+- none
+
+***
+
 ###2022R3-1-2 :briefcase: Epic
 ####New Features
 - *All*: Add sender_type and sender_id for BotAgent messages ignoring [:clipboard: NOV-403] [NOV-403]
@@ -19,42 +58,42 @@
 
 	- Connector In does support types:
 
-		- Message with text
+		• Message with text
 
-		- Message with media (image, video, file,audio)
+		• Message with media (image, video, file,audio)
 
-		- Shares (media/post shares) - same as image
+		• Shares (media/post shares) - same as image
 
-		- Story replies - same as image with caption
+		• Story replies - same as image with caption
 
-		- Inline message replies
+		• Inline message replies
 
-		- Stickers (in .gif format)
+		• Stickers (in .gif format)
 
-		- Quick Replies
+		• Quick Replies
 
-		- Icebreaker, Generic Template
+		• Icebreaker, Generic Template
 
-		- ig.me with referral parameter (**ref** parameter will be written in **payload.ref**)
+		• ig.me with referral parameter (**ref** parameter will be written in **payload.ref**)
 
 	- Connector Out does support types:
 
-		- Text
+		• Text
 
-		- Image
+		• Image
 
-		- Generic Template
+		• Generic Template
 
-		- Quick replies
+		• Quick replies
 
-		- Buttons - same as Quick Replies
+		• Buttons - same as Quick Replies
 
-		- Icebreakers (in node config)
+		• Icebreakers (in node config)
 
 ####Bug Fixes
-- *Genesys*: fixed Genesis In node - Bad Request on sending attachments [:clipboard: NOV-399] [NOV-399]
+- *Genesys*: fixed Genesys In node - Bad Request on sending attachments [:clipboard: NOV-399] [NOV-399]
 
-	> **Genesis In** took sessions by **payload.userId** and not by template
+	> **Genesys In** took sessions by **payload.userId** and not by template
 
 	> Bad Request on sending attachments exist on 2+ Receiver nodes
 
@@ -234,7 +273,7 @@
 
 ###2022R2-1 :briefcase: Epic
 ####New Features
-- *All channels*: Message throttle (message antispam) node [:clipboard: NOV-368] [NOV-368]
+- *All*: Message throttle (message antispam) node [:clipboard: NOV-368] [NOV-368]
 
 	- Node's work mechanism: pass through **X** messages in span of **Y** time; other messages are considered as **blocked**
 	
@@ -262,7 +301,7 @@
 
 	> feature helps sending messages in currect order
 
-- *All channels*: Redis expiration parameter for keys [:clipboard: NOV-353] [NOV-353] 
+- *All*: Redis expiration parameter for keys [:clipboard: NOV-353] [NOV-353] 
 
 	> Value is listed in seconds
 
@@ -435,7 +474,7 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 
 ##2021R4
 ####New Features
-- *All channels*: Developed **Message Queue** node with ability to store messages and retrive then on request [:clipboard: NOV-290] [NOV-290]
+- *All*: Developed **Message Queue** node with ability to store messages and retrive then on request [:clipboard: NOV-290] [NOV-290]
 
 	- created own package based on **node-red-contrib-multiple-queue**
 
@@ -467,7 +506,7 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 
 		• Other
 
-- *All channels*: RedBot 0.19.11 new functionality transfer to Nova.Botflow [:clipboard: NOV-282] [NOV-282]
+- *All*: RedBot 0.19.11 new functionality transfer to Nova.Botflow [:clipboard: NOV-282] [NOV-282]
 - *ABC*: added **Quick Reply** message support [:clipboard: NOV-204] [NOV-204]
 
 	> Available from iOS 15, iPadOS 15, macOS 12 beta 5
@@ -502,7 +541,7 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 
 ##2021R3
 ####New Features
-- *All channels*: added outbound messages [:clipboard: NOV-239] [NOV-239]:
+- *All*: added outbound messages [:clipboard: NOV-239] [NOV-239]:
 	
 	• without specific answer redirect on agent or workgroup\skillgroup 
 	
@@ -519,11 +558,11 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 	• Few bots can be setup on one channel at the same time (in different flows or with switch)
 
 - *WhatsApp (Infobip)*: added support of channel [:clipboard: NOV-184] [NOV-184]
-- *All channels*: added **sessionRefreshTimeout** to **Omilia** conversations [:clipboard: NOV-188] [NOV-188]
+- *All*: added **sessionRefreshTimeout** to **Omilia** conversations [:clipboard: NOV-188] [NOV-188]
 
 	• Mechanism: at the start of conversation sets timer that every time checks if there were messages from client in set timeframe, if messages weren't sent, then it throws up **No Input** event to Omilia
 
-- *All channels*: added functionality to call second Omilia app [:clipboard: NOV-189] [NOV-189]
+- *All*: added functionality to call second Omilia app [:clipboard: NOV-189] [NOV-189]
 
 	> For example: survey application
 
