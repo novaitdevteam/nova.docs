@@ -12,4 +12,4 @@ The following document is an information that describes visual style of document
 
 ***
 
-<figure> <img src="/nova.docs/components/assets/Markup.png" width="800" height"720"> </a> </figure>
+<figure> <img src="components/assets/Markup.png" width="800" height"720"> </a> </figure>

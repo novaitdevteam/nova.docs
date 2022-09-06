@@ -8,6 +8,36 @@
 #NovaTalks.ChatWidget
 ##Product Notices
 ***
+##2022R3
+##2022R3-4
+####New Features
+- *NovaTalks.ChatWidget*: Change of standard Welcome Message promts [:clipboard: NC2-269] [NC2-269]
+
+	> ChatWidget can not have empty Welcome Message
+
+	> Leaving empty Welcome Message in the Inbox setting will fill Welcome Message with standard one
+
+	- Standard prompts changed to:
+
+	- **EN**: Welcome! 👋
+
+	- **RU**: Добро пожаловать! 👋
+
+	- **UA**: Вітаємо! 👋
+
+####Bug Fixes
+- *NovaTalks.ChatWidget*: Fixed problem when regardless of mandatory fields to fill, the chatform require all of them to be filled in [:clipboard: NC2-254] [NC2-254]
+
+- *NovaTalks.ChatWidget*: Fixed problem when locale change does not change Welcome Message promt in ChatWidget [:clipboard: NC2-269] [NC2-269]
+
+- *NovaTalks.ChatWidget*: Fixed problem when ChatWidget style does override standard styles on website [:clipboard: NC2-270] [NC2-270]
+
+	> added new classes
+
+	> wrapped new styles through id
+
+***
+
 ##2022R2
 ###2022R2-3 :briefcase: Epic
 ####New Features

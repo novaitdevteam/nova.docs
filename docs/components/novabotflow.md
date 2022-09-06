@@ -9,6 +9,31 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-4 :briefcase: Epic
+####New Features
+- *Genesys*: Integration with Genesys Cloud BotConnector [:clipboard: NOV-407] [NOV-407]
+
+[BotFlow to Genesys Cloud BotConnector integration](./documents/novatalks/NOV-407_Інтеграція_BotFlow_з_GenesysCloudBotConnector_v0.1.docx.pdf)
+
+- *WhatsApp (Nexmo\Vonage)*: Buttons implementation buttons for ChatBot [:clipboard: NOV-406] [NOV-406]
+
+	- Quick Replies as Postback Buttons
+
+	- Buttons as Postback Buttons
+	
+	- Support of URL buttons
+	
+	> postback buttons do not dissappear from view after postback
+
+####Bug Fixes
+- *WhatsApp Business*: Running of multiple browsers [:clipboard: NOV-413] [NOV-413]
+
+	- added **--disable-dev-shm-usage**
+
+	- correct stop of unwanted browsers (reload, etc.)
+	
+***
+
 ###2022R3-3 :briefcase: Epic
 ####New Features
 - *Genesys*: Genesys In (Open Messaging API) improvement [:clipboard: NOV-400] [NOV-400]
@@ -19,7 +44,7 @@
 
 - *WhatsApp*: R&D WhatsApp API Client via NodeJS Web Browser App [:clipboard: NOV-364] [NOV-364]
 
-	- Developed new channel of numbered whatsapp based on **whatsapp-web.js** library with support of:
+	- Developed new channel of whatsapp business based on **whatsapp-web.js** library with support of:
 
 		• text
 
@@ -465,8 +490,8 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 
 ###2022R1-1 :briefcase: Epic
 ####New Features
-- *WhatsApp (Nexmo)*: migration from API v0.1 to API v1 [:clipboard: NOV-309] [NOV-309]
-- *WhatsApp (Nexmo)*: backwards compatibility with API v0.1 [:clipboard: NOV-309] [NOV-309]
+- *WhatsApp (Nexmo\Vonage)*: migration from API v0.1 to API v1 [:clipboard: NOV-309] [NOV-309]
+- *WhatsApp (Nexmo\Vonage)*: backwards compatibility with API v0.1 [:clipboard: NOV-309] [NOV-309]
 
 ####Bug Fixes
 - none
@@ -600,7 +625,7 @@ Error shown as a red triangle icon under chatbot-chatwoot-botagent-receive node
 - Added node-connector to **Cisco.ECE** [:clipboard: NOV-144] [NOV-144]
 - Added node-connector to **Omilia** [:clipboard: NOV-145] [NOV-145]
 - Added node-connector to **Genesys.PureEngage** [:clipboard: NOV-146] [NOV-146]
-- *WhatsApp (Nexmo)*: added support of channel [:clipboard: NOV-158] [NOV-158]
+- *WhatsApp (Nexmo\Vonage)*: added support of channel [:clipboard: NOV-158] [NOV-158]
 - *WeChat*: added support of channel [:clipboard: NOV-159] [NOV-159]
 - Realized native attachment sending (no URL) for PureEngage [:clipboard: NOV-160] [NOV-160]
 - *ABC*: Added support of **Omilia** buttons for **Apple Chat** [:clipboard: NOV-178] [NOV-178]

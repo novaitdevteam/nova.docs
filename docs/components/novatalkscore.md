@@ -9,6 +9,32 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-4 :briefcase: Epic
+####New Features
+- *NovaTalks.Core*: Notifications - add configuration [:clipboard: NC2-197] [NC2-197]
+
+	- addition of API CRUD methods for adding and changing of the configurations settings
+
+	- different roles for administrator and agent
+
+[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+
+- *NovaTalks.Core*: Notifications - popup notifications on desktop [:clipboard: NC2-231] [NC2-231]
+
+- *NovaTalks.Core.BA*: Ask phone number [:clipboard: NC2-231] [NC2-231]
+
+	- Ask phone number (in telegram, viber, facebook) by button from the agent side in ongoing conversation 
+
+	- Automized addition of phone number to the client's contact card
+
+[Ask Phone number](./documents/novatalks/NC2-231_Запит_телефону_email_v0.1(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- *NovaTalks.Core*: Fixed syntax error in WebSite inbox creation request [:clipboard: NC2-273] [NC2-273]
+
+
+***
+
 ###2022R3-3 :briefcase: Epic
 ####New Features
 - *NovaTalks.Core.BA*: Increase of dialog filtering parameters [:clipboard: NC2-192] [NC2-192]

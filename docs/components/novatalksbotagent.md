@@ -9,6 +9,64 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-4 :briefcase: Epic
+####New Features
+- *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project  [:clipboard: NC2-230] [NC2-230]
+
+	- Changed node names to NovaTalks on front-end
+
+	> all backend node names left unchanged
+	
+	- New **Pop** and **Push** nodes
+	
+	> store **content** object in another object and return it back to the **content** object  
+
+	- New Google Analytics node
+
+<details><summary>Library Dependencies</summary>
+<p>
+```
+info Direct dependencies
+├─ log4js@6.6.1
+└─ node-red-contrib-chronos@1.18.0
+info All dependencies
+├─ flatted@3.2.6
+├─ log4js@6.6.1
+├─ node-red-contrib-chronos@1.18.0
+└─ streamroller@3.1.2
+
+ 
+
+info Direct dependencies
+├─ moment@2.29.4
+└─ underscore@1.13.4
+info All dependencies
+├─ moment@2.29.4
+└─ underscore@1.13.4
+
+ 
+
+info Direct dependencies
+├─ lodash@4.17.21
+└─ mime-types@2.1.35
+info All dependencies
+├─ ieee754@1.2.1
+├─ lodash@4.17.21
+├─ mime-db@1.52.0
+├─ mime-types@2.1.35
+├─ peek-readable@5.0.0
+├─ readable-web-to-node-stream@3.0.2
+├─ strtok3@7.0.0
+└─ token-types@5.0.1
+```
+</p>
+</details>
+
+####Bug Fixes
+- none
+
+***
+
 ###2022R3-3 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent.BA*: Outgoing chat initialization in numbered WhatsApp for business [:clipboard: NC2-230] [NC2-230]

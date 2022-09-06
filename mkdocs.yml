@@ -106,7 +106,9 @@ nav:
         - ChatsConnector: components/documents/chatsconnector/chatsconnectortoc.md
         - BotConnector: components/documents/botconnector/botconnectortortoc.md
         - BotFlow: components/documents/botflow/botflowtoc.md
-        - NovaTalks: components/documents/novatalks/novatalkstoc.md
+        - Nova.Talks:
+            - Flowcharts: components/documents/novatalks/novatalkstoc.md
+            - Checklists: components/documents/novatalks/novatalkstesting.md
 
 theme:
   name: null

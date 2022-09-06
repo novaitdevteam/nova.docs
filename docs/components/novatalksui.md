@@ -9,6 +9,27 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-4 :briefcase: Epic
+####New Features
+- *NovaTalks.UI*: Notifications - music play [:clipboard: NC2-202] [NC2-202]
+
+- *NovaTalks.UI*: Notifications - blinking icon on browser's tab [:clipboard: NC2-201] [NC2-201]
+
+####Bug Fixes
+- *NovaTalks.UI*: Fixed corrupted endpoint for Change system language [:clipboard: NC2-272] [NC2-272]
+
+- *NovaTalks.UI*: Fixed conversation dissappearing from list after filter tab change [:clipboard: NC2-278] [NC2-278]
+
+- *NovaTalks.UI*: Fixed canned response search not refiltering results by short code [:clipboard: NC2-281] [NC2-281]
+
+- *NovaTalks.UI*: Fixed canned response search causing Navigation Duplication error on conversation transition [:clipboard: NC2-282] [NC2-282]
+
+- *NovaTalks.UI*: Fixed problem when canned response is not fully visualized in message entry field [:clipboard: NC2-268] [NC2-268]
+
+- *NovaTalks.UI*: Fixed incorrect writing of Agent status to Redis DB [:clipboard: NC2-266] [NC2-266]
+
+***
+
 ###2022R3-1-2 :briefcase: Epic
 ####New Features
 - *NovaTalks.UI*: Show password *eye* button [:clipboard: NC2-213] [NC2-213]
@@ -48,7 +69,7 @@
 
 - *NovaTalks.UI.BA*: Notifications support in UI [:clipboard: NC2-76] [NC2-76]
 
-[New table with agents' events](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
 
 ####Bug Fixes
 - *NovaTalks.UI*: Visual bug fix [:clipboard: NC2-182] [NC2-182]
