@@ -9,9 +9,28 @@
 ##Product Notices
 ***
 ##2022R3
+##2022R3-5
+####New Features
+- *NovaTalks.BotAgent*: Post Call Survey - flow scenario [:clipboard: NC2-227] [NC2-227]
+
+	- CSAT scenario, by standard, is started when conversation changes status to **Resolved** 
+
+	- CSAT works in chatwidget and messengers
+
+	- CSAT logic doesn't change conversation status to **Open**
+
+- *NovaTalks.BotAgent*: Write first to the client (WhatsApp Business) [:clipboard: NC2-258] [NC2-258]
+
+	- Added **Default transport** and **Default config** in **	chatbot-chatwoot-connector-out** to use for outbound messaging
+
+[Write first outbound messaging WhatApp Business](NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- none
+***
 ###2022R3-4 :briefcase: Epic
 ####New Features
-- *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project  [:clipboard: NC2-230] [NC2-230]
+- *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project  [:clipboard: NC2-243] [NC2-243]
 
 	- Changed node names to NovaTalks on front-end
 

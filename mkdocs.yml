@@ -25,8 +25,8 @@ nav:
                     - Line: components/botconnector/lineconnector.md
                     - Slack: components/botconnector/slackconnector.md
                     - WhatsApp: components/botconnector/whatsappconnector.md
-                    - Kik: components/botconnector/kikconnector.md
                     - Nexmo (WhatsApp): components/botconnector/nexmoconnector.md
+                    - Kik: components/botconnector/kikconnector.md
                     - Vkontakte: components/botconnector/vkconnector.md
                     - Odnoklassniki: components/botconnector/okconnector.md
                     - WebChat: components/botconnector/webchatconnector.md
@@ -49,9 +49,11 @@ nav:
                     - Slack: components/botflow/slackflow.md
                     - Apple Business Chat: components/botflow/abcflow.md
                     - WhatsApp: components/botflow/whatsappflow.md
-                    - Kik: components/botflow/kikflow.md
+                    - WhatsApp BC: components/botflow/whatsappBCflow.md
+                    - WhatsApp WEB: components/botflow/whatsappWEBflow.md
                     - Nexmo (WhatsApp): components/botflow/nexmoflow.md
                     - Smooch (WhatsApp): components/botflow/smoochflow.md
+                    - Kik: components/botflow/kikflow.md
                     - Vkontakte: components/botflow/vkflow.md
                     - Odnoklassniki: components/botflow/okflow.md
                     - Infobip (WhatsApp): components/botflow/infobipflow.md

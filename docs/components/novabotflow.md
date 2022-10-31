@@ -9,6 +9,124 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-5 :briefcase: Epic
+####New Features
+- *Genesys*: Facebook WhatsApp Business Platform Cloud API [:clipboard: NOV-379] [NOV-379]
+
+<details><summary>Nova.Botflow to WhatsApp</summary>
+<p>
+```
+	- Text
+	- Media (one pre message, [supported content types](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types):
+	- Images
+		- image/jpeg, image/png
+		- Images must be 8-bit, RGB or RGBA
+		- 5MB Size Limit
+	- Video
+		- video/mp4, video/3gp
+		- Only H.264 video codec and AAC audio codec is supported.
+		- We support videos with a single audio stream or no audio stream.
+		- 16MB Size Limit
+	- Document
+		- text/plain, application/pdf, application/vnd.ms-powerpoint, application/msword, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+		- 100MB Size Limit
+	- Audio
+		- audio/aac, audio/mp4, audio/mpeg, audio/amr, audio/ogg (only opus codecs, base audio/ogg is not supported)
+		- 16MB Size Limit
+	- Location
+	- Rich Media:
+		- inline buttons AS reply button
+		- quick reply AS reply button
+		- generic template AS reply button
+```
+</p>
+</details>
+<details><summary>WhatsApp to Nova.Botflow</summary>
+<p>
+```
+	- Text
+	- Media (one pre message, [supported content types](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types):
+	- Images
+		- image/jpeg, image/png
+		- Images must be 8-bit, RGB or RGBA
+		- 5MB Size Limit
+	- Video
+		- video/mp4, video/3gp
+		- Only H.264 video codec and AAC audio codec is supported.
+		- We support videos with a single audio stream or no audio stream.
+		- 16MB Size Limit
+		- Document
+		- text/plain, application/pdf, application/vnd.ms-powerpoint, application/msword, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+		- 100MB Size Limit
+	- Audio
+		- audio/aac, audio/mp4, audio/mpeg, audio/amr, audio/ogg (only opus codecs, base audio/ogg is not supported)
+		- 16MB Size Limit
+	- Sticker (Type: Photo)
+		- image/webp
+		- Static stickers: 100KB Size Limit
+		- Animated stickers: 500KB Size Limit
+	- Location
+	- Share contact (Type: Contact)
+	- Reply to message (reply) (Type: Text)
+	- Reply to rich media:
+		- list (list message)
+		- Buttons (reply button)
+	- Mark message as "Seen" (Type: Events)
+```
+</p>
+</details>
+
+- **Installation**:
+```
+	- Create business account on Meta for Developers
+	- Create new app (in "my apps") with "bussiness" type. In settings fill in its name, email and add bussiness account
+	- In app's dashboard add WhatsApp in products list
+	- In WhatsApp product tab, "getting started" option, add bussiness phone number (step 5) from which the customer will converse
+	- Add webhook in "configuration", subscribe to events ("messages" is mandane event) and add verification token
+	- On "verify" request the following GET request will be sent on webhook:
+```
+<details><summary>Request /webhooks</summary>
+<p>
+``` bash
+curl -X GET https://www.your-clever-domain-name.com/webhooks?
+  hub.mode=subscribe&
+  hub.challenge=NUMBER&
+  hub.verify_token=TOKEN
+```
+</p>
+</details>
+
+	- Create permanent token:
+		- Enter "business manager" -> "System users" (https://business.facebook.com/settings/system-users)
+		- Create new system user with "admin" type
+		- Add assets for this user (application with permission "application testing"
+		- Use "generate new token"
+	- Send test message:
+
+<details><summary>Request /messages</summary>
+<p>
+``` json
+https://graph.facebook.com/v13.0/{{phone_number_id}}/messages
+  Authorization: Bearer {{TOKEN}}
+
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "XXXXX",
+  "type": "text",
+  "text": {
+    "preview_url": false,
+    "body": "MESSAGE_TEXT"
+  }
+}
+```
+</p>
+</details>
+
+####Bug Fixes
+- none
+***
+
 ###2022R3-4 :briefcase: Epic
 ####New Features
 - *Genesys*: Integration with Genesys Cloud BotConnector [:clipboard: NOV-407] [NOV-407]

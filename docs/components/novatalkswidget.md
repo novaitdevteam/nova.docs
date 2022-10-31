@@ -9,6 +9,17 @@
 ##Product Notices
 ***
 ##2022R3
+##2022R3-5
+####New Features
+- none
+
+####Bug Fixes
+- *NovaTalks.ChatWidget*: Fixed chatwidget style conflict on websites[:clipboard: NC2-317] [NC2-317]
+
+	- Standard css styles in chatwidget overrided styles on client's websites 
+
+***
+
 ##2022R3-4
 ####New Features
 - *NovaTalks.ChatWidget*: Change of standard Welcome Message promts [:clipboard: NC2-269] [NC2-269]

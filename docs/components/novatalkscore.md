@@ -9,6 +9,70 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-6 :briefcase: Epic
+####New Features
+- *NovaTalks.Core.BA*: Additional chats autoassigment schematics - Queues [:clipboard: NC2-319] [NC2-319]
+
+	> autoassignment of unassigned conversations
+
+[Additional chats autoassigment schematics - Queues](./documents/novatalks/NC2-220_Черги_Додаткові_схеми_авторозподілу_діалогів_v0.3(NovaTalks).docx.pdf)
+
+- *NovaTalks.Core.BA*: Realtime Statistics [:clipboard: NC2-105] [NC2-105]
+
+[Realtime Statistics specification](./documents/novatalks/NC2-105_Звіти_RealTime_v0.2(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- *NovaTalks.Core*: Fixed comversation search performance [:clipboard: NC2-326] [NC2-326]
+
+	• Built index **index_conversations_on_additional_attributes_chat_id** on **additional_attributes** field to improve conversation search performance 
+
+- *NovaTalks.Core*: Fixed labels deletion from database on contact deletion [:clipboard: NC2-339] [NC2-339]
+
+	> contact deletion erases all constrained with it entities
+
+	• Deletion of client's contact will initiate cascade deletion of all taggings assosiated with it's **taggable_id**
+
+	• Deletion of client's contact will initiate cascade deletion of all conversations assosiated with it's **taggable_id**, and, therefore, will also delete all taggings assosiated with deleted conversations' **taggable_id**
+	
+***
+
+###2022R3-5 :briefcase: Epic
+####New Features
+- *NovaTalks.Core*: Write first to the client (WhatsApp Business) [:clipboard: NC2-256] [NC2-256]
+
+	- New additional attributes to the inbox channels in database
+
+	> example:
+
+	>[{"can_write_first_to_a_new_client ": "1",
+
+	> "channel_for_writing_first_to_a_new client": "whatsapp"}]
+
+[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+
+- *NovaTalks.Core*: Filtration by addtional_attributes [:clipboard: NC2-301] [NC2-301]
+
+|Attrbute name - attribute_key | Attribute values                            | Attribute models                       |
+|:---:                         |:---:                                        |:---:                                   |
+|status	                       | 'open','resolved','pending','snoozed','all' | "attribute_model": "standard"          |
+|assignee_id                   | Integer                                     | "attribute_model": "standard"          |
+|inbox_id	Число	           | Integer                                     | "attribute_model": "standard"          |
+|team_id	Число	           | Integer                                     | "attribute_model": "standard"          |
+|display_id	Строка	           | String                                      | "attribute_model": "standard"          |
+|labels	Масив строк	           | String array                                | "attribute_model": "standard"          |
+|Other	                       |                                             | "attribute_model": "custom_attributes" |
+
+- *NovaTalks.Core*: Logging additional events into a database [:clipboard: NC2-186] [NC2-186]
+
+[BD's additional events logging](./documents/novatalks/NC2-176_1_БД_Логування_додаткових_подій_v0.3(NovaTalks).docx.pdf)
+
+[New table with agents' events](./documents/novatalks/NC2-176_2_БД_NewTable_Події_операторів_v0.1(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- *NovaTalks.UI, Core*: Fixed problem when page refresh mark all conversations as seen [:clipboard: NC2-296] [NC2-296]
+
+***
+
 ###2022R3-4 :briefcase: Epic
 ####New Features
 - *NovaTalks.Core*: Notifications - add configuration [:clipboard: NC2-197] [NC2-197]
@@ -31,7 +95,6 @@
 
 ####Bug Fixes
 - *NovaTalks.Core*: Fixed syntax error in WebSite inbox creation request [:clipboard: NC2-273] [NC2-273]
-
 
 ***
 

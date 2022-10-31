@@ -9,6 +9,284 @@
 ##Product Notices
 ***
 ##2022R3
+###2022R3-6 :briefcase: Epic
+####New Features
+- *NovaTalks.UI*: Draft saving for messages and private notes [:clipboard: NC2-320] [NC2-320]
+
+	> Draft saving for agent's messages and private notes when he travels between menus\conversations
+	
+	> Will reset on page refresh
+
+- *NovaTalks.UI*: MAA - autoassignment method with Team and Inbox utilization [:clipboard: NC2-262] [NC2-262]
+
+> Check utilization on agent (identification by **access_token**):
+
+<details><summary>/api/v1/accounts/{accountId}/conversations/pool</summary>
+<p>
+```
+[
+  {}
+]
+```
+</p>
+</details>
+	
+> Check utilization distribution:
+
+<details><summary>/api/v1/accounts/{accountId}/conversations/queue</summary>
+<p>
+```
+[
+]
+```
+</p>
+</details>
+
+[Additional chats autoassigment schematics - Queues](./documents/novatalks/NC2-220_Черги_Додаткові_схеми_авторозподілу_діалогів_v0.3(NovaTalks).docx.pdf)
+
+####Bug Fixes
+- none
+
+***
+
+###2022R3-5 :briefcase: Epic
+####New Features
+- *NovaTalks.UI*: Write first to the client (WhatsApp Business) - changes to the contact form [:clipboard: NC2-138] [NC2-138]
+
+	- Changes to fields in Contacts list table
+	
+	> deleted rudamental fields: **Company, City, Country**
+
+	> added **Last Activity** field
+	
+	> added **Conversations** counter field
+
+	- Changes on the Contact Details page
+	
+	> added **Conversations** submenu to the side bar with direct linking to the conversation
+
+[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+
+- *NovaTalks.UI*: Write first to the client (WhatsApp Business) [:clipboard: NC2-257] [NC2-257]
+
+	- Added transport channel pictures for WhatsApp WEB and WhatsApp Business
+
+	- Default transport and bot config in *chatbot-chatwoot-connector-out* node 
+
+	> Default transport and bot config are needed for create message structure if botId was not provided
+
+	- Implemented *Can write first* function to the inbox entity
+
+	> Ability to write outbound message to WhatsApp channel number with creation of new conversation under this contact
+
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/send_outbound_messages</summary>
+<p>
+``` json
+{
+  "inbox_id": 1,
+  "contact_id": 1,
+  "additional_attributes": {
+    "botId": "aab9c9a92923c5b2",
+    "chatId": 43220521,
+    "contactSource": "telegram"
+  },
+  "message": {
+    "content": "hello"
+  },
+  "contact": {
+    "phoneNumber": "+1234"
+  }
+}
+```
+</p>
+</details>
+
+<details><summary>"additional_settings" - addition to Inbox requests </summary>
+<p>
+``` json
+{
+"additional_settings":
+	{
+		"can_write_first_to_a_new_client": true,
+		"channel_for_writing_first_to_a_new_client": "string"
+	}
+}
+```
+</p>
+</details>
+
+[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+
+- *NovaTalks.UI*: Labels visualization in conversation previews [:clipboard: NC2-323] [NC2-323]
+
+> tags placing is adaptive to their length and will transfer to the new line if there are not enough place 
+
+- *NovaTalks.UI*: Post Call Survey - part 1 [:clipboard: NC2-226] [NC2-226]
+
+> CSAT can be enabled in the Inbox settings
+
+	- CSAT functionality implemented as a Nova.Botflow scenario
+	
+	- CSAT scenario, by standard, is started when conversation changes status to **Resolved** 
+
+<details><summary>GET /api/v1/accounts/{accountId}/csat</summary>
+<p>
+``` json
+
+```
+</p>
+</details>
+
+<details><summary>POST /api/v1/accounts/{accountId}/csat</summary>
+<p>
+``` json
+{
+  "contact_id": 1,
+  "conversation_id": 1,
+  "message_id": 1,
+  "rating": 1
+}
+```
+</p>
+</details>
+
+<details><summary>GET /api/v1/accounts/{accountId}/csat/{csatId}</summary>
+<p>
+``` json
+
+```
+</p>
+</details>
+
+<details><summary>PATCH /api/v1/accounts/{accountId}/csat/{csatId}</summary>
+<p>
+``` json
+{
+  "rating": 1
+}
+```
+</p>
+</details>
+
+[Post Call Survey - specification for part 1](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+
+- *NovaTalks.UI*: Notifications [:clipboard: NC2-198] [NC2-198]
+
+> Global settings do not require rights check (API, in UI only admin users have this option)
+
+> Help section is on the right side description and is highlighted on hovering over the option
+
+<details><summary>POST /api/v1/notification_subscriptions</summary>
+<p>
+``` json
+{
+"additional_settings":
+	{
+		"can_write_first_to_a_new_client": true,
+		"channel_for_writing_first_to_a_new_client": "string"
+	}
+}
+```
+</p>
+</details>
+
+<details><summary>GET/PATCH /api/v1/accounts/{accountId}/notification_settings/global</summary>
+<p>
+``` json
+{
+  "notification_settings": {
+    "selected_notification_setting_flags": [
+      "conversation_creation_sound",
+      "conversation_assignment_pop_up",
+      "conversation_mention_blink"
+    ],
+    "selected_creation_sound": "creation.mp3",
+    "selected_assignment_sound": "assignment.mp3",
+    "selected_new_message_sound": "new_message.mp3",
+    "selected_mention_sound": "mention.mp3"
+  }
+}
+```
+</p>
+</details>
+
+<details><summary>GET/PATCH /api/v1/accounts/{accountId}/notification_settings</summary>
+<p>
+``` json
+{
+  "notification_settings": {
+    "selected_notification_setting_flags": [
+      "conversation_creation_sound",
+      "conversation_assignment_pop_up",
+      "conversation_mention_blink"
+    ],
+    "selected_creation_sound": "creation.mp3",
+    "selected_assignment_sound": "assignment.mp3",
+    "selected_new_message_sound": "new_message.mp3",
+    "selected_mention_sound": "mention.mp3"
+  }
+}
+```
+</p>
+</details>
+
+<details><summary>GET /api/v1/accounts/{accountId}/notifications/unread_count</summary>
+<p>
+``` json
+{
+	integer
+}
+```
+</p>
+</details>
+
+<details><summary>POST /api/v1/accounts/{accountId}/notifications/read_all</summary>
+<p>
+``` json
+{
+  "id": 1,
+  "account_id": 1,
+  "user_id": 1,
+  "all_notification_setting_flags": [],
+  "selected_notification_setting_flags": [],
+  "selected_creation_sound": "creation.mp3",
+  "selected_assignment_sound": "assignment.mp3",
+  "selected_new_message_sound": "new_message.mp3",
+  "selected_mention_sound": "mention.mp3"
+}
+```
+</p>
+</details>
+
+[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+
+- *NovaTalks.UI*: Hide snoozed status menu [:clipboard: NC2-239] [NC2-239]
+
+> Snoozed functionality, in overall, does conflict with Core and Botflow additions
+
+- *NovaTalks.UI.BA*: Outbound message in resolved conversation [:clipboard: NC2-157] [NC2-157]
+
+> When agent will write in the resolved conversation, the conversation will be assigned to him and set in status "Open"
+
+[Outbound message in resolved conversation specification](./documents/novatalks/NC2-157_Settings_Agent_writes_in_resolved_or_unassigned_conversation_v0.2(NovaTalks).docx.docx.pdf)
+
+####Bug Fixes
+- *NovaTalks.UI*: Fixed agent name visualization in conversarsation channels using wrong field [:clipboard: NC2-327] [NC2-327]
+
+- *NovaTalks.UI, Core*: Fixed problem when page refresh mark all conversations as seen [:clipboard: NC2-296] [NC2-296]
+
+- *NovaTalks.UI*: Fixed wrong chat counter visualization[:clipboard: NC2-294] [NC2-294]
+
+	- On high loads every new conversation or status change of existing conversation initiated counter change which in return caused chaotic counter values visualization
+	
+	- For route **/conversations/meta** stated ratelimit (throttling) with **avarage** and **burst** parameters
+
+- *NovaTalks.UI*: Fixed assignee and team visualization [:clipboard: NC2-295] [NC2-295]
+
+> On trasfer, the agent and team visualized in UI on page refresh
+
+***
+
 ###2022R3-4 :briefcase: Epic
 ####New Features
 - *NovaTalks.UI*: Notifications - music play [:clipboard: NC2-202] [NC2-202]
@@ -289,18 +567,22 @@
 
 	• Redis integration
 
-<details><summary>Variables and their default values</summary>
-<p>
-```
-Environment variables:
+Variables and their default values:
 
+<details><summary>Environment variables</summary>
+<p>
+``` js
 LOGIN_STATUS='busy'
 #status of agent on login
 LOGOUT_TIMEOUT_OFFLINE=10000
 #websocket connection timeout time
+```
+</p>
+</details>
 
-Redis settings:
-
+<details><summary>Redis environment variables</summary>
+<p>
+``` js
 REDIS_PORT=6379
 REDIS_HOST='127.0.0.1'
 REDIS_PASSWORD=''
@@ -311,7 +593,6 @@ AGENT_STATE='AgentState::'
 #HashMap name for user state storage
 ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 #HashMap name where original ChatWoot store user state
-
 ```
 </p>
 </details>
@@ -343,25 +624,30 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 
 - *NovaTalks.UI*: LDAP authentification [:clipboard: NC2-42] [NC2-42]
 
-	- Changed Login payload to:
-		```
-		{
-			password: "Rokdestbob322!!"
-			sso_auth_token: ""
-			username: "voll@gmail.com"
-		}
-		```
 	- **Authorization flow**:
 
 		1. Sending payload with password and username (mandatory field) on login
 
 		2. On receiving, the backend checks in DB if user exist by **uid** (which is username) field
 
-		3. If **doesn't exist** - failed
-		
 		3. If **exist** - determine authorization method by **provider** field
 
-		5. Authorization according to choosen method
+		> If **doesn't exist** - failed
+
+		4. Authorization according to choosen method
+
+<details><summary>Changed Log In payload</summary>
+<p>
+
+``` json
+{
+	password: "Rokdestbob322!!"
+	sso_auth_token: ""
+	username: "voll@gmail.com"
+}
+```
+</details>
+</p>
 
 - *NovaTalks.UI*: User creation with different provider authentification [:clipboard: NC2-44] [NC2-44]
 
@@ -518,7 +804,7 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 <details><summary>Envirounment variables in config</summary>
 <p>
 
-```		
+```	js	
 SERVER_HOST=0.0.0.0
 SERVER_PORT=3001
 RUBY_HOST=http://srv-captain--novachats2-demo-chatwoot-web:3000
@@ -527,12 +813,13 @@ NOVA_CHATS_ENGINE_HOST=http://srv-captain--novachats2-demo-engine:3000
 NOVA_CHATS_PURECONNECT_CONNECTOR=http://srv-captain--novachats2-demo-pureconnect-connector:8000
 GENESYS_STATUS_ONLINE=Available
 GENESYS_STATUS_BUSY=Do Not disturb
-
-GENESYS_STATUS_ONLINE and GENESYS_STATUS_BUSY - statusId in Genesys.
-If does not exist, then sort by alphabet and choose first by isAcdStatus (true for "ONLINE" and false for "BUSY")
 ```
 </p>
 </details>
+
+> GENESYS_STATUS_ONLINE and GENESYS_STATUS_BUSY - statusId in Genesys.
+
+> If does not exist, then sort by alphabet and choose first by isAcdStatus (true for "ONLINE" and false for "BUSY")
 
 ***
 
@@ -576,13 +863,13 @@ If does not exist, then sort by alphabet and choose first by isAcdStatus (true f
 
 		> Channel name (source) extracted from field: **additionalAttributes.contactSource**
 
-		> Icons are stored in ./assets/dashboard/images/channels
+		> Icons are stored in **./assets/dashboard/images/channels**
 
 	- **Contact Card - contact header**:
 
 		• Mini icon: shows messanger icon by it's type stored in Conversation's attributes
 
-		> Icons are stored in ./assets/dashboard/images/channels
+		> Icons are stored in **./assets/dashboard/images/channels**
 
 		• Mini title: prints messanger name from it's type stored in Conversation's attributes
 
@@ -596,25 +883,25 @@ If does not exist, then sort by alphabet and choose first by isAcdStatus (true f
 
 		> Concatenation result is stored in Vue store
 
-<details><summary>"additionalAttributes"</summary>
+<details><summary>"additionalAttributes" - Send to Genesys format</summary>
 <p>
-```
-Sent to genesys	format:
-
-additionalAttributes: {
-      nova_contactName: '{firstname} {lastname}',
-      nova_contactEmail: '{userid}@{source}',
-      nova_contactChatId: '{chatId}',
-      nova_contactUserId: '{userid}',
-      nova_contactChannelId: '{channel}',
-      nova_contactSource: '{source}',
-	  
-	  Restriction:
-	  without "contactSource" parameter the avatar wouldn't showup
-   }
+``` json
+{
+"additionalAttributes":
+	{
+		"nova_contactName": "{firstname} {lastname}",
+		"nova_contactEmail": "{userid}@{source}",
+		"nova_contactChatId": "{chatId}",
+		"nova_contactUserId": "{userid}",
+		"nova_contactChannelId": "{channel}",
+		"nova_contactSource": "{source}",
+	}
+}
 ```
 </p>
 </details>
+  
+> Restriction: without "contactSource" parameter the avatar wouldn't show up
 
 ####Bug Fixes
 - none
