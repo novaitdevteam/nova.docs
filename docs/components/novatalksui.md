@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false
@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2022R3
-###2022R3-6 :briefcase: Epic
+###2022R3-6 :briefcase: Epic 
 ####New Features
 - *NovaTalks.UI*: Draft saving for messages and private notes [:clipboard: NC2-320] [NC2-320]
 
@@ -17,11 +17,17 @@
 	
 	> Will reset on page refresh
 
+- *NovaTalks.UI*: Adding messengers to select on the widget [:clipboard: NC2-348] [NC2-348]
+
+	> Added additional parameters to the widget configuration section for selecting messengers, namely Instagram, Line.
+
+	> Updated the script for the widget.
+
 - *NovaTalks.UI*: MAA - autoassignment method with Team and Inbox utilization [:clipboard: NC2-262] [NC2-262]
 
 > Check utilization on agent (identification by **access_token**):
 
-<details><summary>/api/v1/accounts/{accountId}/conversations/pool</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/pool</summary>
 <p>
 ```
 [
@@ -33,7 +39,7 @@
 	
 > Check utilization distribution:
 
-<details><summary>/api/v1/accounts/{accountId}/conversations/queue</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/queue</summary>
 <p>
 ```
 [
@@ -42,7 +48,7 @@
 </p>
 </details>
 
-[Additional chats autoassigment schematics - Queues](./documents/novatalks/NC2-220_Черги_Додаткові_схеми_авторозподілу_діалогів_v0.3(NovaTalks).docx.pdf)
+[Additional chats autoassigment schematics - Queues](https://drive.google.com/drive/folders/1vEhGK7vabQL-n7c5CtolEJ74_s3I_wZg)
 
 ####Bug Fixes
 - none
@@ -65,7 +71,7 @@
 	
 	> added **Conversations** submenu to the side bar with direct linking to the conversation
 
-[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+[Write first outbound messaging WhatApp Business](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
 
 - *NovaTalks.UI*: Write first to the client (WhatsApp Business) [:clipboard: NC2-257] [NC2-257]
 
@@ -115,7 +121,7 @@
 </p>
 </details>
 
-[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+[Write first outbound messaging WhatApp Business](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
 
 - *NovaTalks.UI*: Labels visualization in conversation previews [:clipboard: NC2-323] [NC2-323]
 
@@ -168,7 +174,7 @@
 </p>
 </details>
 
-[Post Call Survey - specification for part 1](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+[Post Call Survey - specification for part 1](https://drive.google.com/drive/folders/1v8A5g681VFrooYz_mXkF2cH2BSENxIp_)
 
 - *NovaTalks.UI*: Notifications [:clipboard: NC2-198] [NC2-198]
 
@@ -258,7 +264,7 @@
 </p>
 </details>
 
-[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+[Notifications functionality specification](https://drive.google.com/drive/folders/1rU0RPuJ_wzQaDuXy6bsLxDKMB28RW3hb)
 
 - *NovaTalks.UI*: Hide snoozed status menu [:clipboard: NC2-239] [NC2-239]
 
@@ -268,7 +274,7 @@
 
 > When agent will write in the resolved conversation, the conversation will be assigned to him and set in status "Open"
 
-[Outbound message in resolved conversation specification](./documents/novatalks/NC2-157_Settings_Agent_writes_in_resolved_or_unassigned_conversation_v0.2(NovaTalks).docx.docx.pdf)
+[Outbound message in resolved conversation specification](https://drive.google.com/drive/folders/1uA86aUE0VP8zU-4vwjvRW3fYAdAzX8mN)
 
 ####Bug Fixes
 - *NovaTalks.UI*: Fixed agent name visualization in conversarsation channels using wrong field [:clipboard: NC2-327] [NC2-327]
@@ -347,7 +353,7 @@
 
 - *NovaTalks.UI.BA*: Notifications support in UI [:clipboard: NC2-76] [NC2-76]
 
-[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+[Notifications functionality specification](https://drive.google.com/drive/folders/1rU0RPuJ_wzQaDuXy6bsLxDKMB28RW3hb)
 
 ####Bug Fixes
 - *NovaTalks.UI*: Visual bug fix [:clipboard: NC2-182] [NC2-182]

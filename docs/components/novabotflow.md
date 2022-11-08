@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false
@@ -9,9 +9,9 @@
 ##Product Notices
 ***
 ##2022R3
-###2022R3-5 :briefcase: Epic
+###2022R3-6 :briefcase: Epic
 ####New Features
-- *Genesys*: Facebook WhatsApp Business Platform Cloud API [:clipboard: NOV-379] [NOV-379]
+- *WhatsApp Business*: Facebook WhatsApp Business Platform Cloud API [:clipboard: NOV-379] [NOV-379]
 
 <details><summary>Nova.Botflow to WhatsApp</summary>
 <p>
@@ -123,6 +123,108 @@ https://graph.facebook.com/v13.0/{{phone_number_id}}/messages
 </p>
 </details>
 
+-  Nova.BotFlow: Integration with Line messenger. [:clipboard: NOV-423] [NOV-423]
+	- Added integration with line messenger.
+
+<details><summary>Features</summary>
+<p>
+```
+	    Text message
+Both directions: agent  client, client  agent
+• Maximum character limit is 5000
+
+		Pictures
+Both directions: agent  client, client  agent
+• Formats: JPEG, PNG
+• Maximum image size: no limit
+• Maximum file size: 10MB
+
+		Files
+Both directions: agent  client, client  agent
+• File size up to 300MB
+• There is a storage period of 30 days only for files larger than 50MB
+• The total storage (Keep) limit is 1GB
+• Most items can be saved in Keep for any length of time
+• Maximum length of video: no limit
+• Maximum video file size: 200MB (unofficially, can be up to 300MB, but only if there wont be API timeout)
+
+		Emoji
+Both directions: agent  client, client  agent
+• Maximum of 20 LINE emoji's
+
+		Quick Replies
+Quick Replies are supported as a disappearing after click/tap buttons
+• Type: quickReply
+• Maximum content length is 5000 characters
+• Maximum 13 buttons
+• Maximum label length is 20 characters
+
+		Card
+Card is supported as a monolith structure of Picture, Title with Subtitle and buttons
+• Type buttons template
+• Maximum label length is 20 characters
+• Maximum title length is 40 characters
+• Maximum subtitle length is 60 characters
+
+		Button List
+Button List is supported as a Content with number of buttons positioned vertically
+• Type Flex message
+• Maximum label length is 20 characters
+
+		Button Grid
+Button Grid is supported as a Content with number of buttons positioned vertically
+• Type Flex message
+• Maximum label length is 20 characters
+
+		Carousel
+Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)
+• Type: carousel template
+• Maximum 10 cards
+• Maximum label length is 20 characters
+• Maximum title length is 40 characters
+• Maximum subtitle length is 60 characters
+• All messages in a carousel must have the same number of images, buttons, and fields
+• Pictures are must be in JPEG or PNG image with a maximum width of 1024 pixels. The image URL maximum is 1,000 characters
+```
+</p>
+</details>
+
+####Bug Fixes
+-  *WhatsApp* Nexmo (Vonage). Implementation List Messages for WhatsApp (for ChatBot) [:clipboard: NOV-415] [NOV-415]
+	- Implemented support for WhatsApp List Messages (List Picker):
+
+		• Maximum a menu of up to 10 options
+		
+		• Maximum header length 60 characters 
+		
+		• Maximum message length 1,024 characters
+		
+		• Maximum footer length up to 60 characters
+		
+		• Maximum label length (button text) up to 20 characters
+		
+		• List of items must have at least one section
+		
+		• List section must contain at least one item
+
+
+-  Request is not sent via sender. [:clipboard: NOV-421] [NOV-421]
+	- Fixed sending phone number and geolocation request.
+	> Added support for requesting a number \ location using the keyboard.
+	
+	> Visually displayed telegram support for this type of keyboard buttons.
+
+-  NovaBotflow. GenesysPureCloud more than one configurations does not work. [:clipboard: NOV-414] [NOV-414]
+	- Fixed inability to write to GenesysPureCloud with more than 1 connection configuration.
+	> Two or more configurations which use the same AWS region could overwrite each others authorization data.
+
+
+	
+***
+###2022R3-5 :briefcase: Epic
+####New Features
+- none
+
 ####Bug Fixes
 - none
 ***
@@ -131,7 +233,7 @@ https://graph.facebook.com/v13.0/{{phone_number_id}}/messages
 ####New Features
 - *Genesys*: Integration with Genesys Cloud BotConnector [:clipboard: NOV-407] [NOV-407]
 
-[BotFlow to Genesys Cloud BotConnector integration](./documents/novatalks/NOV-407_Інтеграція_BotFlow_з_GenesysCloudBotConnector_v0.1.docx.pdf)
+[BotFlow to Genesys Cloud BotConnector integration](https://drive.google.com/drive/folders/1whTZvHG4W63oKRtS3eX2e3L0r2dcbhIH)
 
 - *WhatsApp (Nexmo\Vonage)*: Buttons implementation buttons for ChatBot [:clipboard: NOV-406] [NOV-406]
 

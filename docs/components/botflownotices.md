@@ -1,12 +1,12 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--datelink-botflow-start-->"
    end="<!--datelink-botflow-end-->"
    rewrite-relative-urls=true
 %}
 
 {%
-   include-markdown ".\glossary.md"
+   include-markdown "./glossary.md"
    start="<!--glossary-start-->"
    end="<!--glossary-end-->"
    rewrite-relative-urls=true
