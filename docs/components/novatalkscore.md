@@ -6,11 +6,70 @@
 %}
 
 #NovaTalks.Core
-##Product Notices
+##Product Notices	
 ***
 ##2022R3
 ###2022R3-6 :briefcase: Epic
 ####New Features
+- *NovaTalks.Core*: Contact deletion drops database [:clipboard: NC2-274] [NC2-274]
+
+	- Reworked mechanism of contact, botagent and user deletion
+	
+	- Logic is working on database level
+	
+	> deleted native rails Chatwoot foreign keys
+	
+	> added missing foreign keys
+	
+	> files deletion is working on Engine and not database level
+	
+User entity deletion triggers:
+|table name                           |action                                 |
+|:---:                                |:---:                                  |
+|"reporting_events"                   |user_id change to NULL                 |
+|"notifications"                      |cascade entry deletion                 |
+|"notification_subscriptions"         |cascade entry deletion                 |
+|"notes"                              |user_id change to NULL                 |
+|"messages"                           |cascade entry deletion                 |
+|"mentions"                           |user_id change to NULL)                |
+|"inbox_members"                      |cascade entry deletion                 |
+|"custom_filters"                     |cascade entry deletion                 |
+|"csat_survey_responses"              |cascade entry deletion                 |
+|"dialogs"                            |assignee_id change to NULL             |
+|"conversations"                      |assignee_id change to NULL             |
+|"team_members"                       |cascade entry deletion                 |
+|"user_events"                        |cascade entry deletion                 |
+|"users"                              |cascade entry deletion                 |
+|"attachments"                        |cascade entry deletion                 |
+|"storage_attachments"                |cascade avatar and attachments deletion|
+|"storage_blobs"                      |cascade avatar and attachments deletion|
+|"access_tokens"                      |cascade entry deletion                 |
+
+AgentBot entity deletion triggers:
+|table name                           |action                                 |
+|:---:                                |:---:                                  |
+|"agent_bots"                         |cascade entry deletion                 |
+|"access_tokens"                      |cascade entry deletion                 |
+
+Contact entity deletion triggers:
+|table name                           |action                                 |
+|:---:                                |:---:                                  |
+|"contacts"                           |cascade entry deletion                 |
+|"messages"                           |cascade entry deletion                 |
+|"dialogs"                            |cascade entry deletion                 |
+|"conversations"                      |cascade entry deletion                 |
+|"attachments"                        |cascade entry deletion                 |
+|"storage_attachments"                |cascade entry deletion                 |
+|"storage_blobs"                      |cascade entry deletion                 |
+|"tags"                               |taggings_count decrement               |
+|"taggings"                           |cascade entry deletion                 |
+|"reporting_events"                   |cascade entry deletion                 |
+|"notifications"                      |no action                              |
+|"notes"                              |cascade entry deletion                 |
+|"mentions"                           |cascade entry deletion                 |
+|"contact_inboxes"                    |cascade entry deletion                 |
+|"csat_survey_responses"              |cascade entry deletion                 |
+
 - *NovaTalks.Core.BA*: Additional chats autoassigment schematics - Queues [:clipboard: NC2-319] [NC2-319]
 
 	> autoassignment of unassigned conversations
