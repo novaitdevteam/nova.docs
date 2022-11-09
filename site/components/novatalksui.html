@@ -18,7 +18,7 @@
         <link rel="canonical" href="https://novaitdevteam.github.io/nova.docs/components/novatalksui.html">
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
@@ -3123,7 +3123,7 @@
               
                 
                 
-                <!-- BEGIN INCLUDE .\links.md &lt;!--tasklink-start--&gt; &lt;!--tasklink-end--&gt; -->
+                <!-- BEGIN INCLUDE .\links.md '&lt;!--tasklink-start--&gt;' '&lt;!--tasklink-end--&gt;' -->
 
 <!-- END INCLUDE -->
 
@@ -3142,13 +3142,20 @@
 </blockquote>
 </li>
 <li>
+<p><em>NovaTalks.UI</em>: Adding messengers to select on the widget <a href="https://sd.novait.com.ua/browse/NC2-348"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-348</a></p>
+<blockquote>
+<p>Added additional parameters to the widget configuration section for selecting messengers, namely Instagram, Line.</p>
+<p>Updated the script for the widget.</p>
+</blockquote>
+</li>
+<li>
 <p><em>NovaTalks.UI</em>: MAA - autoassignment method with Team and Inbox utilization <a href="https://sd.novait.com.ua/browse/NC2-262"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-262</a></p>
 </li>
 </ul>
 <blockquote>
 <p>Check utilization on agent (identification by <strong>access_token</strong>):</p>
 </blockquote>
-<details><summary>/api/v1/accounts/{accountId}/conversations/pool</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/pool</summary>
 <p>
 <div class="highlight"><pre><span></span><code>[
   {}
@@ -3160,7 +3167,7 @@
 <blockquote>
 <p>Check utilization distribution:</p>
 </blockquote>
-<details><summary>/api/v1/accounts/{accountId}/conversations/queue</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/queue</summary>
 <p>
 <div class="highlight"><pre><span></span><code>[
 ]
@@ -3220,34 +3227,34 @@
 </ul>
 <details><summary>POST /api/v1/accounts/{accountId}/conversations/send_outbound_messages</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;inbox_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;contact_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;additional_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;botId&quot;</span><span class="p">:</span> <span class="s2">&quot;aab9c9a92923c5b2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;chatId&quot;</span><span class="p">:</span> <span class="mi">43220521</span><span class="p">,</span>
-    <span class="nt">&quot;contactSource&quot;</span><span class="p">:</span> <span class="s2">&quot;telegram&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;hello&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;contact&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;phoneNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;+1234&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;inbox_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;contact_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;additional_attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;botId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aab9c9a92923c5b2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;chatId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43220521</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;contactSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;telegram&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;phoneNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+1234&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>"additional_settings" - addition to Inbox requests </summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="nt">&quot;additional_settings&quot;</span><span class="p">:</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;can_write_first_to_a_new_client&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;channel_for_writing_first_to_a_new_client&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;additional_settings&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;can_write_first_to_a_new_client&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;channel_for_writing_first_to_a_new_client&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -3278,12 +3285,12 @@
 
 <details><summary>POST /api/v1/accounts/{accountId}/csat</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;contact_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;conversation_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;message_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;rating&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;contact_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;conversation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;message_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -3297,9 +3304,9 @@
 
 <details><summary>PATCH /api/v1/accounts/{accountId}/csat/{csatId}</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;rating&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -3314,77 +3321,77 @@
 </blockquote>
 <details><summary>POST /api/v1/notification_subscriptions</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="nt">&quot;additional_settings&quot;</span><span class="p">:</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;can_write_first_to_a_new_client&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;channel_for_writing_first_to_a_new_client&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;additional_settings&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;can_write_first_to_a_new_client&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;channel_for_writing_first_to_a_new_client&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>GET/PATCH /api/v1/accounts/{accountId}/notification_settings/global</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;notification_settings&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&quot;conversation_creation_sound&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;conversation_assignment_pop_up&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;conversation_mention_blink&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;mention.mp3&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;notification_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_creation_sound&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_assignment_pop_up&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_mention_blink&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mention.mp3&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>GET/PATCH /api/v1/accounts/{accountId}/notification_settings</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;notification_settings&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&quot;conversation_creation_sound&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;conversation_assignment_pop_up&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;conversation_mention_blink&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;mention.mp3&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;notification_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_creation_sound&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_assignment_pop_up&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;conversation_mention_blink&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mention.mp3&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>GET /api/v1/accounts/{accountId}/notifications/unread_count</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="err">i</span><span class="kc">nte</span><span class="err">ger</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">i</span><span class="kc">nte</span><span class="err">ger</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>POST /api/v1/accounts/{accountId}/notifications/read_all</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;all_notification_setting_flags&quot;</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span> <span class="s2">&quot;mention.mp3&quot;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;all_notification_setting_flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;selected_notification_setting_flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;selected_creation_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;creation.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;selected_assignment_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assignment.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;selected_new_message_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new_message.mp3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;selected_mention_sound&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mention.mp3&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -3743,26 +3750,26 @@
 <p>Variables and their default values:</p>
 <details><summary>Environment variables</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="nx">LOGIN_STATUS</span><span class="o">=</span><span class="s1">&#39;busy&#39;</span>
-<span class="err">#</span><span class="nx">status</span> <span class="k">of</span> <span class="nx">agent</span> <span class="nx">on</span> <span class="nx">login</span>
-<span class="nx">LOGOUT_TIMEOUT_OFFLINE</span><span class="o">=</span><span class="mf">10000</span>
-<span class="err">#</span><span class="nx">websocket</span> <span class="nx">connection</span> <span class="nx">timeout</span> <span class="nx">time</span>
+<div class="highlight"><pre><span></span><code><span class="nx">LOGIN_STATUS</span><span class="o">=</span><span class="s1">&#39;busy&#39;</span><span class="w"></span>
+<span class="err">#</span><span class="nx">status</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">agent</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">login</span><span class="w"></span>
+<span class="nx">LOGOUT_TIMEOUT_OFFLINE</span><span class="o">=</span><span class="mf">10000</span><span class="w"></span>
+<span class="err">#</span><span class="nx">websocket</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="nx">timeout</span><span class="w"> </span><span class="nx">time</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
 
 <details><summary>Redis environment variables</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="nx">REDIS_PORT</span><span class="o">=</span><span class="mf">6379</span>
-<span class="nx">REDIS_HOST</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span>
-<span class="nx">REDIS_PASSWORD</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="nx">REDIS_USERNAME</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="nx">REDIS_DB</span><span class="o">=</span><span class="mf">0</span>
-<span class="nx">REDIS_FAMILY</span><span class="o">=</span><span class="mf">4</span><span class="p">,</span>
-<span class="nx">AGENT_STATE</span><span class="o">=</span><span class="s1">&#39;AgentState::&#39;</span>
-<span class="err">#</span><span class="nx">HashMap</span> <span class="nx">name</span> <span class="k">for</span> <span class="nx">user</span> <span class="nx">state</span> <span class="nx">storage</span>
-<span class="nx">ALFRED_ONLINE_STATUS</span><span class="o">=</span><span class="s1">&#39;alfred:ONLINE_STATUS::&#39;</span>
-<span class="err">#</span><span class="nx">HashMap</span> <span class="nx">name</span> <span class="nx">where</span> <span class="nx">original</span> <span class="nx">ChatWoot</span> <span class="nx">store</span> <span class="nx">user</span> <span class="nx">state</span>
+<div class="highlight"><pre><span></span><code><span class="nx">REDIS_PORT</span><span class="o">=</span><span class="mf">6379</span><span class="w"></span>
+<span class="nx">REDIS_HOST</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="w"></span>
+<span class="nx">REDIS_PASSWORD</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="nx">REDIS_USERNAME</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="nx">REDIS_DB</span><span class="o">=</span><span class="mf">0</span><span class="w"></span>
+<span class="nx">REDIS_FAMILY</span><span class="o">=</span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="nx">AGENT_STATE</span><span class="o">=</span><span class="s1">&#39;AgentState::&#39;</span><span class="w"></span>
+<span class="err">#</span><span class="nx">HashMap</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="nx">storage</span><span class="w"></span>
+<span class="nx">ALFRED_ONLINE_STATUS</span><span class="o">=</span><span class="s1">&#39;alfred:ONLINE_STATUS::&#39;</span><span class="w"></span>
+<span class="err">#</span><span class="nx">HashMap</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="nx">original</span><span class="w"> </span><span class="nx">ChatWoot</span><span class="w"> </span><span class="nx">store</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="nx">state</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -3822,11 +3829,11 @@
 <details><summary>Changed Log In payload</summary>
 <p>
 
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="err">password</span><span class="p">:</span> <span class="s2">&quot;Rokdestbob322!!&quot;</span>
-    <span class="err">sso_au</span><span class="kc">t</span><span class="err">h_</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-    <span class="err">user</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span> <span class="s2">&quot;voll@gmail.com&quot;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">password</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rokdestbob322!!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="err">sso_au</span><span class="kc">t</span><span class="err">h_</span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="err">user</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;voll@gmail.com&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </details>
 </p>
@@ -3981,14 +3988,14 @@
 <details><summary>Envirounment variables in config</summary>
 <p>
 
-<div class="highlight"><pre><span></span><code><span class="nx">SERVER_HOST</span><span class="o">=</span><span class="mf">0.0.0.0</span>
-<span class="nx">SERVER_PORT</span><span class="o">=</span><span class="mf">3001</span>
-<span class="nx">RUBY_HOST</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-chatwoot-web:3000</span>
-<span class="nx">GENESYS_HOST</span><span class="o">=</span><span class="nx">https</span><span class="o">:</span><span class="c1">//pureconnect.demo.novait.com.ua/api/192.168.124.160</span>
-<span class="nx">NOVA_CHATS_ENGINE_HOST</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-engine:3000</span>
-<span class="nx">NOVA_CHATS_PURECONNECT_CONNECTOR</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-pureconnect-connector:8000</span>
-<span class="nx">GENESYS_STATUS_ONLINE</span><span class="o">=</span><span class="nx">Available</span>
-<span class="nx">GENESYS_STATUS_BUSY</span><span class="o">=</span><span class="nx">Do</span> <span class="nx">Not</span> <span class="nx">disturb</span>
+<div class="highlight"><pre><span></span><code><span class="nx">SERVER_HOST</span><span class="o">=</span><span class="mf">0.0.0.0</span><span class="w"></span>
+<span class="nx">SERVER_PORT</span><span class="o">=</span><span class="mf">3001</span><span class="w"></span>
+<span class="nx">RUBY_HOST</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-chatwoot-web:3000</span><span class="w"></span>
+<span class="nx">GENESYS_HOST</span><span class="o">=</span><span class="nx">https</span><span class="o">:</span><span class="c1">//pureconnect.demo.novait.com.ua/api/192.168.124.160</span><span class="w"></span>
+<span class="nx">NOVA_CHATS_ENGINE_HOST</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-engine:3000</span><span class="w"></span>
+<span class="nx">NOVA_CHATS_PURECONNECT_CONNECTOR</span><span class="o">=</span><span class="nx">http</span><span class="o">:</span><span class="c1">//srv-captain--novachats2-demo-pureconnect-connector:8000</span><span class="w"></span>
+<span class="nx">GENESYS_STATUS_ONLINE</span><span class="o">=</span><span class="nx">Available</span><span class="w"></span>
+<span class="nx">GENESYS_STATUS_BUSY</span><span class="o">=</span><span class="nx">Do</span><span class="w"> </span><span class="nx">Not</span><span class="w"> </span><span class="nx">disturb</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -4063,17 +4070,17 @@
 </ul>
 <details><summary>"additionalAttributes" - Send to Genesys format</summary>
 <p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="nt">&quot;additionalAttributes&quot;</span><span class="p">:</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;nova_contactName&quot;</span><span class="p">:</span> <span class="s2">&quot;{firstname} {lastname}&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;nova_contactEmail&quot;</span><span class="p">:</span> <span class="s2">&quot;{userid}@{source}&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;nova_contactChatId&quot;</span><span class="p">:</span> <span class="s2">&quot;{chatId}&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;nova_contactUserId&quot;</span><span class="p">:</span> <span class="s2">&quot;{userid}&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;nova_contactChannelId&quot;</span><span class="p">:</span> <span class="s2">&quot;{channel}&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;nova_contactSource&quot;</span><span class="p">:</span> <span class="s2">&quot;{source}&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;additionalAttributes&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{firstname} {lastname}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactEmail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{userid}@{source}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactChatId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{chatId}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactUserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{userid}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactChannelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{channel}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nova_contactSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{source}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </p>
 </details>
@@ -4158,7 +4165,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top"], "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>

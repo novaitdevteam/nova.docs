@@ -18,7 +18,7 @@
         <link rel="canonical" href="https://novaitdevteam.github.io/nova.docs/components/novatalkscore.html">
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.3.6">
     
     
       
@@ -3177,7 +3177,7 @@
               
                 
                 
-                <!-- BEGIN INCLUDE .\links.md &lt;!--tasklink-start--&gt; &lt;!--tasklink-end--&gt; -->
+                <!-- BEGIN INCLUDE .\links.md '&lt;!--tasklink-start--&gt;' '&lt;!--tasklink-end--&gt;' -->
 
 <!-- END INCLUDE -->
 
@@ -3197,9 +3197,42 @@
 </ul>
 <p><a href="documents/novatalks/NC2-220_%D0%A7%D0%B5%D1%80%D0%B3%D0%B8_%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D1%96_%D1%81%D1%85%D0%B5%D0%BC%D0%B8_%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B7%D0%BF%D0%BE%D0%B4%D1%96%D0%BB%D1%83_%D0%B4%D1%96%D0%B0%D0%BB%D0%BE%D0%B3%D1%96%D0%B2_v0.3%28NovaTalks%29.docx.pdf">Additional chats autoassigment schematics - Queues</a></p>
 <ul>
-<li><em>NovaTalks.Core.BA</em>: Realtime Statistics <a href="https://sd.novait.com.ua/browse/NC2-105"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-105</a></li>
+<li>
+<p><em>NovaTalks.Core</em>: Post Call Survey - Add configuration <a href="https://sd.novait.com.ua/browse/NC2-225"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-225</a></p>
+<ul>
+<li>API provided: CRUD methods for adding and changing notification settings.</li>
+<li>Granted roles: for administrator, for user.</li>
+<li>Recording of results provided.</li>
+</ul>
+<p><a href="documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1%28NovaTalks%29.docx.pdf">Post Call Survey - specification</a></p>
+</li>
+<li>
+<p><em>NovaTalks.Core.BA</em>: Realtime Statistics <a href="https://sd.novait.com.ua/browse/NC2-105"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-105</a></p>
+</li>
 </ul>
 <p><a href="documents/novatalks/NC2-105_%D0%97%D0%B2%D1%96%D1%82%D0%B8_RealTime_v0.2%28NovaTalks%29.docx.pdf">Realtime Statistics specification</a></p>
+<ul>
+<li>
+<p><em>NovaTalks.Core</em>: MAA autodistribution - Actions from conversation if agent writes to completed or unassigned dialog
+ [<img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-159] [NC2-159]</p>
+<blockquote>
+<p>Added conversation toggle status to <strong>Open</strong> on Engine side when agent writes to resolved conversation.</p>
+<p>Added agent self-assignment to conversation when he writes to unassigned resolved conversation.</p>
+</blockquote>
+</li>
+<li>
+<p><em>NovaTalks.Core</em>: Autodistribution MAA - Implementation of the MAA algorithm for Team and Inbox [<img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-159] [NC2-159]</p>
+<blockquote>
+<p>If the conversation is assigned to a team (field team_id != NULL):
+the utilization of this conversation equals value of the utilization set in team settings.</p>
+<p>If the conversation is not assigned to the team (field team_id = NULL):
+the utilization of this conversation equals value of the utilization set in Inbox settings.</p>
+<p>Added localization and error handling for the Priority attribute in Conversation Information (values ​​from 1 to unlimited).</p>
+<p>When adding an agent to tim/inbox, the system distributes current dialogs in the queue to these agents.</p>
+<p>Theme/inbox utilization can be set to 0.</p>
+</blockquote>
+</li>
+</ul>
 <h4 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -3213,6 +3246,10 @@
 </blockquote>
 <p>• Deletion of client's contact will initiate cascade deletion of all taggings assosiated with it's <strong>taggable_id</strong></p>
 <p>• Deletion of client's contact will initiate cascade deletion of all conversations assosiated with it's <strong>taggable_id</strong>, and, therefore, will also delete all taggings assosiated with deleted conversations' <strong>taggable_id</strong></p>
+</li>
+<li>
+<p><em>NovaTalks.Core</em>: NovaTalks.Core: gallery attachments brokes id incrementation <a href="https://sd.novait.com.ua/browse/NC2-328"><img alt="📋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4cb.svg" title=":clipboard:" /> NC2-328</a></p>
+<p>• Fixed <strong>storage_attachments</strong> and <strong>attachments</strong> tables id shifting, when loading several attachments.</p>
 </li>
 </ul>
 <hr />
@@ -4153,7 +4190,7 @@ tlsOptions:       Optional object with options accepted by Node.js tls module
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top"], "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
