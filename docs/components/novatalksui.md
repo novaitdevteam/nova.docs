@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2022R3
-###2022R3-6 :briefcase: Epic
+###2022R3-6 :briefcase: Epic 
 ####New Features
 - *NovaTalks.UI*: Draft saving for messages and private notes [:clipboard: NC2-320] [NC2-320]
 
@@ -17,11 +17,17 @@
 	
 	> Will reset on page refresh
 
+- *NovaTalks.UI*: Adding messengers to select on the widget [:clipboard: NC2-348] [NC2-348]
+
+	> Added additional parameters to the widget configuration section for selecting messengers, namely Instagram, Line.
+
+	> Updated the script for the widget.
+
 - *NovaTalks.UI*: MAA - autoassignment method with Team and Inbox utilization [:clipboard: NC2-262] [NC2-262]
 
 > Check utilization on agent (identification by **access_token**):
 
-<details><summary>/api/v1/accounts/{accountId}/conversations/pool</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/pool</summary>
 <p>
 ```
 [
@@ -33,7 +39,7 @@
 	
 > Check utilization distribution:
 
-<details><summary>/api/v1/accounts/{accountId}/conversations/queue</summary>
+<details><summary>POST /api/v1/accounts/{accountId}/conversations/queue</summary>
 <p>
 ```
 [

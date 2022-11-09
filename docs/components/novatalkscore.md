@@ -6,79 +6,51 @@
 %}
 
 #NovaTalks.Core
-##Product Notices	
+##Product Notices
 ***
 ##2022R3
 ###2022R3-6 :briefcase: Epic
 ####New Features
-- *NovaTalks.Core*: Contact deletion drops database [:clipboard: NC2-274] [NC2-274]
-
-	- Reworked mechanism of contact, botagent and user deletion
-	
-	- Logic is working on database level
-	
-	> deleted native rails Chatwoot foreign keys
-	
-	> added missing foreign keys
-	
-	> files deletion is working on Engine and not database level
-	
-User entity deletion triggers:
-|table name                           |action                                 |
-|:---:                                |:---:                                  |
-|"reporting_events"                   |user_id change to NULL                 |
-|"notifications"                      |cascade entry deletion                 |
-|"notification_subscriptions"         |cascade entry deletion                 |
-|"notes"                              |user_id change to NULL                 |
-|"messages"                           |cascade entry deletion                 |
-|"mentions"                           |user_id change to NULL)                |
-|"inbox_members"                      |cascade entry deletion                 |
-|"custom_filters"                     |cascade entry deletion                 |
-|"csat_survey_responses"              |cascade entry deletion                 |
-|"dialogs"                            |assignee_id change to NULL             |
-|"conversations"                      |assignee_id change to NULL             |
-|"team_members"                       |cascade entry deletion                 |
-|"user_events"                        |cascade entry deletion                 |
-|"users"                              |cascade entry deletion                 |
-|"attachments"                        |cascade entry deletion                 |
-|"storage_attachments"                |cascade avatar and attachments deletion|
-|"storage_blobs"                      |cascade avatar and attachments deletion|
-|"access_tokens"                      |cascade entry deletion                 |
-
-AgentBot entity deletion triggers:
-|table name                           |action                                 |
-|:---:                                |:---:                                  |
-|"agent_bots"                         |cascade entry deletion                 |
-|"access_tokens"                      |cascade entry deletion                 |
-
-Contact entity deletion triggers:
-|table name                           |action                                 |
-|:---:                                |:---:                                  |
-|"contacts"                           |cascade entry deletion                 |
-|"messages"                           |cascade entry deletion                 |
-|"dialogs"                            |cascade entry deletion                 |
-|"conversations"                      |cascade entry deletion                 |
-|"attachments"                        |cascade entry deletion                 |
-|"storage_attachments"                |cascade entry deletion                 |
-|"storage_blobs"                      |cascade entry deletion                 |
-|"tags"                               |taggings_count decrement               |
-|"taggings"                           |cascade entry deletion                 |
-|"reporting_events"                   |cascade entry deletion                 |
-|"notifications"                      |no action                              |
-|"notes"                              |cascade entry deletion                 |
-|"mentions"                           |cascade entry deletion                 |
-|"contact_inboxes"                    |cascade entry deletion                 |
-|"csat_survey_responses"              |cascade entry deletion                 |
-
 - *NovaTalks.Core.BA*: Additional chats autoassigment schematics - Queues [:clipboard: NC2-319] [NC2-319]
 
 	> autoassignment of unassigned conversations
 
 [Additional chats autoassigment schematics - Queues](./documents/novatalks/NC2-220_Черги_Додаткові_схеми_авторозподілу_діалогів_v0.3(NovaTalks).docx.pdf)
 
+- *NovaTalks.Core*: Post Call Survey - Add configuration [:clipboard: NC2-225] [NC2-225]
+
+	- API provided: CRUD methods for adding and changing notification settings.
+	- Granted roles: for administrator, for user.
+	- Recording of results provided.
+
+	[Post Call Survey - specification](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+
 - *NovaTalks.Core.BA*: Realtime Statistics [:clipboard: NC2-105] [NC2-105]
 
 [Realtime Statistics specification](./documents/novatalks/NC2-105_Звіти_RealTime_v0.2(NovaTalks).docx.pdf)
+
+
+- *NovaTalks.Core*: MAA autodistribution - Actions from conversation if agent writes to completed or unassigned dialog
+ [:clipboard: NC2-159] [NC2-159]
+
+	> Added conversation toggle status to **Open** on Engine side when agent writes to resolved conversation.
+
+	> Added agent self-assignment to conversation when he writes to unassigned resolved conversation.
+
+
+- *NovaTalks.Core*: Autodistribution MAA - Implementation of the MAA algorithm for Team and Inbox [:clipboard: NC2-159] [NC2-159]
+
+	> If the conversation is assigned to a team (field team_id != NULL):
+	> the utilization of this conversation equals value of the utilization set in team settings.
+
+	> If the conversation is not assigned to the team (field team_id = NULL):
+	> the utilization of this conversation equals value of the utilization set in Inbox settings.
+
+	> Added localization and error handling for the Priority attribute in Conversation Information (values ​​from 1 to unlimited).
+
+	> When adding an agent to tim/inbox, the system distributes current dialogs in the queue to these agents.
+
+	> Theme/inbox utilization can be set to 0.
 
 ####Bug Fixes
 - *NovaTalks.Core*: Fixed comversation search performance [:clipboard: NC2-326] [NC2-326]
@@ -92,6 +64,11 @@ Contact entity deletion triggers:
 	• Deletion of client's contact will initiate cascade deletion of all taggings assosiated with it's **taggable_id**
 
 	• Deletion of client's contact will initiate cascade deletion of all conversations assosiated with it's **taggable_id**, and, therefore, will also delete all taggings assosiated with deleted conversations' **taggable_id**
+
+- *NovaTalks.Core*: NovaTalks.Core: gallery attachments brokes id incrementation [:clipboard: NC2-328] [NC2-328]
+
+	• Fixed **storage_attachments** and **attachments** tables id shifting, when loading several attachments.
+
 	
 ***
 

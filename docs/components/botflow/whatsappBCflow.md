@@ -62,7 +62,7 @@ Supported type: image/webp
 ```
 </p>
 </details>
-<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowQuickReplies.jpg" title="WhatsApp Quick Replies" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowQuickReplies.png" title="WhatsApp Quick Replies" width="600" height"500"> </a> </figure>
 ####List Picker
 - List messages cannot be used as notifications. Currently, they can only be sent within 24 hours of the last message sent by the user. If you try to send a message outside the 24-hour window, you get an error message.
 <details><summary>Known Restrictions</summary>
@@ -78,8 +78,8 @@ Supported type: image/webp
 ```
 </p>
 </details>
-<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowListPicker1.jpg" title="WhatsApp BC List Picker" width="600" height"500"> </a> </figure>
-<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowListPicker2.jpg" title="WhatsApp BC List Picker" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowListPicker1.png" title="WhatsApp BC List Picker" width="600" height"500"> </a> </figure>
+<figure> <img src="/nova.docs/components/botflow/examples/WhatsAppBCFlowListPicker2.png" title="WhatsApp BC List Picker" width="600" height"500"> </a> </figure>
 ####Card
 - Card is not supported, but can be replicated as a Picture message then Quick Replies
 

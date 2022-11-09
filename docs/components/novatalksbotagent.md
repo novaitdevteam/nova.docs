@@ -9,6 +9,22 @@
 ##Product Notices
 ***
 ##2022R3
+##2022R3-6
+####New Features
+
+- *NovaTalks.BotAgent*: batch\gallery media sending. [:clipboard: NC2-203] [NC2-203]
+
+	- Added the ability to send multiple media (media gallery).
+	- Added bot agent throttling for sending messages (0.2 sec).
+
+- *NovaTalks.BotAgent*: Improved Conversation state(isTransfered). [:clipboard: NC2-340] [NC2-340]
+
+	- Correct understanding by the bot agent whether the dialog is on the team \ operator.
+	- Processing of **assignee_changed**, **team_changed** events.
+
+####Bug Fixes
+
+
 ##2022R3-5
 ####New Features
 - *NovaTalks.BotAgent*: Post Call Survey - flow scenario [:clipboard: NC2-227] [NC2-227]
