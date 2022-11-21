@@ -1,16 +1,22 @@
-name: ci
+name: CI Build Trigger
 on:
   push:
-    branches:
-      - master
-      - main
+  pull_request:
+  pull_request_target:
+  pull_request_review:
+  pull_request_review_comment:
+
+
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  start:
+    name: Start
+    runs-on: self-hosted
+    environment: nova.ci
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - name: Checkout
+        uses: actions/checkout@v3
+
+  ci-build-trigger-switcher:
+    name: CI Build Trigger Switcher
+    uses: novaitdevteam/nova.ci/.github/workflows/ci-build-trigger-switcher.yaml@main
+    secrets: inherit
