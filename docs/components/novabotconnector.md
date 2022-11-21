@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false

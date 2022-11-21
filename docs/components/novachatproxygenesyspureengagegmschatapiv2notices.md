@@ -1,12 +1,12 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--datelink-chatproxygenesyspureengagegmschatapiv2-start-->"
    end="<!--datelink-chatproxygenesyspureengagegmschatapiv2-end-->"
    rewrite-relative-urls=true
 %}
 
 {%
-   include-markdown ".\glossary.md"
+   include-markdown "./glossary.md"
    start="<!--glossary-start-->"
    end="<!--glossary-end-->"
    rewrite-relative-urls=true

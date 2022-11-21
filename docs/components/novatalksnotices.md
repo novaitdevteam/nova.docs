@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--datelink-novatalks-start-->"
    end="<!--datelink-novatalks-end-->"
    rewrite-relative-urls=true

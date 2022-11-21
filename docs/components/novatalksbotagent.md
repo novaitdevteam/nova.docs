@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false
@@ -23,7 +23,9 @@
 	- Processing of **assignee_changed**, **team_changed** events.
 
 ####Bug Fixes
+- none
 
+***
 
 ##2022R3-5
 ####New Features
@@ -39,11 +41,13 @@
 
 	- Added **Default transport** and **Default config** in **	chatbot-chatwoot-connector-out** to use for outbound messaging
 
-[Write first outbound messaging WhatApp Business](NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+[Write first outbound messaging WhatApp Business](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
 
 ####Bug Fixes
 - none
+
 ***
+
 ###2022R3-4 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project  [:clipboard: NC2-243] [NC2-243]
@@ -106,7 +110,7 @@ info All dependencies
 ####New Features
 - *NovaTalks.BotAgent.BA*: Outgoing chat initialization in numbered WhatsApp for business [:clipboard: NC2-230] [NC2-230]
 
-[Outgoing chat functionality](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.1(NovaTalks).docx.pdf)
+[Outgoing chat functionality](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
 
 - *NovaTalks.BotAgent*: Numbered WhatsApp for business Botflow nodes develpment [:clipboard: NC2-253] [NC2-253]
 
@@ -139,11 +143,11 @@ info All dependencies
 
 	> done for viber and telegram channels
 
-[Keyboard reply buttons for viber channel](./documents/novatalks/NC2-188_Viber_Add_Reply_Buttons_Compability_v0.1(NovaTalks).docx.pdf)
+[Keyboard reply buttons for viber channel](https://drive.google.com/drive/folders/1uDsmxZgzjgvIZqmFEQiO2nU6WjR6SzPr)
 
 - *NovaTalks.BotAgent.BA*: Standard script modification [:clipboard: NC2-195] [NC2-195]
 
-[Standard script schematic](./documents/novatalks/NC2-000_Basic_Script_v0.2(NovaTalks).vsdx)
+[Standard script schematic](https://drive.google.com/drive/folders/1vBFsLGMpMm3g9I83wQZFsq91BXPciSfW)
 
 - *NovaTalks.BotAgent*: Standard script develpment [:clipboard: NC2-214] [NC2-214]
 

@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false
@@ -233,7 +233,7 @@ Carousel is supported as a number of Card type messages, where every card may ha
 ####New Features
 - *Genesys*: Integration with Genesys Cloud BotConnector [:clipboard: NOV-407] [NOV-407]
 
-[BotFlow to Genesys Cloud BotConnector integration](./documents/novatalks/NOV-407_Інтеграція_BotFlow_з_GenesysCloudBotConnector_v0.1.docx.pdf)
+[BotFlow to Genesys Cloud BotConnector integration](https://drive.google.com/drive/folders/1whTZvHG4W63oKRtS3eX2e3L0r2dcbhIH)
 
 - *WhatsApp (Nexmo\Vonage)*: Buttons implementation buttons for ChatBot [:clipboard: NOV-406] [NOV-406]
 

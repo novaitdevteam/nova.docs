@@ -113,8 +113,10 @@ nav:
             - Checklists: components/documents/novatalks/novatalkstesting.md
 
 theme:
-  name: null
-  custom_dir: mkdocs-material/material
+#  name: null
+  name: material
+#  custom_dir: mkdocs-material/material
+  custom_dir: docs/overrides
 
   # 404 page
   static_templates:
@@ -202,6 +204,7 @@ extra:
 #extra_javascript:
 #   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 #   - ./javascript/mermaid.min.js
+#   - ./javascript/stickytable.js
  
 extra_css:
    - ./css/extra.css

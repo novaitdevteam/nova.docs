@@ -271,7 +271,6 @@
 [NC2-221]: https://sd.novait.com.ua/browse/NC2-221
 [NC2-220]: https://sd.novait.com.ua/browse/NC2-220
 [NC2-219]: https://sd.novait.com.ua/browse/NC2-219
-[NC2-219]: https://sd.novait.com.ua/browse/NC2-219
 [NC2-214]: https://sd.novait.com.ua/browse/NC2-214
 [NC2-213]: https://sd.novait.com.ua/browse/NC2-213
 [NC2-210]: https://sd.novait.com.ua/browse/NC2-210

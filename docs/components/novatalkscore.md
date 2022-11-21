@@ -1,5 +1,5 @@
 {%
-   include-markdown ".\links.md"
+   include-markdown "./links.md"
    start="<!--tasklink-start-->"
    end="<!--tasklink-end-->"
    rewrite-relative-urls=false
@@ -15,7 +15,7 @@
 
 	> autoassignment of unassigned conversations
 
-[Additional chats autoassigment schematics - Queues](./documents/novatalks/NC2-220_Черги_Додаткові_схеми_авторозподілу_діалогів_v0.3(NovaTalks).docx.pdf)
+[Additional chats autoassigment schematics - Queues](https://drive.google.com/drive/folders/1vEhGK7vabQL-n7c5CtolEJ74_s3I_wZg)
 
 - *NovaTalks.Core*: Post Call Survey - Add configuration [:clipboard: NC2-225] [NC2-225]
 
@@ -23,11 +23,13 @@
 	- Granted roles: for administrator, for user.
 	- Recording of results provided.
 
-	[Post Call Survey - specification](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+	[Post Call Survey - specification](https://drive.google.com/drive/folders/1v8A5g681VFrooYz_mXkF2cH2BSENxIp_)
 
 - *NovaTalks.Core.BA*: Realtime Statistics [:clipboard: NC2-105] [NC2-105]
 
-[Realtime Statistics specification](./documents/novatalks/NC2-105_Звіти_RealTime_v0.2(NovaTalks).docx.pdf)
+[Realtime Statistics specification](https://drive.google.com/drive/folders/1x1b5JWdb8Kmw8sYO0o2lh9wQ-WDp8G83)
+
+[Database changes specification](https://drive.google.com/drive/folders/1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz)
 
 
 - *NovaTalks.Core*: MAA autodistribution - Actions from conversation if agent writes to completed or unassigned dialog
@@ -84,7 +86,7 @@
 
 	> "channel_for_writing_first_to_a_new client": "whatsapp"}]
 
-[Write first outbound messaging WhatApp Business](./documents/novatalks/NC2-230_Функціонал_написати_першим_новому_клієнту_v0.3(NovaTalks).docx.pdf)
+[Write first outbound messaging WhatApp Business](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
 
 - *NovaTalks.Core*: Filtration by addtional_attributes [:clipboard: NC2-301] [NC2-301]
 
@@ -100,9 +102,9 @@
 
 - *NovaTalks.Core*: Logging additional events into a database [:clipboard: NC2-186] [NC2-186]
 
-[BD's additional events logging](./documents/novatalks/NC2-176_1_БД_Логування_додаткових_подій_v0.3(NovaTalks).docx.pdf)
+[BD's additional events logging](https://drive.google.com/drive/folders/1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz)
 
-[New table with agents' events](./documents/novatalks/NC2-176_2_БД_NewTable_Події_операторів_v0.1(NovaTalks).docx.pdf)
+[New table with agents' events](https://drive.google.com/drive/folders/1rM8kliZxhm96mg0zCGWIa_GLIy0mp1ka)
 
 ####Bug Fixes
 - *NovaTalks.UI, Core*: Fixed problem when page refresh mark all conversations as seen [:clipboard: NC2-296] [NC2-296]
@@ -117,7 +119,7 @@
 
 	- different roles for administrator and agent
 
-[Notifications functionality specification](./documents/novatalks/NC2-76_Нотифікації_v0.2(NovaTalks).docx.pdf)
+[Notifications functionality specification](https://drive.google.com/drive/folders/1rU0RPuJ_wzQaDuXy6bsLxDKMB28RW3hb)
 
 - *NovaTalks.Core*: Notifications - popup notifications on desktop [:clipboard: NC2-231] [NC2-231]
 
@@ -127,7 +129,7 @@
 
 	- Automized addition of phone number to the client's contact card
 
-[Ask Phone number](./documents/novatalks/NC2-231_Запит_телефону_email_v0.1(NovaTalks).docx.pdf)
+[Ask Phone number](https://drive.google.com/drive/folders/1wRa1aQuSd_sFk4zyjd7X-5aPUkKYyOrP)
 
 ####Bug Fixes
 - *NovaTalks.Core*: Fixed syntax error in WebSite inbox creation request [:clipboard: NC2-273] [NC2-273]
@@ -136,7 +138,7 @@
 
 ###2022R3-3 :briefcase: Epic
 ####New Features
-- *NovaTalks.Core.BA*: Increase of dialog filtering parameters [:clipboard: NC2-192] [NC2-192]
+- *NovaTalks.Core.BA*: Increase of dialog filtering parameters [:clipboard: NC2-219] [NC2-219]
 
 > The this task is unification of tasks:
 
@@ -148,11 +150,11 @@
 
 > [:clipboard: NC2-138] [NC2-138]
 
-[Contact and Conversation filtering](./documents/novatalks/NC2-223_Додаткова_фільтрація_Зміни_в_розділі_Contacts_v0.1(NovaTalks).docx.pdf)
+[Contact and Conversation filtering](https://drive.google.com/drive/folders/1w-GVzNVPg_mm35mgExnmGWYBifvpMX-Y)
 
 - *NovaTalks.Core.BA*: Development of new transfer on agent methods [:clipboard: NC2-220] [NC2-220]
 
-[Most available agent (MAA) specification](./documents/novatalks/NC2-220_Додаткові_схеми_авторозподілу_діалогів_v0.1(NovaTalks).docx.pdf)
+[Most available agent (MAA) specification](https://drive.google.com/drive/folders/1vEhGK7vabQL-n7c5CtolEJ74_s3I_wZg)
 
 ####Bug Fixes
 - none
@@ -163,9 +165,9 @@
 ####New Features
 - *NovaTalks.Core.BA*: Post Call Survey (CSAT) [:clipboard: NC2-192] [NC2-192]
 
-[CSAT specification - stage 1](./documents/novatalks/NC2-192_1_Post_Call_Suvey_v0.1(NovaTalks).docx.pdf)
+[CSAT specification - stage 1](https://drive.google.com/drive/folders/1v8A5g681VFrooYz_mXkF2cH2BSENxIp_)
 
-[CSAT specification - stage 2](./documents/novatalks/NC2-192_2_Post_Call_Suvey_v0.2(NovaTalks).docx.pdf)
+[CSAT specification - stage 2](https://drive.google.com/drive/folders/1uHnkt0QCaXnVoF3vIPHXbx4lw4i8acRQ)
 
 - *NovaTalks.Core.BA*: Porting *Mentions* to NovaTalks [:clipboard: NC2-210] [NC2-210]
 
@@ -247,9 +249,9 @@
 
 - *NovaTalks.Core.BA*: DB additional events gathering for historical reports [:clipboard: NC2-176] [NC2-176]
 
-[BD's additional events logging](./documents/novatalks/NC2-176_1_БД_Логування_додаткових_подій_v0.3(NovaTalks).docx.pdf)
+[BD's additional events logging](https://drive.google.com/drive/folders/1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz)
 
-[New table with agents' events](./documents/novatalks/NC2-176_2_БД_NewTable_Події_операторів_v0.1(NovaTalks).docx.pdf)
+[New table with agents' events](https://drive.google.com/drive/folders/1rM8kliZxhm96mg0zCGWIa_GLIy0mp1ka)
 
 - *NovaTalks.Core*: 018 Internals - Online Status tracker [:clipboard: NC2-171] [NC2-171]
 
