@@ -8,6 +8,91 @@
 #NovaTalks.Core
 ##Product Notices
 ***
+##2022R4
+###2022R4-1-2-3-4 :briefcase: Epic
+####New Features
+- *NovaTalks.Core.BA*: Menu (IVR) [:clipboard: NC2-242] [NC2-242]
+
+	- A visual form (tree) has been implemented, according to which the client can create a menu as needed
+	- For free, the client has the opportunity to create up to 5-10 points
+	- Displaying the IVR menu in the form of buttons (depending on the support of the messenger)
+	- Ability to assign a dialog to an operator/group depending on the selected menu item
+	- Ability to assign a tag to a client (category) depending on the selected menu item
+	- Output embedded text from the menu + the ability to attach a file
+
+
+[Menu (IVR) TK](https://drive.google.com/drive/folders/1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv)
+
+
+[ChatBot TK](https://drive.google.com/drive/folders/1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw)
+
+- *NovaTalks.Core*: Implementation of the AgentBot role, Part 1 [:clipboard: NC2-244] [NC2-244]
+
+	- Implemented authorization for agent bot.
+	- Botagent token has admin roots.
+
+- *NovaTalks.Core*: Implementation of the AgentBot role, Part 2 [:clipboard: NC2-245] [NC2-245]
+
+	- Generate events when sending messages specifying the type of user (User, AgentBot)
+	- Open Conversations from users of the User type (ignore AgentBot)
+	- Creation of a dialogue during service on the agent
+	- Correction of the chat status when the bot is connected
+
+- *NovaTalks.Core*: Realtime Statistics - API for realtime endpoints [:clipboard: NC2-367] [NC2-367]
+
+	- Implemented API for getting statistics **getAgentRealtimeStatus**
+	- Fixed data collection in the database
+	- Fixed collection of statistics for **dialogs** table
+
+- *NovaTalks.Core*: Cascade removal of custom_attribute in dialog, contact [:clipboard: NC2-338] [NC2-338]
+
+	- In order to delete any custom attribute, it is enough to go to the contact or dialog and delete this attribute.
+
+	- Request to delete attributes, where ${tableName} = 'conversations' or 'contacts' and '${attributeKey}' = custom_attribute key:
+
+	>UPDATE ${tableName} 
+
+    >    SET custom_attributes = custom_attributes - '${attributeKey}' 
+
+    >    WHERE id IN 
+
+    >    (SELECT id FROM "public"."${tableName}" WHERE "public"."${tableName}"."custom_attributes" ? '${attributeKey}')
+
+
+- *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
+
+	- Added getting information about the dialogue every 3.5 seconds.
+	- Added a check for obtaining a user's avatar, in which case there will be no request to obtain them from www.gravatar.com.
+
+- *NovaTalks.Core*: Check Type and Role of Token Endpoint [:clipboard: NC2-383] [NC2-383]
+
+	- GET auth/get_token_info - a new endpoint, returns data about the user by token.
+	- NovaTalks In node - when deploying, token verification has been added, it must be **ownerType = "User"**, otherwise - show the status (signature under the node).
+	- BotAgent In node - similar, but **ownerType = "AgentBot"**.
+
+####Bug Fixes
+
+- *NovaTalks.UI/Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+
+	- The agent now cannot see all inbox dialogues/custom filters without being a member of them.
+
+- *NovaTalks.CORE*: Add validation\limitation when creating and updating custom\additional attributes [:clipboard: NC2-356] [NC2-356]
+	- Added validation on custom\additional attributes in contacts and conversations.
+	- fields are available for additional attributes in the conversations *botId*, *chatId*, *contactSource*
+	- Added validation on custom\additional attributes in contacts and conversations + added validation on *content_attributes* in *messages*.
+	- For custom\additional attributes, there is a string limit of 255 and array of 1024 bytes, for content_attributes - 255 \ 2048 (because the buttons are there).
+	- These values ​​can be changed in the Attributes decorator or not added at all (for developers).
+
+- *NovaTalks.Core*: Endpoint return users, do not return User Type=System [:clipboard: NC2-406] [NC2-406]
+
+	- The API now does not return users whose field **type** equals to **System** in the **users** table
+	- These users cannot be deleted (for deletion, you need to change the user **type**)
+
+- *NovaTalks.Core*: File not downloading [:clipboard: NC2-380] [NC2-380]
+
+	- on core, the URI malformed error when trying to download a file with incorrect name.
+	- on botflow, getting the file name has been fixed, now if it has a Cyrillic name, it will not be corrupted, but will remain original.
+
 ##2022R3
 ###2022R3-6 :briefcase: Epic
 ####New Features

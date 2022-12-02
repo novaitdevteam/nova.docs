@@ -8,6 +8,33 @@
 #NovaTalks.UI
 ##Product Notices
 ***
+##2022R4
+###2022R4-1-2-3-4 :briefcase: Epic
+####New Features
+
+- *NovaTalks.UI*: Historical reports, Implementation in UI [:clipboard: NC2-352] [NC2-352]
+
+	- Implemented historical reports in UI
+
+
+[Historical reports TK](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+
+- *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
+
+	- Added getting information about the dialogue every 3.5 seconds.
+	- Added a check for obtaining a user's avatar, in which case there will be no request to obtain them from www.gravatar.com.
+
+- *NovaTalks.UI*: Localization update [:clipboard: NC2-365] [NC2-365]
+
+	- Updated localization for NovaTalks User Interface.
+
+####Bug Fixes
+
+- *NovaTalks.UI/Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+
+	- The agent now cannot see all inbox dialogues/custom filters without being a member of them.
+
+
 ##2022R3
 ###2022R3-6 :briefcase: Epic 
 ####New Features

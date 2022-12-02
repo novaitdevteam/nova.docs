@@ -8,6 +8,26 @@
 #Nova.BotFlow
 ##Product Notices
 ***
+##2022R4
+###2022R4-1-2-3-4 :briefcase: Epic
+####New Features
+
+- *Nova.BotFlow*: Whatsapp-Web: Receiving unread messages [:clipboard: NC2-396] [NC2-396]
+
+	- Whatsapp-Web: when BotFlow starts, the process of reading all unread messages that have accumulated will be started.
+
+- *Nova.BotFlow*: Initiation of new messages without a bot [:clipboard: NC2-330] [NC2-330]
+
+	- If the agent is the initiator of the dialog (the agent is the first to write to the client), when the client responded to the dialog, this dialog does not enter the standard chat bot.
+
+####Bug Fixes
+
+- *Nova.BotFlow*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
+
+	- When user sending a location, 0 is sent instead of empty coordinates.
+
+
+
 ##2022R3
 ###2022R3-6 :briefcase: Epic
 ####New Features
