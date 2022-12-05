@@ -46,9 +46,93 @@
 
 	- Implemented API for getting statistics:
 		- **Get agent Status realtime**
+		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_status</summary>
+		<p>
+		```
+		accountId *
+		number
+		(path)
+		The numeric ID of the account
+
+		inboxes
+		array[number]
+		(query)
+		The numeric IDs of the inboxes
+
+		teams
+		array[number]
+		(query)
+		The numeric IDs of the teams
+
+		status
+		string
+		(query)
+		The agent status
+		online
+
+		Here example for accountId 1, inboxes 1 and 2, teams 1 and status online:
+		/api/v2/accounts/1/realtime/agent_status?inboxes=1&inboxes=2&teams=1&status=online
+		```
+		</p>
+		</details>
+
 		- **Get agent overview realtime**
+		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
+		<p>
+		```
+		accountId *
+		number
+		(path)
+		The numeric ID of the account
+
+		agents
+		array[number]
+		(query)
+		The numeric IDs of the agents
+
+		Here example for accountId 1 and agents 1 and 2:
+		/api/v2/accounts/1/realtime/agent_overview?agents=1&agents=2
+		```
+		</p>
+		</details>
 		- **Get team overview realtime**
+		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
+		<p>
+		```
+		accountId *
+		number
+		(path)
+		The numeric ID of the account
+
+		teams
+		array[number]
+		(query)
+		The numeric IDs of the teams
+
+		Here example for accountId 1 and teams 1 and 2:
+		/api/v2/accounts/1/realtime/team_overview?teams=1&teams=2
+		```
+		</p>
+		</details>
 		- **Get inbox overview realtime**
+		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
+		<p>
+		```
+		accountId *
+		number
+		(path)
+		The numeric ID of the account
+
+		inboxes
+		array[number]
+		(query)
+		The numeric IDs of the inboxes
+
+		Here example for accountId 1 and inboxes 1 and 2:
+		/api/v2/accounts/1/realtime/team_overview?inboxes=1&inboxes=2
+		```
+		</p>
+		</details>
 	- Fixed data collection in the database
 	- Fixed collection of statistics for **dialogs** table
 
