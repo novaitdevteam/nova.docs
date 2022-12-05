@@ -24,7 +24,7 @@
 
 - *Nova.BotFlow*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
 
-	- When user sending a location, 0 is sent instead of empty coordinates.
+	- When user sending a location, 0.0 is sent instead of empty coordinates.
 
 
 

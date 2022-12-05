@@ -21,8 +21,8 @@
 
 - *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
 
-	- Added getting information about the dialogue every 3.5 seconds.
-	- Added a check for obtaining a user's avatar, in which case there will be no request to obtain them from www.gravatar.com.
+	- Added getting meta information (counters) about the conversations every 3.5 seconds.
+	- Added a check for obtaining a user's avatar, there will be no request to obtain it from www.gravatar.com.
 
 - *NovaTalks.UI*: Localization update [:clipboard: NC2-365] [NC2-365]
 
