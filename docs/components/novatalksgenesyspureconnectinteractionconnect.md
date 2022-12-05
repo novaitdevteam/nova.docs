@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2021R4
-###2021R4-5
+###2021R4-5 :briefcase: Epic
 ####New Features
 - *NovaTalks.UI*: login using UID [:clipboard: NC2-53] [NC2-53]
 
@@ -83,7 +83,7 @@
 ***
 
 
-###2021R4-3
+###2021R4-3 :briefcase: Epic
 ####New Features
 - *NovaTalks.ChatProxy*: ChatProxy :material-arrow-right: ChatWoot connector [:clipboard: NC2-26] [NC2-26]
 
@@ -253,7 +253,7 @@ If does not exist, then sort by alphabet and choose first by isAcdStatus (true f
 
 ***
 
-###2021R4-2
+###2021R4-2 :briefcase: Epic
 ####New Features
 - *Nova.Chats*: Node.JS ChatWoot Backend expanding [:clipboard: NC2-4] [NC2-4]
 
@@ -287,7 +287,7 @@ If does not exist, then sort by alphabet and choose first by isAcdStatus (true f
 - none
 ***
 
-###2021R3
+##2021R3
 ####New Features
 - *Genesys.PureConnect.Widget*: Interaction Connect Widget development [:clipboard: NC2-2] [NC2-2]
 
