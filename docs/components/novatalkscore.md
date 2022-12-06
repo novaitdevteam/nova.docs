@@ -11,6 +11,32 @@
 ##2022R4
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
+- *NovaTalks.Core*: AgentBot role implementation, Part 1 [:clipboard: NC2-244] [NC2-244]
+
+	- **AgentBot** inbox integrations have their own **access_token** to access Novatalks API
+	- **access_token** is created and assigned to the integration on its creation
+	- AgentBot's access_token has **administrator** rights
+	
+	> AgentBot is not a user and doesn't behave the same as them
+	
+	> AgentBot can not be assigned to conversation, added to inbox or team as a user
+
+- *NovaTalks.Core*: AgentBot role implementation, Part 2 [:clipboard: NC2-245] [NC2-245]
+
+	- AgentBot's access_token has **owner_type** == **AgentBot**
+	- Messages sent via AgentBot's access_token have **sender_type** == **AgentBot** with a corresponding **sender_id**
+	- Changed **disableChangeStatus** and its description in the sender nodes (Nova.Botflow) to work with new logic 
+	- Disabled **content_attributes** sending (Nova.Botflow)
+	- Generation of new WS events
+		- event: "contact.updated"
+		- event: "conversation.status_changed"
+		- event: "message.created"
+		
+		> **data.sender.type** shows user type: **user**, **agent_bot**, **contact**
+
+	- Messages sent via AgentBot's access_token change conversation status to **pending**
+	- Messages sent via User's access_token change conversation status to **open**
+
 - *NovaTalks.Core.BA*: Menu (IVR) [:clipboard: NC2-242] [NC2-242]
 
 	- A visual form (tree) has been implemented, according to which the client can create a menu as needed
@@ -49,90 +75,64 @@
 		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_status</summary>
 		<p>
 		```
-		accountId *
-		number
-		(path)
-		The numeric ID of the account
+		accountId - number (in path) - The numeric ID of the account
 
-		inboxes
-		array[number]
-		(query)
-		The numeric IDs of the inboxes
+		inboxes - array[number] - (in query) - The numeric IDs of the inboxes
 
-		teams
-		array[number]
-		(query)
-		The numeric IDs of the teams
+		teams - array[number] - (in query) - The numeric IDs of the teams
 
-		status
-		string
-		(query)
-		The agent status
-		online
-
-		Here example for accountId 1, inboxes 1 and 2, teams 1 and status online:
-		/api/v2/accounts/1/realtime/agent_status?inboxes=1&inboxes=2&teams=1&status=online
+		status - string (in query) - The agent status
 		```
 		</p>
 		</details>
+
+		> Example for accountId 1, inboxes 1 and 2, teams 1 and status online:
+		> /api/v2/accounts/1/realtime/agent_status?inboxes=1&inboxes=2&teams=1&status=online
 
 		- **Get agent overview realtime**
 		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
 		<p>
 		```
-		accountId *
-		number
-		(path)
-		The numeric ID of the account
+		accountId - number (in path) - The numeric ID of the account
 
-		agents
-		array[number]
-		(query)
-		The numeric IDs of the agents
-
-		Here example for accountId 1 and agents 1 and 2:
-		/api/v2/accounts/1/realtime/agent_overview?agents=1&agents=2
+		agents - array[number] (in query) - The numeric IDs of the agents
 		```
 		</p>
 		</details>
+
+		> Example for accountId 1 and agents 1 and 2:
+		> /api/v2/accounts/1/realtime/agent_overview?agents=1&agents=2
+
 		- **Get team overview realtime**
 		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
 		<p>
 		```
-		accountId *
-		number
-		(path)
-		The numeric ID of the account
+		accountId
+		number - (in path) - The numeric ID of the account
 
 		teams
-		array[number]
-		(query)
-		The numeric IDs of the teams
-
-		Here example for accountId 1 and teams 1 and 2:
-		/api/v2/accounts/1/realtime/team_overview?teams=1&teams=2
+		array[number] - (in query) - The numeric IDs of the teams
 		```
 		</p>
 		</details>
+
+		> Example for accountId 1 and teams 1 and 2:
+		> /api/v2/accounts/1/realtime/team_overview?teams=1&teams=2
+
 		- **Get inbox overview realtime**
 		<details><summary>GET /api/v2/accounts/{accountId}/realtime/agent_overview</summary>
 		<p>
 		```
-		accountId *
-		number
-		(path)
-		The numeric ID of the account
+		accountId - number (in path) - The numeric ID of the account
 
-		inboxes
-		array[number]
-		(query)
-		The numeric IDs of the inboxes
-
-		Here example for accountId 1 and inboxes 1 and 2:
-		/api/v2/accounts/1/realtime/team_overview?inboxes=1&inboxes=2
+		inboxes - array[number] (in query) - The numeric IDs of the inboxes
 		```
 		</p>
 		</details>
+
+		> Here example for accountId 1 and inboxes 1 and 2:
+		> /api/v2/accounts/1/realtime/team_overview?inboxes=1&inboxes=2
+
 	- Fixed data collection in the database
 	- Fixed collection of statistics for **dialogs** table
 

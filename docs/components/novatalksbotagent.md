@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2022R3
-##2022R3-6
+###2022R3-6 :briefcase: Epic
 ####New Features
 
 - *NovaTalks.BotAgent*: batch\gallery media sending. [:clipboard: NC2-203] [NC2-203]
@@ -27,7 +27,7 @@
 
 ***
 
-##2022R3-5
+###2022R3-5 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent*: Post Call Survey - flow scenario [:clipboard: NC2-227] [NC2-227]
 
@@ -50,7 +50,7 @@
 
 ###2022R3-4 :briefcase: Epic
 ####New Features
-- *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project  [:clipboard: NC2-243] [NC2-243]
+- *NovaTalks.BotAgent*: Syncronization with the forked Red Bot project [:clipboard: NC2-243] [NC2-243]
 
 	- Changed node names to NovaTalks on front-end
 
@@ -414,8 +414,8 @@ axios(config)
 - none
 ***
 
-###2021R4
-###2021R4-5
+##2021R4
+###2021R4-5 :briefcase: Epic
 ####New Features
 - *NovaTalks.BotAgent*: DEMO chatbot [:clipboard: NC2-51] [NC2-51]
 

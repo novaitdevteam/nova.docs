@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2021R4
-###2021R4-4 :briefcase: Epic (unvalidated)
+###2021R4-4 :briefcase: Epic
 ####New Features
 - none
 
@@ -17,6 +17,7 @@
 - *WhatsApp (Infobip)*: fixed sending file issue (unsupported attachment type) [:clipboard: NOV-305] [NOV-305]
 ***
 
+###Out of Epic
 ####New Features
 - none
 

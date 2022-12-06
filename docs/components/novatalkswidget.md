@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2022R3
-##2022R3-5
+###2022R3-5 :briefcase: Epic
 ####New Features
 - none
 
@@ -20,7 +20,7 @@
 
 ***
 
-##2022R3-4
+###2022R3-4 :briefcase: Epic
 ####New Features
 - *NovaTalks.ChatWidget*: Change of standard Welcome Message promts [:clipboard: NC2-269] [NC2-269]
 
@@ -62,7 +62,7 @@
 	
 <details><summary>Script example</summary>
 <p>
-```html
+``` html
 <html>
   <head>
     <title>NovaTalks Demo Standalone Chat</title>

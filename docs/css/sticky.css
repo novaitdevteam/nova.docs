@@ -9,12 +9,12 @@ td:nth-child(even), th:nth-child(even) {
 th {
   background-color: #F8F8F8;
 }
-/*
+
 td:first-child {
   position: sticky;
   left: 0	
 }
-*/
+/*
 table thead th:first-child {
   position: sticky;
   left: 0;
@@ -26,7 +26,7 @@ table tbody th {
   background: white;
   z-index: 1;
 }
-
+*/
 /*.connector-table {
   position: relative;
 }
