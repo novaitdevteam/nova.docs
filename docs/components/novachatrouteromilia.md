@@ -9,7 +9,7 @@
 ##Product Notices
 ***
 ##2022R1
-##2022R1-2 :briefcase: Epic
+###2022R1-2 :briefcase: Epic
 ####New Features
 - Extension of work with Sandblast API [:clipboard: NOV-310] [NOV-310]
 

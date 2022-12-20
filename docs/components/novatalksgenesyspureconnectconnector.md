@@ -38,7 +38,7 @@
 - none
 ***
 
-###2021R2
+##2021R2
 ####New Features
 - *Genesys.PureConnect.Connector*: Core development [:clipboard: NC2-1] [NC2-1]
 
