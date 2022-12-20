@@ -8,6 +8,20 @@
 #NovaTalks.UI
 ##Product Notices
 ***
+###2022R4-5 :briefcase: Epic
+####New Features
+
+- *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
+
+[Calendars TK](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+
+- *NovaTalks.Core|UI*: Hide **Offline** status [:clipboard: NC2-432] [NC2-432]
+
+	- Hidden **offline** status for Agenst. 
+
+####Bug Fixes
+- none
+
 ##2022R4
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
