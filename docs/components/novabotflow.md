@@ -13,17 +13,17 @@
 ####New Features
 - *Nova.Botflow*: Add "Video" processing (FB Messenger) [:clipboard: NC2-177] [NC2-177]
 
-	- Added processing of outgoing videos to the code .\src\node-red-contrib-chatbot\lib\platforms\facebook\facebook.js
+	- Added processing of outgoing videos to the code
 	> .\src\node-red-contrib-chatbot\lib\platforms\facebook\facebook.js
 
-- *Nova.Botflow* IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368]
-	- Updated botflow according to new [Menu (IVR) TK](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs).
+- *Nova.Botflow*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368]
+	- Updated botflow according to new [Menu (IVR) specification](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs).
 
-- *Nova.Botflow* NodeRed 3 migration [:clipboard: NC2-404] [NC2-404]
+- *Nova.Botflow*: NodeRed 3 migration [:clipboard: NC2-404] [NC2-404]
 	- Updated **node-red -> 3.0.2**
 	- Updated **node.js -> 18.12.1** (node:18.12.1-alpine)
 	- Updated **yarn.lock**
-	- Added commitlint [commitlint](https://commitlint.js.org/).
+	- Added [commitlint](https://commitlint.js.org/).
 
 
 ####Bug Fixes
@@ -32,20 +32,20 @@
 	- Fixed handling of messages with type = undefined if the message passed all checks and did not receive a type, so this type is not supported.
 	- Such messages are reset and do not leave the connector.
 
-- *Nova.Botflow*:Queue modernization [:clipboard: NC2-398] [NC2-398]
+- *Nova.Botflow*: Queue modernization [:clipboard: NC2-398] [NC2-398]
 
 	- Fixed incorrect behavior when the queue gap is set to 0
 	- Now we can insert a Queue Selector into the several nesting levels. For example: payload.chatId.
 
 	
-- *Nova.Botflow* Errors with sending pictures, videos and messages [:clipboard: NC2-293] [NC2-293]
+- *Nova.Botflow*: Errors with sending pictures, videos and messages [:clipboard: NC2-293] [NC2-293]
 	- In TG\Viber\Messenger\Nexmo\Whatsapp Buisness nodes added variable **attachmentUrl** in **payload**.
 	- When the file size is greater than **MAX_FILE_SIZE**(env) Chatwoot In (NovaTalks In) sends **attachmentUrl**.
 	
-- *Nova.Botflow* NodeRed fallDown while sending **msg** without **chat** [:clipboard: NC2-416] [NC2-416]
+- *Nova.Botflow*: NodeRed fallDown while sending **msg** without **chat** [:clipboard: NC2-416] [NC2-416]
 	- Added processing **msg** objects without **chat()** by **done()** func.
 
-- *Nova.Botflow* The **track** state on the sender node is not saves [:clipboard: NC2-399] [NC2-399]
+- *Nova.Botflow*: The **track** state on the sender node is not saves [:clipboard: NC2-399] [NC2-399]
 	- Fixed stopping of sending messages when NodeRed incorrectly shutting down.
 	- Updated sender-factory work with global context and enviroment.
 

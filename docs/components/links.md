@@ -229,6 +229,7 @@
 [NC2-380]: https://sd.novait.com.ua/browse/NC2-380
 [NC2-372]: https://sd.novait.com.ua/browse/NC2-372
 [NC2-368]: https://sd.novait.com.ua/browse/NC2-368
+[NC2-369]: https://sd.novait.com.ua/browse/NC2-369
 [NC2-367]: https://sd.novait.com.ua/browse/NC2-367
 [NC2-365]: https://sd.novait.com.ua/browse/NC2-365
 [NC2-364]: https://sd.novait.com.ua/browse/NC2-364

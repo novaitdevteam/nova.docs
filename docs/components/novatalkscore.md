@@ -15,15 +15,12 @@
 
 - *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
 
-[Calendars TK](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Calendars specification](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
-- *NovaTalks.Core*: Menu IVR [:clipboard: NC2-372] [NC2-372]
+- *NovaTalks.Core*: Menu IVR [:clipboard: NC2-369] [NC2-369]
 
-[Menu IVR TK](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Menu IVR specification](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
-- *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-242] [NC2-242]
-
-[Calendars TK](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
 ####Bug Fixes
 - none
@@ -66,14 +63,14 @@
 		-  Output embedded text from the menu + the ability to attach a file
 
 
-[Menu (IVR) TK](https://drive.google.com/drive/folders/1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv)
+[Menu (IVR) specification](https://drive.google.com/drive/folders/1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv)
 
 
-[ChatBot TK](https://drive.google.com/drive/folders/1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw)
+[ChatBot specification](https://drive.google.com/drive/folders/1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw)
 
 - *NovaTalks.Core.BA*: Historical Reports, Implementation in UI [:clipboard: NC2-190] [NC2-190]
 
-[Historical Reports TK](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Historical Reports specification](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
 - *NovaTalks.Core*: Implementation of the AgentBot role, Part 1 [:clipboard: NC2-244] [NC2-244]
 
@@ -156,7 +153,7 @@
 	- Fixed collection of statistics for **dialogs** table
 
 - *NovaTalks.Core*: Realtime Statistics - Changes in the database [:clipboard: NC2-351] [NC2-351]
-	- Database has been changet according to [Database TK](https://drive.google.com/open?id=1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+	- Database has been changet according to [Database specification](https://drive.google.com/open?id=1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
 - *NovaTalks.Core*: Cascade removal of custom_attribute in dialog, contact [:clipboard: NC2-338] [NC2-338]
 
