@@ -8,22 +8,46 @@
 #NovaTalks.UI
 ##Product Notices
 ***
+
+##2022R4
 ###2022R4-5 :briefcase: Epic
 ####New Features
 
-- *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
+- *NovaTalks.UI*: Calendars [:clipboard: NC2-372] [NC2-372]
+
+	- Added creation of custom agents' work schedule calendars to use in other functionalities
+
+	- Features:
+
+		- Selecting timezone
+
+		- Setting weekly hours 
+
+		> availability windows for each day of the week
+
+		- Setting exceptions
+
+		> Select calendar day and availability exception hours for it
 
 [Calendars specification](https://drive.google.com/drive/folders/1G8eNbFayR2ZhDkevvUStTElGZxGPOA5S)
 
-- *NovaTalks.Core|UI*: Hide **Offline** status [:clipboard: NC2-432] [NC2-432]
+- *NovaTalks.UI*: Hidden **Offline** status change option [:clipboard: NC2-432] [NC2-432]
 
-	- Hidden **offline** status for Agenst.
-	- The system assigns an offline status to the agent when the connection is interrupted for 10 minutes or when agent has been logged out.
+	- Hidden **offline** status for Agent and Administrators in UI
+	- The system assigns an offline status to the agent when the websocket connection is interrupted for 10 minutes or when agent has logged out
+
+- *NovaTalks.UI*: Menu IVR [:clipboard: NC2-369] [NC2-369]
+
+	- Assembly of data based on Chat Bot configuration in NovaTalks
+
+	- Sending data to Nova.Botflow for Message Factory builder
+
+[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
 
 ####Bug Fixes
 - none
 
-##2022R4
+***
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
 
@@ -31,10 +55,9 @@
 
 	- Implemented historical reports in UI
 
-
 [Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
 
-- *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
+- *NovaTalks.UI*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
 
 	- Added getting meta information (counters) about the conversations every 3.5 seconds.
 	- Added a check for obtaining a user's avatar, there will be no request to obtain it from www.gravatar.com.
@@ -44,11 +67,10 @@
 	- Updated localization for NovaTalks User Interface.
 
 ####Bug Fixes
+- *NovaTalks.UI*: Fixed agent ability to see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
 
-- *NovaTalks.UI/Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
-
-	- The agent now cannot see all inbox dialogues/custom filters without being a member of them.
-
+	- The agent now cannot see all inbox dialogues/custom filters without being a member of corresponding inbox.
+***
 
 ##2022R3
 ###2022R3-6 :briefcase: Epic 
