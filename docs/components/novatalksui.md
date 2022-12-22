@@ -13,11 +13,12 @@
 
 - *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
 
-[Calendars specification](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Calendars specification](https://drive.google.com/drive/folders/1G8eNbFayR2ZhDkevvUStTElGZxGPOA5S)
 
 - *NovaTalks.Core|UI*: Hide **Offline** status [:clipboard: NC2-432] [NC2-432]
 
-	- Hidden **offline** status for Agenst. 
+	- Hidden **offline** status for Agenst.
+	- The system assigns an offline status to the agent when the connection is interrupted for 10 minutes or when agent has been logged out.
 
 ####Bug Fixes
 - none
@@ -31,7 +32,7 @@
 	- Implemented historical reports in UI
 
 
-[Historical reports specification](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
 
 - *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
 

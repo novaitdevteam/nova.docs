@@ -15,11 +15,11 @@
 
 - *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
 
-[Calendars specification](https://drive.google.com/open?id=1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Calendars specification](https://drive.google.com/drive/folders/1G8eNbFayR2ZhDkevvUStTElGZxGPOA5S)
 
 - *NovaTalks.Core*: Menu IVR [:clipboard: NC2-369] [NC2-369]
 
-[Menu IVR specification](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
 
 
 ####Bug Fixes

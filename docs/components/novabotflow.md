@@ -11,13 +11,13 @@
 
 ###2022R4-5 :briefcase: Epic
 ####New Features
-- *Nova.Botflow*: Add "Video" processing (FB Messenger) [:clipboard: NC2-177] [NC2-177]
+- *Facebook Messenger*: Add "Video" processing [:clipboard: NC2-177] [NC2-177]
 
 	- Added processing of outgoing videos to the code
 	> .\src\node-red-contrib-chatbot\lib\platforms\facebook\facebook.js
 
-- *Nova.Botflow*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368]
-	- Updated botflow according to new [Menu (IVR) specification](https://drive.google.com/open?id=1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs).
+- *Nova.Botflow*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368] 
+	- Updated botflow according to new [Menu (IVR) specification](https://drive.google.com/drive/folders/1Du0vARHkvO1rR5lWXx2qY3Q9zuI0izeZ).
 
 - *Nova.Botflow*: NodeRed 3 migration [:clipboard: NC2-404] [NC2-404]
 	- Updated **node-red -> 3.0.2**
@@ -54,7 +54,7 @@
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
 
-- *Nova.BotFlow*: Whatsapp-Web: Receiving unread messages [:clipboard: NC2-396] [NC2-396]
+- *Whatsapp-Web*: Receiving unread messages [:clipboard: NC2-396] [NC2-396]
 
 	- Whatsapp-Web: when BotFlow starts, the process of reading all unread messages that have accumulated will be started.
 
