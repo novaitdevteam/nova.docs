@@ -9,56 +9,87 @@
 ##Product Notices
 ***
 
+##2022R4
 ###2022R4-5 :briefcase: Epic
 ####New Features
-- *Facebook Messenger*: Add "Video" processing [:clipboard: NC2-177] [NC2-177]
+- *Facebook Messenger*: Added "Video" processing [:clipboard: NC2-177] [NC2-177]
 
-	- Added processing of outgoing videos to the code
-	> .\src\node-red-contrib-chatbot\lib\platforms\facebook\facebook.js
+	- Added processing of outgoing (from agent to client
 
-- *Nova.Botflow*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368] 
+	> message.attachment.type = "video"
+
+	> message.attachment.payload.url:
+
+	> Optional. URL of the file to upload. 
+
+	> Max file size is 25MB for all file types including (after encoding), excluding images.
+
+	> A Timeout is set to 75 seconds for videos and 10 seconds for all other file type.
+
+- *NovaTalks*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368] 
+	
+	- changed global variables to flow variables
+
+	- added agentbot-token verification
+
 	- Updated botflow according to new [Menu (IVR) specification](https://drive.google.com/drive/folders/1Du0vARHkvO1rR5lWXx2qY3Q9zuI0izeZ).
 
-- *Nova.Botflow*: NodeRed 3 migration [:clipboard: NC2-404] [NC2-404]
+- *All*: NodeRed 3 migration [:clipboard: NOV-404] [NOV-404]
 	- Updated **node-red -> 3.0.2**
-	- Updated **node.js -> 18.12.1** (node:18.12.1-alpine)
-	- Updated **yarn.lock**
-	- Added [commitlint](https://commitlint.js.org/).
 
+	- Updated **node.js -> 18.12.1** 
+
+	> for images use **node:18.12.1-alpine** as a basis
+
+	- Updated **yarn.lock**
+	
+	- Added [commitlint](https://commitlint.js.org/) library
+
+	> checks if commit messages meet the conventional commit format
+
+- *All*: Queue improvement [:clipboard: NC2-398] [NC2-398]
+
+	- Fixed incorrect behavior when the queue size is set to 0  (< 1 for no limit)
+	- Now we can insert a Queue Selector into the several nesting levels. For example: msg.payload.chatId
 
 ####Bug Fixes
 
-- *Nova.Botflow*: Correct handling of unsupported types in connectors[:clipboard: NC2-364] [NC2-364]
-	- Fixed handling of messages with type = undefined if the message passed all checks and did not receive a type, so this type is not supported.
-	- Such messages are reset and do not leave the connector.
+- *All*: Fixed handling of unsupported types in connectors [:clipboard: NC2-364] [NC2-364]
 
-- *Nova.Botflow*: Queue modernization [:clipboard: NC2-398] [NC2-398]
+	- Fixed handling of messages with **type** = **undefined** 
 
-	- Fixed incorrect behavior when the queue gap is set to 0
-	- Now we can insert a Queue Selector into the several nesting levels. For example: payload.chatId.
+	> if the message passed all checks and did not receive a type then this message type is not supported
 
+	- Messages with unsupported type are dropped and do not leave the connector
 	
-- *Nova.Botflow*: Errors with sending pictures, videos and messages [:clipboard: NC2-293] [NC2-293]
-	- In TG\Viber\Messenger\Nexmo\Whatsapp Buisness nodes added variable **attachmentUrl** in **payload**.
-	- When the file size is greater than **MAX_FILE_SIZE**(env) Chatwoot In (NovaTalks In) sends **attachmentUrl**.
+- *All*: Fixed error logging on receiving pictures big media in NovaTalks In node [:clipboard: NC2-293] [NC2-293]
+
+	- Channel Receiver nodes add variable **attachmentUrl** to the **payload** when attachment is bigger than set size
+
+	- When the file size is greater than **MAX_FILE_SIZE**(Node Red envirounment variable) NovaTalks In sends **attachmentUrl** instead of file
+
+	> MAX_FILE_SIZE default value is 10485760 bytes
 	
-- *Nova.Botflow*: NodeRed fallDown while sending **msg** without **chat** [:clipboard: NC2-416] [NC2-416]
-	- Added processing **msg** objects without **chat()** by **done()** func.
+- *All*: NodeRed shutdown on sending **msg** without **chat()** data [:clipboard: NC2-416] [NC2-416]
+	- Added processing of **msg** objects without **chat()** or if **chat** is not a function
 
-- *Nova.Botflow*: The **track** state on the sender node is not saves [:clipboard: NC2-399] [NC2-399]
-	- Fixed stopping of sending messages when NodeRed incorrectly shutting down.
-	- Updated sender-factory work with global context and enviroment.
+- *All*: Fixed **track** state preservation on Node Red shutdown and restart [:clipboard: NC2-399] [NC2-399]
 
+	- Fixed message sending on NodeRed incorrect shutdown
 
-##2022R4
+	> messages are received when Node Red in up
+
+	- Updated sender-factory work with global context and enviroment
+***
+
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
 
-- *Whatsapp-Web*: Receiving unread messages [:clipboard: NC2-396] [NC2-396]
+- *Whatsapp-Web*: Added receiving of not received messages [:clipboard: NC2-396] [NC2-396]
 
-	- Whatsapp-Web: when BotFlow starts, the process of reading all unread messages that have accumulated will be started.
+	- Nova.Botflow deploy initiates the process of reading all unread (and unreceived) messages that have been accumulated during Nova.Botflow inaccessibility
 
-- *Nova.BotFlow*: Initiation of new messages without a bot [:clipboard: NC2-330] [NC2-330]
+- *NovaTalks*: Initiation of new messages without a bot [:clipboard: NC2-330] [NC2-330]
 
 	- If the agent is the initiator of the dialog (the agent is the first to write to the client), when the client responded to the dialog, this dialog does not enter the standard chat bot.
 
@@ -67,8 +98,7 @@
 - *Nova.BotFlow*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
 
 	- When user sending a location, 0.0 is sent instead of empty coordinates.
-
-
+***
 
 ##2022R3
 ###2022R3-6 :briefcase: Epic
@@ -185,7 +215,7 @@ https://graph.facebook.com/v13.0/{{phone_number_id}}/messages
 </p>
 </details>
 
--  Nova.BotFlow: Integration with Line messenger. [:clipboard: NOV-423] [NOV-423]
+-  *Line*: Integration with Line Messenger [:clipboard: NOV-423] [NOV-423]
 	- Added integration with line messenger.
 
 <details><summary>Features</summary>
@@ -252,7 +282,7 @@ Carousel is supported as a number of Card type messages, where every card may ha
 </details>
 
 ####Bug Fixes
--  *WhatsApp* Nexmo (Vonage). Implementation List Messages for WhatsApp (for ChatBot) [:clipboard: NOV-415] [NOV-415]
+-  *WhatsApp* Nexmo (Vonage): Implementation List Messages for WhatsApp (for ChatBot) [:clipboard: NOV-415] [NOV-415]
 	- Implemented support for WhatsApp List Messages (List Picker):
 
 		• Maximum a menu of up to 10 options
@@ -270,19 +300,19 @@ Carousel is supported as a number of Card type messages, where every card may ha
 		• List section must contain at least one item
 
 
--  Request is not sent via sender. [:clipboard: NOV-421] [NOV-421]
+-  *Telegram*,*Viber*: Fixed phone number and location request not being sent through Channel Sender node [:clipboard: NOV-421] [NOV-421]
 	- Fixed sending phone number and geolocation request.
+
 	> Added support for requesting a number \ location using the keyboard.
-	
+
 	> Visually displayed telegram support for this type of keyboard buttons.
 
--  NovaBotflow. GenesysPureCloud more than one configurations does not work. [:clipboard: NOV-414] [NOV-414]
-	- Fixed inability to write to GenesysPureCloud with more than 1 connection configuration.
+-  *Genesys*: Fixed Genesys Pure Cloud not working with more than one active configuration [:clipboard: NOV-414] [NOV-414]
+	- Fixed inability to write to GenesysPureCloud with more than one active connection configuration.
 	> Two or more configurations which use the same AWS region could overwrite each others authorization data.
 
-
-	
 ***
+
 ###2022R3-5 :briefcase: Epic
 ####New Features
 - none
