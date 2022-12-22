@@ -8,22 +8,40 @@
 #NovaTalks.Core
 ##Product Notices
 ***
-##2022R4
 
+##2022R4
 ###2022R4-5 :briefcase: Epic
 ####New Features
 
-- *NovaTalks.Core|UI*: Calendars [:clipboard: NC2-372] [NC2-372]
+- *NovaTalks.Core*: Calendars [:clipboard: NC2-372] [NC2-372]
+
+	- Added creation of custom agents' work schedule calendars to use in other functionalities
+
+	- Features:
+
+		- Selecting timezone
+
+		- Setting weekly hours 
+
+		> availability windows for each day of the week
+
+		- Setting exceptions
+
+		> Select calendar day and availability exception hours for it
 
 [Calendars specification](https://drive.google.com/drive/folders/1G8eNbFayR2ZhDkevvUStTElGZxGPOA5S)
 
-- *NovaTalks.Core*: Menu IVR [:clipboard: NC2-369] [NC2-369]
+- *NovaTalks.Core*: Menu IVR [:clipboard: NC2-334] [NC2-334]
+
+	- Assembly of data based on Chat Bot configuration in NovaTalks
+
+	- Sending data to Nova.Botflow for Message Factory builder
 
 [Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
 
-
 ####Bug Fixes
 - none
+***
 
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
@@ -171,8 +189,7 @@
 
 ```
 
-
-- *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
+- *NovaTalks.Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
 
 	- Added getting meta information (counters) about the conversations every 3.5 seconds.
 	- Added a check for obtaining a user's avatar, there will be no request to obtain it from www.gravatar.com.
@@ -180,12 +197,16 @@
 - *NovaTalks.Core*: Check Type and Role of Token Endpoint [:clipboard: NC2-383] [NC2-383]
 
 	- GET auth/get_token_info - a new endpoint, returns data about the user by token.
-	- NovaTalks In node - token verification has been added on deployment;	 it must be **ownerType = "User"**, otherwise - show the status (signature under the node).
+
+	- NovaTalks In node - token verification has been added on deployment;
+
+	> it must be **ownerType = "User"**, otherwise - show the status (signature under the node).
+
 	- BotAgent In node - similar, but **ownerType = "AgentBot"**.
 
 ####Bug Fixes
 
-- *NovaTalks.UI/Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+- *NovaTalks.Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
 
 	- Fixed agent's ability to see all inbox's conversations without being its member.
 	- Fixed agent's ability to see all team's conversations without being its member.
@@ -193,7 +214,7 @@
 	- Fixed agent's ability to see WebSocket events related to the teams and inboxes that he is not a member of.
 	- Fixed agent's ability to direct entry by url to the resources (conversations, conversations filter by inbox conversations filter by team ) that he is not a member of.
 
-- *NovaTalks.CORE*: Add validation\limitation when creating and updating custom\additional attributes [:clipboard: NC2-337] [NC2-337]
+- *NovaTalks.Core*: Add validation\limitation when creating and updating custom\additional attributes [:clipboard: NC2-337] [NC2-337]
 	- Added validation on custom\additional attributes in contacts and conversations.
 	- Additional attributes fields in the conversations: **botId**, **chatId**, **contactSource**.
 	- Added validation on custom\additional attributes in contacts and conversations, and added validation on **content_attributes** in **messages**.
@@ -210,6 +231,7 @@
 
 	- On core: fixed the "URI malformed" error when trying to download a file with incorrect (cyrylic letters and url encoding) name.
 	- On botflow: getting the file name has been fixed; now if it has a Cyrillic name it will not be corrupted, but will remain original.
+***
 
 ##2022R3
 ###2022R3-6 :briefcase: Epic
