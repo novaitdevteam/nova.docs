@@ -8,6 +8,7 @@
 [NOV-407]: https://sd.novait.com.ua/browse/NOV-407
 [NOV-406]: https://sd.novait.com.ua/browse/NOV-406
 [NOV-405]: https://sd.novait.com.ua/browse/NOV-405
+[NOV-404]: https://sd.novait.com.ua/browse/NOV-404
 [NOV-403]: https://sd.novait.com.ua/browse/NOV-403
 [NOV-402]: https://sd.novait.com.ua/browse/NOV-402
 [NOV-400]: https://sd.novait.com.ua/browse/NOV-400
