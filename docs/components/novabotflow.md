@@ -9,7 +9,181 @@
 ##Product Notices
 ***
 
+##2023R1
+
+###2023R1-4 :briefcase: Epic
+
+####New Features
+
+
+- *Nova.BotFlow*: System for dividing messages into smaller [:clipboard: NOV-467] [NOV-467]
+
+	- Implemented a system for dividing messages into smaller, according to next limitations in **.env** file:
+
+		> **MESSAGE_MAX_SIZE_TG_BOT**=3992
+
+		> **MESSAGE_MAX_SIZE_VIBER**=3992
+
+		> **MESSAGE_MAX_SIZE_WHATSAPP_BUSINESS**=3992
+
+		> **MESSAGE_MAX_SIZE_FACEBOOK**=2000
+
+		> **MESSAGE_MAX_SIZE_INSTAGRAM**=998
+
+
+####Bug Fixes
+
+***
+
+###2023R1-3 :briefcase: Epic
+####New Features
+
+- *Nova.BotFlow*: New Botflow API [:clipboard: NC2-450] [NC2-450]
+	- Added new endpoints for botflow:
+		<details><summary>api/v1/accounts/${accountId} :</summary>
+		<p>
+		```
+		contacts/search - get
+		contacts - post
+
+		contacts/${contactId}/contact_inboxes - post
+		contacts/${contactId}/conversations - get
+		conversations/filter - post
+		conversations/${conversationId}/attributes - post
+		conversations - post
+		conversations/${conversationId}/messages - post
+		conversations/${conversationId}/assignments -post
+		conversations/${conversationId}/toggle_status - post
+		conversations/${conversationId}/chatbot_settings - get
+		teams - get
+		teams/${teamId}/team_members - get
+
+		agents - get
+		```
+		</p>
+		</details>
+
+
+- *Nova.BotFlow*: Changes in menu IVR [:clipboard: NC2-481] [NC2-481]
+
+	- Added turning off greeting prompt.
+	- Added turning off transfer prompt.
+	- Added buttons in widget.
+	- Added buttons in instagam.
+	- Removed conversation auto-complete timers for non-working hours.
+	- Added catch node where where context is requesting.
+	- Added throttling to the default logic on attachments.
+
+	[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
+
+- *Whatsapp-Web*: Updated library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+
+	- Whatsapp-web library has been updated to v1.19.4
+	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
+
+- *Whatsapp-Web*: Updated library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+
+	- Whatsapp-web library has been updated to v1.19.4
+	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
+
+- *ABC*: Fixed bugs & new logic [:clipboard: NOV-442] [NOV-442]
+
+	- List Picker - check if exist: Single selection text only, Multi selection text only, Multi SECTION with icons for send/received list pickers as well as images.
+	- Video - Add a Video and Image Using Rich Links.
+	- 4.Authentication Message - Demonstrate a use case where classic authentication is supported, and the same use case when the user is on a device that supports the new authentication
+	- iMessage Apps - Support iMessage apps for advanced interactions.
+	- Form Message - Support forms interactions.
+	- Quick Reply Messages - The agent or operator can trigger this message type via an automated flow, or a canned response/object available in the agent console.
+	- Form Message - The agent or operator can trigger this message type via an automated flow, or a canned response/object available in the agent console
+	- Time Picker Message - With icons for send/received time picker as well as location and GPS information.
+
+####Bug Fixes
+
+- *All*: Fixed extension validation [:clipboard: NC2-357] [NC2-357]
+
+	- Fixed processing of unsupported filetypes for telegram, viber, facebook, whatsapp.
+	- Added logging in console and botflow when sending unsupported filetype.
+
+- *Whatsapp-Web*: Fixed username when sending an array [:clipboard: NOV-460] [NOV-460]
+
+	- Fixed username substitution when sending an array of unread messages.
+	- All information about sender is taken from the first element of array.
+
+- *Nova.BotFlow*: Fixed maintenance of the botflow state [:clipboard: NOV-463] [NOV-463]
+
+	- For saving state botflow use **node._alias** instead of **node.id**.
+	- This task is the solution of following tasks:
+
+		> [:clipboard: NOV-462] [NOV-462]
+
+		> [:clipboard: NOV-461] [NOV-461]
+
+
+
+- *ABC*: Fixed bugs & new logic [:clipboard: NOV-452] [NOV-452]
+
+	- Fixed bugs (red in specification).
+	- Added new logic (yellow in specification).
+	- In this task has been fixed [:clipboard: NOV-449] [NOV-449] (fixed List Picker displaying)
+
+	[ABC logic specification](https://drive.google.com/file/d/15qp9rPjcAyiWHw78_fuXIgyYySWHGPtN/view?usp=share_link)
+
+***
+
+###2023R1-1 :briefcase: Epic
+####New Features
+
+
+
+
+####Bug Fixes
+
+- *Nova.BotFlow. ABC*: Error when sending a message to the client [:clipboard: NOV-437] [NOV-437]
+
+	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
+
+- *Nova.BotFlow. ABC*: Fixed Apple Payment [:clipboard: NOV-436] [NOV-436]
+
+	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
+
+***
+
 ##2022R4
+###2023R4-6 :briefcase: Epic
+####New Features
+
+- *All*: Routes improvement for multiple channels [:clipboard: NC2-309] [NC2-309]
+
+	- Added a bot configuration check in the **rules** node.
+
+	- When **node configuration** is empty, all messages for selected **transport** are sent.
+
+	- Added **configId** into **msg.payload**.
+
+
+
+####Bug Fixes
+- *Viber*: Fixed incorrect message sending with attachments [:clipboard: NOV-430] [NOV-430]
+
+	- Messages of the "document" type with text are sent in two messages: **1-> document 2-> text**.
+
+- *NovaTalks*: Added interval for token validation [:clipboard: NC2-444] [NC2-444]
+
+	- Added token validation interval(**60s**) when the connection is broken.
+
+	- Validation will be repeated until it receives a response from engine.
+
+	- Added logging in botflow for token validation.
+
+- *NovaTalks*: Added interval for token validation [:clipboard: NOV-443] [NOV-443]
+
+	- Into **NovaTalks in** node added **array** support in **msg.payload**.
+	
+	- Added logging **agent is not in Inbox** into the console with **Response code 400 (Bad Request)**.
+
+***
+
+
 ###2022R4-5 :briefcase: Epic
 ####New Features
 - *Facebook Messenger*: Added "Video" processing [:clipboard: NC2-177] [NC2-177]
@@ -95,7 +269,7 @@
 
 ####Bug Fixes
 
-- *Nova.BotFlow*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
+- *Viber*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
 
 	- When user sending a location, 0.0 is sent instead of empty coordinates.
 ***
