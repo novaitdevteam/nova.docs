@@ -16,9 +16,9 @@
 ####New Features
 
 
-- *Nova.BotFlow*: System for dividing messages into smaller [:clipboard: NOV-467] [NOV-467]
+- *Nova.BotFlow*: System for dividing messages into smaller counterparts [:clipboard: NOV-467] [NOV-467]
 
-	- Implemented a system for dividing messages into smaller, according to next limitations in **.env** file:
+	- Messages are divided into multiple smaller messages according to the conversation channel character limitations, which are written in the **.env** file:
 
 		> **MESSAGE_MAX_SIZE_TG_BOT**=3992
 
@@ -32,65 +32,62 @@
 
 
 ####Bug Fixes
-
+- none
 ***
 
 ###2023R1-3 :briefcase: Epic
 ####New Features
 
-- *Nova.BotFlow*: New Botflow API [:clipboard: NC2-450] [NC2-450]
+- *Nova.BotFlow*: New NovaTalks API for Botflow [:clipboard: NC2-450] [NC2-450]
 	- Added new endpoints for botflow:
-		<details><summary>api/v1/accounts/${accountId} :</summary>
+		<details><summary>api/v1/accounts/${accountId}/intergrations:</summary>
 		<p>
 		```
-		contacts/search - get
-		contacts - post
-
-		contacts/${contactId}/contact_inboxes - post
-		contacts/${contactId}/conversations - get
-		conversations/filter - post
-		conversations/${conversationId}/attributes - post
-		conversations - post
-		conversations/${conversationId}/messages - post
-		conversations/${conversationId}/assignments -post
-		conversations/${conversationId}/toggle_status - post
-		conversations/${conversationId}/chatbot_settings - get
-		teams - get
-		teams/${teamId}/team_members - get
-
-		agents - get
+		Contact Search:                           GET  /contacts/search
+		Add Contact to Inbox:                     POST /contacts/${contactId}/contact_inboxes
+		Create Contact:                           POST /contacts
+		Conversation Search:                      POST /conversations/filter
+		Create Conversation:                      GET  /conversations
+		Create Message:                           POST /conversations/${conversationId}/messages
+		Toggle Status:                            POST /conversations/${conversationId}/toggle_status
+		Assign Conversation:                      POST /conversations/${conversationId}/assignments
+		Create or update Conversation Attributes: POST /conversations/${conversationId}/attributes
+		Get all Agents:                           GET  /agents
+		Get all Teams:                            GET  /teams
+		Get Details of Agents in a Team:          GET  /teams/${teamId}/team_members
+		Get conversation Chatbot Settings:        GET  /conversations/${conversationId}/chatbot_settings
 		```
 		</p>
 		</details>
 
-
 - *Nova.BotFlow*: Changes in menu IVR [:clipboard: NC2-481] [NC2-481]
 
-	- Added turning off greeting prompt.
-	- Added turning off transfer prompt.
-	- Added buttons in widget.
-	- Added buttons in instagam.
-	- Removed conversation auto-complete timers for non-working hours.
-	- Added catch node where where context is requesting.
-	- Added throttling to the default logic on attachments.
+	- Added option to turn off the greeting prompt
+	- Added option to turn off the transfer prompt
+	- Added buttons support in the widget channel
+	- Added buttons support in the instagam channel
+	- Removed conversation auto-complete timers for non-working hours
+	- Added catch node on all functions where context is requested
+	  (in some cases the context can be unavailable)
+	- Added throttling on attachments to the default logic
 
 	[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
 
-- *Whatsapp-Web*: Updated library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+- *Whatsapp-Web*: Update library whatsapp-web [:clipboard: NOV-468] [NOV-468]
 
 	- Whatsapp-web library has been updated to v1.19.4
 	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
 
-- *Whatsapp-Web*: Updated library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+- *Whatsapp-Web*: Update library whatsapp-web [:clipboard: NOV-468] [NOV-468]
 
 	- Whatsapp-web library has been updated to v1.19.4
 	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
 
-- *ABC*: Fixed bugs & new logic [:clipboard: NOV-442] [NOV-442]
-
+- *ABC*: New features implementation [:clipboard: NOV-442] [NOV-442]
+	List of new features:
 	- List Picker - check if exist: Single selection text only, Multi selection text only, Multi SECTION with icons for send/received list pickers as well as images.
 	- Video - Add a Video and Image Using Rich Links.
-	- 4.Authentication Message - Demonstrate a use case where classic authentication is supported, and the same use case when the user is on a device that supports the new authentication
+	- Authentication Message - Demonstrate a use case where classic authentication is supported, and the same use case when the user is on a device that supports the new authentication
 	- iMessage Apps - Support iMessage apps for advanced interactions.
 	- Form Message - Support forms interactions.
 	- Quick Reply Messages - The agent or operator can trigger this message type via an automated flow, or a canned response/object available in the agent console.
@@ -111,8 +108,8 @@
 
 - *Nova.BotFlow*: Fixed maintenance of the botflow state [:clipboard: NOV-463] [NOV-463]
 
-	- For saving state botflow use **node._alias** instead of **node.id**.
-	- This task is the solution of following tasks:
+	- For state saving the botflow will use **node._alias** instead of **node.id**.
+	This task is the solution to the following tasks:
 
 		> [:clipboard: NOV-462] [NOV-462]
 
@@ -122,9 +119,9 @@
 
 - *ABC*: Fixed bugs & new logic [:clipboard: NOV-452] [NOV-452]
 
-	- Fixed bugs (red in specification).
-	- Added new logic (yellow in specification).
-	- In this task has been fixed [:clipboard: NOV-449] [NOV-449] (fixed List Picker displaying)
+	- Fixed bugs (listed in the specification)
+	- Added new logic (yellow in specification)
+	- [:clipboard: NOV-449] [NOV-449] (fixed List Picker displaying) has been fixed as a part of this task 
 
 	[ABC logic specification](https://drive.google.com/file/d/15qp9rPjcAyiWHw78_fuXIgyYySWHGPtN/view?usp=share_link)
 
@@ -132,40 +129,36 @@
 
 ###2023R1-1 :briefcase: Epic
 ####New Features
-
-
-
+- none
 
 ####Bug Fixes
 
-- *Nova.BotFlow. ABC*: Error when sending a message to the client [:clipboard: NOV-437] [NOV-437]
+- *Nova.BotFlow. ABC*: Fixed error when sending a message to the client [:clipboard: NOV-437] [NOV-437]
 
-	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
+	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection information in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
 
 - *Nova.BotFlow. ABC*: Fixed Apple Payment [:clipboard: NOV-436] [NOV-436]
 
-	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
+	- Fixed array filling in the case when payload contains an array of messages
+	- Foxed LinkenIn authorization
 
 ***
 
 ##2022R4
 ###2023R4-6 :briefcase: Epic
 ####New Features
-
 - *All*: Routes improvement for multiple channels [:clipboard: NC2-309] [NC2-309]
 
-	- Added a bot configuration check in the **rules** node.
+	- Added a bot configuration check in the **rules** node
 
-	- When **node configuration** is empty, all messages for selected **transport** are sent.
+	- When **node configuration** is empty, all messages are sent according to the selected **transport**
 
-	- Added **configId** into **msg.payload**.
-
-
+	- Added **configId** into **msg.payload**
 
 ####Bug Fixes
 - *Viber*: Fixed incorrect message sending with attachments [:clipboard: NOV-430] [NOV-430]
 
-	- Messages of the "document" type with text are sent in two messages: **1-> document 2-> text**.
+	- Messages with the "document" type containing text are split and sent in two messages: **1-> document 2-> text**
 
 - *NovaTalks*: Added interval for token validation [:clipboard: NC2-444] [NC2-444]
 
@@ -182,7 +175,6 @@
 	- Added logging **agent is not in Inbox** into the console with **Response code 400 (Bad Request)**.
 
 ***
-
 
 ###2022R4-5 :briefcase: Epic
 ####New Features
