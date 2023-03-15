@@ -17,18 +17,18 @@
 
 - *NovaTalks.Core*: Import WebHooks from ChatWoot [:clipboard: NC2-479] [NC2-479]
 
-	- Imported Webhooks functionality from ChatWoot.
-	- WebHooks provide user the realtime information about events in selected account. This funtionality helps to communicate events to selected apps like Github or Slack.
+	- Imported Webhooks functionality from the ChatWoot.
+	- WebHooks provide user the realtime information about events in the selected account. This funtionality helps to communicate events to the selected apps (like Github or Slack).
 	- Added **enable** (true\false) variable for WebHooks.
 	- Added **lastTimeFailed** (date) variable - the time of WebHooks failure, after which he will be turned off.
 
 - *NovaTalks.Core*: Macros - Migration from ChatWoot [:clipboard: NC2-522] [NC2-522]
 
-	- Imported macros functionality from ChatWoot.
-	- Admin can create macros for himself (private) and teams. He can delete common macros (those available to everyone and personal).
-	- User can create and delete macros only for himself.
+	- Imported macros functionality from the ChatWoot.
+	- Admin can create macroses for himself (private) and teams. He can delete macroses which are public and personal.
+	- Agent users can create and delete macroses only for themselves.
 
-- *NovaTalks.Core*: Mechanism for prohibiting service exit in the presence of open dialogs [:clipboard: NC2-512] [NC2-512]
+- *NovaTalks.Core*: Functionality to prohibit exit from NovaTalks in the presence of open assigned dialogs [:clipboard: NC2-512] [NC2-512]
 
 	- Added a mechanism for prohibiting service exit in the presence of open dialogs.
 	- This mechanism does not extend to web socket connection.
@@ -36,10 +36,7 @@
 
 ####Bug Fixes
 
-- *NovaTalks.Core*: Fixed problem mark all conversations as seen after system messages. [:clipboard: NC2-512] [NC2-512]
-
-	- Fixed problem mark all conversations as seen after system messages.
-
+- *NovaTalks.Core*: Fixed problem when system message mark their conversation as seen [:clipboard: NC2-512] [NC2-512]
 
 ***
 
@@ -47,38 +44,34 @@
 ####New Features
 - *NovaTalks.Core*: New Botflow API [:clipboard: NC2-341] [NC2-341]
 	- Added new endpoints for botflow:
-		<details><summary>api/v1/accounts/${accountId} :</summary>
-		<p>
-		```
-		contacts/search - get
-		contacts - post
-
-		contacts/${contactId}/contact_inboxes - post
-		contacts/${contactId}/conversations - get
-		conversations/filter - post
-		conversations/${conversationId}/attributes - post
-		conversations - post
-		conversations/${conversationId}/messages - post
-		conversations/${conversationId}/assignments -post
-		conversations/${conversationId}/toggle_status - post
-		conversations/${conversationId}/chatbot_settings - get
-		teams - get
-		teams/${teamId}/team_members - get
-
-		agents - get
+		<details><summary>api/v1/accounts/${accountId}/integrations:</summary>
+		Contact Search:                           GET  /contacts/search
+		Add Contact to Inbox:                     POST /contacts/${contactId}/contact_inboxes
+		Create Contact:                           POST /contacts
+		Conversation Search:                      POST /conversations/filter
+		Create Conversation:                      GET  /conversations
+		Create Message:                           POST /conversations/${conversationId}/messages
+		Toggle Status:                            POST /conversations/${conversationId}/toggle_status
+		Assign Conversation:                      POST /conversations/${conversationId}/assignments
+		Create or update Conversation Attributes: POST /conversations/${conversationId}/attributes
+		Get all Agents:                           GET  /agents
+		Get all Teams:                            GET  /teams
+		Get Details of Agents in a Team:          GET  /teams/${teamId}/team_members
+		Get conversation Chatbot Settings:        GET  /conversations/${conversationId}/chatbot_settings
 		```
 		</p>
 		</details>
 
 - *NovaTalks.Core*: Changes in menu IVR [:clipboard: NC2-480] [NC2-480]
 
-	- Added turning off greeting prompt.
-	- Added turning off transfer prompt.
-	- Added buttons in widget.
-	- Added buttons in instagam.
-	- Removed conversation auto-complete timers for non-working hours.
-	- Added catch node where where context is requesting.
-	- Added throttling to the default logic on attachments.
+	- Added option to turn off the greeting prompt
+	- Added option to turn off the transfer prompt
+	- Added buttons support in the widget channel
+	- Added buttons support in the instagam channel
+	- Removed conversation auto-complete timers for non-working hours
+	- Added catch node on all functions where context is requested
+	  (in some cases the context can be unavailable)
+	- Added throttling on attachments to the default logic
 
 	[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
 
@@ -96,19 +89,18 @@
 
 - *NovaTalks.Core*: Historical Reports - Changes in DataBase [:clipboard: NC2-405] [NC2-405]
 
-	- Added creation and filling of historical tables according to Historical reports specification.
-	
-	-  **user_team_interval**
-	-  **team_interval**
-	-  **inbox_interval**
-	-  **user_interval**
-	-  **user_csat_interval**
+	- Added creation and filling of historical tables according to Historical reports specification:
+	- **user_team_interval**
+	- **team_interval**
+	- **inbox_interval**
+	- **user_interval**
+	- **user_csat_interval**
 
 	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
 
 - *NovaTalks.Core*: Historical Reports - API [:clipboard: NC2-354] [NC2-354]
 
-	- Added endpoints for next methods.
+	- Added endpoints for the next methods:
 	
 	- **Get historical agent overview summary**
 		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_overview_summary</summary>
@@ -226,8 +218,6 @@
 - *NovaTalks.Core*: Wrong value for response_time [:clipboard: NC2-429] [NC2-429] 
 
 	- Fixed wrong calculation of **response_time** in tables **dialogs** and **user_dialogs**.
-
-
 
 ***
 
