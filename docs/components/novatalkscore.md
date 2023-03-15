@@ -514,7 +514,7 @@
 	> Added agent self-assignment to conversation when he writes to unassigned resolved conversation.
 
 
-- *NovaTalks.Core*: Autodistribution MAA - Implementation of the MAA algorithm for Team and Inbox [:clipboard: NC2-159] [NC2-159]
+- *NovaTalks.Core*: Autodistribution MAA - Implementation of the MAA algorithm for Team and Inbox [:clipboard: NC2-260] [NC2-260]
 
 	> If the conversation is assigned to a team (field team_id != NULL):
 	> the utilization of this conversation equals value of the utilization set in team settings.
