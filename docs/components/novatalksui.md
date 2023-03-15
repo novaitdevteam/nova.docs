@@ -72,12 +72,8 @@
 
 - *NovaTalks.UI*: Sending text wit "/" symbols [:clipboard: NC2-497] [NC2-497]
 
-	- Fixed sending text wit "/" symbols.
+	- Fixed sending text with the "/" symbols.
 	- Input field does'nt react on "/" symbol, without choosing canned response.
-
-		
-	
-	
 
 ***
 
@@ -117,25 +113,21 @@
 ####New Features
 
 - *NovaTalks.UI*: Review of dependencies [:clipboard: NC2-331] [NC2-331]
-
+(Related tasks:
+- [:clipboard: NC2-433] [NC2-433]
+- [:clipboard: NC2-454] [NC2-454]
+- [:clipboard: NC2-451] [NC2-451]
+- [:clipboard: NC2-452] [NC2-452]
+- [:clipboard: NC2-453] [NC2-453]
+- [:clipboard: NC2-240] [NC2-240])
 	- Cleared and updated all dependencies.
 	- Added husky.
 	- Updated Eslint rules.
 	- Added commitlint.
 
-	- Tasks were completed in this task:
-	- [:clipboard: NC2-433] [NC2-433]
-	- [:clipboard: NC2-454] [NC2-454]
-	- [:clipboard: NC2-451] [NC2-451]
-	- [:clipboard: NC2-452] [NC2-452]
-	- [:clipboard: NC2-453] [NC2-453]
-	- [:clipboard: NC2-240] [NC2-240]
-
-
-
 - *NovaTalks.UI*: Historical Reports - API [:clipboard: NC2-354] [NC2-354]
 
-	- Added endpoints for next methods.
+	- Added endpoints for next methods:
 	
 	- **Get historical agent overview summary**
 		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_overview_summary</summary>
@@ -227,15 +219,11 @@
 		</p>
 		</details>
 
-
 	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
-
-
 
 - *NovaTalks.UI*: Transfer of language selection [:clipboard: NC2-454] [NC2-454]
 
 	- Language selection has been transferred to profile settings.
-
 
 - *NovaTalks.UI*: Timezone settings [:clipboard: NC2-433] [NC2-433]
 
@@ -243,18 +231,17 @@
 
 	[Timezone specification](https://drive.google.com/drive/folders/1GRLkT1LR4UBlDEEG-Hro6sRmdZ5zu4e7)
 
-
 - *NovaTalks.UI*: Transfer of settings [:clipboard: NC2-453] [NC2-453]
 
-	- Settings transferred from Organization Settings to Account Settings.
-	- **Notifications**, **Account Name**, **Site language**, **Select timezone**.
+	- Settings transferred from Organization Settings to Account Settings:
+	- **Notifications**
+	- **Account Name**
+	- **Site language**
+	- **Select timezone**
 
 - *NovaTalks.UI*: Refactoring of User Data [:clipboard: NC2-240] [NC2-240]
 
-	- Array of accounts from User Data has been remowed.
-
-
-
+	- Array of accounts from User Data has been removed
 
 ####Bug Fixes
 
@@ -270,8 +257,6 @@
 - *NovaTalks.UI*: Fixed iтзге ашудв [:clipboard: NC2-452] [NC2-452]
 
 	- Fixed the expand of the input field when entering large text.
-
-
 
 ***
 
