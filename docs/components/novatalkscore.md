@@ -8,7 +8,290 @@
 #NovaTalks.Core
 ##Product Notices
 ***
+
+##2023R1
+
+###2023R1-4 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Import WebHooks from ChatWoot [:clipboard: NC2-479] [NC2-479]
+
+	- Imported Webhooks functionality from the ChatWoot.
+	- WebHooks provide user the realtime information about events in the selected account. This funtionality helps to communicate events to the selected apps (like Github or Slack).
+	- Added **enable** (true\false) variable for WebHooks.
+	- Added **lastTimeFailed** (date) variable - the time of WebHooks failure, after which he will be turned off.
+
+- *NovaTalks.Core*: Macros - Migration from ChatWoot [:clipboard: NC2-522] [NC2-522]
+
+	- Imported macros functionality from the ChatWoot.
+	- Admin can create macroses for himself (private) and teams. He can delete macroses which are public and personal.
+	- Agent users can create and delete macroses only for themselves.
+
+- *NovaTalks.Core*: Functionality to prohibit exit from NovaTalks in the presence of open assigned dialogs [:clipboard: NC2-512] [NC2-512]
+
+	- Added a mechanism for prohibiting service exit in the presence of open dialogs.
+	- This mechanism does not extend to web socket connection.
+	- Settings for exiting service will be transmited via web socket and they will be applied immediately.
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed problem when system message mark their conversation as seen [:clipboard: NC2-512] [NC2-512]
+
+***
+
+###2023R1-3 :briefcase: Epic
+####New Features
+- *NovaTalks.Core*: New Botflow API [:clipboard: NC2-341] [NC2-341]
+	- Added new endpoints for botflow:
+		<details><summary>api/v1/accounts/${accountId}/integrations:</summary>
+		Contact Search:                           GET  /contacts/search
+		Add Contact to Inbox:                     POST /contacts/${contactId}/contact_inboxes
+		Create Contact:                           POST /contacts
+		Conversation Search:                      POST /conversations/filter
+		Create Conversation:                      GET  /conversations
+		Create Message:                           POST /conversations/${conversationId}/messages
+		Toggle Status:                            POST /conversations/${conversationId}/toggle_status
+		Assign Conversation:                      POST /conversations/${conversationId}/assignments
+		Create or update Conversation Attributes: POST /conversations/${conversationId}/attributes
+		Get all Agents:                           GET  /agents
+		Get all Teams:                            GET  /teams
+		Get Details of Agents in a Team:          GET  /teams/${teamId}/team_members
+		Get conversation Chatbot Settings:        GET  /conversations/${conversationId}/chatbot_settings
+		```
+		</p>
+		</details>
+
+- *NovaTalks.Core*: Changes in menu IVR [:clipboard: NC2-480] [NC2-480]
+
+	- Added option to turn off the greeting prompt
+	- Added option to turn off the transfer prompt
+	- Added buttons support in the widget channel
+	- Added buttons support in the instagam channel
+	- Removed conversation auto-complete timers for non-working hours
+	- Added catch node on all functions where context is requested
+	  (in some cases the context can be unavailable)
+	- Added throttling on attachments to the default logic
+
+	[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
+
+- *NovaTalks.Core*: Changed inbox token for all inboxes [:clipboard: NC2-499] [NC2-499]
+
+	- The superadmin token displayed for all inboxes.
+
+####Bug Fixes
+
+***
+
+
+###2023R1-1 :briefcase: Epic
+####New Features
+
+- *NovaTalks.Core*: Historical Reports - Changes in DataBase [:clipboard: NC2-405] [NC2-405]
+
+	- Added creation and filling of historical tables according to Historical reports specification:
+	- **user_team_interval**
+	- **team_interval**
+	- **inbox_interval**
+	- **user_interval**
+	- **user_csat_interval**
+
+	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
+
+- *NovaTalks.Core*: Historical Reports - API [:clipboard: NC2-354] [NC2-354]
+
+	- Added endpoints for the next methods:
+	
+	- **Get historical agent overview summary**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_overview_summary</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical team overview summary**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/team_overview_summary</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical inbox overview summary**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/inbox_overview_summary</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical agent availabilit overview summary**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_availability_summary</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical agent CSAT summary**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_csat_summary</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical agent availability detail**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_availability_detail</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical CSAT detail**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/csat_detail</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical dialog detail**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/dialog_detail</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical message detail**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/message_detail</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+	- **Get historical tag detail**
+		<details><summary>GET /api/v2/accounts/{accountId}/historical/tag_detail</summary>
+		<p>
+		```
+		accountId - number (in path) - The numeric ID of the account
+		```
+		</p>
+		</details>
+
+
+	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
+
+- *NovaTalks.Core*: Data refactoring in reporting_events [:clipboard: NC2-460] [NC2-460] 
+
+	- Relinked the data in the table **reporting_events** to **dialogs** instead of chats.
+
+- *NovaTalks.Core*: Licensing the number of agents [:clipboard: NC2-445] [NC2-445] 
+
+	- Into table **account** added field **users** (This parameter reflects the number of users that the customer can add to the system).
+
+	>  Initial value for field **users**: {"users": 1}.
+
+- *NovaTalks.Core*: Addition of one more counter for Web Socket timeout [:clipboard: NC2-456] [NC2-456] 
+
+	- **AUTH_AGENT_INACTIVE_TIMEOUT** environment variable added (initial value 10000). By which timeout agent status changes to busy.
+
+####Bug Fixes
+- *NovaTalks.Core*: Realtime Statistics - reporting_events.conversation_assigned_team [:clipboard: NC2-421] [NC2-421] 
+
+	- Fixed **null** value **user_id** in table **conversation_assigned_team** when team changed.
+	- Instead of **null** value field **user_id** has the id of the first agent.
+
+- *NovaTalks.Core*: Wrong value for response_time [:clipboard: NC2-429] [NC2-429] 
+
+	- Fixed wrong calculation of **response_time** in tables **dialogs** and **user_dialogs**.
+
+***
+
 ##2022R4
+###2023R4-6 :briefcase: Epic
+####New Features
+
+- *NovaTalks.Core*: Ported filtration in the Contacts/Conversations section [:clipboard: NC2-135] [NC2-135]
+
+	- Ported the functionality of filtration on fields **Created At**, **Last Activity**, **date**, **list**, **checkbox** in the ***Contacts*** section from version 2.6.0 of chatwoot.
+
+	- Added additional filtration on field **Name** by operators **Contains** and **Does not contain** that is not available in the native chatwoot. 
+	
+	- Ported the functionality of filtration on fields **Assignee Name**, **Inbox Name**, **Team Name**, **Labels**, **Created At**, **Last Activity** in the ***Conversations*** section from last version of chatwoot.
+
+	[Additional filtration specification](https://docs.google.com/document/d/1DTHXdKdzTt9p6hI3zCWSvKSizWJ43J_0)
+
+- *NovaTalks.Core*: Added new filters to Conversations section [:clipboard: NC2-137] [NC2-137]
+
+	- Added filtration on field **Channel** in ***standart filters*** and on fields **Name**, **Phone Number** in ***Contact Filters***. 
+
+	[Additional filtration specification](https://docs.google.com/document/d/1DTHXdKdzTt9p6hI3zCWSvKSizWJ43J_0)
+
+####Bug Fixes
+- *NovaTalks.Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+
+	- Fixed agent's ability to see all inbox's conversations without being its member.
+
+	- Fixed agent's ability to see all team's conversations without being its member.
+
+	- Fixed agent's ability to see custom filters related to the teams and inboxes that he is not a member of.
+
+	- Fixed agent's ability to see WebSocket events related to the teams and inboxes that he is not a member of.
+
+	- Fixed agent's ability to direct entry by url to the resources (conversations, conversations filter by inbox conversations filter by team ) that he is not a member of.
+
+- *NovaTalks.Core*: The ACD queue takes the operator in the offline status into the pool [:clipboard: NC2-400] [NC2-400]
+
+	- Fixed getting agent with **offline** status into the queue.
+***
+
+###2022R4-5 :briefcase: Epic
+####New Features
+
+- *NovaTalks.Core*: Calendars [:clipboard: NC2-372] [NC2-372]
+
+	- Added creation of custom agents' work schedule calendars to use in other functionalities
+
+	- Features:
+
+		- Selecting timezone
+
+		- Setting weekly hours 
+
+		> availability windows for each day of the week
+
+		- Setting exceptions
+
+		> Select calendar day and availability exception hours for it
+
+[Calendars specification](https://drive.google.com/drive/folders/1G8eNbFayR2ZhDkevvUStTElGZxGPOA5S)
+
+- *NovaTalks.Core*: Menu IVR [:clipboard: NC2-334] [NC2-334]
+
+	- Assembly of data based on Chat Bot configuration in NovaTalks
+
+	- Sending data to Nova.Botflow for Message Factory builder
+
+[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
+
+####Bug Fixes
+- none
+***
+
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
 - *NovaTalks.Core*: AgentBot role implementation, Part 1 [:clipboard: NC2-244] [NC2-244]
@@ -47,14 +330,14 @@
 		-  Output embedded text from the menu + the ability to attach a file
 
 
-[Menu (IVR) TK](https://drive.google.com/drive/folders/1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv)
+[Menu (IVR) specification](https://drive.google.com/drive/folders/1yrgBr7YQ8wh_YuhyDZn6E-RhJZgkqzkv)
 
 
-[ChatBot TK](https://drive.google.com/drive/folders/1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw)
+[ChatBot specification](https://drive.google.com/drive/folders/1wl5w_mNff59Cdrz0BJfL9iI3zrFnDCjw)
 
 - *NovaTalks.Core.BA*: Historical Reports, Implementation in UI [:clipboard: NC2-190] [NC2-190]
 
-[Historical Reports TK](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+[Historical Reports specification](https://drive.google.com/open?id=13deOqiP48AeBU06GFQpStlYNl5PAXhs3&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
 - *NovaTalks.Core*: Implementation of the AgentBot role, Part 1 [:clipboard: NC2-244] [NC2-244]
 
@@ -137,7 +420,7 @@
 	- Fixed collection of statistics for **dialogs** table
 
 - *NovaTalks.Core*: Realtime Statistics - Changes in the database [:clipboard: NC2-351] [NC2-351]
-	- Database has been changet according to [Database TK](https://drive.google.com/open?id=1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
+	- Database has been changet according to [Database specification](https://drive.google.com/open?id=1rGq0MR07Uk3GjXWU0CdsxxOc__SZ-ULz&authuser=cristina.podoliuh%40novait.com.ua&usp=drive_fs)
 
 - *NovaTalks.Core*: Cascade removal of custom_attribute in dialog, contact [:clipboard: NC2-338] [NC2-338]
 
@@ -155,8 +438,7 @@
 
 ```
 
-
-- *NovaTalks.UI/Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
+- *NovaTalks.Core*: Performance improvement 2 [:clipboard: NC2-335] [NC2-335]
 
 	- Added getting meta information (counters) about the conversations every 3.5 seconds.
 	- Added a check for obtaining a user's avatar, there will be no request to obtain it from www.gravatar.com.
@@ -164,12 +446,16 @@
 - *NovaTalks.Core*: Check Type and Role of Token Endpoint [:clipboard: NC2-383] [NC2-383]
 
 	- GET auth/get_token_info - a new endpoint, returns data about the user by token.
-	- NovaTalks In node - token verification has been added on deployment;	 it must be **ownerType = "User"**, otherwise - show the status (signature under the node).
+
+	- NovaTalks In node - token verification has been added on deployment;
+
+	> it must be **ownerType = "User"**, otherwise - show the status (signature under the node).
+
 	- BotAgent In node - similar, but **ownerType = "AgentBot"**.
 
 ####Bug Fixes
 
-- *NovaTalks.UI/Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+- *NovaTalks.Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
 
 	- Fixed agent's ability to see all inbox's conversations without being its member.
 	- Fixed agent's ability to see all team's conversations without being its member.
@@ -177,7 +463,7 @@
 	- Fixed agent's ability to see WebSocket events related to the teams and inboxes that he is not a member of.
 	- Fixed agent's ability to direct entry by url to the resources (conversations, conversations filter by inbox conversations filter by team ) that he is not a member of.
 
-- *NovaTalks.CORE*: Add validation\limitation when creating and updating custom\additional attributes [:clipboard: NC2-337] [NC2-337]
+- *NovaTalks.Core*: Add validation\limitation when creating and updating custom\additional attributes [:clipboard: NC2-337] [NC2-337]
 	- Added validation on custom\additional attributes in contacts and conversations.
 	- Additional attributes fields in the conversations: **botId**, **chatId**, **contactSource**.
 	- Added validation on custom\additional attributes in contacts and conversations, and added validation on **content_attributes** in **messages**.
@@ -194,6 +480,7 @@
 
 	- On core: fixed the "URI malformed" error when trying to download a file with incorrect (cyrylic letters and url encoding) name.
 	- On botflow: getting the file name has been fixed; now if it has a Cyrillic name it will not be corrupted, but will remain original.
+***
 
 ##2022R3
 ###2022R3-6 :briefcase: Epic

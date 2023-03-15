@@ -8,25 +8,263 @@
 #Nova.BotFlow
 ##Product Notices
 ***
+
+##2023R1
+
+###2023R1-4 :briefcase: Epic
+
+####New Features
+
+
+- *Nova.BotFlow*: System for dividing messages into smaller counterparts [:clipboard: NOV-467] [NOV-467]
+
+	- Messages are divided into multiple smaller messages according to the conversation channel character limitations, which are written in the **.env** file:
+
+		> **MESSAGE_MAX_SIZE_TG_BOT**=3992
+
+		> **MESSAGE_MAX_SIZE_VIBER**=3992
+
+		> **MESSAGE_MAX_SIZE_WHATSAPP_BUSINESS**=3992
+
+		> **MESSAGE_MAX_SIZE_FACEBOOK**=2000
+
+		> **MESSAGE_MAX_SIZE_INSTAGRAM**=998
+
+
+####Bug Fixes
+- none
+***
+
+###2023R1-3 :briefcase: Epic
+####New Features
+
+- *Nova.BotFlow*: New NovaTalks API for Botflow [:clipboard: NC2-450] [NC2-450]
+	- Added new endpoints for botflow:
+		<details><summary>api/v1/accounts/${accountId}/intergrations:</summary>
+		<p>
+		```
+		Contact Search:                           GET  /contacts/search
+		Add Contact to Inbox:                     POST /contacts/${contactId}/contact_inboxes
+		Create Contact:                           POST /contacts
+		Conversation Search:                      POST /conversations/filter
+		Create Conversation:                      GET  /conversations
+		Create Message:                           POST /conversations/${conversationId}/messages
+		Toggle Status:                            POST /conversations/${conversationId}/toggle_status
+		Assign Conversation:                      POST /conversations/${conversationId}/assignments
+		Create or update Conversation Attributes: POST /conversations/${conversationId}/attributes
+		Get all Agents:                           GET  /agents
+		Get all Teams:                            GET  /teams
+		Get Details of Agents in a Team:          GET  /teams/${teamId}/team_members
+		Get conversation Chatbot Settings:        GET  /conversations/${conversationId}/chatbot_settings
+		```
+		</p>
+		</details>
+
+- *Nova.BotFlow*: Changes in menu IVR [:clipboard: NC2-481] [NC2-481]
+
+	- Added option to turn off the greeting prompt
+	- Added option to turn off the transfer prompt
+	- Added buttons support in the widget channel
+	- Added buttons support in the instagam channel
+	- Removed conversation auto-complete timers for non-working hours
+	- Added catch node on all functions where context is requested
+	  (in some cases the context can be unavailable)
+	- Added throttling on attachments to the default logic
+
+	[Menu IVR specification](https://drive.google.com/drive/folders/1BQyqGtEO8pBMxqJWue15UGbqbpuqRbrh)
+
+- *Whatsapp-Web*: Update library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+
+	- Whatsapp-web library has been updated to v1.19.4
+	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
+
+- *Whatsapp-Web*: Update library whatsapp-web [:clipboard: NOV-468] [NOV-468]
+
+	- Whatsapp-web library has been updated to v1.19.4
+	[PatchNote for v1.19.4](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.4)
+
+- *ABC*: New features implementation [:clipboard: NOV-442] [NOV-442]
+	List of new features:
+	- List Picker - check if exist: Single selection text only, Multi selection text only, Multi SECTION with icons for send/received list pickers as well as images.
+	- Video - Add a Video and Image Using Rich Links.
+	- Authentication Message - Demonstrate a use case where classic authentication is supported, and the same use case when the user is on a device that supports the new authentication
+	- iMessage Apps - Support iMessage apps for advanced interactions.
+	- Form Message - Support forms interactions.
+	- Quick Reply Messages - The agent or operator can trigger this message type via an automated flow, or a canned response/object available in the agent console.
+	- Form Message - The agent or operator can trigger this message type via an automated flow, or a canned response/object available in the agent console
+	- Time Picker Message - With icons for send/received time picker as well as location and GPS information.
+
+####Bug Fixes
+
+- *All*: Fixed extension validation [:clipboard: NC2-357] [NC2-357]
+
+	- Fixed processing of unsupported filetypes for telegram, viber, facebook, whatsapp.
+	- Added logging in console and botflow when sending unsupported filetype.
+
+- *Whatsapp-Web*: Fixed username when sending an array [:clipboard: NOV-460] [NOV-460]
+
+	- Fixed username substitution when sending an array of unread messages.
+	- All information about sender is taken from the first element of array.
+
+- *Nova.BotFlow*: Fixed maintenance of the botflow state [:clipboard: NOV-463] [NOV-463]
+
+	- For state saving the botflow will use **node._alias** instead of **node.id**.
+	This task is the solution to the following tasks:
+
+		> [:clipboard: NOV-462] [NOV-462]
+
+		> [:clipboard: NOV-461] [NOV-461]
+
+
+
+- *ABC*: Fixed bugs & new logic [:clipboard: NOV-452] [NOV-452]
+
+	- Fixed bugs (listed in the specification)
+	- Added new logic (yellow in specification)
+	- [:clipboard: NOV-449] [NOV-449] (fixed List Picker displaying) has been fixed as a part of this task 
+
+	[ABC logic specification](https://drive.google.com/file/d/15qp9rPjcAyiWHw78_fuXIgyYySWHGPtN/view?usp=share_link)
+
+***
+
+###2023R1-1 :briefcase: Epic
+####New Features
+- none
+
+####Bug Fixes
+
+- *Nova.BotFlow. ABC*: Fixed error when sending a message to the client [:clipboard: NOV-437] [NOV-437]
+
+	- **ChatsConnector Receiver** and **ChatsConnector Sender** (nova.chatproxy.genesys.pureconnect.icws) - changed from using flow context to using its own connection information in the global context, which makes it possible to use Receiver and Sender in different flows (tabs).
+
+- *Nova.BotFlow. ABC*: Fixed Apple Payment [:clipboard: NOV-436] [NOV-436]
+
+	- Fixed array filling in the case when payload contains an array of messages
+	- Foxed LinkenIn authorization
+
+***
+
 ##2022R4
+###2023R4-6 :briefcase: Epic
+####New Features
+- *All*: Routes improvement for multiple channels [:clipboard: NC2-309] [NC2-309]
+
+	- Added a bot configuration check in the **rules** node
+
+	- When **node configuration** is empty, all messages are sent according to the selected **transport**
+
+	- Added **configId** into **msg.payload**
+
+####Bug Fixes
+- *Viber*: Fixed incorrect message sending with attachments [:clipboard: NOV-430] [NOV-430]
+
+	- Messages with the "document" type containing text are split and sent in two messages: **1-> document 2-> text**
+
+- *NovaTalks*: Added interval for token validation [:clipboard: NC2-444] [NC2-444]
+
+	- Added token validation interval(**60s**) when the connection is broken.
+
+	- Validation will be repeated until it receives a response from engine.
+
+	- Added logging in botflow for token validation.
+
+- *NovaTalks*: Added interval for token validation [:clipboard: NOV-443] [NOV-443]
+
+	- Into **NovaTalks in** node added **array** support in **msg.payload**.
+	
+	- Added logging **agent is not in Inbox** into the console with **Response code 400 (Bad Request)**.
+
+***
+
+###2022R4-5 :briefcase: Epic
+####New Features
+- *Facebook Messenger*: Added "Video" processing [:clipboard: NC2-177] [NC2-177]
+
+	- Added processing of outgoing (from agent to client
+
+	> message.attachment.type = "video"
+
+	> message.attachment.payload.url:
+
+	> Optional. URL of the file to upload. 
+
+	> Max file size is 25MB for all file types including (after encoding), excluding images.
+
+	> A Timeout is set to 75 seconds for videos and 10 seconds for all other file type.
+
+- *NovaTalks*: IVR menu: chatBot changes [:clipboard: NC2-368] [NC2-368] 
+	
+	- changed global variables to flow variables
+
+	- added agentbot-token verification
+
+	- Updated botflow according to new [Menu (IVR) specification](https://drive.google.com/drive/folders/1Du0vARHkvO1rR5lWXx2qY3Q9zuI0izeZ).
+
+- *All*: NodeRed 3 migration [:clipboard: NOV-404] [NOV-404]
+	- Updated **node-red -> 3.0.2**
+
+	- Updated **node.js -> 18.12.1** 
+
+	> for images use **node:18.12.1-alpine** as a basis
+
+	- Updated **yarn.lock**
+	
+	- Added [commitlint](https://commitlint.js.org/) library
+
+	> checks if commit messages meet the conventional commit format
+
+- *All*: Queue improvement [:clipboard: NC2-398] [NC2-398]
+
+	- Fixed incorrect behavior when the queue size is set to 0  (< 1 for no limit)
+	- Now we can insert a Queue Selector into the several nesting levels. For example: msg.payload.chatId
+
+####Bug Fixes
+
+- *All*: Fixed handling of unsupported types in connectors [:clipboard: NC2-364] [NC2-364]
+
+	- Fixed handling of messages with **type** = **undefined** 
+
+	> if the message passed all checks and did not receive a type then this message type is not supported
+
+	- Messages with unsupported type are dropped and do not leave the connector
+	
+- *All*: Fixed error logging on receiving pictures big media in NovaTalks In node [:clipboard: NC2-293] [NC2-293]
+
+	- Channel Receiver nodes add variable **attachmentUrl** to the **payload** when attachment is bigger than set size
+
+	- When the file size is greater than **MAX_FILE_SIZE**(Node Red envirounment variable) NovaTalks In sends **attachmentUrl** instead of file
+
+	> MAX_FILE_SIZE default value is 10485760 bytes
+	
+- *All*: NodeRed shutdown on sending **msg** without **chat()** data [:clipboard: NC2-416] [NC2-416]
+	- Added processing of **msg** objects without **chat()** or if **chat** is not a function
+
+- *All*: Fixed **track** state preservation on Node Red shutdown and restart [:clipboard: NC2-399] [NC2-399]
+
+	- Fixed message sending on NodeRed incorrect shutdown
+
+	> messages are received when Node Red in up
+
+	- Updated sender-factory work with global context and enviroment
+***
+
 ###2022R4-1-2-3-4 :briefcase: Epic
 ####New Features
 
-- *Nova.BotFlow*: Whatsapp-Web: Receiving unread messages [:clipboard: NC2-396] [NC2-396]
+- *Whatsapp-Web*: Added receiving of not received messages [:clipboard: NC2-396] [NC2-396]
 
-	- Whatsapp-Web: when BotFlow starts, the process of reading all unread messages that have accumulated will be started.
+	- Nova.Botflow deploy initiates the process of reading all unread (and unreceived) messages that have been accumulated during Nova.Botflow inaccessibility
 
-- *Nova.BotFlow*: Initiation of new messages without a bot [:clipboard: NC2-330] [NC2-330]
+- *NovaTalks*: Initiation of new messages without a bot [:clipboard: NC2-330] [NC2-330]
 
 	- If the agent is the initiator of the dialog (the agent is the first to write to the client), when the client responded to the dialog, this dialog does not enter the standard chat bot.
 
 ####Bug Fixes
 
-- *Nova.BotFlow*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
+- *Viber*: An error occurs when sending a location (viber) [:clipboard: NC2-349] [NC2-349]
 
 	- When user sending a location, 0.0 is sent instead of empty coordinates.
-
-
+***
 
 ##2022R3
 ###2022R3-6 :briefcase: Epic
@@ -143,7 +381,7 @@ https://graph.facebook.com/v13.0/{{phone_number_id}}/messages
 </p>
 </details>
 
--  Nova.BotFlow: Integration with Line messenger. [:clipboard: NOV-423] [NOV-423]
+-  *Line*: Integration with Line Messenger [:clipboard: NOV-423] [NOV-423]
 	- Added integration with line messenger.
 
 <details><summary>Features</summary>
@@ -210,7 +448,7 @@ Carousel is supported as a number of Card type messages, where every card may ha
 </details>
 
 ####Bug Fixes
--  *WhatsApp* Nexmo (Vonage). Implementation List Messages for WhatsApp (for ChatBot) [:clipboard: NOV-415] [NOV-415]
+-  *WhatsApp* Nexmo (Vonage): Implementation List Messages for WhatsApp (for ChatBot) [:clipboard: NOV-415] [NOV-415]
 	- Implemented support for WhatsApp List Messages (List Picker):
 
 		• Maximum a menu of up to 10 options
@@ -228,19 +466,19 @@ Carousel is supported as a number of Card type messages, where every card may ha
 		• List section must contain at least one item
 
 
--  Request is not sent via sender. [:clipboard: NOV-421] [NOV-421]
+-  *Telegram*,*Viber*: Fixed phone number and location request not being sent through Channel Sender node [:clipboard: NOV-421] [NOV-421]
 	- Fixed sending phone number and geolocation request.
+
 	> Added support for requesting a number \ location using the keyboard.
-	
+
 	> Visually displayed telegram support for this type of keyboard buttons.
 
--  NovaBotflow. GenesysPureCloud more than one configurations does not work. [:clipboard: NOV-414] [NOV-414]
-	- Fixed inability to write to GenesysPureCloud with more than 1 connection configuration.
+-  *Genesys*: Fixed Genesys Pure Cloud not working with more than one active configuration [:clipboard: NOV-414] [NOV-414]
+	- Fixed inability to write to GenesysPureCloud with more than one active connection configuration.
 	> Two or more configurations which use the same AWS region could overwrite each others authorization data.
 
-
-	
 ***
+
 ###2022R3-5 :briefcase: Epic
 ####New Features
 - none
