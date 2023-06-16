@@ -9,7 +9,235 @@
 ##Product Notices
 ***
 
+##2023R2
+
+###2023R2-3-4 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: The mechanism for changing agent statuses by the admin. [:clipboard: NC2-631] [NC2-631]
+
+	- Added ability (for role = admin) to change statuses and substatuses of agents.
+	- In Settings -> Agent -> Edit Agent added new parameter **Aviability** (type - dropdown, available values - available statuses and substatuses).
+	- Agent Log Out automaticaly when his status has been changed to offline.
+	- In report Online -> Agent Status added new parameter **Aviability** and  ability to change status (for admin role).
+	- Related task [:clipboard: NC2-633] [NC2-633]
+
+	[Change status specification](https://drive.google.com/drive/folders/1J5LCUo58irnniHqXeIzaNFPaNyd7K9-h)
+
+- *NovaTalks.Core*: Dashboard apps: changes i DB [:clipboard: NC2-623] [NC2-623]
+
+	- Migratet table **dashboard_apps** from chatwoot.
+	- In table **dashboard_apps** added columns **active** (true/false) and **deleted_at**.
+	- In table **users** in column **ui_settings** added property **added_apps** ([] with ids of added apps).
+
+	[Dashboard apps specification](https://drive.google.com/drive/folders/1HmGZE9WRSOoGcfonyBvajbgGz6avBs9n)
+
+- *NovaTalks.Core*: K8S readiness/liveness Probe Services [:clipboard: NC2-615] [NC2-615]
+
+	- Developed for Engine, UI endpoints for integration with K8S readiness/liveness Probe Services.
+	- Added enviroment variable **HEALTH_ENABLED** **KEEPALIVE_SERVICES_ENABLED**.
+
+- *NovaTalks.Core*: Added intarvals to historical reports [:clipboard: NC2-657] [NC2-657]
+
+	- To historical reports added one week and one month intarvals.
+
+- *NovaTalks.Core*: Added AZ localization [:clipboard: NC2-669] [NC2-669]
+
+	- In system messages added AZ localization.
+
+- *NovaTalks.Core*: Service for Prometheus Metrics Discovery [:clipboard: NC2-617] [NC2-617]
+
+	- Developed service which issues statistics for Prometeus monitoring.
+	- Added enviroment variable **PROMETHEUS_CLIENT_ENABLED**.
+	- Endpoint: /metrics.
+	- Port: 9100.
+
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed incorrect websocket work [:clipboard: NC2-650] [NC2-650]
+
+	- Fixed case when after authorization websocket unsubscribes from invets, and the current socket continues to live in the pending state.
+
+***
+
+###2023R2-1-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Conversation substatuses [:clipboard: NC2-546] [NC2-546]
+
+	- On dialog start, agent_bot_id in **active** status for inbox_id = conversation inbox_id is checked.
+	- If **agent_bot_id** with status active is available - conversation change status for **pending**.
+	- If **agent_bot_id** with status active is'nt available - conversation change status for **open** and substatus for **oninbox**.
+
+	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
+
+- *NovaTalks.Core*: Changes in ACD [:clipboard: NC2-548] [NC2-548]
+
+	- For conversations added **subpriority** property (default value = null).
+	- In table **conversations** added column **subpriority**.
+	- Changed queue allocation mechanism.
+
+	[ACD specification](https://drive.google.com/drive/folders/1ButrDgWeHsF5tSk_4pRIMArvC0MD8zfG)
+
+- *NovaTalks.Core*: Distributed FileStorage [:clipboard: NC2-574] [NC2-574]
+
+	- To export Core data to a CDN compatible with the S3 protocol, the following is done:
+	- Tested and brought to working state S3 Storage for Engine (static content storage).
+	- Optimizing the speed and efficiency of the internal service Engine FileStorage.
+	- Developed a utility for migration of existing Engine data to S3-storage. The utility runs autonomously and work separately from the core (to enable the system engineer to perform the migration at any time).
+	
+	<details><summary>Added enviroment variables</summary>
+		<p>
+		```
+		AWS_S3_ACCESS_KEY_ID=dev-01-dev-demo
+
+		AWS_S3_SECRET_ACCESS_KEY=3CSZtPn2ZXtmrseMhU9bzZqjUlwwxJfg
+
+		AWS_S3_BUCKET=dev-01-dev-demo-bucket
+
+		AWS_S3_REGION=us-east-1
+
+		AWS_S3_ENDPOINT=https://minio-ntk-prod-tenant.nsm.novait.local
+
+		```
+		</p>
+	</details>
+
+[Substatuses specification](https://drive.google.com/drive/folders/15whaUA2R55muBoHmyKsPATgA49Yh2Ojv)
+
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed incorrect utilization calculation [:clipboard: NC2-599] [NC2-599]
+
+	- To export Core data to a CDN compatible with the S3 protocol, the following is done:
+
+***
+
 ##2023R1
+
+###2023R1-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Substatus for Agent not ready [:clipboard: NC2-200] [NC2-200]
+
+	- Added 2 system substatuses (**System** - Selected automatically when the agent logs in, **Not responding** - Selected automatically when an agent does not answer an assigned conversation)  for status **busy**
+	- Added ability to create/edit custom substatuses.
+	- Added new endpoints for substatuses:
+		<details><summary>api/v1/accounts/${accountId}:</summary>
+		<p>
+		```
+		Add substatus:                            POST    /substatus
+
+		Update substatus:                         PATCH   /substatus
+
+		Get an Account substatuses:               GET     /substatus
+		
+		Delete substatus:                         DELETE  /substatus
+		```
+		</p>
+		</details>
+
+[Substatuses specification](https://drive.google.com/drive/folders/15whaUA2R55muBoHmyKsPATgA49Yh2Ojv)
+
+- *NovaTalks.DB*: Substatus for Agent not ready: changes in DB [:clipboard: NC2-283] [NC2-283]
+
+	- Added tables **substatuses**, **user_substatus_events**
+	- In table **account_users** added column **substatus_id**
+
+[Substatuses DB specification](https://drive.google.com/drive/folders/18dVlqQLNR_oscxpFouv4XB4S0KZAFuRs)
+
+- *NovaTalks.Core*: Message was read: endpoint [:clipboard: NC2-485] [NC2-485]
+
+	- For **Viber, Facebook, Instagram, WhatsApp Business**, implemented message status support.
+	- Available values for statuses "**sent**" (default value), "**delivered**", "**seen**".
+	- Only instagram does'nt support **"delivered"** status.
+	- Added endpoint for changing status of messages:
+		<details><summary>/api/v1/accounts/{accountId}/integrations:</summary>
+		Update statu8s of the message:             PATCH    /messages/{messageId}/status
+		<p>
+		```
+		Request body:
+		{
+			"status": (default value - "sent", available values - "delivered"/"seen")
+		}
+		```
+		</p>
+		</details>
+
+	- Added env variables **MESSAGE_ID_PREFIX**=ntid, **MESSAGE_ID_EX_TIME**=604800, **MESSAGE_STATUS_INTERVAL**=5000
+	- In table **messages** added new collumn **status**.
+
+
+	> The this task is unification of tasks:
+
+	> [:clipboard: NC2-486] [NC2-486]
+
+	> [:clipboard: NOV-455] [NOV-455]
+
+- *NovaTalks.Core*: Deleting entities: changes in DB [:clipboard: NC2-344] [NC2-344]
+
+	- In table **users** added column **deleted_at**. Available values: NULL (for active agent), DateTime (for deleted agent).
+	- When the agent has been deleted, in tables **inbox_members**, **team_members** all records are deleted with the agent.
+	- When the agent has been deleted, in table **conversatoins** where **assignee_id** = agent, **assignee_id** changes to NULL.
+
+	- In table **teams** added column **deleted_at**. Available values: NULL (for active team), DateTime (for deleted team).
+	- When the team has been deleted, in table **conversatoins** where **team_id** = team, **team_id** changes to NULL.
+
+	- In table **inboxes** added column **deleted_at**. Available values: NULL (for active inbox), DateTime (for deleted inbox).
+
+	- In table **lables** added column **deleted_at**. Available values: NULL (for active label), DateTime (for deleted label).
+
+	- In table **custom_attribute_definitions** added column **deleted_at**. Available values: NULL (for active attribute), DateTime (for deleted attribute).
+
+[Deleting entities specification](https://drive.google.com/drive/folders/18-3hsNiWW9SC4MHJSI-9nMmGea5Dx1jh)
+
+- *NovaTalks.Core*: Deleting entities: changes in API [:clipboard: NC2-514] [NC2-514]
+
+	- In table **users** added column **deleted_at**. Available values: NULL (for active agent), DateTime (for deleted agent).
+	- When the agent has been deleted, in tables **inbox_members**, **team_members** all records are deleted with the agent.
+	- When the agent has been deleted, in table **conversatoins** where **assignee_id** = agent, **assignee_id** changes to NULL.
+
+	- In table **teams** added column **deleted_at**. Available values: NULL (for active team), DateTime (for deleted team).
+	- When the team has been deleted, in table **conversatoins** where **team_id** = team, **team_id** changes to NULL.
+
+	- In table **inboxes** added column **deleted_at**. Available values: NULL (for active inbox), DateTime (for deleted inbox).
+
+	- In table **lables** added column **deleted_at**. Available values: NULL (for active label), DateTime (for deleted label).
+
+	- In table **custom_attribute_definitions** added column **deleted_at**. Available values: NULL (for active attribute), DateTime (for deleted attribute).
+
+[Deleting entities specification](https://drive.google.com/drive/folders/18-3hsNiWW9SC4MHJSI-9nMmGea5Dx1jh)
+
+- *NovaTalks.Core*: Request phone number/email [:clipboard: NC2-539] [NC2-539]
+	- Added 2 system macros **get_phone**, **get_email**
+	- After successfully receiving the phone number/email, it is updated in the client's card
+
+[Request phone/email specification](https://drive.google.com/drive/folders/1DiMeRrRM2-mRSp2fjwGgkhcrtI2afjjX)
+
+- *NovaTalks.Core*: Extend report **Messages detail** [:clipboard: NC2-560] [NC2-560]
+	- In report **Messages detail** added new collumn **Message status** (which displays the delivery status of the message).
+
+- *NovaTalks.Core*: Improved performance [:clipboard: NC2-562] [NC2-562]
+	- Returned  search by **labels** for **dialogs** and **contacts** to the extended filter.
+
+- *NovaTalks.Core*: Substatus for Agent not ready - changes in reports [:clipboard: NC2-575] [NC2-575]
+	- In report **Agent aviability detail** added new column **Substatus**.
+	- For report **Agent aviability detail** added filter **select substatus**, added a filter for the **substatus** column.
+	- In report **Agent status** added new column **Substatus** (required).
+
+[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
+[Online reports specification](https://drive.google.com/drive/folders/1EOvA8Z8FgbaGIoaFK1AUAWk5R-NwDtPi)
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed problem when system message mark their conversation as seen [:clipboard: NC2-347] [NC2-347]
+
+***
 
 ###2023R1-4 :briefcase: Epic
 

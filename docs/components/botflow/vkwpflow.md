@@ -1,4 +1,4 @@
-#Nova.BotFlow Vkontakte Wallposts
+#Nova.BotFlow Instagram
 ##Features
 ####Text
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
@@ -6,8 +6,7 @@
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-• Post text character limit: 16384
-• Comment text recomended to be 280 characters, but can be more 
+• Text character limit: 998 UTF-8
 ```
 </p>
 </details>
@@ -17,25 +16,18 @@
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-• Picture size limit is: 5 MB
-• Possible to attach up to 5 images to a message 
+• Picture size limit is: 1 GB (width 720px, 960px, or 2048 px)
+• Picture formats: jpeg, png, gif		
+• Description text: no
 ```
 </p>
 </details>
+
 ####Files
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-<details><summary>Known Restrictions</summary>
-<p>
-```
-• File size limit is: 200 MB
-• Main supported formats:
-	• Text documents: DOC, DOCX, XLS, XLSX, RTF
-	• Presentations, books: PPT, PPTX, PDF, DJVU, FB2
-	• Images: PNG, JPG, GIF, PSD, PS
-	• Music: MP3
-```
-</p>
-</details>
 ####Emoji
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
+
+####Quick Replies
+- Quick Replies are supported as a disappearing after click/tap buttons
