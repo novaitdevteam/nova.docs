@@ -53,14 +53,14 @@ nav:
                     - WhatsApp WEB: components/botflow/whatsappWEBflow.md
                     - Nexmo (WhatsApp): components/botflow/nexmoflow.md
                     - Smooch (WhatsApp): components/botflow/smoochflow.md
-                    - Kik: components/botflow/kikflow.md
+                    # - Kik: components/botflow/kikflow.md
                     - Vkontakte: components/botflow/vkflow.md
                     - Odnoklassniki: components/botflow/okflow.md
                     - Infobip (WhatsApp): components/botflow/infobipflow.md
                     - Facebook Wallposts: components/botflow/fbwpflow.md
                     - Twitter Wallposts: components/botflow/twitterwpflow.md
-                    - Vkontakte Wallposts: components/botflow/vkwpflow.md
-                    - Odnoklassniki Wallposts: components/botflow/okwpflow.md
+                    - Instagram: components/botflow/vkwpflow.md
+                    - Webchat: components/botflow/okwpflow.md
             - Nova.ChatProxy:
                 - Features: components/chatproxyfeatures.md
                 - Cisco:

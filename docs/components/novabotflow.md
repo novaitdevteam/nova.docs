@@ -9,7 +9,169 @@
 ##Product Notices
 ***
 
+##2023R2
+
+###2023R2-3-4 :briefcase: Epic
+
+####New Features
+
+- *Nova.Botflow*: Conversation substatuses [:clipboard: NC2-547] [NC2-547]
+
+	- On dialog start, agent_bot_id in **active** status for inbox_id = conversation inbox_id is checked.
+	- If **agent_bot_id** with status active is available - conversation change status for **pending**.
+	- If **agent_bot_id** with status active is'nt available - conversation change status for **open** and substatus for **oninbox**.
+
+	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
+
+
+- *Nova.Botflow*: Redis Q modernization [:clipboard: NOV-447] [NOV-447]
+
+	- Unsent messages are added to the Redis queue.
+	- Added processing failed jobs.
+	- Added variable **REDIS_QUEUE_LOCK_TIME**.
+
+- *Nova.Botflow*: Added reset buttons processing [:clipboard: NOV-486] [NOV-486]
+
+	- Added reset buttons processing to sender nodes (BotAgent Incoming -> keyboards -> sender).
+
+- *Nova.Botflow*: Added conversationId to Genesys Cloud node [:clipboard: NOV-242] [NOV-242]
+
+	- Added parameter conversation id to Genesys Cloud node which gives the opportunity to connect more than one configuration of messanger.
+
+- *Messanger*: Added buttons processing [:clipboard: NOV-387] [NOV-387]
+
+	- Added processing of buttons array.
+	- If buttons in array more than 3 they are converted to quick replies.
+	- Wrong for quick replies types of buttons are deleted from array.
+
+
+- *Whatsapp-Web*: Updated library to v1.20 [:clipboard: NOV-489] [NOV-489]
+
+- *Whatsapp-Web*: Updated library to v1.21.0 [:clipboard: NOV-493] [NOV-493]
+
+- *NovaTalks*: Added http reties [:clipboard: NOV-446] [NOV-446]
+
+	- Added retries for status codes 5XX, 429.
+	- In node added property Max Retry Attempts (default value 3).
+	- In node added checkbox Requests retry which enable retries.
+	- Retry timeouts 10, 20, 60, 120, 300 sec.
+
+####Bug Fixes
+
+- *Nova.Botflow*: Fixed Redis Q: redis connection close [:clipboard: NOV-471] [NOV-471]
+
+	- Fixed case when redis disconnected from botflow without errors.
+
+***
+
+###2023R2-1-2 :briefcase: Epic
+
+####New Features
+
+- *Nova.Botflow*: Conversation substatuses [:clipboard: NC2-547] [NC2-547]
+
+	- On dialog start, agent_bot_id in **active** status for inbox_id = conversation inbox_id is checked.
+	- If **agent_bot_id** with status active is available - conversation change status for **pending**.
+	- If **agent_bot_id** with status active is'nt available - conversation change status for **open** and substatus for **oninbox**.
+
+	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
+
+- *Instagram*: Story mentions [:clipboard: NOV-474] [NOV-474]
+
+	- Added ability to enable/disable **story_mentions** events by checkbox in instagram node.
+	
+- *Telegram*: Implemented markdown support for telegram [:clipboard: NOV-475] [NOV-475]
+
+	- Implemented support for markdown v1.
+	- Added checkBox enable/disable markdown to telegram node.
+
+[Markdown specification](https://core.telegram.org/bots/api#markdown-style)
+
+- *Nova.Botflow*: Genesys Purengage node [:clipboard: NOV-478] [NOV-478]
+
+	- Added new node for connect to Genesys Purengage which support:
+	- Sending messages/media via link. Or **use native attachment** (checkbox).
+	- Chat timeout (Value in minutes, after how much time should we clear queued sessions).
+	- Dead sessions interval (Value in seconds, interval how often we should check for dead sessions).
+	- Dead sessions timeout (Value in minutes, after how much time should we clear dead sessions).
+	- Polling interval (Value in seconds, interval how often we should check for chat updates (3-5 secs recommended)).
+	- Request timeout.
+
+	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
+
+
+
+####Bug Fixes
+
+- *Nova.Botflow*: onStart actions rework - Viber, facebook, intagram, telegram [:clipboard: NOV-482] [NOV-482]
+
+	- For Viber, facebook, intagram, telegram added ability to set/check/delete vebhook.
+	- Added checkbox **Enable API Requests** which set webhook automaticaly after every deploy.
+	- Related task [:clipboard: NOV-481] [NOV-481]
+
+***
+
 ##2023R1
+
+###2023R1-6 :briefcase: Epic
+
+####New Features
+
+- *Telegram*: Implemented markdown support for telegram [:clipboard: NOV-475] [NOV-475]
+
+	- Implemented support for markdown v1.
+	- Added checkBox enable/disable markdown to telegram node.
+
+[Markdown specification](https://core.telegram.org/bots/api#markdown-style)
+
+- *Nova.Botflow*: Message was read: Added additional events, implemented additional methods [:clipboard: NOV-455] [NOV-455]
+	
+	- For **Viber, Facebook, Instagram, WhatsApp Business**, implemented message status support.
+	- Available values for statuses "**sent**" (default value), "**delivered**", "**seen**".
+	- Only instagram does'nt support **"delivered"** status.
+	- Added endpoint for changing status of messages:
+		<details><summary>/api/v1/accounts/{accountId}/integrations:</summary>
+		Update statu8s of the message:             PATCH    /messages/{messageId}/status
+
+		Request body:
+		{
+			"status": (default value - "sent", available values - "delivered"/"seen")
+		}
+		```
+		</p>
+		</details>
+
+	- Added env variables **MESSAGE_ID_PREFIX**=ntid, **MESSAGE_ID_EX_TIME**=604800, **MESSAGE_STATUS_INTERVAL**=5000
+	- In table **messages** added new collumn **status**.
+
+- *Nova.Botflow*: Request phone number/email [:clipboard: NC2-538] [NC2-538]
+	- Added 2 system macros **get_phone**, **get_email**
+	- After successfully receiving the phone number/email, it is updated in the client's card
+
+- *Whatsapp-web*: Updated library for Whatsapp-web [:clipboard: NOV-476] [NOV-476]
+	
+	- Updated library for Whatsapp-web to [v1.19.5](https://github.com/pedroslopez/whatsapp-web.js/releases/tag/v1.19.5)
+
+- *Twitter WallPost*: Added Twitter WallPost node [:clipboard: NC2-506] [NC2-506]
+	
+	- This node support: Text message Image message Video message, comment.
+
+[Twitter WallPosts specification](https://developer.twitter.com/en/docs/twitter-api/enterprise/account-activity-api/guides/account-activity-data-objects)
+
+- *Nova.Botflow*: Added a mechanism for splitting messages[:clipboard: NOV-467] [NOV-467]
+	
+	- Limits for messengers Telegram/Viber/Whatsapp Business - 3992 characters, Messenger - 2000characters, Instagram - 998characters.
+	- Added env variables **MESSAGE_MAX_SIZE_TG_BOT**, **MESSAGE_MAX_SIZE_VIBER**, **MESSAGE_MAX_SIZE_WHATSAPP**, **MESSAGE_MAX_SIZE_FACEBOOK**, **MESSAGE_MAX_SIZE_INSTAGRAM**.
+
+####Bug Fixes
+
+- *Nova.Botflow*: Fixed cases when the NovaTalks Connector Crush the Node-Red [:clipboard: NOV-477] [NOV-477]
+	
+	- This case occurs when error code not 200/201/4xx/5xx or it does not exist.
+
+
+
+***
 
 ###2023R1-4 :briefcase: Epic
 

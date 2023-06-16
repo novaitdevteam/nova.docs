@@ -1,4 +1,4 @@
-#Nova.BotFlow Odnoklassniki Wallposts
+#Nova.BotFlow Webchat
 ##Features
 ####Text
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
@@ -6,31 +6,31 @@
 <details><summary>Known Restrictions</summary>
 <p>
 ```
-• Post text character limit: does not seem to have a limit
-• Comment text character limit: 3000
+• Text character limit: 1000 UTF-8
 ```
 </p>
 </details>
 ####Pictures
+
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-<details><summary>Known Restrictions</summary>
-<p>
-```
-• Maximum size of uploading images by API is 1680x1680
-```
-</p>
-</details>
 ####Files
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
 
-<details><summary>Known Restrictions</summary>
-<p>
-```
-• The video length can be any
-• File size should not exceed 32 GB
-```
-</p>
-</details>
 ####Emoji
 - Both directions: *agent* :material-arrow-right: *client*, *client* :material-arrow-right: *agent*
+
+
+####Quick Replies
+- Quick Replies are supported as a disappearing after click/tap buttons
+
+####Button List
+- Button List is supported as a Title with number of buttons positioned vertically 
+
+####Button Grid
+
+- Button Grid is supported as a Title with number of buttons positioned horizontally 
+
+####Carousel
+
+- Carousel is supported as a number of Card type messages, where every card may have buttons (different, if needed)

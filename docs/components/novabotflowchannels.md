@@ -22,7 +22,6 @@ hide:
     <th align="center">Image</th>
     <th align="center">File</th>
     <th align="center">Emoji</th>
-    <th align="center">Typing</th>
     <th align="center">Quick Replies</th>
     <th align="center">Card</th>
     <th align="center">Button List</th>
@@ -37,7 +36,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/telegramflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/telegramflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/telegramflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/telegramflow.html#typing"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/telegramflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/telegramflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/telegramflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -50,7 +48,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/viberflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/viberflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/viberflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/viberflow.html#typing"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/viberflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/viberflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/viberflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -63,7 +60,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/fbflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/fbflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/fbflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/fbflow.html#typing"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/fbflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/fbflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/fbflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -76,7 +72,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/twitterflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/twitterflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/twitterflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/twitterflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/twitterflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/twitterflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -89,7 +84,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/lineflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/lineflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/lineflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/lineflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/lineflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/lineflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -102,7 +96,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/slackflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/slackflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/slackflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/slackflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/slackflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/slackflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -115,7 +108,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/abcflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/abcflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/abcflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/abcflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/abcflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -127,7 +119,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/whatsappBCflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappBCflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappBCflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappBCflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
@@ -140,14 +131,13 @@ hide:
 	<td align="center"><figure> <a href="botflow/whatsappWEBflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappWEBflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappWEBflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/whatsappWEBflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
   </tr>
-  <tr>
+  <!-- <tr>
 	<td align="center"><figure> <a href="botflow/kikflow.html"> <img src="/nova.docs/components/assets/kik.svg" title="Kik" width="50" height"50"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
@@ -158,15 +148,13 @@ hide:
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
-  </tr>
+  </tr> -->
   <tr>
 	<td align="center"><figure> <a href="botflow/smoochflow.html"> <img src="/nova.docs/components/assets/smooch.jfif" title="Smooch" width="50" height"50"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/smoochflow.html#text"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/smoochflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/smoochflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/smoochflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/smoochflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
@@ -179,7 +167,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/nexmoflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/nexmoflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/nexmoflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/nexmoflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
@@ -192,7 +179,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/infobipflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/infobipflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/infobipflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
@@ -210,7 +196,6 @@ hide:
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
   </tr>
   <tr>
 	<td align="center"><figure> <a href="botflow/twitterwpflow.html"> <img src="/nova.docs/components/assets/twitterwallpost.png" title="Twitter Wallposts" width="50" height"50"> </a> </figure> </td>
@@ -223,6 +208,29 @@ hide:
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+  </tr>
+    <tr>
+	<td align="center"><figure> <a href="botflow/vkwpflow.html"> <img src="/nova.docs/components/assets/instagram.png"title="instagram" width="50" height"50"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/vkwpflow.html#text"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/vkwpflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/vkwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/vkwpflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+  </tr>
+  <tr>
+	<td align="center"><figure> <a href="botflow/okwpflow.html"> <img src="/nova.docs/components/assets/webchat.png" title="Webchat" width="50" height"50"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#text"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <a href="botflow/okwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
+	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
   </tr>
   <tr>
@@ -231,7 +239,6 @@ hide:
 	<td align="center"><figure> <a href="botflow/vkflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/vkflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/vkflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/vkflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/vkflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/vkflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
@@ -244,38 +251,11 @@ hide:
 	<td align="center"><figure> <a href="botflow/okflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/dash.svg" title="Not implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#quick-replies"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#card"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#button-list"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#button-grid"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
 	<td align="center"><figure> <a href="botflow/okflow.html#carousel"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-  </tr>
-  <tr>
-	<td align="center"><figure> <a href="botflow/vkwpflow.html"> <img src="/nova.docs/components/assets/vkwallpost.jpg" title="Vkontakte Wallposts" width="50" height"50"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/vkwpflow.html#text"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/vkwpflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/vkwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/vkwpflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-  </tr>
-  <tr>
-	<td align="center"><figure> <a href="botflow/okwpflow.html"> <img src="/nova.docs/components/assets/okwallpost.png" title="Odnoklassniki Wallposts" width="50" height"50"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/okwpflow.html#text"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/okwpflow.html#pictures"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/okwpflow.html#files"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <a href="botflow/okwpflow.html#emoji"> <img src="/nova.docs/components/assets/check.svg" title="Implemented" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
-	<td align="center"><figure> <img src="/nova.docs/components/assets/close.svg" title="Not supported" width="25" height"25"> </a> </figure> </td>
   </tr>
   </tbody>
 </table>

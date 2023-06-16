@@ -9,7 +9,296 @@
 ##Product Notices
 ***
 
+##2023R2
+
+###2023R2-3-4 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Hiding system messages [:clipboard: NC2-551] [NC2-551]
+
+	- In account settings added section **conversation** which include option **show system messages** (available for admin role).
+	- In opened conversation tab, under the client name, added option **show system messages** (available for all roles).
+	- In **accounts** table added column **show_system_messages** (true/false).
+	- In **users** table added column **show_system_messages** (true/false).
+
+	[Hiding system messages specification](https://drive.google.com/drive/folders/15sG54ocJGVh4at_i5Q8-7IwpEbYRXEwD)
+
+- *NovaTalks.UI*: Dashboard apps: changes i UI [:clipboard: NC2-622] [NC2-622]
+
+	- In section Settings -> Integrations added panel winh dashboard apps settings.
+	- In dasboard settings added parameters **active** (true/false), **icon** (icon of app).
+	- In Conversation section added Dasboard Apps panel (right sidebar) in which agent can add and open apps.
+	- After opening of app, displayed modal window with header of app and functions close and full screen mode.
+
+
+
+	[Dashboard apps specification](https://drive.google.com/drive/folders/1HmGZE9WRSOoGcfonyBvajbgGz6avBs9n)
+
+- *NovaTalks.UI*: Changes in reports [:clipboard: NC2-589] [NC2-589]
+
+	- In report **Agent Aviability Detail** added filter **Select Substatuses** and **Substatus**.
+	- In reports **CSAT Detail**,  **Dialogs Detail**, **Messages Detail** added links to columns **Dialog ID**, **Contact ID**, **Conversation ID**.
+	- In report **Tags Detail** added links in column **Taggable ID**.
+
+	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
+	[Online reports specification](https://drive.google.com/drive/folders/1EDHEk237NyZGkbDxt1GmgWFOYak3-jDT)
+	
+- *NovaTalks.UI*: Added intarvals to historical reports [:clipboard: NC2-598] [NC2-598]
+
+	- To historical reports added one week and one month intarvals.
+
+- *NovaTalks.UI*: The mechanism for changing agent statuses by the admin. [:clipboard: NC2-632] [NC2-632]
+
+	- Added ability (for role = admin) to change statuses and substatuses of agents.
+	- In Settings -> Agent -> Edit Agent added new parameter **Aviability** (type - dropdown, available values - available statuses and substatuses).
+	- Agent Log Out automaticaly when his status has been changed to offline.
+	- In report Online -> Agent Status added new parameter **Aviability** and  ability to change status (for admin role).
+	- Related task [:clipboard: NC2-633] [NC2-633]
+
+	[Change status specification](https://drive.google.com/drive/folders/1J5LCUo58irnniHqXeIzaNFPaNyd7K9-h)
+
+- *NovaTalks.UI*: The mechanism for changing agent statuses by the admin. [:clipboard: NC2-632] [NC2-632]
+
+	- Added ability change NavaTalks logo for different image.
+	- New env variables **INSTALLATION_NAME**, **WEBSITE_TITLE**, **INSTALLATION** added.
+
+- *NovaTalks.Core*: Added AZ localization [:clipboard: NC2-470] [NC2-470]
+
+	- In system messages added AZ localization.
+
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed displaying information about client [:clipboard: NC2-647] [NC2-647]
+
+	- Fixed case when after updating information about clien, changes has been displayed after refrest the page.
+
+- *NovaTalks.UI*: Fixed displaying information about client [:clipboard: NC2-601] [NC2-601]
+
+	- Fixed case when after sending an image novatalks sends 2 images.
+
+- *NovaTalks.UI*: Fixed downloading report [:clipboard: NC2-649] [NC2-649]
+
+	- Fixed downloading message detail report when content = NULL.
+
+- *NovaTalks.UI*: Fixed line feed in online chat [:clipboard: NC2-602] [NC2-602]
+
+	- Fixed line feed when message contains "/" symbol.
+
+***
+
+###2023R2-1-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Hiding system messages [:clipboard: NC2-551] [NC2-551]
+
+	- In account settings added section **conversation** which include option **show system messages** (available for admin role).
+	- In opened conversation tab, under the client name, added option **show system messages** (available for all roles).
+	- In **accounts** table added column **show_system_messages** (true/false).
+	- In **users** table added column **show_system_messages** (true/false).
+
+	[Hiding system messages specification](https://drive.google.com/drive/folders/15sG54ocJGVh4at_i5Q8-7IwpEbYRXEwD)
+
+- *NovaTalks.UI*: Conversation substatuses [:clipboard: NC2-545] [NC2-545]
+
+	- In opened conversation tab, under the client name, added status and substatus(if available) displaying.
+	- Displaying formats: _status_ (without substatus), _status_ - _subsatus_ (wit substatus).
+	- In **conversations** filter added parameter **substatus**.
+
+	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
+
+- *NovaTalks.UI*: Changes in conversation tab [:clipboard: NC2-553] [NC2-553]
+
+	- Changed color for messages where **sender_type = AgentBot**.
+	- Changed icon for option show/hide contact.
+	[Specification](https://drive.google.com/drive/folders/15so3EYjPoBJlb_UvDIRDrCR88KV8dfnM)
+
+- *NovaTalks.UI*: Added xlsx format for downloading reports [:clipboard: NC2-537] [NC2-538]
+
+	- For reports added new xlsx format foe downloading.
+
+- *NovaTalks.UI*: Dividing conversations into dialogs [:clipboard: NC2-537] [NC2-538]
+
+	- Added dividing line in conversations which start dialog.
+	- Under dividing line added **labels** field which show all labels of dialog and have option **add label**.
+	- Agent can add labels for every dialog.
+	- In table **taggings** added **taggable_type=dialog**. For **taggable_type=dialog** **taggable_id=dialog_id**.
+
+	[Dialogs specification](https://drive.google.com/drive/folders/1BJG82NZP39f_aDAx9J3YYTfkX9R3WzVJ)
+
+- *NovaTalks.UI*: Dividing conversations into dialogs [:clipboard: NC2-635] [NC2-635]
+
+	- In conversations section added last activity time.
+	- Last activity time reset every client/agent message.
+
+
+
+- *NovaTalks.UI*: Auto Answer - Changes in UI and addition of additional parameters in the database [:clipboard: NC2-541] [NC2-541]
+
+	- In **Team settings** added 2 new parameters: **Auto Answer** (type - checkbox, enable/disable Alerting timeout), **Alerting Timeout** (type - number, available values - 0-900, default value -7).
+	- The **alerting_timeout** and **autoanswer** parameters have been added to the **additional_settings** column in the **teams** table.
+	- In **Inbox settings** added 2 new parameters: **Auto Answer** (type - checkbox, enable/disable Alerting timeout), **Alerting Timeout** (type - number, available values - 0-900, default value -7).
+	- The **alerting_timeout** and **autoanswer** parameters have been added to the **additional_settings** column in the **inboxes** table.
+	- Related tasks:
+	- [:clipboard: NC2-545] [NC2-545]
+	- [:clipboard: NC2-546] [NC2-546]
+	- [:clipboard: NC2-547] [NC2-547]
+	- [:clipboard: NC2-548] [NC2-548]
+	- [:clipboard: NC2-477] [NC2-477]
+
+[Autoanswers specification](https://drive.google.com/drive/folders/14nZgjdvyNRXZSiaZZ0rkbR2rK_E3Bf73)
+
+- *NovaTalks.UI*: Optimizing conversations tab [:clipboard: NC2-569] [NC2-569]
+
+	- In **conversation.meta** deleted all **inboxes** properties.
+	- For conversations deleted **labels** property:
+		<details><summary>Optimized endpoints:</summary>
+		<p>
+		```
+		1. Get Contact Conversations [Get]: api/v1/accounts/:accountId/contacts/:contactId/conversations
+
+		2. Create Conversation[Post]: api/v1/accounts/:accountId/conversations
+
+		3. Get Account Conversation[Get]: api/v1/accounts/:accountId/conversations/:conversationId
+
+		4. Get All Conversations [Get]: api/v1/accounts/:accountId/conversations
+
+		5. Conversations Filter [Post]: api/v1/accounts/:accountId/conversations/filter
+		```
+		</p>
+		</details>
+
+	- Optimized **conversatons.meta** (Deleted **meta** property for next endpoint):
+		<details><summary>Optimized endpoint:</summary>
+		<p>
+		```
+		1. Get Messages [Get\{*}{*}]: api/v1/accounts/:accountId/conversations/:conversationId/messages
+		```
+		</p>
+		</details>
+
+	- Refactored Conversatons section in UI.
+
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed localization in widget settings [:clipboard: NC2-613] [NC2-613]
+
+- *NovaTalks.UI*: Fixed label [:clipboard: NC2-578] [NC2-578]
+
+	- Fixed case when after changing label name, changed it id.
+
+
+- *NovaTalks.UI*: Fixed problem with conversations panel [:clipboard: NC2-595] [NC2-595]
+
+	- Fixed a problem when the conversation panel broke the page markup.
+
+- *NovaTalks.UI*: Fixed Incorrect display time of stay in substatus [:clipboard: NC2-596] [NC2-596]
+
+	- Fixed reset of time counter when agent change substatus.
+
+***
+
 ##2023R1
+
+###2023R1-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Substatus for Agent not ready [:clipboard: NC2-121] [NC2-121]
+
+	- Added new **Substatuses** section in account settings.
+	- Added 2 system substatuses (**System** - Selected automatically when the agent logs in, **Not responding** - Selected automatically when an agent does not answer an assigned conversation)  for status **busy**
+	- Added ability to create/edit custom substatuses.
+	- Added ability to change substatus in sidebar.
+
+[Substatuses specification](https://drive.google.com/drive/folders/15whaUA2R55muBoHmyKsPATgA49Yh2Ojv)
+
+- *NovaTalks.UI*: Improved performance [:clipboard: NC2-562] [NC2-562]
+	- Returned  search by **labels** for **dialogs** and **contacts** to the extended filter.
+
+- *NovaTalks.UI*: Message was read: marks [:clipboard: NC2-486] [NC2-486]
+
+	- Added marks for message statuses **sent**, **delivered**, **seen**.
+
+
+	> The this task is unification of tasks:
+
+	> [:clipboard: NC2-485] [NC2-485]
+
+	> [:clipboard: NOV-455] [NOV-455]
+
+- *NovaTalks.UI*: Deleting entities: changes in UI [:clipboard: NC2-513] [NC2-513]
+
+	- In the Agents section: added 2 sections: **Active** - agents in which **deleted_at** is not filled **Deleted** – agents in which **deleted_at** is filled.
+	- Agent control icons have been changed - labels on the buttons have been removed and these names have been added in the tooltips. 
+	- Add search function by Agents.
+	- The deactivate/activate function is displayed in the switch form.
+	- Added the Restore function on the **Deleted** tab. The Restore function clears the value of the deleted_at parameter.
+
+	- In the Teams section: added 2 sections: **Active** - teams in which **deleted_at** is not filled **Deleted** – teams in which **deleted_at** is filled.
+	- Changed the tooltip from Edit team to Edit.
+	- Add search function by Teams.
+	- Added the Restore function on the **Deleted** tab. The Restore function clears the value of the deleted_at parameter.
+
+	- In the Inboxes section: added 2 sections: **Active** - Inboxes in which **deleted_at** is not filled **Deleted** – Inboxes in which **deleted_at** is filled.
+	- Add search function by Inboxes.
+	- Added the Restore function on the **Deleted** tab. The Restore function clears the value of the deleted_at parameter.
+
+	- In the Labels section: added 2 sections: **Active** - Labels in which **deleted_at** is not filled **Deleted** – Labels in which **deleted_at** is filled.
+	- Add search function by Labels.
+	- Added the Restore function on the **Deleted** tab. The Restore function clears the value of the deleted_at parameter.
+
+	- In the Custom Attributes section: added 2 sections: **Active** - Custom Attributes in which **deleted_at** is not filled **Deleted** – Custom Attributes in which **deleted_at** is filled.
+	- Add search function by Custom Attributes.
+	- Added the Restore function on the **Deleted** tab. The Restore function clears the value of the deleted_at parameter.
+
+	- When deleting a contact, if no conversations where **contact_id** = deleting contact id - the contact is deleted from the DB. If conversations with **contact_id** = deleting contact id exist - system issue an error.
+
+[Deleting entities specification](https://drive.google.com/drive/folders/18-3hsNiWW9SC4MHJSI-9nMmGea5Dx1jh)
+
+- *NovaTalks.UI*: Request phone number/email [:clipboard: NC2-539] [NC2-539]
+	- Added macros section in conversation tab.
+	- Added 2 system macros **get_phone**, **get_email** to the macros section.
+	- After successfully receiving the phone number/email, it is updated in the client's card.
+
+[Request phone/email specification](https://drive.google.com/drive/folders/1DiMeRrRM2-mRSp2fjwGgkhcrtI2afjjX)
+
+- *NovaTalks.UI*: Implemented Markdown support in the Detail Message report [:clipboard: NC2-558] [NC2-558]
+	- Implemented Markdown for messages in the Detail Message report.
+
+- *NovaTalks.UI*: Added message status in the Detail Message report [:clipboard: NC2-559] [NC2-559]
+	- Added message status for messages in the Detail Message report.
+
+[Request phone/email specification](https://drive.google.com/drive/folders/1DiMeRrRM2-mRSp2fjwGgkhcrtI2afjjX)
+
+- *NovaTalks.UI*: Substatus for Agent not ready - changes in reports [:clipboard: NC2-515] [NC2-515]
+	- In report **Agent aviability detail** added new column **Substatus**.
+	- For report **Agent aviability detail** added filter **select substatus**, added a filter for the **substatus** column.
+	- In report **Agent status** added new column **Substatus** (required).
+
+[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
+[Online reports specification](https://drive.google.com/drive/folders/1EOvA8Z8FgbaGIoaFK1AUAWk5R-NwDtPi)
+
+- *NovaTalks.UI*: Improved performance [:clipboard: NC2-562] [NC2-562]
+	- Returned  search by **labels** for **dialogs** and **contacts** to the extended filter.
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed incorrect filling of information about the client [:clipboard: NC2-482] [NC2-482]
+
+- *NovaTalks.UI*: Fixed incorrect  displaying in reports [:clipboard: NC2-520] [NC2-520]
+	- Fixed incorrect displaying in excel format in the **Message Detail** report.
+	- Fixed incorrect displaying in excel format in the **Agent CSAT Sum** report.
+
+- *NovaTalks.UI*: Fixed incorrect displaying messages in conversation tab [:clipboard: NC2-523] [NC2-523]
+
+- *NovaTalks.UI*: Fixed incorrect sendind message [:clipboard: NC2-523] [NC2-523]
+	- Figed cases when messages sending without line feed.
+
+***
 
 ###2023R1-4 :briefcase: Epic
 
@@ -316,7 +605,7 @@
 
 	- Fixed filter behavior when search with **Not Equal: value** tag did not return results with **value = null**.
 
-- *NovaTalks.Core*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
+- *NovaTalks.UI*: Agent does see all conversations without inbox membership [:clipboard: NC2-356] [NC2-356]
 
 	- Fixed agent's ability to see all inbox's conversations without being its member.
 
