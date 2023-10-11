@@ -11,6 +11,259 @@
 
 ##2023R2
 
+###2023R2-5-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676](https://sd.novait.com.ua/browse/NC2-676)
+
+	Request caching was added to the following endpoints: 
+
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /canned_responses
+	- /canned_responses/{cannedResponseId}		
+	- /custom_attribute_definitions		
+	- /custom_attribute_definitions/{customAttributeId}	
+	- /dialogs/labels		
+	- /labels		
+	- /teams
+	```
+	</p>
+	</details>
+
+
+- *NovaTalks.UI*: Added new variables to display the logo on the login page and the mini logo on the dashboard page. [:clipboard: NC2-689](https://sd.novait.com.ua/browse/NC2-689)
+	 
+	List of new UI variables:
+
+	- LOGO_SMALL - does change company's logo on the primary sidebar with an image located at the URL address.
+
+	- LOGO - does change company's logo with image at the URL address.
+
+	> INSTALLATION - adds name of the customer's company to the image name for simpler image identification.
+
+	> INSTALLATION_NAME - does change the default installation name to the name of the clients choice.
+
+
+- *NovaTalks.Widget, Core, UI*: Dynamic update of widget profile. [:clipboard: NC2-571](https://sd.novait.com.ua/browse/NC2-571)
+	
+	- Added a "Get settings from server" checkbox button in the Inbox settings, and now the widget settings will be updated automatically via a request to the NovaTalks server:
+
+	<details><summary>GET /widget/settings</summary>
+	<p>
+	```
+	- /widget/settings?website_token=${websiteToken}
+	```
+	</p>
+	</details>
+	
+	<details><summary>Response example:</summary>
+	<p>
+	```
+	{
+	  "welcomeTitle": "Title ",
+	  "widgetColor": "#FF0866",
+	  "preChatFormEnabled": true,
+	  "additionalSettings": {
+		"locale": "en",
+		"channels": [
+		  {
+			"hint": "telegram",
+			"name": "asd",
+			"type": "chat",
+			"enabled": true,
+			"url": "http://t.me/url"
+		  }
+		],
+		"isWidgetDynamic": true,
+		"showCloseWidgetIcon": true
+	  },
+	  "preChatFormOptions": {
+		"calendar": {
+		  "timezone": "Europe/Kyiv",
+		  "workingHours": []
+		},
+		"online": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		},
+		"offline": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		}
+	  }
+	}
+	```
+	</p>
+	</details>
+
+	[Dynamic widget profile update specification](https://drive.google.com/drive/folders/1BEg5Qnx8g0y7dkk8F50xYIRNsGCZ9f3s)
+
+
+- *NovaTalks.UI*: Added the ability to change the size of "Conversations Dashboard" panels. [:clipboard: NC2-670](https://sd.novait.com.ua/browse/NC2-670)
+	
+	To resize each panel, move the cursor to its edge. When the cursor changes to an arrow, click and hold the left mouse button to drag the panel's edge and adjust its size.
+	
+	Applies to the following panels:
+	
+	- Quick filters by "Mentions", "Teams", "Inboxes", "Labels" 
+			
+		> "main-nav secondary-menu"
+
+	- List of all conversations 
+	
+		> "conversations-list"
+
+	- Open dialogue
+		
+		> "current-chat"
+
+	- Contact information
+	
+		> "conversation-sidebar-wrap"
+
+	- Apps on the sidebar
+	
+		> "dashboard-apps-sidebar"
+		
+	[Dashboard apps specification](https://drive.google.com/drive/folders/1HmGZE9WRSOoGcfonyBvajbgGz6avBs9n)
+	
+	
+- *NovaTalks.UI*: The modal window is now active when interacting with it. [:clipboard: NC2-685](https://sd.novait.com.ua/browse/NC2-685)
+
+
+- *NovaTalks.Core, UI*: Ported templates variables from Chatwoot. [:clipboard: NC2-509](https://sd.novait.com.ua/browse/NC2-509)
+
+	By using **{{variable}}** in the following sections:
+
+	- In the message sending panel "Reply" and "Private Note"
+
+	- Canned Responses
+
+	- Macros
+	
+
+- *NovaTalks.UI*: Implemented the "Mentions" functionality. [:clipboard: NC2-215](https://sd.novait.com.ua/browse/NC2-215)
+
+	- "Mentions" tab does list conversations where the current agent was mentioned.
+	
+	- Conversations are not listed in the Mentions tab if they exceed the value in "Account Settings" - "Conversations" section. 
+	
+	- To mention other agents, in a conversation navigate to the message sending panel and open the Private Notes tab. In the field for sending a message, indicate one or more agents with "@" and click on the button "Add Note".
+
+	
+- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216](https://sd.novait.com.ua/browse/NC2-216)
+
+	- Added the ability to set the display of mentions in conversations for a specific number of days.
+	
+	- The number of days is counted using **mentioned_at** field in table **mentions**.
+
+	
+- *NovaTalks.Core, UI*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636](https://sd.novait.com.ua/browse/NC2-636)
+
+	- Channel type "Email" allows connection of mail using the IMAP and SMTP/SMTPS protocols.
+	
+	New environment variables:
+	
+	- **EMAIL_FETCH_INTERVAL** - the interval at which we send a request to receive mail in milliseconds. 
+
+	- **ENCRYPTION_SECRET** - secret of the data. Additional string for generating *secretKey*. One of the elements for *encryptData*.
+	
+	
+- *NovaTalks.Widget, UI*: Widget opening mechanism. [:clipboard: NC2-609](https://sd.novait.com.ua/browse/NC2-609)
+	
+	- Added an option to choose the position for widget expansion in the browser (vertically or horizontally) on desktop and mobile devices.
+
+
+- *NovaTalks.Widget, UI*: Widget positioning mechanism. [:clipboard: NC2-610](https://sd.novait.com.ua/browse/NC2-610)
+
+	- Added an option to choose the widget position in the browser (bottom right, bottom left, middle left, middle right) on desktop and mobile devices.
+
+
+- *NovaTalks.UI*: Added copy link to a message. [:clipboard: NC2-614](https://sd.novait.com.ua/browse/NC2-614)
+
+	- An added option in the opened conversarsation, you can now select a message with the right mouse button or by clicking the three dots next to it to share it.
+
+	- Added highlighting for replay messages in the dialog.
+
+
+- *NovaTalks.Core, UI*: Added "Pin/Unpin" and "Reply" functionality to message. [:clipboard: NC2-552](https://sd.novait.com.ua/browse/NC2-552)
+
+	- The order number of pinned message corresponds to the order in which the agent pinned it.
+	
+		> Changing the selected pinned message does not download additional conversarsation's message history.
+	
+	- Added the "pinned" column to the "messages" table.
+	
+	- Added the "pinned_messages" parameter to "additional_attributes" in the "conversations" table.
+	
+	
+- *NovaTalks.Widget*: Added an option to display the agent's avatar and name in the online chat. [:clipboard: NC2-611](https://sd.novait.com.ua/browse/NC2-611)
+
+	- Added a "Show agent name" and " Show agent avatar" checkbox button in the **Inboxes** settings.
+
+
+####Bug Fixes
+
+
+- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703](https://sd.novait.com.ua/browse/NC2-703)
+	
+	> Attempting to send a file in a conversation from the agent's side, files were added to the conversation and not sent on webhook.
+	
+	
+- *NovaTalks.UI*: Fixed image preview button covering dashboard apps. [:clipboard: NC2-690](https://sd.novait.com.ua/browse/NC2-690)
+
+
+- *NovaTalks.Core, Widget*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693](https://sd.novait.com.ua/browse/NC2-693)
+	
+	> If a message is sent to the web widget and the connection with Engine is lost, the message will be fetched once the connection between web-widget and Engine is restablished.
+	
+	
+- *NovaTalks.UI*: Fixed contact information panel breaching the window border when writing a long text in the dialog. [:clipboard: NC2-698](https://sd.novait.com.ua/browse/NC2-698)
+	
+	- Fixed case when writing a long text, the contact information panel will not move to the right.
+	
+	
+- *NovaTalks.Core, UI*: Fixed url encoding of cyrillic file names sent from Email inbox. [:clipboard: NC2-678](https://sd.novait.com.ua/browse/NC2-678)
+	
+	- Files which had cirillic characters in their name had them url encoded when sent to a client.
+	
+	
+- *NovaTalks.Widget*: Fixed a case where the client could not create a dialog on OS Android. [:clipboard: NC2-511](https://sd.novait.com.ua/browse/NC2-511)
+
+	- User data storage has been moved from *cookie* in *localStorage*. 
+
+
+- *NovaTalks.UI*: Fixed an issue where typing "/" in a dialog would cause an extra paragraph to be created. [:clipboard: NC2-602](https://sd.novait.com.ua/browse/NC2-602)
+
+
+- *NovaTalks.Widget*: Fixed **vue** styles conflict between widget and websites. [:clipboard: NC2-707](https://sd.novait.com.ua/browse/NC2-707)
+
+	> Websites based on **vue** framework have conflicting basics styles with widget which is also created on the vue basis.
+
+- *NovaTalks.UI*: Fixed conversarsation routing error. [:clipboard: NC2-709](https://sd.novait.com.ua/browse/NC2-709)
+
+	> "NavigationDuplicated" Nuxt error.
+
+
+***
+
+
+
 ###2023R2-3-4 :briefcase: Epic
 
 ####New Features
@@ -43,7 +296,7 @@
 
 	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
 	[Online reports specification](https://drive.google.com/drive/folders/1EDHEk237NyZGkbDxt1GmgWFOYak3-jDT)
-	
+
 - *NovaTalks.UI*: Added intarvals to historical reports [:clipboard: NC2-598] [NC2-598]
 
 	- To historical reports added one week and one month intarvals.
@@ -336,7 +589,7 @@
 
 - *NovaTalks.UI*: Fixed request for Tags Detail [:clipboard: NC2-491] [NC2-491]
 
-	
+
 	- **Changed request for Tags Detail**
 		<details><summary>GET /api/v2/accounts/{accountId}/historical/tag_detail</summary>
 		<p>
@@ -417,7 +670,7 @@
 - *NovaTalks.UI*: Historical Reports - API [:clipboard: NC2-354] [NC2-354]
 
 	- Added endpoints for next methods:
-	
+
 	- **Get historical agent overview summary**
 		<details><summary>GET /api/v2/accounts/{accountId}/historical/agent_overview_summary</summary>
 		<p>
@@ -687,10 +940,10 @@
 - *NovaTalks.UI*: Draft saving for messages and private notes [:clipboard: NC2-320] [NC2-320]
 
 	> Draft saving for agent's messages and private notes when he travels between menus\conversations
-	
+
 	> Will reset on page refresh
 
-- *NovaTalks.UI*: Adding messengers to select on the widget [:clipboard: NC2-348] [NC2-348]
+- *NovaTalks.UI*: Added messengers to select on the widget [:clipboard: NC2-348] [NC2-348]
 
 	> Added additional parameters to the widget configuration section for selecting messengers, namely Instagram, Line.
 
@@ -709,7 +962,7 @@
 ```
 </p>
 </details>
-	
+
 > Check utilization distribution:
 
 <details><summary>POST /api/v1/accounts/{accountId}/conversations/queue</summary>
@@ -733,15 +986,15 @@
 - *NovaTalks.UI*: Write first to the client (WhatsApp Business) - changes to the contact form [:clipboard: NC2-138] [NC2-138]
 
 	- Changes to fields in Contacts list table
-	
+
 	> deleted rudamental fields: **Company, City, Country**
 
 	> added **Last Activity** field
-	
+
 	> added **Conversations** counter field
 
 	- Changes on the Contact Details page
-	
+
 	> added **Conversations** submenu to the side bar with direct linking to the conversation
 
 [Write first outbound messaging WhatApp Business](https://drive.google.com/drive/folders/1w2KQLIZM-3ovi4G2MBrHqX0_A_A85oiu)
@@ -805,7 +1058,7 @@
 > CSAT can be enabled in the Inbox settings
 
 	- CSAT functionality implemented as a Nova.Botflow scenario
-	
+
 	- CSAT scenario, by standard, is started when conversation changes status to **Resolved** 
 
 <details><summary>GET /api/v1/accounts/{accountId}/csat</summary>
@@ -957,7 +1210,7 @@
 - *NovaTalks.UI*: Fixed wrong chat counter visualization[:clipboard: NC2-294] [NC2-294]
 
 	- On high loads every new conversation or status change of existing conversation initiated counter change which in return caused chaotic counter values visualization
-	
+
 	- For route **/conversations/meta** stated ratelimit (throttling) with **avarage** and **burst** parameters
 
 - *NovaTalks.UI*: Fixed assignee and team visualization [:clipboard: NC2-295] [NC2-295]
@@ -992,9 +1245,9 @@
 - *NovaTalks.UI*: Show password *eye* button [:clipboard: NC2-213] [NC2-213]
 
 	- Button locations:
-	
+
 		- *Log In* page
-		
+
 		> host/app/login
 
 		- *Profile Settings* menu for admin and for agent
@@ -1042,13 +1295,13 @@
 	• In *Edit* menus (all) side bar menus are inactive
 
 	• Importing file with wrong extension or values in *Import Contacts* shows error
-	
+
 	• Teams description doesn't go out of workspace bounds
-	
+
 	• Changed *New Password* field type to *password*
 
 	• Added *Confirm New Password* to *Edit Agent* menu
-	
+
 	• Added *View Contact* button to *contact-info*
 
 ***
@@ -1078,7 +1331,7 @@
 - *NovaTalks.UI*: Frontend modification [:clipboard: NC2-109] [NC2-109]
 
 	- **UI**:
-	
+
 		• added to **@ Mentions** tab Beta flag
 
 		• hidden **Ticket close timer** in the Account Setting
@@ -1096,7 +1349,7 @@
 		• hidden **CSAT** in Webchat Inbox settings
 
 		• hidden **Enforce User Indetity Validation** in Webchat Inbox settings
-	
+
 		• hidden **Conversation continuity via email** in Webchat Inbox settings
 
 		• changed **Электронная почта** section to "Источник" in Reports in russian locale
@@ -1118,7 +1371,7 @@
 		• deleted **Welcome Messages**
 
 	- **Additional information**:
-	
+
 		• BotAgent does work with both widget and messangers (2 different inboxes) at the same time
 
 		• When the same name and email are filled in online chat, the new contact isn't created in BD, but conversation does
@@ -1145,7 +1398,7 @@
 		• Agent
 
 	> One user (agent) corresponds to one role
-	
+
 	> One API method can corresponding to few roles
 
 - *NovaTalks.UI*: Modified chat assignment to an agent [:clipboard: NC2-73] [NC2-73]
@@ -1155,7 +1408,7 @@
 	• When agend snooze the conversation, the assignment is preserved
 
 	• When client write a message in **X minutes** after conversation was resolved, the conversation is straightforwardly assigned to that agent
-	
+
 	>  X - is a configurable parameter
 
 ####Bug Fixes
@@ -1212,10 +1465,10 @@
 
 ###2022R1-4 :briefcase: Epic
 ####New Features
-- *NovaTalks.Core*,*NovaTalks.UI*: Possibility analysis for adding new roles [:clipboard: NC2-74] [NC2-74]
+- *NovaTalks.Core*,*NovaTalks.UI*: Possibility analysis for Added new roles [:clipboard: NC2-74] [NC2-74]
 
 	> System has only two roles: Administrator and Agent
-	
+
 	> Role matrix is not realized in ChatWoot API
 
 ####Bug Fixes
@@ -1237,11 +1490,11 @@
 	• WebSocket connection is proxed to backend
 
 	• Agent's status is set to *Offline* on exit from workplace
-	
+
 	• Added timeout parameter (in seconds):
-	
+
 	>  If agent closes\go out of browser tab the websocket won't receive reply from him. If such non-reply time exceeds timeout parameter, the agent's status will switch to *Offline*.
-	
+
 	• After login, agent will have *Busy* status
 
 	• Redis integration
@@ -1279,11 +1532,11 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 - *NovaTalks.UI*: UI refining [:clipboard: NC2-61] [NC2-61]
 
 	• **Reports**: hidden CSAT reports
-	
+
 	• **Companies**: hidden option
-	
+
 	• **Settings**: hidden Integrations and Applications
-	
+
 	• **Conversation sidebar**: Team field in now currectly shown in user card and dialog list
 
 	• **User (agent) creation**: user with *email* provider has non-editable uid, which is same as user's email
@@ -1341,7 +1594,7 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 - *NovaTalks.UI*: CRUD methods for Agents[:clipboard: NC2-46] [NC2-46]
 
 	• frontend elements (buttons) of *Agents* settings page: create, activate\deactivate, edit, delete agent
-	
+
 	• functionality of *Agents* settings page buttons: create, activate\deactivate, edit, delete agent
 
 - *NovaTalks.UI*: Conversation icon visualization as a messanger icon [:clipboard: NC2-47] [NC2-47]
@@ -1357,7 +1610,7 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 	• Genesys auth when auth token exists will send it to a Core istead of login and password
 
 - *NovaTalks.UI*,*NovaTalks.Core*: UI adaptation to work with solitary Engine [:clipboard: NC2-57] [NC2-57]
-	
+
 	- **NovaTalks.UI**:
 
 		• login with "Genesys Settings" not checked in.
@@ -1365,9 +1618,9 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 		> When it is not checked in and it is Genesys auth, then "No Station" option will be choosen by default
 
 		• user Activation\Deactivation 
-		
+
 		• provider on Profile and Agents pages
-		
+
 		• user editting for administrators
 
 		• administrator creation (all providers, except genesys)
@@ -1430,7 +1683,7 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 		Email Address: non-editable
 
 		Language: editable (only administrator)
-	
+
 	> Administrator changes system language for himself and his created agents
 
 ####Bug Fixes
@@ -1465,19 +1718,19 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 - *Nova.Chats*: UI [:clipboard: NC2-41] [NC2-41]
 
 	- Genesys station droplist choose option (active only with Genesys Settings checkbox checked)
-		
+
 		• No Station
-	
+
 		• Workstation
-	
+
 		• Remote Workstation
-	
+
 		• Remote Number
-	
+
 	- Dashboard redirect on zero conversations
 
 	- Genesys-ChatWoot mapping
-		
+
 		• config has "online" and "busy" statuses mapping
 
 <details><summary>Envirounment variables in config</summary>
@@ -1509,7 +1762,7 @@ GENESYS_STATUS_BUSY=Do Not disturb
 	- **Contact card**:
 
 		• Deleted: **Assign Agent**, **Assign Team**
-		
+
 		• Email now is non-editable
 
 		• Deleted: **Social Profiles**, **Company Name**
