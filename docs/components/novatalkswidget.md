@@ -31,6 +31,7 @@
 
 	> Websites based on **vue** framework have conflicting basics styles with widget which is also created on the vue basis.
 
+***
 
 ##2022R3
 
