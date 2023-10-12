@@ -15,9 +15,9 @@
 
 ####New Features
 
-- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676](https://sd.novait.com.ua/browse/NC2-676)
+- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676] [NC2-676]
 
-	Request caching was added to the following endpoints: 
+	Request caching was added to the following endpoints:
 
 	<details><summary>/api/v1/accounts/{accountId}</summary>
 	<p>
@@ -34,26 +34,124 @@
 	</details>
 
 
-- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216](https://sd.novait.com.ua/browse/NC2-216)
+- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216] [NC2-216]
 
 	- Added the ability to set the display of mentions in conversations for a specific number of days.
 	
 	- The number of days is counted using **mentioned_at** field in table **mentions**.
 
+- *NovaTalks.Core*: Dynamic update of widget profile. [:clipboard: NC2-571] [NC2-571]
+	
+	- Added a "Get settings from server" checkbox button in the Inbox settings, and now the widget settings will be updated automatically via a request to the NovaTalks server:
+
+	<details><summary>GET /widget/settings</summary>
+	<p>
+	```
+	- /widget/settings?website_token=${websiteToken}
+	```
+	</p>
+	</details>
+	
+	<details><summary>Response example:</summary>
+	<p>
+	```
+	{
+	  "welcomeTitle": "Title ",
+	  "widgetColor": "#FF0866",
+	  "preChatFormEnabled": true,
+	  "additionalSettings": {
+		"locale": "en",
+		"channels": [
+		  {
+			"hint": "telegram",
+			"name": "asd",
+			"type": "chat",
+			"enabled": true,
+			"url": "http://t.me/url"
+		  }
+		],
+		"isWidgetDynamic": true,
+		"showCloseWidgetIcon": true
+	  },
+	  "preChatFormOptions": {
+		"calendar": {
+		  "timezone": "Europe/Kyiv",
+		  "workingHours": []
+		},
+		"online": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		},
+		"offline": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		}
+	  }
+	}
+	```
+	</p>
+	</details>
+
+	[Dynamic widget profile update specification](https://drive.google.com/drive/folders/1BEg5Qnx8g0y7dkk8F50xYIRNsGCZ9f3s)
+
+- *NovaTalks.Core*: Ported templates variables from Chatwoot. [:clipboard: NC2-509] [NC2-509]
+
+	By using **{{variable}}** in the following sections:
+
+	- In the message sending panel "Reply" and "Private Note"
+
+	- Canned Responses
+
+	- Macros
+
+- *NovaTalks.Core*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636] [NC2-636]
+
+	- Channel type "Email" allows connection of mail using the IMAP and SMTP/SMTPS protocols.
+	
+	New environment variables:
+	
+	- **EMAIL_FETCH_INTERVAL** - the interval at which we send a request to receive mail in milliseconds. 
+
+	- **ENCRYPTION_SECRET** - secret of the data. Additional string for generating *secretKey*. One of the elements for *encryptData*.
+
+- *NovaTalks.Core*: Added "Pin/Unpin" and "Reply" functionality to message. [:clipboard: NC2-552] [NC2-552]
+
+	- The order number of pinned message corresponds to the order in which the agent pinned it.
+	
+		> Changing the selected pinned message does not download additional conversarsation's message history.
+	
+	- Added the "pinned" column to the "messages" table.
+	
+	- Added the "pinned_messages" parameter to "additional_attributes" in the "conversations" table.
 
 ####Bug Fixes
 
-- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703](https://sd.novait.com.ua/browse/NC2-703)
+- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703] [NC2-703]
 	
 	> Attempting to send a file in a conversation from the agent's side, files were added to the conversation and not sent on webhook.
 
 
-- *NovaTalks.Core*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693](https://sd.novait.com.ua/browse/NC2-693)
+- *NovaTalks.Core*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693] [NC2-693]
 	
 	> If a message is sent to the web widget and the connection with Engine is lost, the message will be fetched once the connection between web-widget and Engine is restablished.
 
+- *NovaTalks.Core*: Fixed url encoding of cyrillic file names sent from Email inbox. [:clipboard: NC2-678] [NC2-678]
+	
+	- Files which had cirillic characters in their name had them url encoded when sent to a client.
 
-- *NovaTalks.Core*: Fixed conversarsation routing error. [:clipboard: NC2-709](https://sd.novait.com.ua/browse/NC2-709)
+- *NovaTalks.Core*: Fixed conversarsation routing error. [:clipboard: NC2-709] [NC2-709]
 
 	> "NavigationDuplicated" Nuxt error.
 
@@ -69,9 +167,10 @@
 	- In Settings -> Agent -> Edit Agent added new parameter **Aviability** (type - dropdown, available values - available statuses and substatuses).
 	- Agent Log Out automaticaly when his status has been changed to offline.
 	- In report Online -> Agent Status added new parameter **Aviability** and  ability to change status (for admin role).
-	- Related task [:clipboard: NC2-633] [NC2-633]
 
 	[Change status specification](https://drive.google.com/drive/folders/1J5LCUo58irnniHqXeIzaNFPaNyd7K9-h)
+
+> Related task [:clipboard: NC2-633] [NC2-633]
 
 - *NovaTalks.Core*: Dashboard apps: changes i DB [:clipboard: NC2-623] [NC2-623]
 
@@ -98,9 +197,8 @@
 
 	- Developed service which issues statistics for Prometeus monitoring.
 	- Added enviroment variable **PROMETHEUS_CLIENT_ENABLED**.
-	- Endpoint: /metrics.
-	- Port: 9100.
-
+	- Endpoint: **/metrics**.
+	- Port: **9100**.
 
 ####Bug Fixes
 
@@ -283,7 +381,7 @@
 
 ####Bug Fixes
 
-- *NovaTalks.Core*: Fixed problem when system message mark their conversation as seen [:clipboard: NC2-347] [NC2-347]
+- *NovaTalks.Core*: Fixed problem with system message marking conversation as **seen** [:clipboard: NC2-347] [NC2-347]
 
 ***
 
@@ -365,11 +463,16 @@
 
 - *NovaTalks.Core*: Historical Reports - Changes in DataBase [:clipboard: NC2-405] [NC2-405]
 
-	- Added creation and filling of historical tables according to Historical reports specification:
+	Added creation and filling of historical tables according to Historical reports specification:
+	
 	- **user_team_interval**
+	
 	- **team_interval**
+	
 	- **inbox_interval**
+	
 	- **user_interval**
+	
 	- **user_csat_interval**
 
 	[Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
@@ -1376,8 +1479,6 @@ tlsOptions:       Optional object with options accepted by Node.js tls module
 
 - *NovaTalks.Core*: creation of users with different auth providers [:clipboard: NC2-43] [NC2-43]
 	
-	Related task [:clipboard: NC2-38] [NC2-38]
-
 	- Created endpoint " /auth/active " to receive list of active auth providers
 
 	- Active providers are listed in "cfg.default.json", located in the root of the repository
@@ -1386,7 +1487,9 @@ tlsOptions:       Optional object with options accepted by Node.js tls module
 	
 		• "activeProviders": ["email", "genesys", "ldap", "ldaps"]
 
-	> If provider is deleted from the config, the users tied with provider wont be able to log in
+	> If provider is deleted from the config, the users tied with provider won't be able to log in
+	
+> Related task [:clipboard: NC2-38] [NC2-38]
 
 - *NovaTalks.Core*: User creation with different provider authentification [:clipboard: NC2-43] [NC2-43]
 

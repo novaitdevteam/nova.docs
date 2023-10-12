@@ -8,6 +8,40 @@
 #NovaTalks.BotAgent
 ##Product Notices
 ***
+##2023R2
+###2023R2-5-6 :briefcase: Epic
+####New Features
+
+- *NovaTalks.BotAgent*: Added library to work with google sheets [:clipboard: NOV-497] [NOV-497]
+
+	Nodered node to get, update, append, and clear google sheets.
+
+	> library:  https://flows.nodered.org/node/node-red-contrib-google-sheets
+
+- *NovaTalks.BotAgent*: Optimized "Working Time" workflow [:clipboard: NOV-498] [NOV-498]
+
+	The Worktime flow was changed to avoid open conversation messages triggering working \ non-working time logic and to lessen the burden from the backend.
+	
+	The flow:
+	
+	- On opening a conversation UI requests Engine to provide Worktime data from chatbot settings
+	
+	- Worktime is sent to Botflow and is written to the chat context
+	
+	- Worktime validation is done against the chat context
+
+####Bug Fixes
+
+- *NovaTalks.BotAgent*: Fixed problem with file with uppercase extensions not being sent to PureCloud [:clipboard: NOV-501] [NOV-501]
+
+- *NovaTalks.BotAgent*: Fixed cases of multiple Bot messaging [:clipboard: NOV-503] [NOV-503]
+
+	When multiple events are sent on the **BotAgent Incomming** node webhook the Bot itself considers them as a separate entities and logic is triggered for all of the events separately.
+	
+	> Multiple events can be triggered with, for example: bulk media (Facebook gallery), same timing messages, etc.
+
+***
+
 ##2022R3
 ###2022R3-6 :briefcase: Epic
 ####New Features
