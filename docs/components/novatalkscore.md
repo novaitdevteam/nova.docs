@@ -11,6 +11,54 @@
 
 ##2023R2
 
+###2023R2-5-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676](https://sd.novait.com.ua/browse/NC2-676)
+
+	Request caching was added to the following endpoints: 
+
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /canned_responses
+	- /canned_responses/{cannedResponseId}		
+	- /custom_attribute_definitions		
+	- /custom_attribute_definitions/{customAttributeId}	
+	- /dialogs/labels		
+	- /labels		
+	- /teams
+	```
+	</p>
+	</details>
+
+
+- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216](https://sd.novait.com.ua/browse/NC2-216)
+
+	- Added the ability to set the display of mentions in conversations for a specific number of days.
+	
+	- The number of days is counted using **mentioned_at** field in table **mentions**.
+
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703](https://sd.novait.com.ua/browse/NC2-703)
+	
+	> Attempting to send a file in a conversation from the agent's side, files were added to the conversation and not sent on webhook.
+
+
+- *NovaTalks.Core*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693](https://sd.novait.com.ua/browse/NC2-693)
+	
+	> If a message is sent to the web widget and the connection with Engine is lost, the message will be fetched once the connection between web-widget and Engine is restablished.
+
+
+- *NovaTalks.Core*: Fixed conversarsation routing error. [:clipboard: NC2-709](https://sd.novait.com.ua/browse/NC2-709)
+
+	> "NavigationDuplicated" Nuxt error.
+
+***
+
 ###2023R2-3-4 :briefcase: Epic
 
 ####New Features
