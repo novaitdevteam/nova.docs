@@ -15,25 +15,6 @@
 
 ####New Features
 
-- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676](https://sd.novait.com.ua/browse/NC2-676)
-
-	Request caching was added to the following endpoints: 
-
-	<details><summary>/api/v1/accounts/{accountId}</summary>
-	<p>
-	```
-	- /canned_responses
-	- /canned_responses/{cannedResponseId}		
-	- /custom_attribute_definitions		
-	- /custom_attribute_definitions/{customAttributeId}	
-	- /dialogs/labels		
-	- /labels		
-	- /teams
-	```
-	</p>
-	</details>
-
-
 - *NovaTalks.UI*: Added new variables to display the logo on the login page and the mini logo on the dashboard page. [:clipboard: NC2-689](https://sd.novait.com.ua/browse/NC2-689)
 	 
 	List of new UI variables:
@@ -166,13 +147,6 @@
 	- To mention other agents, in a conversation navigate to the message sending panel and open the Private Notes tab. In the field for sending a message, indicate one or more agents with "@" and click on the button "Add Note".
 
 	
-- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216](https://sd.novait.com.ua/browse/NC2-216)
-
-	- Added the ability to set the display of mentions in conversations for a specific number of days.
-	
-	- The number of days is counted using **mentioned_at** field in table **mentions**.
-
-	
 - *NovaTalks.Core, UI*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636](https://sd.novait.com.ua/browse/NC2-636)
 
 	- Channel type "Email" allows connection of mail using the IMAP and SMTP/SMTPS protocols.
@@ -184,12 +158,12 @@
 	- **ENCRYPTION_SECRET** - secret of the data. Additional string for generating *secretKey*. One of the elements for *encryptData*.
 	
 	
-- *NovaTalks.Widget, UI*: Widget opening mechanism. [:clipboard: NC2-609](https://sd.novait.com.ua/browse/NC2-609)
+- *NovaTalks.UI, Widget*: Widget opening mechanism. [:clipboard: NC2-609](https://sd.novait.com.ua/browse/NC2-609)
 	
 	- Added an option to choose the position for widget expansion in the browser (vertically or horizontally) on desktop and mobile devices.
 
 
-- *NovaTalks.Widget, UI*: Widget positioning mechanism. [:clipboard: NC2-610](https://sd.novait.com.ua/browse/NC2-610)
+- *NovaTalks.UI, Widget*: Widget positioning mechanism. [:clipboard: NC2-610](https://sd.novait.com.ua/browse/NC2-610)
 
 	- Added an option to choose the widget position in the browser (bottom right, bottom left, middle left, middle right) on desktop and mobile devices.
 
@@ -212,27 +186,12 @@
 	- Added the "pinned_messages" parameter to "additional_attributes" in the "conversations" table.
 	
 	
-- *NovaTalks.Widget*: Added an option to display the agent's avatar and name in the online chat. [:clipboard: NC2-611](https://sd.novait.com.ua/browse/NC2-611)
-
-	- Added a "Show agent name" and " Show agent avatar" checkbox button in the **Inboxes** settings.
-
-
 ####Bug Fixes
 
-
-- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703](https://sd.novait.com.ua/browse/NC2-703)
-	
-	> Attempting to send a file in a conversation from the agent's side, files were added to the conversation and not sent on webhook.
-	
 	
 - *NovaTalks.UI*: Fixed image preview button covering dashboard apps. [:clipboard: NC2-690](https://sd.novait.com.ua/browse/NC2-690)
 
 
-- *NovaTalks.Core, Widget*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693](https://sd.novait.com.ua/browse/NC2-693)
-	
-	> If a message is sent to the web widget and the connection with Engine is lost, the message will be fetched once the connection between web-widget and Engine is restablished.
-	
-	
 - *NovaTalks.UI*: Fixed contact information panel breaching the window border when writing a long text in the dialog. [:clipboard: NC2-698](https://sd.novait.com.ua/browse/NC2-698)
 	
 	- Fixed case when writing a long text, the contact information panel will not move to the right.
@@ -242,22 +201,9 @@
 	
 	- Files which had cirillic characters in their name had them url encoded when sent to a client.
 	
-	
-- *NovaTalks.Widget*: Fixed a case where the client could not create a dialog on OS Android. [:clipboard: NC2-511](https://sd.novait.com.ua/browse/NC2-511)
-
-	- User data storage has been moved from *cookie* in *localStorage*. 
-
 
 - *NovaTalks.UI*: Fixed an issue where typing "/" in a dialog would cause an extra paragraph to be created. [:clipboard: NC2-602](https://sd.novait.com.ua/browse/NC2-602)
 
-
-- *NovaTalks.Widget*: Fixed **vue** styles conflict between widget and websites. [:clipboard: NC2-707](https://sd.novait.com.ua/browse/NC2-707)
-
-	> Websites based on **vue** framework have conflicting basics styles with widget which is also created on the vue basis.
-
-- *NovaTalks.UI*: Fixed conversarsation routing error. [:clipboard: NC2-709](https://sd.novait.com.ua/browse/NC2-709)
-
-	> "NavigationDuplicated" Nuxt error.
 
 
 ***

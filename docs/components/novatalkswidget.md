@@ -8,8 +8,34 @@
 #NovaTalks.ChatWidget
 ##Product Notices
 ***
+
+##2023R2
+
+###2023R2-5-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.ChatWidget*: Added an option to display the agent's avatar and name in the online chat. [:clipboard: NC2-611](https://sd.novait.com.ua/browse/NC2-611)
+
+	- Added a "Show agent name" and " Show agent avatar" checkbox button in the **Inboxes** settings.
+
+
+####Bug Fixes
+
+- *NovaTalks.ChatWidget*: Fixed a case where the client could not create a dialog on OS Android. [:clipboard: NC2-511](https://sd.novait.com.ua/browse/NC2-511)
+
+	- User data storage has been moved from *cookie* in *localStorage*.
+
+
+- *NovaTalks.ChatWidget*: Fixed **vue** styles conflict between widget and websites. [:clipboard: NC2-707](https://sd.novait.com.ua/browse/NC2-707)
+
+	> Websites based on **vue** framework have conflicting basics styles with widget which is also created on the vue basis.
+
+
 ##2022R3
+
 ###2022R3-5 :briefcase: Epic
+
 ####New Features
 - none
 
