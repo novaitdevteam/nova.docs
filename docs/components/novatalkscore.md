@@ -57,6 +57,7 @@
 
 	> "NavigationDuplicated" Nuxt error.
 
+***
 
 ###2023R2-3-4 :briefcase: Epic
 
