@@ -15,20 +15,19 @@
 
 ####New Features
 
-- *NovaTalks.UI*: Added new variables to display the logo on the login page and the mini logo on the dashboard page. [:clipboard: NC2-689](https://sd.novait.com.ua/browse/NC2-689)
+- *NovaTalks.UI*: Added new variables to display the logo on the login page and the mini logo on the dashboard page. [:clipboard: NC2-689] [NC2-689]
 	 
 	List of new UI variables:
 
-	- LOGO_SMALL - does change company's logo on the primary sidebar with an image located at the URL address.
+	- **LOGO_SMALL** - does change company's logo on the primary sidebar with an image located at the URL address.
 
-	- LOGO - does change company's logo with image at the URL address.
+	- **LOGO** - does change company's logo with image at the URL address.
 
-	> INSTALLATION - adds name of the customer's company to the image name for simpler image identification.
+	> **INSTALLATION** - adds name of the customer's company to the image name for simpler image identification.
 
-	> INSTALLATION_NAME - does change the default installation name to the name of the clients choice.
+	> **INSTALLATION_NAME** - does change the default installation name to the name of the clients choice.
 
-
-- *NovaTalks.Widget, Core, UI*: Dynamic update of widget profile. [:clipboard: NC2-571](https://sd.novait.com.ua/browse/NC2-571)
+- *NovaTalks.UI*: Dynamic update of widget profile. [:clipboard: NC2-571] [NC2-571]
 	
 	- Added a "Get settings from server" checkbox button in the Inbox settings, and now the widget settings will be updated automatically via a request to the NovaTalks server:
 
@@ -95,7 +94,7 @@
 	[Dynamic widget profile update specification](https://drive.google.com/drive/folders/1BEg5Qnx8g0y7dkk8F50xYIRNsGCZ9f3s)
 
 
-- *NovaTalks.UI*: Added the ability to change the size of "Conversations Dashboard" panels. [:clipboard: NC2-670](https://sd.novait.com.ua/browse/NC2-670)
+- *NovaTalks.UI*: Added the ability to change the size of "Conversations Dashboard" panels. [:clipboard: NC2-670] [NC2-670]
 	
 	To resize each panel, move the cursor to its edge. When the cursor changes to an arrow, click and hold the left mouse button to drag the panel's edge and adjust its size.
 	
@@ -123,11 +122,9 @@
 		
 	[Dashboard apps specification](https://drive.google.com/drive/folders/1HmGZE9WRSOoGcfonyBvajbgGz6avBs9n)
 	
-	
-- *NovaTalks.UI*: The modal window is now active when interacting with it. [:clipboard: NC2-685](https://sd.novait.com.ua/browse/NC2-685)
+- *NovaTalks.UI*: The modal window is now active when interacting with it. [:clipboard: NC2-685] [NC2-685]
 
-
-- *NovaTalks.Core, UI*: Ported templates variables from Chatwoot. [:clipboard: NC2-509](https://sd.novait.com.ua/browse/NC2-509)
+- *NovaTalks.UI*: Ported templates variables from Chatwoot. [:clipboard: NC2-509] [NC2-509]
 
 	By using **{{variable}}** in the following sections:
 
@@ -136,18 +133,16 @@
 	- Canned Responses
 
 	- Macros
-	
 
-- *NovaTalks.UI*: Implemented the "Mentions" functionality. [:clipboard: NC2-215](https://sd.novait.com.ua/browse/NC2-215)
+- *NovaTalks.UI*: Implemented the "Mentions" functionality. [:clipboard: NC2-215] [NC2-215]
 
 	- "Mentions" tab does list conversations where the current agent was mentioned.
 	
 	- Conversations are not listed in the Mentions tab if they exceed the value in "Account Settings" - "Conversations" section. 
 	
 	- To mention other agents, in a conversation navigate to the message sending panel and open the Private Notes tab. In the field for sending a message, indicate one or more agents with "@" and click on the button "Add Note".
-
 	
-- *NovaTalks.Core, UI*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636](https://sd.novait.com.ua/browse/NC2-636)
+- *NovaTalks.UI*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636] [NC2-636]
 
 	- Channel type "Email" allows connection of mail using the IMAP and SMTP/SMTPS protocols.
 	
@@ -157,25 +152,21 @@
 
 	- **ENCRYPTION_SECRET** - secret of the data. Additional string for generating *secretKey*. One of the elements for *encryptData*.
 	
-	
-- *NovaTalks.UI, Widget*: Widget opening mechanism. [:clipboard: NC2-609](https://sd.novait.com.ua/browse/NC2-609)
+- *NovaTalks.UI*: Widget opening mechanism. [:clipboard: NC2-609] [NC2-609]
 	
 	- Added an option to choose the position for widget expansion in the browser (vertically or horizontally) on desktop and mobile devices.
 
-
-- *NovaTalks.UI, Widget*: Widget positioning mechanism. [:clipboard: NC2-610](https://sd.novait.com.ua/browse/NC2-610)
+- *NovaTalks.UI*: Widget positioning mechanism. [:clipboard: NC2-610] [NC2-610]
 
 	- Added an option to choose the widget position in the browser (bottom right, bottom left, middle left, middle right) on desktop and mobile devices.
 
-
-- *NovaTalks.UI*: Added copy link to a message. [:clipboard: NC2-614](https://sd.novait.com.ua/browse/NC2-614)
+- *NovaTalks.UI*: Added copy link to a message. [:clipboard: NC2-614] [NC2-614]
 
 	- An added option in the opened conversarsation, you can now select a message with the right mouse button or by clicking the three dots next to it to share it.
 
 	- Added highlighting for replay messages in the dialog.
 
-
-- *NovaTalks.Core, UI*: Added "Pin/Unpin" and "Reply" functionality to message. [:clipboard: NC2-552](https://sd.novait.com.ua/browse/NC2-552)
+- *NovaTalks.UI*: Added "Pin/Unpin" and "Reply" functionality to message. [:clipboard: NC2-552] [NC2-552]
 
 	- The order number of pinned message corresponds to the order in which the agent pinned it.
 	
@@ -185,30 +176,21 @@
 	
 	- Added the "pinned_messages" parameter to "additional_attributes" in the "conversations" table.
 	
-	
 ####Bug Fixes
-
 	
-- *NovaTalks.UI*: Fixed image preview button covering dashboard apps. [:clipboard: NC2-690](https://sd.novait.com.ua/browse/NC2-690)
+- *NovaTalks.UI*: Fixed image preview button covering dashboard apps. [:clipboard: NC2-690] [NC2-690]
 
-
-- *NovaTalks.UI*: Fixed contact information panel breaching the window border when writing a long text in the dialog. [:clipboard: NC2-698](https://sd.novait.com.ua/browse/NC2-698)
+- *NovaTalks.UI*: Fixed contact information panel breaching the window border when writing a long text in the dialog. [:clipboard: NC2-698] [NC2-698]
 	
 	- Fixed case when writing a long text, the contact information panel will not move to the right.
 	
-	
-- *NovaTalks.Core, UI*: Fixed url encoding of cyrillic file names sent from Email inbox. [:clipboard: NC2-678](https://sd.novait.com.ua/browse/NC2-678)
+- *NovaTalks.UI*: Fixed url encoding of cyrillic file names sent from Email inbox. [:clipboard: NC2-678] [NC2-678]
 	
 	- Files which had cirillic characters in their name had them url encoded when sent to a client.
-	
 
-- *NovaTalks.UI*: Fixed an issue where typing "/" in a dialog would cause an extra paragraph to be created. [:clipboard: NC2-602](https://sd.novait.com.ua/browse/NC2-602)
-
-
+- *NovaTalks.UI*: Fixed an issue where typing "/" in a dialog would cause an extra paragraph to be created. [:clipboard: NC2-602] [NC2-602]
 
 ***
-
-
 
 ###2023R2-3-4 :briefcase: Epic
 
@@ -253,29 +235,32 @@
 	- In Settings -> Agent -> Edit Agent added new parameter **Aviability** (type - dropdown, available values - available statuses and substatuses).
 	- Agent Log Out automaticaly when his status has been changed to offline.
 	- In report Online -> Agent Status added new parameter **Aviability** and  ability to change status (for admin role).
-	- Related task [:clipboard: NC2-633] [NC2-633]
 
 	[Change status specification](https://drive.google.com/drive/folders/1J5LCUo58irnniHqXeIzaNFPaNyd7K9-h)
 
-- *NovaTalks.UI*: The mechanism for changing agent statuses by the admin. [:clipboard: NC2-632] [NC2-632]
+> Related task [:clipboard: NC2-633] [NC2-633]
+
+- *NovaTalks.UI*: Basic White Label. [:clipboard: NC2-655] [NC2-655]
 
 	- Added ability change NavaTalks logo for different image.
 	- New env variables **INSTALLATION_NAME**, **WEBSITE_TITLE**, **INSTALLATION** added.
 
-- *NovaTalks.Core*: Added AZ localization [:clipboard: NC2-470] [NC2-470]
+- *NovaTalks.UI*: Added AZ localization [:clipboard: NC2-470] [NC2-470]
 
-	- In system messages added AZ localization.
+	- Added AZ localization to system messages.
 
 
 ####Bug Fixes
 
 - *NovaTalks.UI*: Fixed displaying information about client [:clipboard: NC2-647] [NC2-647]
 
-	- Fixed case when after updating information about clien, changes has been displayed after refrest the page.
+	- Fixed non-dynamic client information update
+	
+	> changes were shown after page refresh
 
-- *NovaTalks.UI*: Fixed displaying information about client [:clipboard: NC2-601] [NC2-601]
+- *NovaTalks.UI*: Fixed image duplication on sending from buffer [:clipboard: NC2-601] [NC2-601]
 
-	- Fixed case when after sending an image novatalks sends 2 images.
+	- Fixed case when sending an image from the buffer sends 2 images to online chat from novatalks.
 
 - *NovaTalks.UI*: Fixed downloading report [:clipboard: NC2-649] [NC2-649]
 
@@ -314,25 +299,26 @@
 	- Changed icon for option show/hide contact.
 	[Specification](https://drive.google.com/drive/folders/15so3EYjPoBJlb_UvDIRDrCR88KV8dfnM)
 
-- *NovaTalks.UI*: Added xlsx format for downloading reports [:clipboard: NC2-537] [NC2-538]
+- *NovaTalks.UI*: Added xlsx format for downloading reports [:clipboard: NC2-537] [NC2-537]
 
 	- For reports added new xlsx format foe downloading.
 
-- *NovaTalks.UI*: Dividing conversations into dialogs [:clipboard: NC2-537] [NC2-538]
+- *NovaTalks.UI*: Added ability to label conversation dialogs [:clipboard: NC2-588] [NC2-588]
 
 	- Added dividing line in conversations which start dialog.
-	- Under dividing line added **labels** field which show all labels of dialog and have option **add label**.
-	- Agent can add labels for every dialog.
-	- In table **taggings** added **taggable_type=dialog**. For **taggable_type=dialog** **taggable_id=dialog_id**.
+	- Under dividing line added **labels** field which show all labels of ф dialog and have option **add label**.
+	- Agent can add labels to every dialog.
+	- In table **taggings** added **taggable_type=dialog** and **taggable_id=dialog_id** filter options.
 
 	[Dialogs specification](https://drive.google.com/drive/folders/1BJG82NZP39f_aDAx9J3YYTfkX9R3WzVJ)
 
-- *NovaTalks.UI*: Dividing conversations into dialogs [:clipboard: NC2-635] [NC2-635]
+- *NovaTalks.UI*: Conversations last activity american time format  [:clipboard: NC2-635] [NC2-635]
 
-	- In conversations section added last activity time.
-	- Last activity time reset every client/agent message.
-
-
+	- In conversations section added last activity time in format: **HH:MM AM|PM MM/DD/YYYY**.
+	
+	> MESSAGE_DYNAMIC_TIME=true - env variable for UI to change time format.
+	
+	- Last activity time refresh every client/agent message.
 
 - *NovaTalks.UI*: Auto Answer - Changes in UI and addition of additional parameters in the database [:clipboard: NC2-541] [NC2-541]
 
@@ -340,12 +326,18 @@
 	- The **alerting_timeout** and **autoanswer** parameters have been added to the **additional_settings** column in the **teams** table.
 	- In **Inbox settings** added 2 new parameters: **Auto Answer** (type - checkbox, enable/disable Alerting timeout), **Alerting Timeout** (type - number, available values - 0-900, default value -7).
 	- The **alerting_timeout** and **autoanswer** parameters have been added to the **additional_settings** column in the **inboxes** table.
-	- Related tasks:
-	- [:clipboard: NC2-545] [NC2-545]
-	- [:clipboard: NC2-546] [NC2-546]
-	- [:clipboard: NC2-547] [NC2-547]
-	- [:clipboard: NC2-548] [NC2-548]
-	- [:clipboard: NC2-477] [NC2-477]
+	
+> Related tasks:
+	
+> [:clipboard: NC2-545] [NC2-545]
+
+> [:clipboard: NC2-546] [NC2-546]
+
+> [:clipboard: NC2-547] [NC2-547]
+
+> [:clipboard: NC2-548] [NC2-548]
+
+> [:clipboard: NC2-477] [NC2-477]
 
 [Autoanswers specification](https://drive.google.com/drive/folders/14nZgjdvyNRXZSiaZZ0rkbR2rK_E3Bf73)
 
@@ -380,7 +372,6 @@
 
 	- Refactored Conversatons section in UI.
 
-
 ####Bug Fixes
 
 - *NovaTalks.UI*: Fixed localization in widget settings [:clipboard: NC2-613] [NC2-613]
@@ -388,7 +379,6 @@
 - *NovaTalks.UI*: Fixed label [:clipboard: NC2-578] [NC2-578]
 
 	- Fixed case when after changing label name, changed it id.
-
 
 - *NovaTalks.UI*: Fixed problem with conversations panel [:clipboard: NC2-595] [NC2-595]
 
@@ -416,7 +406,7 @@
 [Substatuses specification](https://drive.google.com/drive/folders/15whaUA2R55muBoHmyKsPATgA49Yh2Ojv)
 
 - *NovaTalks.UI*: Improved performance [:clipboard: NC2-562] [NC2-562]
-	- Returned  search by **labels** for **dialogs** and **contacts** to the extended filter.
+	- Returned search by **labels** for **dialogs** and **contacts** to the extended filter.
 
 - *NovaTalks.UI*: Message was read: marks [:clipboard: NC2-486] [NC2-486]
 
@@ -481,9 +471,6 @@
 [Historical reports specification](https://drive.google.com/drive/folders/1GMh0ky7LWuxMGE8i9j1H_mu9CkM_yNCt)
 [Online reports specification](https://drive.google.com/drive/folders/1EOvA8Z8FgbaGIoaFK1AUAWk5R-NwDtPi)
 
-- *NovaTalks.UI*: Improved performance [:clipboard: NC2-562] [NC2-562]
-	- Returned  search by **labels** for **dialogs** and **contacts** to the extended filter.
-
 ####Bug Fixes
 
 - *NovaTalks.UI*: Fixed incorrect filling of information about the client [:clipboard: NC2-482] [NC2-482]
@@ -493,9 +480,10 @@
 	- Fixed incorrect displaying in excel format in the **Agent CSAT Sum** report.
 
 - *NovaTalks.UI*: Fixed incorrect displaying messages in conversation tab [:clipboard: NC2-523] [NC2-523]
+	> conversation and contact infomation pannel moves out of screen.
 
-- *NovaTalks.UI*: Fixed incorrect sendind message [:clipboard: NC2-523] [NC2-523]
-	- Figed cases when messages sending without line feed.
+- *NovaTalks.UI*: Fixed incorrect message sending [:clipboard: NC2-527] [NC2-527]
+	- Fixed cases when messages are sent without line feed.
 
 ***
 
@@ -601,17 +589,24 @@
 ####New Features
 
 - *NovaTalks.UI*: Review of dependencies [:clipboard: NC2-331] [NC2-331]
-(Related tasks:
-- [:clipboard: NC2-433] [NC2-433]
-- [:clipboard: NC2-454] [NC2-454]
-- [:clipboard: NC2-451] [NC2-451]
-- [:clipboard: NC2-452] [NC2-452]
-- [:clipboard: NC2-453] [NC2-453]
-- [:clipboard: NC2-240] [NC2-240])
 	- Cleared and updated all dependencies.
 	- Added husky.
 	- Updated Eslint rules.
 	- Added commitlint.
+
+> Related tasks:
+
+> [:clipboard: NC2-433] [NC2-433]
+
+> [:clipboard: NC2-454] [NC2-454]
+
+> [:clipboard: NC2-451] [NC2-451]
+
+> [:clipboard: NC2-452] [NC2-452]
+
+> [:clipboard: NC2-453] [NC2-453]
+
+> [:clipboard: NC2-240] [NC2-240]
 
 - *NovaTalks.UI*: Historical Reports - API [:clipboard: NC2-354] [NC2-354]
 
@@ -1494,11 +1489,13 @@ ALFRED_ONLINE_STATUS='alfred:ONLINE_STATUS::'
 ###2021R4
 ###2021R4-5
 ####New Features
-- *NovaTalks.UI*: UI part for LDAP authentification [:clipboard: NC2-42] [NC2-42] (Related task [:clipboard: NC2-38] [NC2-38])
+- *NovaTalks.UI*: UI part for LDAP authentification [:clipboard: NC2-42] [NC2-42]
 
 	• Provider field in "Add Agent" menu with options: "email", "ldap", "ldaps"
 
 	> "genesys" provider added only to users synchronized from Genesys ICWS
+
+> Related task [:clipboard: NC2-38] [NC2-38])
 
 - *NovaTalks.UI*: LDAP authentification [:clipboard: NC2-42] [NC2-42]
 

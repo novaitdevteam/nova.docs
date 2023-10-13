@@ -15,19 +15,92 @@
 
 ####New Features
 
-- *NovaTalks.ChatWidget*: Added an option to display the agent's avatar and name in the online chat. [:clipboard: NC2-611](https://sd.novait.com.ua/browse/NC2-611)
+- *NovaTalks.ChatWidget*: Added an option to display the agent's avatar and name in the online chat. [:clipboard: NC2-611] [NC2-611]
 
 	- Added a "Show agent name" and " Show agent avatar" checkbox button in the **Inboxes** settings.
 
+- *NovaTalks.ChatWidget*: Dynamic update of widget profile. [:clipboard: NC2-571] [NC2-571]
+	
+	- Added a "Get settings from server" checkbox button in the Inbox settings, and now the widget settings will be updated automatically via a request to the NovaTalks server:
+
+	<details><summary>GET /widget/settings</summary>
+	<p>
+	```
+	- /widget/settings?website_token=${websiteToken}
+	```
+	</p>
+	</details>
+	
+	<details><summary>Response example:</summary>
+	<p>
+	```
+	{
+	  "welcomeTitle": "Title ",
+	  "widgetColor": "#FF0866",
+	  "preChatFormEnabled": true,
+	  "additionalSettings": {
+		"locale": "en",
+		"channels": [
+		  {
+			"hint": "telegram",
+			"name": "asd",
+			"type": "chat",
+			"enabled": true,
+			"url": "http://t.me/url"
+		  }
+		],
+		"isWidgetDynamic": true,
+		"showCloseWidgetIcon": true
+	  },
+	  "preChatFormOptions": {
+		"calendar": {
+		  "timezone": "Europe/Kyiv",
+		  "workingHours": []
+		},
+		"online": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		},
+		"offline": {
+		  "enabled": true,
+		  "fields": [
+			{
+			  "name": "name",
+			  "key": "key",
+			  "required": true
+			}
+		  ]
+		}
+	  }
+	}
+	```
+	</p>
+	</details>
+
+	[Dynamic widget profile update specification](https://drive.google.com/drive/folders/1BEg5Qnx8g0y7dkk8F50xYIRNsGCZ9f3s)
+
+- *NovaTalks.ChatWidget*: Implemented Widget opening mechanism. [:clipboard: NC2-609] [NC2-609]
+	
+	- Added an option to choose the position for widget expansion in the browser (vertically or horizontally) on desktop and mobile devices.
+
+- *NovaTalks.ChatWidget*: Implemented Widget positioning mechanism. [:clipboard: NC2-610] [NC2-610]
+
+	- Added an option to choose the widget position in the browser (bottom right, bottom left, middle left, middle right) on desktop and mobile devices.
 
 ####Bug Fixes
 
-- *NovaTalks.ChatWidget*: Fixed a case where the client could not create a dialog on OS Android. [:clipboard: NC2-511](https://sd.novait.com.ua/browse/NC2-511)
+- *NovaTalks.ChatWidget*: Fixed a case where the client could not create a dialog on OS Android. [:clipboard: NC2-511] [NC2-511]
 
 	- User data storage has been moved from *cookie* in *localStorage*.
 
 
-- *NovaTalks.ChatWidget*: Fixed **vue** styles conflict between widget and websites. [:clipboard: NC2-707](https://sd.novait.com.ua/browse/NC2-707)
+- *NovaTalks.ChatWidget*: Fixed **vue** styles conflict between widget and websites. [:clipboard: NC2-707] [NC2-707]
 
 	> Websites based on **vue** framework have conflicting basics styles with widget which is also created on the vue basis.
 
