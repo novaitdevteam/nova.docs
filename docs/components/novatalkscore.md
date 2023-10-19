@@ -9,6 +9,121 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Added extra parameters for SSL database connection. [:clipboard: NC2-798] [NC2-798]
+	
+	New environment variables to specify the certificate path:
+	
+	- "DATABASE_SSL_CA_CERT" - path to CA certificate.
+	
+	- "DATABASE_SSL_ENABLED" - When specifying only DATABASE_SSL_ENABLED, an SSL connection will be established, and certificate verification will be ignored.
+		
+	> Implemented database schema migration over an SSL connection without certificate verification.
+
+
+- *NovaTalks.Core*: Optimized "Pin/Unpin" functionality. [:clipboard: NC2-776] [NC2-776]
+		
+	Optimized requests to retrieve pinned messages:
+		
+	- Now, no requests are made unless they are part of the conversation.
+		
+	- Now, only fixed messages are retrieved from the database that haven't been downloaded in the initial 21 messages during conversation download.
+	
+	
+- *NovaTalks.Core*: Migration from Vuex to Pinia. [:clipboard: NC2-708] [NC2-708]
+	
+	<details><summary>Migration for such modules:</summary>
+	<p>
+	```
+	- Pinia auth store module.
+	- Notification Pinia module.
+	- Account pinia module.
+	- Conversation and contact modules.
+	- Pinia message module.	
+	```
+	</p>
+	</details>
+
+
+- *NovaTalks.Core*: Added support for *Adobe Illustrator* (.ai) format for illustrations. [:clipboard: NC2-809] [NC2-809]
+
+
+- *NovaTalks.Core*: Updating "prosemirror-schema" library. [:clipboard: NC2-752] [NC2-752]
+
+	 - Moving commits from [https://github.com/chatwoot/prosemirror-schema](https://github.com/chatwoot/prosemirror-schema) repository to our library.
+
+
+- *NovaTalks.Core*: Added the "Automation" functionality. [:clipboard: NC2-175] [NC2-175]
+
+	Imported "Automation" functionality from the ChatWoot.
+	
+	Added next endpoints:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- GET /automation_rules
+	- POST /automation_rules
+	- GET /automation_rules/{automationRuleId}
+	- PATCH /automation_rules/{automationRuleId}
+	- DELETE /automation_rules/{automationRuleId}
+	- POST /automation_rules/{automationRuleId}/attach_file
+	```
+	</p>
+	</details>
+	
+	[Specification](https://sd.novait.com.ua/browse/NC2-211)
+	
+
+- *NovaTalks.Core*: Added text editor functionality with emoji support from Chatwoot. [:clipboard: NC2-753] [NC2-753]
+
+
+- *NovaTalks.Core*: Modified "Conversations" panel. [:clipboard: NC2-684] [NC2-684]
+		
+	Changes in conversations counters:
+	
+	- Increased counter image size.
+	
+	- Added color: "*#e6dd35*" if the counter is not zero.
+	
+	
+- *NovaTalks.Core*: Added long response notification settings. [:clipboard: NC2-726] [NC2-726]
+
+	- Added the "long_response_notification" column to the "accounts" table.
+	
+	> Intended to highlight chats waiting for a response from the operator longer than the set timeout.	
+	
+	[Specification](https://drive.google.com/drive/folders/1SmYAhqDAioascfrsnkYdf2lQeJhvxoQr)
+	
+	[Task BA](https://sd.novait.com.ua/browse/NC2-666)
+	
+	
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed Incorrect recalculation of ACD queue. [:clipboard: NC2-801] [NC2-801]
+
+	- Now, only agents with online statuses will enter the pool for the queue.
+
+
+- *NovaTalks.Core*: Fixed WebSocket stability issues. [:clipboard: NC2-785] [NC2-785]
+
+	- Fixed problem with environment variable "AUTH_LOGOUT_TIMEOUT" - session authorisation time.
+	
+	
+- *NovaTalks.Core*: Fixed exceeding the limit for newly created agents. [:clipboard: NC2-750] [NC2-750]
+
+	- Fixed the impossibility to restore any users or add a new users if the limit does not allow it.
+
+	- Fixed notification about reached the limit of paid agent accounts in the system.
+	
+***
+
+
 ##2023R2
 
 ###2023R2-5-6 :briefcase: Epic

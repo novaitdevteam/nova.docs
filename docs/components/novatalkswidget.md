@@ -9,6 +9,29 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- none
+
+####Bug Fixes
+
+- *NovaTalks.ChatWidget*: Fixed excessive amount of information in websocket messages. [:clipboard: NC2-754] [NC2-754]
+
+	For the widgets, unnecessary WS data has been removed:
+	
+	- update_presence;
+	
+	- conversation.substatus_changed;
+	
+	- conversation.status_changed.
+
+***
+
+
 ##2023R2
 
 ###2023R2-5-6 :briefcase: Epic
