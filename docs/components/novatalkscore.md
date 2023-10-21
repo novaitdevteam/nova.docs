@@ -9,13 +9,119 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Added LDAP Match Parameter [:clipboard: NC2-806] [NC2-806]
+
+	Added **LDAP_USERNAME_ATTRIBUTE** environment variable which is used for LDAP integration to search user among attributes provided by LDAP.
+
+- *NovaTalks.Core*: Added extra parameters for SSL database connection [:clipboard: NC2-798] [NC2-798]
+	
+	New environment variables to specify the connection to database with certificate:
+	
+	- "DATABASE_SSL_CA_CERT" - path to CA certificate
+
+	- "DATABASE_SSL_ENABLED" - enable or disable SSL connection to database
+
+	> When specifying only **DATABASE_SSL_ENABLED** parameter, an SSL connection will be established, and server side certificate verification will be ignored.
+
+	> Implemented database schema migration over an SSL connection without certificate verification.
+
+- *NovaTalks.Core*: Migration from Vuex to Pinia [:clipboard: NC2-708] [NC2-708]
+	
+	<details><summary>Migration for the following modules:</summary>
+	<p>
+	```
+	- Pinia auth store module.
+	- Notification Pinia module.
+	- Account pinia module.
+	- Conversation and contact modules.
+	- Pinia message module.	
+	```
+	</p>
+	</details>
+	
+	> **[Vuex](https://vuex.vuejs.org/)** is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+	
+	> **[Pinia](https://pinia.vuejs.org/)**, which is a new default, is a store library for Vue, which allows to share a state across components/pages.
+
+- *NovaTalks.Core*: Added support for *Adobe Illustrator* (.ai) format for files [:clipboard: NC2-809] [NC2-809]
+
+	> Added new mimeType to support sending both ways.
+
+- *NovaTalks.Core*: Updated "prosemirror-schema" library [:clipboard: NC2-752] [NC2-752]
+
+	- Migrated new features from [prosemirror-schema](https://github.com/chatwoot/prosemirror-schema) to our repository.
+
+- *NovaTalks.Core*: Added the "Automation" functionality [:clipboard: NC2-175] [NC2-175]
+
+	Migrated "Automation" functionality from the ChatWoot to our component and added the following endpoints:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- GET /automation_rules
+	- POST /automation_rules
+	- GET /automation_rules/{automationRuleId}
+	- PATCH /automation_rules/{automationRuleId}
+	- DELETE /automation_rules/{automationRuleId}
+	- POST /automation_rules/{automationRuleId}/attach_file
+	```
+	</p>
+	</details>
+	
+	[Specification](https://sd.novait.com.ua/browse/NC2-211)
+	
+
+- *NovaTalks.Core*: Migrated emoji text editor support from Chatwoot [:clipboard: NC2-753] [NC2-753]
+
+	> Added emoji support functionality to the text editor.
+	
+- *NovaTalks.Core*: Added long response notification settings [:clipboard: NC2-726] [NC2-726]
+
+	- Added the "long_response_notification" column to the "accounts" table.
+	
+	- Long response timeout can be set in Account Settings - Conversations section with value in seconds.
+	
+	> Intended to highlight chats waiting for a response from the operator longer than the set timeout.	
+	
+	[Specification](https://drive.google.com/drive/folders/1SmYAhqDAioascfrsnkYdf2lQeJhvxoQr)
+	
+####Bug Fixes
+
+- *NovaTalks.Core*: Optimized "Pin/Unpin" requests [:clipboard: NC2-776] [NC2-776]
+
+	- Requests are not made unless pinned messages are present in a conversation.
+
+	- Pinned messages are additionally retrieved from the database if they were not initially downloaded (21 messages).
+
+- *NovaTalks.Core*: Fixed incorrect recalculation of ACD queue [:clipboard: NC2-801] [NC2-801]
+
+	- Only agents with online statuses will enter the pool for the queue.
+
+- *NovaTalks.Core*: Fixed WebSocket stability issues [:clipboard: NC2-785] [NC2-785]
+
+	- Fixed problem with session token invalidation before timeout due to "**AUTH_LOGOUT_TIMEOUT**" environment variable.
+
+- *NovaTalks.Core*: Fixed exceeding the account agent limit [:clipboard: NC2-750] [NC2-750]
+
+	- Fixed the possibility to exceed agent limit by restoring any deleted agent.
+
+	- Fixed error notification prompt when limit of the paid account agents in the system is reached.
+
+***
+
 ##2023R2
 
 ###2023R2-5-6 :briefcase: Epic
 
 ####New Features
 
-- *NovaTalks.Core*: Added request caching. [:clipboard: NC2-676] [NC2-676]
+- *NovaTalks.Core*: Added request caching [:clipboard: NC2-676] [NC2-676]
 
 	Request caching was added to the following endpoints:
 
@@ -34,13 +140,13 @@
 	</details>
 
 
-- *NovaTalks.Core*: Implemented the "Mentions" functionality. [:clipboard: NC2-216] [NC2-216]
+- *NovaTalks.Core*: Implemented the "Mentions" functionality [:clipboard: NC2-216] [NC2-216]
 
 	- Added the ability to set the display of mentions in conversations for a specific number of days.
 	
 	- The number of days is counted using **mentioned_at** field in table **mentions**.
 
-- *NovaTalks.Core*: Dynamic update of widget profile. [:clipboard: NC2-571] [NC2-571]
+- *NovaTalks.Core*: Dynamic update of widget profile [:clipboard: NC2-571] [NC2-571]
 	
 	- Added a "Get settings from server" checkbox button in the Inbox settings, and now the widget settings will be updated automatically via a request to the NovaTalks server:
 
@@ -106,7 +212,7 @@
 
 	[Dynamic widget profile update specification](https://drive.google.com/drive/folders/1BEg5Qnx8g0y7dkk8F50xYIRNsGCZ9f3s)
 
-- *NovaTalks.Core*: Ported templates variables from Chatwoot. [:clipboard: NC2-509] [NC2-509]
+- *NovaTalks.Core*: Ported templates variables from Chatwoot [:clipboard: NC2-509] [NC2-509]
 
 	By using **{{variable}}** in the following sections:
 
@@ -116,7 +222,7 @@
 
 	- Macros
 
-- *NovaTalks.Core*: Added new channel type "Email" in Inboxes. [:clipboard: NC2-636] [NC2-636]
+- *NovaTalks.Core*: Added new channel type "Email" in Inboxes [:clipboard: NC2-636] [NC2-636]
 
 	- Channel type "Email" allows connection of mail using the IMAP and SMTP/SMTPS protocols.
 	
@@ -126,7 +232,7 @@
 
 	- **ENCRYPTION_SECRET** - secret of the data. Additional string for generating *secretKey*. One of the elements for *encryptData*.
 
-- *NovaTalks.Core*: Added "Pin/Unpin" and "Reply" functionality to message. [:clipboard: NC2-552] [NC2-552]
+- *NovaTalks.Core*: Added "Pin/Unpin" and "Reply" functionality to message [:clipboard: NC2-552] [NC2-552]
 
 	- The order number of pinned message corresponds to the order in which the agent pinned it.
 	
@@ -138,20 +244,20 @@
 
 ####Bug Fixes
 
-- *NovaTalks.Core*: Fixed Engine error on sending files on webhook. [:clipboard: NC2-703] [NC2-703]
+- *NovaTalks.Core*: Fixed Engine error on sending files on webhook [:clipboard: NC2-703] [NC2-703]
 	
 	> Attempting to send a file in a conversation from the agent's side, files were added to the conversation and not sent on webhook.
 
 
-- *NovaTalks.Core*: Fixed an issue when messages are not fetched on connection restablished. [:clipboard: NC2-693] [NC2-693]
+- *NovaTalks.Core*: Fixed an issue when messages are not fetched on connection restablished [:clipboard: NC2-693] [NC2-693]
 	
 	> If a message is sent to the web widget and the connection with Engine is lost, the message will be fetched once the connection between web-widget and Engine is restablished.
 
-- *NovaTalks.Core*: Fixed url encoding of cyrillic file names sent from Email inbox. [:clipboard: NC2-678] [NC2-678]
+- *NovaTalks.Core*: Fixed url encoding of cyrillic file names sent from Email inbox [:clipboard: NC2-678] [NC2-678]
 	
 	- Files which had cirillic characters in their name had them url encoded when sent to a client.
 
-- *NovaTalks.Core*: Fixed conversarsation routing error. [:clipboard: NC2-709] [NC2-709]
+- *NovaTalks.Core*: Fixed conversarsation routing error [:clipboard: NC2-709] [NC2-709]
 
 	> "NavigationDuplicated" Nuxt error.
 
@@ -161,7 +267,7 @@
 
 ####New Features
 
-- *NovaTalks.Core*: The mechanism for changing agent statuses by the admin. [:clipboard: NC2-631] [NC2-631]
+- *NovaTalks.Core*: The mechanism for changing agent statuses by the admin [:clipboard: NC2-631] [NC2-631]
 
 	- Added ability (for role = admin) to change statuses and substatuses of agents.
 	- In Settings -> Agent -> Edit Agent added new parameter **Aviability** (type - dropdown, available values - available statuses and substatuses).
@@ -183,7 +289,7 @@
 - *NovaTalks.Core*: K8S readiness/liveness Probe Services [:clipboard: NC2-615] [NC2-615]
 
 	- Developed for Engine, UI endpoints for integration with K8S readiness/liveness Probe Services.
-	- Added enviroment variable **HEALTH_ENABLED** **KEEPALIVE_SERVICES_ENABLED**.
+	- Added environment variable **HEALTH_ENABLED** **KEEPALIVE_SERVICES_ENABLED**.
 
 - *NovaTalks.Core*: Added intarvals to historical reports [:clipboard: NC2-657] [NC2-657]
 
@@ -196,7 +302,7 @@
 - *NovaTalks.Core*: Service for Prometheus Metrics Discovery [:clipboard: NC2-617] [NC2-617]
 
 	- Developed service which issues statistics for Prometeus monitoring.
-	- Added enviroment variable **PROMETHEUS_CLIENT_ENABLED**.
+	- Added environment variable **PROMETHEUS_CLIENT_ENABLED**.
 	- Endpoint: **/metrics**.
 	- Port: **9100**.
 
@@ -235,7 +341,7 @@
 	- Optimizing the speed and efficiency of the internal service Engine FileStorage.
 	- Developed a utility for migration of existing Engine data to S3-storage. The utility runs autonomously and work separately from the core (to enable the system engineer to perform the migration at any time).
 	
-	<details><summary>Added enviroment variables</summary>
+	<details><summary>Added environment variables</summary>
 		<p>
 		```
 		AWS_S3_ACCESS_KEY_ID=dev-01-dev-demo

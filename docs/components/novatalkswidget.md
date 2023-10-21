@@ -9,6 +9,36 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.ChatWidget*: Modified "Pre Chat Form" functionality in "Inboxes". [:clipboard: NC2-612] [NC2-612]
+
+	- Conversation would not start if all required fields are not filled in.
+
+	- Pre Chat Form fields are not asked on continuation of the conversation.
+
+	- Custom attributes are added to the system as an anonimous attributes.
+	
+	> Anonimous attributes cannot be filtered or edited.
+
+####Bug Fixes
+
+- *NovaTalks.ChatWidget*: Fixed excessive amount of information in websocket messages. [:clipboard: NC2-754] [NC2-754]
+
+	For the widgets, unnecessary WS data has been removed:
+	
+	- update_presence;
+	
+	- conversation.substatus_changed;
+	
+	- conversation.status_changed.
+
+***
+
 ##2023R2
 
 ###2023R2-5-6 :briefcase: Epic

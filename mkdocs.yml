@@ -98,6 +98,7 @@ nav:
                 - Core: components/novatalkscore.md
                 - UI: components/novatalksui.md
                 - BotAgent: components/novatalksbotagent.md
+                - Voice: components/novatalksvoice.md
                 - ChatWidget: components/novatalkswidget.md
 #                - Sys: components/novatalkssys.md
                 - Genesys.PureConnect:
@@ -113,10 +114,9 @@ nav:
             - Checklists: components/documents/novatalks/novatalkstesting.md
 
 theme:
-#  name: null
   name: material
-#  custom_dir: mkdocs-material/material
-  custom_dir: docs/overrides
+  custom_dir: mkdocs-material/material
+#  custom_dir: docs/overrides
 
   # 404 page
   static_templates:
@@ -201,10 +201,9 @@ extra:
   homepage: components/markup.html
   generator: false
 
-#extra_javascript:
-#   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
-#   - ./javascript/mermaid.min.js
-#   - ./javascript/stickytable.js
+extra_javascript:
+   - ./javascript/mermaid.min.js
+   - ./javascript/stickytable.js
  
 extra_css:
    - ./css/extra.css
