@@ -9,6 +9,138 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Dynamic update of custom filters. [:clipboard: NC2-668] [NC2-668]
+
+	When creating a new conversation, it is automatically added to the created filter.
+
+	Dynamic filters work for Conversations when filtering by:
+	
+	- Standard filters (status, labels, inbox name, etc.)
+		
+	- Custom attributes (admin created attributes for conversation)
+		
+	- Additional attributes (chat id, channel type)
+
+
+- *NovaTalks.UI*: Added automatic display update a new dialogue in an open conversation. [:clipboard: NC2-697] [NC2-697]
+
+	- A separation marker is created when an agent starts a dialogue.
+	
+	
+- *NovaTalks.UI*: Dynamic update of custom attributes. [:clipboard: NC2-648] [NC2-648]
+
+	- Added the ability to add or modify custom attributes that will be saved and displayed in the "Conversation Information" and "Contact Attributes" sections in contact information panel.
+
+
+- *NovaTalks.UI*: Added the column and filter "Select messenger" to the section "Dialogs Detail" in the "Reports". [:clipboard: NC2-597] [NC2-597]
+
+
+- *NovaTalks.UI*: Added message statuses for online chats. [:clipboard: NC2-603] [NC2-603]
+	
+	- Added message statuses (delivery, send, seen) for outgoing messages.
+
+		
+- *NovaTalks.UI*: Modified "Pre Chat Form" functionality in "Inboxes". [:clipboard: NC2-612] [NC2-612]
+
+	- Added the option to switch the form on and off.
+	
+	- Added the ability to request custom attributes from the client, which can be related to a contact or agent.
+		
+	- Added the option to mark form fields as required or not, showing this with the "Is field required" button.
+	
+
+- *NovaTalks.UI*: Added display names of assigned agent's in conversations. [:clipboard: NC2-683] [NC2-683]
+
+
+- *NovaTalks.UI*: Added the "Automation" functionality. [:clipboard: NC2-175] [NC2-175]
+
+	Imported "Automation" functionality from the ChatWoot.
+	
+	Added next endpoints:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- GET /automation_rules
+	- POST /automation_rules
+	- GET /automation_rules/{automationRuleId}
+	- PATCH /automation_rules/{automationRuleId}
+	- DELETE /automation_rules/{automationRuleId}
+	- POST /automation_rules/{automationRuleId}/attach_file
+	```
+	</p>
+	</details>
+	
+	[Specification](https://sd.novait.com.ua/browse/NC2-211)
+	
+	
+- *NovaTalks.UI*: Ported text editor functionality with emoji support from Chatwoot. [:clipboard: NC2-753] [NC2-753]
+
+	Relate task:
+	
+	- *NovaTalks.UI*: Implemented a text editor for conversations in channel type "Email" and channel type "Website" in Inboxes. [:clipboard: NC2-745] [NC2-745]
+	
+	
+- *NovaTalks.UI*: Modified "Conversations" panel. [:clipboard: NC2-684] [NC2-684]
+		
+	Changes in conversations counters:
+	
+	- Increased counter image size.
+	
+	- Added color: "*#e6dd35*" if the counter is not zero.
+	
+	
+		
+- *NovaTalks.UI*: Added long response notification settings. [:clipboard: NC2-726] [NC2-726]
+
+	- Added "long responce notification" data entry field (its value in seconds) in "Account Settings" - "Conversations" section.
+	
+	> Intended to highlight chats waiting for a response from the operator longer than the set timeout.
+	
+	[Specification](https://drive.google.com/drive/folders/1SmYAhqDAioascfrsnkYdf2lQeJhvxoQr)
+	
+	[Task BA](https://sd.novait.com.ua/browse/NC2-666)
+	
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed the notification "Internet disconnection"  that couldn't be closed. [:clipboard: NC2-732] [NC2-732]
+
+
+- *NovaTalks.UI*: Fixed contact display after deleting "Inbox". [:clipboard: NC2-751] [NC2-751]
+	
+	- A list of contacts from the deleted "Inbox" will now be displayed.
+
+	- When deleting "Inbox" contacts can be filtered or deleted.
+	
+	- A deleted "Inbox" will no longer appear in the outbox drop-down list.
+	
+	
+- *NovaTalks.UI*: Fixed channel creation or old channel deletion. [:clipboard: NC2-781] [NC2-781]
+	
+
+- *NovaTalks.UI*: Fixed conversation panel covering the left navigation bar. [:clipboard: NC2-667] [NC2-667]
+
+
+- *NovaTalks.UI*: Fixed an issue where typing emoji in a dialogue would cause an extra backslash "\" to be created. [:clipboard: NC2-744] [NC2-744]
+
+
+- *NovaTalks.UI*:  Fixed incorrect work of the "Reply" functionality. [:clipboard: NC2-747] [NC2-747]
+
+	- Fixed "Reply" sending message where the text was sent additionally with the "id dialog" and "id message" in WebWidget conversation.
+	
+
+- *NovaTalks.UI*: Fixed the sorting of messages in the dialogue where the difference was in milliseconds. [:clipboard: NC2-808] [NC2-808]	
+
+***
+
+
 ##2023R2
 
 ###2023R2-5-6 :briefcase: Epic
