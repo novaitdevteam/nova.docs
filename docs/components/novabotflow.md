@@ -9,7 +9,99 @@
 ##Product Notices
 ***
 
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.BotFlow*: Developed Whatsapp Web API receiver and sender [:clipboard: NOV-502] [NOV-502]
+
+	Functionality:
+
+	- Sending and receiving text messages; received messages are marked as read
+
+	- Sending and receiving media messages; received messages are marked as read
+
+	- On session start reads all unread messages with their corresponding marking
+
+	- Outbound messages on non-exitsing number returns in dialog "Contact not found in WhatsApp"
+	
+	- Show and dynamically update QR code on special webhook address
+
+	- Receiver can receive and show session status
+
+	- Config has ability to terminate session on set timeout
+
+> Solution can be scaled with multi instancing.
+
+- *NovaTalks.BotFlow*: Implemented ability to work with proxy for main channels [:clipboard: NOV-523] [NOV-523]
+
+	Main channels:
+	
+	- Telegram
+	- Viber
+	- Facebook
+
+> Viber library was reworked in separate [repository](https://www.npmjs.com/package/node-viber-bot-api)
+
+- *NovaTalks.BotFlow*: Added support of enviroment variables for OmiliaConnector [:clipboard: NOV-526] [NOV-526]
+
+	Enviroment variables:
+
+	- Host URL
+
+	- App Name
+
+- *NovaTalks.BotFlow*: Added Omilia conversation history transfer [:clipboard: NOV-509] [NOV-509]
+
+	Transfer client's conversation history from Omilia to another service as JSON.
+
+####Bug Fixes
+
+- *NovaTalks.BotFlow*: Fixed config not being saved for Whatsapp Web API channel in **Novatalks Out** node [:clipboard: NOV-522] [NOV-522]
+
+- *NovaTalks.BotFlow*: Fixed session restore after Whatsapp Web browser crush [:clipboard: NOV-507] [NOV-507]
+
+- *NovaTalks.BotFlow*: Fixed issue with Redis Queue generating numerous connections to Redis [:clipboard: NOV-514] [NOV-514]
+
+	> Every queue entry did generate a connection which did not clean up.
+
+- *NovaTalks.BotFlow*: Fixed queue errors in Redis Queue [:clipboard: NOV-515] [NOV-515]
+
+	- Error when queued message does not have context
+	
+	> 'chat' object is null
+	
+	- Error when queue overflows
+	
+	> queue can have a set amount of messages stored and messages over the limit are failed
+
+- *NovaTalks.BotFlow*: Fixed issue when Redis Queue does not emit messages [:clipboard: NOV-516] [NOV-516]
+
+	Disabled visual counter of messages for all queues (loop operation had had a high difficulty)
+
+> Redis Queue does not emit messages when it cannot get total number of queues - connection closes
+
+***
+
 ##2023R2
+
+###2023R2-5-6 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.BotFlow*: Added library to work with google sheets [:clipboard: NOV-497] [NOV-497]
+
+	Nodered node to get, update, append, and clear google sheets.
+
+	> [node red contrib google sheets](https://flows.nodered.org/node/node-red-contrib-google-sheets) library
+
+####Bug Fixes
+
+- *NovaTalks.BotFlow*: Fixed problem with file with uppercase extensions not being sent to PureCloud [:clipboard: NOV-501] [NOV-501]
+
+***
 
 ###2023R2-3-4 :briefcase: Epic
 
@@ -24,7 +116,7 @@
 	[Substatuses specification](https://drive.google.com/drive/folders/14oP11AIEt-eFGuqaIEA_PNwvqN0231_1)
 
 
-- *Nova.Botflow*: Redis Q modernization [:clipboard: NOV-447] [NOV-447]
+- *Nova.Botflow*: Redis Queue modernization [:clipboard: NOV-447] [NOV-447]
 
 	- Unsent messages are added to the Redis queue.
 	- Added processing failed jobs.

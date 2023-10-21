@@ -15,7 +15,15 @@
 
 ####New Features
 
-- none
+- *NovaTalks.ChatWidget*: Modified "Pre Chat Form" functionality in "Inboxes". [:clipboard: NC2-612] [NC2-612]
+
+	- Conversation would not start if all required fields are not filled in.
+
+	- Pre Chat Form fields are not asked on continuation of the conversation.
+
+	- Custom attributes are added to the system as an anonimous attributes.
+	
+	> Anonimous attributes cannot be filtered or edited.
 
 ####Bug Fixes
 
@@ -30,7 +38,6 @@
 	- conversation.status_changed.
 
 ***
-
 
 ##2023R2
 

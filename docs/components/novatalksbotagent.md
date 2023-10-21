@@ -8,15 +8,45 @@
 #NovaTalks.BotAgent
 ##Product Notices
 ***
-##2023R2
-###2023R2-5-6 :briefcase: Epic
+
+##2023R3
+
+###2023R3-1 :briefcase: Epic
+
 ####New Features
 
-- *NovaTalks.BotAgent*: Added library to work with google sheets [:clipboard: NOV-497] [NOV-497]
+- *NovaTalks.BotAgent*: Added ability to use parametrization in channels [:clipboard: NOV-520] [NOV-520]
 
-	Nodered node to get, update, append, and clear google sheets.
+	Parametrization was added to **Receiver** and **Sender** of the following channels:
 
-	> library:  https://flows.nodered.org/node/node-red-contrib-google-sheets
+	- Botagent
+	- Novatalks
+	- Telegram
+	- Viber
+	- Messanger (Facebook)
+	- Instagram
+	- Nexmo
+	- Whatsapp Web API
+
+> Example of usage: **{env.Token}**
+
+- *NovaTalks.BotAgent*: Modified conversation search logic in Novatalks In node [:clipboard: NOV-521] [NOV-521]
+
+	If the entry is present in Redis but does not contain **chatWootConversationId**, the **findConversationFilter** search is done with **chatId** and **inbox_id**.
+	
+	> in any false occasion (no conversation in inbox or no conversation at all) the new conversation will be created
+
+####Bug Fixes
+
+- none
+
+***
+
+##2023R2
+
+###2023R2-5-6 :briefcase: Epic
+
+####New Features
 
 - *NovaTalks.BotAgent*: Optimized "Working Time" workflow [:clipboard: NOV-498] [NOV-498]
 
@@ -32,8 +62,6 @@
 
 ####Bug Fixes
 
-- *NovaTalks.BotAgent*: Fixed problem with file with uppercase extensions not being sent to PureCloud [:clipboard: NOV-501] [NOV-501]
-
 - *NovaTalks.BotAgent*: Fixed cases of multiple Bot messaging [:clipboard: NOV-503] [NOV-503]
 
 	When multiple events are sent on the **BotAgent Incomming** node webhook the Bot itself considers them as a separate entities and logic is triggered for all of the events separately.
@@ -43,7 +71,9 @@
 ***
 
 ##2022R3
+
 ###2022R3-6 :briefcase: Epic
+
 ####New Features
 
 - *NovaTalks.BotAgent*: batch\gallery media sending. [:clipboard: NC2-203] [NC2-203]

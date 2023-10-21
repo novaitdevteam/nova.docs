@@ -1,11 +1,34 @@
 <!--tasklink-start-->
+[NOV-526]: https://sd.novait.com.ua/browse/NOV-526
+[NOV-523]: https://sd.novait.com.ua/browse/NOV-523
+[NOV-522]: https://sd.novait.com.ua/browse/NOV-522
+[NOV-521]: https://sd.novait.com.ua/browse/NOV-521
+[NOV-520]: https://sd.novait.com.ua/browse/NOV-520
+[NOV-517]: https://sd.novait.com.ua/browse/NOV-517
+[NOV-516]: https://sd.novait.com.ua/browse/NOV-516
+[NOV-515]: https://sd.novait.com.ua/browse/NOV-515
+[NOV-514]: https://sd.novait.com.ua/browse/NOV-514
+[NOV-509]: https://sd.novait.com.ua/browse/NOV-509
+[NOV-508]: https://sd.novait.com.ua/browse/NOV-508
+[NOV-507]: https://sd.novait.com.ua/browse/NOV-507
 [NOV-503]: https://sd.novait.com.ua/browse/NOV-503
+[NOV-502]: https://sd.novait.com.ua/browse/NOV-502
 [NOV-501]: https://sd.novait.com.ua/browse/NOV-501
 [NOV-498]: https://sd.novait.com.ua/browse/NOV-498
 [NOV-497]: https://sd.novait.com.ua/browse/NOV-497
+[NOV-494]: https://sd.novait.com.ua/browse/NOV-494
+[NOV-493]: https://sd.novait.com.ua/browse/NOV-493
+[NOV-492]: https://sd.novait.com.ua/browse/NOV-492
+[NOV-489]: https://sd.novait.com.ua/browse/NOV-489
+[NOV-486]: https://sd.novait.com.ua/browse/NOV-486
+[NOV-482]: https://sd.novait.com.ua/browse/NOV-482
+[NOV-481]: https://sd.novait.com.ua/browse/NOV-481
+[NOV-478]: https://sd.novait.com.ua/browse/NOV-478
 [NOV-477]: https://sd.novait.com.ua/browse/NOV-477
 [NOV-476]: https://sd.novait.com.ua/browse/NOV-476
 [NOV-475]: https://sd.novait.com.ua/browse/NOV-475
+[NOV-474]: https://sd.novait.com.ua/browse/NOV-474
+[NOV-471]: https://sd.novait.com.ua/browse/NOV-471
 [NOV-468]: https://sd.novait.com.ua/browse/NOV-468
 [NOV-467]: https://sd.novait.com.ua/browse/NOV-467
 [NOV-463]: https://sd.novait.com.ua/browse/NOV-463
@@ -15,6 +38,8 @@
 [NOV-455]: https://sd.novait.com.ua/browse/NOV-455
 [NOV-452]: https://sd.novait.com.ua/browse/NOV-452
 [NOV-449]: https://sd.novait.com.ua/browse/NOV-449
+[NOV-447]: https://sd.novait.com.ua/browse/NOV-447
+[NOV-446]: https://sd.novait.com.ua/browse/NOV-446
 [NOV-443]: https://sd.novait.com.ua/browse/NOV-443
 [NOV-442]: https://sd.novait.com.ua/browse/NOV-442
 [NOV-437]: https://sd.novait.com.ua/browse/NOV-437
@@ -35,6 +60,7 @@
 [NOV-400]: https://sd.novait.com.ua/browse/NOV-400
 [NOV-399]: https://sd.novait.com.ua/browse/NOV-399
 [NOV-397]: https://sd.novait.com.ua/browse/NOV-397
+[NOV-387]: https://sd.novait.com.ua/browse/NOV-387
 [NOV-386]: https://sd.novait.com.ua/browse/NOV-386
 [NOV-381]: https://sd.novait.com.ua/browse/NOV-381
 [NOV-380]: https://sd.novait.com.ua/browse/NOV-380
@@ -89,6 +115,7 @@
 [NOV-256]: https://sd.novait.com.ua/browse/NOV-256
 [NOV-253]: https://sd.novait.com.ua/browse/NOV-253
 [NOV-245]: https://sd.novait.com.ua/browse/NOV-245
+[NOV-242]: https://sd.novait.com.ua/browse/NOV-242
 [NOV-239]: https://sd.novait.com.ua/browse/NOV-239
 [NOV-238]: https://sd.novait.com.ua/browse/NOV-238
 [NOV-236]: https://sd.novait.com.ua/browse/NOV-236
@@ -243,6 +270,7 @@
 
 [NC2-809]: https://sd.novait.com.ua/browse/NC2-809
 [NC2-808]: https://sd.novait.com.ua/browse/NC2-808
+[NC2-806]: https://sd.novait.com.ua/browse/NC2-806
 [NC2-801]: https://sd.novait.com.ua/browse/NC2-801
 [NC2-798]: https://sd.novait.com.ua/browse/NC2-798
 [NC2-785]: https://sd.novait.com.ua/browse/NC2-785
@@ -325,6 +353,7 @@
 [NC2-545]: https://sd.novait.com.ua/browse/NC2-545
 [NC2-541]: https://sd.novait.com.ua/browse/NC2-541
 [NC2-539]: https://sd.novait.com.ua/browse/NC2-539
+[NC2-538]: https://sd.novait.com.ua/browse/NC2-538
 [NC2-537]: https://sd.novait.com.ua/browse/NC2-537
 [NC2-527]: https://sd.novait.com.ua/browse/NC2-527
 [NC2-523]: https://sd.novait.com.ua/browse/NC2-523
@@ -336,6 +365,7 @@
 [NC2-512]: https://sd.novait.com.ua/browse/NC2-512
 [NC2-511]: https://sd.novait.com.ua/browse/NC2-511
 [NC2-509]: https://sd.novait.com.ua/browse/NC2-509
+[NC2-506]: https://sd.novait.com.ua/browse/NC2-506
 [NC2-499]: https://sd.novait.com.ua/browse/NC2-499
 [NC2-497]: https://sd.novait.com.ua/browse/NC2-497
 [NC2-491]: https://sd.novait.com.ua/browse/NC2-491
@@ -869,68 +899,4 @@
 [2018r3]: /nova.docs/components/novatalks.html#2018r3
 [2018r1]: /nova.docs/components/novatalks.html#2018r1
 [2018r2]: /nova.docs/components/novatalks.html#2018r2
-
-
-
-
-[NC2-538]: https://sd.novait.com.ua/browse/NC2-538
-[NC2-506]: https://sd.novait.com.ua/browse/NC2-506
-[NC2-283]: https://sd.novait.com.ua/browse/NC2-283
-[NC2-485]: https://sd.novait.com.ua/browse/NC2-485
-[NC2-486]: https://sd.novait.com.ua/browse/NC2-486
-[NC2-344]: https://sd.novait.com.ua/browse/NC2-344
-[NC2-514]: https://sd.novait.com.ua/browse/NC2-514
-[NC2-539]: https://sd.novait.com.ua/browse/NC2-539
-[NC2-560]: https://sd.novait.com.ua/browse/NC2-560
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-575]: https://sd.novait.com.ua/browse/NC2-575
-[NC2-347]: https://sd.novait.com.ua/browse/NC2-347
-[NC2-121]: https://sd.novait.com.ua/browse/NC2-121
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-486]: https://sd.novait.com.ua/browse/NC2-486
-[NC2-485]: https://sd.novait.com.ua/browse/NC2-485
-[NC2-513]: https://sd.novait.com.ua/browse/NC2-513
-[NC2-539]: https://sd.novait.com.ua/browse/NC2-539
-[NC2-558]: https://sd.novait.com.ua/browse/NC2-558
-[NC2-515]: https://sd.novait.com.ua/browse/NC2-515
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-482]: https://sd.novait.com.ua/browse/NC2-482
-[NC2-523]: https://sd.novait.com.ua/browse/NC2-523
-[NC2-523]: https://sd.novait.com.ua/browse/NC2-523
-[NC2-538]: https://sd.novait.com.ua/browse/NC2-538
-[NC2-506]: https://sd.novait.com.ua/browse/NC2-506
-[NC2-283]: https://sd.novait.com.ua/browse/NC2-283
-[NC2-485]: https://sd.novait.com.ua/browse/NC2-485
-[NC2-486]: https://sd.novait.com.ua/browse/NC2-486
-[NC2-344]: https://sd.novait.com.ua/browse/NC2-344
-[NC2-514]: https://sd.novait.com.ua/browse/NC2-514
-[NC2-539]: https://sd.novait.com.ua/browse/NC2-539
-[NC2-560]: https://sd.novait.com.ua/browse/NC2-560
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-575]: https://sd.novait.com.ua/browse/NC2-575
-[NC2-347]: https://sd.novait.com.ua/browse/NC2-347
-[NC2-121]: https://sd.novait.com.ua/browse/NC2-121
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-486]: https://sd.novait.com.ua/browse/NC2-486
-[NC2-485]: https://sd.novait.com.ua/browse/NC2-485
-[NC2-513]: https://sd.novait.com.ua/browse/NC2-513
-[NC2-539]: https://sd.novait.com.ua/browse/NC2-539
-[NC2-558]: https://sd.novait.com.ua/browse/NC2-558
-[NC2-515]: https://sd.novait.com.ua/browse/NC2-515
-[NC2-562]: https://sd.novait.com.ua/browse/NC2-562
-[NC2-482]: https://sd.novait.com.ua/browse/NC2-482
-[NC2-523]: https://sd.novait.com.ua/browse/NC2-523
-[NC2-523]: https://sd.novait.com.ua/browse/NC2-523
-[NOV-447]: https://sd.novait.com.ua/browse/NOV-447
-[NOV-486]: https://sd.novait.com.ua/browse/NOV-486
-[NOV-242]: https://sd.novait.com.ua/browse/NOV-242
-[NOV-387]: https://sd.novait.com.ua/browse/NOV-387
-[NOV-489]: https://sd.novait.com.ua/browse/NOV-489
-[NOV-493]: https://sd.novait.com.ua/browse/NOV-493
-[NOV-446]: https://sd.novait.com.ua/browse/NOV-446
-[NOV-471]: https://sd.novait.com.ua/browse/NOV-471
-[NOV-474]: https://sd.novait.com.ua/browse/NOV-474
-[NOV-478]: https://sd.novait.com.ua/browse/NOV-478
-[NOV-482]: https://sd.novait.com.ua/browse/NOV-482
-[NOV-481]: https://sd.novait.com.ua/browse/NOV-481
 <!--datelink-novatalks-end-->
