@@ -111,7 +111,7 @@ nav:
         - BotFlow: components/documents/botflow/botflowtoc.md
         - Nova.Talks:
             - Flowcharts: components/documents/novatalks/novatalkstoc.md
-            - Checklists: components/documents/novatalks/novatalkstesting.md
+            - Perfomance: components/documents/novatalks/novatalkstesting.md
 
 theme:
   name: material
