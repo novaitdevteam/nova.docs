@@ -9,6 +9,50 @@
 ##Product Notices
 ***
 
+##2023R4
+
+###2023R4-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.BotFlow*: Updated mechanics for ignoring http certificate requests [:clipboard: NOV-544] [NOV-544]
+
+- *NovaTalks.BotFlow*: Added parameterization of the WebHook field [:clipboard:NOV-536] [NOV-536]		
+
+####Bug Fixes
+
+- *NovaTalks.BotFlow*: Fixed blocked queues [:clipboard: NOV-535] [NOV-535]	
+
+	- Added 3 attempts to send a message to RedisQ.
+
+- *NovaTalks.BotFlow*: Fixed sending outgoing messages to WhatsApp [:clipboard: NOV-541] [NOV-541]
+
+***
+
+##2023R4
+
+###2023R4-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.BotFlow*: Updating the whatsapp-web library in the whatsapp-web-api component [:clipboard: NOV-529] [NOV-529]	
+	
+- *NovaTalks.BotFlow*: Added support for sending (rtf) format for sending attachments to Viber [:clipboard: NOV-533] [NOV-533]
+
+####Bug Fixes
+
+- *NovaTalks.BotFlow*: Fixed retrieval of files in which filename objects had a missing type [:clipboard: NOV-530] [NOV-530]	
+
+- *NovaTalks.BotFlow*: Fixed parameterization of variables for connecting to messengers and context [:clipboard: NOV-531] [NOV-531]
+
+	- Imports now do not lose tokens during "insequre" imports.
+	
+	- Contexts work through the env variable (BF_REDIS_0_CONF) and through expressions:
+	
+	> ($globalContext('sys_global_conf').getRedisConfig("12")).
+
+***
+
 ##2023R3
 
 ###2023R3-1 :briefcase: Epic

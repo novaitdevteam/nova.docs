@@ -9,6 +9,190 @@
 ##Product Notices
 ***
 
+##2023R4
+
+###2023R4-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Canned Responses. Extended functionality [:clipboard: NC2-803] [NC2-803]
+
+	- Added 2 libraries: 
+
+		- Public. The library that will include all current customer templates during migration.
+		
+		- Private. The library that should be displayed for each user and is private for each of them.
+	
+	- Changes in Canned Response:
+
+		- Edit or delete Canned Response
+		
+			> Visibility public Library are displayed only to the user with the Admin role.
+		
+			> Visibility private Library are displayed for the user who created them.
+	
+		- Edit Canned Response
+		
+			> User with the Admin role: the drop-down list will be displayed for all public and private libraries owned by this user. The default value is Default.
+			
+			> User with the Agent role: the drop-down list will be displayed for private libraries owned by this user. The default value is Default. The agent cannot save a template without selecting Library.
+			
+		- Add or Edit Canned Response
+
+			> When you create a new Canned Response with the same name for a public Library, an error will be displayed: "Canned response with such short code already exist"
+
+		[UI Specification](https://drive.google.com/drive/folders/1BDPruNiMwUqOmZ_e72h-X3rgF8hs9ZXW)
+
+- *NovaTalks.UI*: Added reader for PDF files in conversation [:clipboard: NC2-770] [NC2-770]
+
+- *NovaTalks.UI*: Filtering completed conversations by operator [:clipboard: NC2-875] [NC2-875]
+
+	- Added new filter by Participants for resolved conversations.
+
+- *NovaTalks.UI*: Added preventing the creation of channels with the same name [:clipboard: NC2-816] [NC2-816]
+	
+	- Now it is not possible to create a channel with the same name.
+	
+- *NovaTalks.UI*: Added auto-update of UI content when the hash in the image changes [:clipboard: NC2-916] [NC2-916]
+	
+	- Now you do not need to clear the cache when updating the UI.
+	
+- *NovaTalks.UI*: Added button to remove message styling in chat [:clipboard: NC2-924] [NC2-924]
+
+- *NovaTalks.UI*: Added new logic of data transfer [:clipboard: NC2-967] [NC2-967]
+	
+	- Now the data is sent not through the query parameters in the url, but through Window.postMessage.
+	
+- *NovaTalks.UI*: Added 5xx error handling for processing wrap-up codes [:clipboard: NC2-962] [NC2-962]
+	
+- *NovaTalks.UI*: Added a spinner (loader) after clicking on the accept/reject button [:clipboard: NC2-963] [NC2-963]
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed display of the button that closes the video in the modal window [:clipboard: NC2-960] [NC2-960]
+	
+- *NovaTalks.UI*: Fixed "Service Worker" for notification [:clipboard: NC2-925] [NC2-925]
+
+	- Implemented a service status check for notifications to ensure it is enabled.
+	
+- *NovaTalks.UI*: Fixed overlapping objects with contact labels submenu [:clipboard: NC2-825] [NC2-825]
+
+	- The contact's labels do not go beyond the contact's menu and auto-transfer labels to new lines when space is limited.
+
+- *NovaTalks.UI*: Fixed localization of Channel settings [:clipboard: NC2-905] [NC2-905]
+
+- *NovaTalks.UI*: Fixed copying and pasting text with the saved styling into new content using the "remove styling" button  [:clipboard: NC2-924] [NC2-924]
+
+- *NovaTalks.UI*: Fixed no subscription request for pop-up notifications [:clipboard: NC2-972] [NC2-972]
+
+- *NovaTalks.UI*: Fixed email field validation when adding or editing an agent at the engine level [:clipboard: NC2-826] [NC2-826]
+
+	- Maximum allowed total number of characters - 254
+	
+	- The maximum number of characters allowed in:
+		
+		- the User Part before the "@" character - 64
+		- the Domain Part after the "@" and before the "." character - 63
+		- each domain part between the character "."  - 63
+	
+	- Validator error status code - 400
+	
+	- Validator error message - "Invalid email address"	
+	
+***
+
+##2023R4
+
+###2023R4-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.UI*: Added the Wrap-Up Code functionality [:clipboard: NC2-723] [NC2-723]
+  
+	Added "wrap-up code" in "Settings" section, which creates a list of codes that can be changed or removed. Codes can be connected to "Inboxes" and "Teams". Also used in dialogue section.
+	  
+	> Codes that agents use to classify dialogues with customers. Each dialogue with a customer can be marked with one or several Wrap-Up Codes that reflect the main reason or characteristic of the interaction.
+		
+	> *For example: In the banking sector, it can be the following codes: "general question on Cards", "loan processing", "loan repayment", "branch/cash desk operation", etc.*
+	
+
+  	[Specification](https://docs.google.com/document/d/1Ph1vMOXU0xyXFBbqXrvCRAgdPsv95Vfz/edit)
+
+- *NovaTalks.UI*: Migration from Nuxt to Vue [:clipboard: NC2-840] [NC2-840]
+			
+	- Migration in Wrap-up codes.
+	
+	- Migration in Voice-call.
+
+- *NovaTalks.UI*: Improving file streaming for rewinding in the media player [:clipboard: NC2-767] [NC2-767]
+
+	- The player supports the following video and audio codecs (video: AVC, audio: AAC LC/AAC LC SBR PS).
+	
+- *NovaTalks.UI*: Added Spanish language into UI [:clipboard: NC2-868] [NC2-868]
+
+- *NovaTalks.UI*: Added agent substates functionality [:clipboard: NC2-791] [NC2-791]
+
+	Added the following substatuses for agents:
+
+		- Idle – an agent that has no active conversations assigned to it.
+		
+		- Interacting – at least one conversation is assigned to the agent.
+
+	[Specification](https://drive.google.com/open?id=1Av0Bb_8uwXC7upv4gBPlMxY5uB13gmRJ&usp=drive_fs)
+
+- *NovaTalks.UI*: Added Service Level functionality [:clipboard: NC2-818] [NC2-818]
+
+	- Added an additional setting in the Teams section, on the tabs: Chat, Social Media, Email, Call.
+	
+		- Added default value of parameter "Service Level Target, sec" = 20.
+		
+	- Added a new subsection with Analytics settings in the "Account Settings" section.
+
+  	[Specification](https://docs.google.com/document/d/1BYdTcJvZFDNRRCcRMNqUginoOw53HO4J/edit)
+			
+ - *NovaTalks.UI*: Added snoozed status functionality [:clipboard: NC2-821] [NC2-821]
+
+	> The snoozed status is necessary to temporarily put off the conversation until the client's response or the arrival of the time indicated by the agent.
+
+  	[Specification](https://drive.google.com/open?id=1Bunfm4Chy1_LuV1KQ8fBB3Z5h7W9lj2W&usp=drive_fs)
+
+- *NovaTalks.UI*: Added agent Skills functionality [:clipboard: NC2-756] [NC2-756]
+
+	- Added functionality for transferring dialogues to agents depending on the skills required by the dialogue and their level.
+	
+	- Used only in agents and configured in the Chatbot settings.
+
+####Bug Fixes
+
+- *NovaTalks.UI*: Fixed contactSource in Email [:clipboard: NC2-777] [NC2-777]
+
+	- Added email icon in conversation and channel type in filter conversation.
+
+- *NovaTalks.UI*: Fixed conversation list panel covering the main navigation bar
+ [:clipboard: NC2-766] [NC2-766]
+
+	- Fixed fields validation
+	
+	- Fixed button it is not clickable when all fields are valid
+	
+	> Settings -> Agents -> Add Agent
+		
+	> Settings -> Agents -> Edit Agent
+		
+	> Settings -> Teams -> Create a new team
+		
+	> Settings -> Inboxes -> Create Inbox -> Website
+		
+	> Settings -> Inboxes -> Create Inbox -> Api Channel
+		
+	> Settings -> Inbox -> Create Inbox -> Email
+		
+	> Settings -> Inbox -> Create Inbox -> Call
+
+- *NovaTalks.UI*: Fixed text editor that stopped working when selecting a agent was mentioned [:clipboard: NC2-865] [NC2-865]
+
+***
+
 ##2023R3
 
 ###2023R3-1 :briefcase: Epic
