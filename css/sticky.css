@@ -1,0 +1,47 @@
+table {
+  position: relative;
+}
+
+td:nth-child(even), th:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+th {
+  background-color: #F8F8F8;
+}
+
+td:first-child {
+  position: sticky;
+  left: 0	
+}
+/*
+table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+table tbody th {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+*/
+/*.connector-table {
+  position: relative;
+}
+
+.connector-table td:nth-child(even), .connector-table th:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+.connector-table th {
+  background-color: #F8F8F8;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.connector-table td:first-child {
+  position: -webkit-sticky;
+  left: 0	
+}*/

@@ -1,0 +1,2631 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+
+    .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #ff9900;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        color: #ffffff;
+      }
+
+      th, td {
+        border: 1px solid #ff9900;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #444;
+      }
+
+      tr:nth-child(even) {
+        background-color: #333;
+      }
+
+      .subheader-row {
+        background-color: #444;
+        color: #fcdcdc;
+        font-weight: bold;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Table of content -->
+    <div id="toc" class="content-wrapper">
+        <h2>Table of Contents</h2>
+        <ul>
+                <li><a href="#Main_paragraph">1. Performance metrics</a></li>
+                <li><a href="#Sub_paragraph_1">1.1 Transaction groups description</a></li>
+                <li><a href="#Sub_paragraph_2">1.2 Summary data</a></li>
+                <li><a href="#Sub_paragraph_2_1">1.2.1 Summary data table</a></li>
+                <li><a href="#Sub_paragraph_2_2">1.2.2 Summary spread table</a></li>
+                <li><a href="#Sub_paragraph_3">1.3 Summary data conclusions</a></li>
+                <li><a href="#Sub_paragraph_4">1.4 Transaction Data</a></li>
+                <li><a href="#Sub_paragraph_4_1">1.4.1 Data by transaction table</a></li>
+                <li><a href="#Sub_paragraph_4_2">1.4.2 Spread by transaction table</a></li>
+                <li><a href="#Sub_paragraph_5">1.5 Transaction data conclusions</a></li>
+                <li><a href="#Sub_paragraph_5_1">1.5.1 Data by transaction conclusions</a></li>
+                <li><a href="#Sub_paragraph_5_2">1.5.2 Spread by transaction conclusions</a></li>
+                <li><a href="#Sub_paragraph_6">1.6 Resources consumption</a></li>
+                <li><a href="#Sub_paragraph_6_1">1.6.1 Resources consumption table</a></li>
+                <li><a href="#Sub_paragraph_6_2">1.6.2 Resources consumption conclusions</a></li>
+                <li><a href="#Sub_paragraph_7">1.7 Test Anomalies</a></li>
+                <li><a href="#Outro">Ending Conclusions</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="content-wrapper">
+        <h1>Intro information</h1>
+        <p>The test was done with:</p><p>maximum of 2 clients and ramp up time 40 seconds</p><p>maximum of 3 agents and ramp up time 45 seconds</p>
+
+        <h1 id="Main_paragraph">1. Performance metrics</h1>
+        <p>Comparison of <b>2023_R3-1_master</b> and <b>2023_R4-1_master</b> builds.</p>
+
+        <h2 id="Sub_paragraph_1">1.1 Transaction groups description</h2>
+        <ol>
+            <li>Database query transactions</li>
+            <ul>
+                <li>DB - Get last agent id data</li>
+                <li>DB - Get last contact id</li>
+                <li>DB - Get last conversation id</li>
+                <li>DB - Get agents tokens</li>
+            </ul>
+            <li>Create Agents transactions</li>
+            <ul>
+                <li>/api/v1/accounts/{accountId}/agents</li>
+                <li>/api/v1/accounts/{accountId}/inbox_members</li>
+                <li>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</li>
+            </ul>
+            <li>Log In transactions</li>
+            <ul>
+                <li>/app/login</li>
+                <li>/auth/sign_in</li>
+                <li>host/</li>
+                <li>/auth/validate_token</li>
+            </ul>
+            <li>Dashboard transactions</li>
+            <ul>
+                <li>/api/v1/accounts/{accountId}/</li>
+                <li>/api/v1/accounts/{accountId}/notification_settings</li>
+                <li>/api/v1/accounts/{accountId}/notification_settings/global</li>
+                <li>/api/v1/accounts/{accountId}/labels</li>
+                <li>/api/v1/accounts/{accountId}/custom_attribute_definitions</li>
+                <li>/api/v1/profile/availability</li>
+                <li>/auth/active_providers</li>
+                <li>/brand-assets/logo-small.png</li>
+            </ul>
+            <li>Conversation Actions transactions</li>
+            <ul>
+                <li>/api/v1/accounts/{accountId}/contacts/(cont_id)</li>
+                <li>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</li>
+                <li>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</li>
+                <li>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</li>
+                <li>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</li>
+                <li>/api/v1/accounts/{accountId}/custom_attribute_definitions?filter=all</li>
+                <li>/api/v1/accounts/1/dialogs/labels?dialogId[]=(dialog_id)</li>
+                <li>update_last_seen</li>
+                <li>check conversation status = open</li>
+                <li>/api/v1/accounts/{accountId}/conversations?status=open&amp;assignee_type=me&amp;page=1</li>
+                <li>/api/v1/accounts/{accountId}/conversations/meta?status=open&amp;assignee_type=me</li>
+                <li>/api/v1/accounts/(accountId)/conversations/(conv_id)</li>
+                <li>toggle_status resolved</li>
+                <li>check conversation status = resolved</li>
+            </ul>
+            <li>Messaging transactions</li>
+            <ul>
+                <li>Agent - Welcome msg</li>
+                <li>Agent - Reply msg 1</li>
+                <li>Agent - Reply msg 2</li>
+                <li>Agent - Reply msg 3</li>
+                <li>Agent - Reply msg 5</li>
+                <li>Agent - Reply msg 4</li>
+                <li>Bot - Agent request msg</li>
+                <li>Bot - Language menu msg</li>
+                <li>Bot - Entry msg</li>
+                <li>Client - CSAT answer</li>
+                <li>Client - Text msg 1</li>
+                <li>Client - Text msg 2</li>
+                <li>Client - Text msg 3</li>
+                <li>Client - Text msg 4</li>
+                <li>Client - Text msg 5</li>
+            </ul>
+        </ol>
+
+        <h2 id="Sub_paragraph_2">1.2 Summary data</h2>
+        <h3 id="Sub_paragraph_2_1">1.2.1 Summary data table</h3>
+        <table>
+            <thead>
+                <tr>
+                            <th>Metric Name</th>
+                            <th>2023_R3-1_master</th>
+                            <th>2023_R4-1_master</th>
+                            <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                        <tr>
+                                <td>Average Total Database query ET mean</td>
+                                <td>71.667</td>
+                                <td>66.667</td>
+                                <td>+7.5%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Create Agents ET pct90</td>
+                                <td>250.195</td>
+                                <td>383.507</td>
+                                <td>-53.283%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Log In ET pct90</td>
+                                <td>3293.88</td>
+                                <td>493.319</td>
+                                <td>+567.698%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Dashboard requests ET pct90</td>
+                                <td>145.32</td>
+                                <td>197.824</td>
+                                <td>-36.13%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Workflow Actions ET pct90</td>
+                                <td>571.887</td>
+                                <td>666.294</td>
+                                <td>-16.508%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Workflow Actions ET max</td>
+                                <td>1099.74</td>
+                                <td>1220.481</td>
+                                <td>-10.979%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET mean</td>
+                                <td>383.969</td>
+                                <td>431.181</td>
+                                <td>-12.296%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET pct90</td>
+                                <td>812.672</td>
+                                <td>938.857</td>
+                                <td>-15.527%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET max</td>
+                                <td>1581.321</td>
+                                <td>1781.943</td>
+                                <td>-12.687%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET mean</td>
+                                <td>23.158</td>
+                                <td>23.241</td>
+                                <td>-0.358%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET pct90</td>
+                                <td>44.678</td>
+                                <td>45.061</td>
+                                <td>-0.857%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET max</td>
+                                <td>156.612</td>
+                                <td>172.988</td>
+                                <td>-10.456%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Throughput of all requests</td>
+                                <td>2.644</td>
+                                <td>2.798</td>
+                                <td>-5.825%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Throughput of all Agent messages</td>
+                                <td>2.11</td>
+                                <td>1.989</td>
+                                <td>+6.083%</td>
+                        </tr>
+                        <tr>
+                                <td>Total Errors</td>
+                                <td>9.0</td>
+                                <td>25.0</td>
+                                <td>-177.778%</td>
+                        </tr>
+            </tbody>
+        </table>
+
+        <h3 id="Sub_paragraph_2_2">1.2.2 Summary spread table</h3>
+        <table>
+            <thead>
+                <tr>
+                            <th>Metric Name</th>
+                            <th>2023_R3-1_master</th>
+                            <th>2023_R4-1_master</th>
+                            <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                        <tr>
+                                <td>Average Total Database query ET spread of mean</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Create Agents ET spread of pct90</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Log In ET spread of pct90</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Dashboard requests ET spread of pct90</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Workflow Actions ET spread of pct90</td>
+                                <td>0.0</td>
+                                <td>2.724</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Workflow Actions ET spread of max</td>
+                                <td>0.0</td>
+                                <td>5.022</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET spread of mean</td>
+                                <td>0.443</td>
+                                <td>0.729</td>
+                                <td>-64.56%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET spread of pct90</td>
+                                <td>0.922</td>
+                                <td>1.784</td>
+                                <td>-93.492%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Agent Messages ET spread of max</td>
+                                <td>1.976</td>
+                                <td>4.546</td>
+                                <td>-130.061%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET spread of mean</td>
+                                <td>0.017</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET spread of pct90</td>
+                                <td>0.014</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Client Messages ET spread of max</td>
+                                <td>0.047</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Throughput of all requests spread</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+                        <tr>
+                                <td>Average Throughput of all Agent messages spread</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0%</td>
+                        </tr>
+            </tbody>
+        </table>
+
+        <h2 id="Sub_paragraph_3">1.3 Summary data conclusions</h2>
+                <p>In Create Agents transaction group was observed colossal handling time <b>performance deterioration</b> with new build in the responsible code block.</p>
+                <p>In Log In transaction group was observed colossal handling time <b>performance improvement</b> with new build in the responsible code block.</p>
+                <p>In Dashboard requests transaction group was observed significant handling time <b>performance deterioration</b> with new build in the responsible code block.</p>
+                <p>In Workflow Actions transaction group was observed visible handling time <b>performance deterioration</b> with new build in the responsible code block.</p>
+                <p>In Workflow Actions transaction group was observed visible deterioration in maximum transaction handling time with new build. Which, in return, points at <b>increased instability</b> of responsible code block and component in overall in handling large amounts of simultaneous requests.</p>
+                <p>In Agent Messages transaction group was observed visible handling time <b>performance deterioration</b> with new build in the responsible code block.</p>
+                <p>In Agent Messages transaction group was observed visible deterioration in maximum transaction handling time with new build. Which, in return, points at <b>increased instability</b> of responsible code block and component in overall in handling large amounts of simultaneous requests.</p>
+                <p>Was observed visible increase of throughput of all transactions with new build. Which, in return, directly points at <b>better performance</b> of Engine and Database pair.</p>
+                <p>Was observed colossal <b>increase</b> in number of errors with new build.</p>
+                <p>In Agent Messages transaction group was observed colossal increase in volatility of handling time data dispersion with new build. Which, in return, points at <b>poorer stability</b> of reponsible code block.</p>
+                <p>In Agent Messages transaction group was observed colossal increase in volatility of maximum transaction handling time data with new build. Which, in return, points at <b>non-efficiency</b> of reponsible code block.</p>
+
+        <h2 id="Sub_paragraph_4">1.4 Transaction Data</h2>
+        <h3 id="Sub_paragraph_4_1">1.4.1 Data by transaction table</h3>
+        <table>
+                                                                        <thead>
+                        <tr>
+                                <th>Transaction Name</th>
+                                <th>2023_R3-1_master</th>
+                                <th>2023_R4-1_master</th>
+                                <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Total Database query ET mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get agents tokens</td>
+                                        <td>4.0</td>
+                                        <td>4.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last agent data</td>
+                                        <td>4.0</td>
+                                        <td>4.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last contact id</td>
+                                        <td>16.0</td>
+                                        <td>3.0</td>
+                                        <td>+433.333%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last conversation id</td>
+                                        <td>195.0</td>
+                                        <td>193.0</td>
+                                        <td>+1.036%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Create Agents ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/agents</td>
+                                        <td>290.728</td>
+                                        <td>383.507</td>
+                                        <td>-31.913%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members</td>
+                                        <td>114.452</td>
+                                        <td>45.98</td>
+                                        <td>+148.917%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</td>
+                                        <td>87.336</td>
+                                        <td>114.0</td>
+                                        <td>-30.53%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Log In ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/app/login</td>
+                                        <td>11025.325</td>
+                                        <td>903.306</td>
+                                        <td>+1120.553%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/sign_in</td>
+                                        <td>750.72</td>
+                                        <td>716.928</td>
+                                        <td>+4.713%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/validate_token</td>
+                                        <td>193.925</td>
+                                        <td>313.947</td>
+                                        <td>-61.891%</td>
+                                </tr>
+                                <tr>
+                                        <td>host/</td>
+                                        <td>1205.55</td>
+                                        <td>49.061</td>
+                                        <td>+2357.247%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Dashboard requests ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/</td>
+                                        <td>131.071</td>
+                                        <td>211.658</td>
+                                        <td>-61.483%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions</td>
+                                        <td>118.967</td>
+                                        <td>200.057</td>
+                                        <td>-68.162%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/labels</td>
+                                        <td>133.206</td>
+                                        <td>257.57</td>
+                                        <td>-93.362%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings</td>
+                                        <td>119.319</td>
+                                        <td>121.887</td>
+                                        <td>-2.152%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings/global</td>
+                                        <td>81.605</td>
+                                        <td>101.516</td>
+                                        <td>-24.399%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/profile/availability</td>
+                                        <td>510.433</td>
+                                        <td>658.577</td>
+                                        <td>-29.023%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/active_providers</td>
+                                        <td>42.971</td>
+                                        <td>48.858</td>
+                                        <td>-13.7%</td>
+                                </tr>
+                                <tr>
+                                        <td>/brand-assets/logo-small.png</td>
+                                        <td>45.689</td>
+                                        <td>11.615</td>
+                                        <td>+293.362%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Workflow Actions ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>654.733</td>
+                                        <td>742.88</td>
+                                        <td>-13.463%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>404.419</td>
+                                        <td>445.671</td>
+                                        <td>-10.2%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>701.198</td>
+                                        <td>802.821</td>
+                                        <td>-14.493%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>517.766</td>
+                                        <td>563.757</td>
+                                        <td>-8.883%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>338.848</td>
+                                        <td>436.375</td>
+                                        <td>-28.782%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>488.134</td>
+                                        <td>481.21</td>
+                                        <td>+1.439%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>963.079</td>
+                                        <td>917.679</td>
+                                        <td>+4.947%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions?filter=all</td>
+                                        <td>298.03</td>
+                                        <td>360.926</td>
+                                        <td>-21.104%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>407.94</td>
+                                        <td>458.588</td>
+                                        <td>-12.416%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>572.836</td>
+                                        <td>750.332</td>
+                                        <td>-30.985%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>741.402</td>
+                                        <td>812.465</td>
+                                        <td>-9.585%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>835.486</td>
+                                        <td>1544.7</td>
+                                        <td>-84.886%</td>
+                                </tr>
+                                <tr>
+                                        <td>update_last_seen</td>
+                                        <td>447.186</td>
+                                        <td>423.149</td>
+                                        <td>+5.681%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Workflow Actions ET max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>1173.08</td>
+                                        <td>1347.316</td>
+                                        <td>-14.853%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>838.371</td>
+                                        <td>900.226</td>
+                                        <td>-7.378%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>1238.503</td>
+                                        <td>1492.057</td>
+                                        <td>-20.473%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>1074.419</td>
+                                        <td>1036.132</td>
+                                        <td>+3.695%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>757.546</td>
+                                        <td>872.791</td>
+                                        <td>-15.213%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>889.528</td>
+                                        <td>858.459</td>
+                                        <td>+3.619%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>1788.439</td>
+                                        <td>1527.341</td>
+                                        <td>+17.095%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions?filter=all</td>
+                                        <td>741.417</td>
+                                        <td>718.886</td>
+                                        <td>+3.134%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>821.043</td>
+                                        <td>992.109</td>
+                                        <td>-20.835%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>1228.011</td>
+                                        <td>1350.957</td>
+                                        <td>-10.012%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>1290.716</td>
+                                        <td>1430.205</td>
+                                        <td>-10.807%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>1407.094</td>
+                                        <td>2623.454</td>
+                                        <td>-86.445%</td>
+                                </tr>
+                                <tr>
+                                        <td>update_last_seen</td>
+                                        <td>882.8</td>
+                                        <td>897.532</td>
+                                        <td>-1.669%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>372.068</td>
+                                        <td>405.296</td>
+                                        <td>-8.931%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>371.647</td>
+                                        <td>424.848</td>
+                                        <td>-14.315%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>403.56</td>
+                                        <td>424.414</td>
+                                        <td>-5.168%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>402.461</td>
+                                        <td>454.386</td>
+                                        <td>-12.902%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>392.744</td>
+                                        <td>420.909</td>
+                                        <td>-7.171%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>362.074</td>
+                                        <td>454.887</td>
+                                        <td>-25.634%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>770.017</td>
+                                        <td>857.876</td>
+                                        <td>-11.41%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>761.298</td>
+                                        <td>974.64</td>
+                                        <td>-28.023%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>828.356</td>
+                                        <td>909.143</td>
+                                        <td>-9.753%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>842.294</td>
+                                        <td>933.337</td>
+                                        <td>-10.809%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>845.123</td>
+                                        <td>945.68</td>
+                                        <td>-11.899%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>829.857</td>
+                                        <td>1006.64</td>
+                                        <td>-21.303%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>1562.084</td>
+                                        <td>1658.477</td>
+                                        <td>-6.171%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>1643.617</td>
+                                        <td>1678.224</td>
+                                        <td>-2.106%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>1630.715</td>
+                                        <td>1707.805</td>
+                                        <td>-4.727%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>1661.343</td>
+                                        <td>1728.865</td>
+                                        <td>-4.064%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>1439.736</td>
+                                        <td>1639.697</td>
+                                        <td>-13.889%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>1548.412</td>
+                                        <td>2248.176</td>
+                                        <td>-45.192%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>42.967</td>
+                                        <td>41.331</td>
+                                        <td>+3.958%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>22.469</td>
+                                        <td>21.2</td>
+                                        <td>+5.986%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>22.771</td>
+                                        <td>23.664</td>
+                                        <td>-3.922%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>18.986</td>
+                                        <td>17.868</td>
+                                        <td>+6.257%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>17.074</td>
+                                        <td>16.659</td>
+                                        <td>+2.491%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>19.454</td>
+                                        <td>20.208</td>
+                                        <td>-3.876%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>16.971</td>
+                                        <td>18.185</td>
+                                        <td>-7.153%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>17.277</td>
+                                        <td>18.155</td>
+                                        <td>-5.082%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>19.785</td>
+                                        <td>19.893</td>
+                                        <td>-0.546%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>74.177</td>
+                                        <td>71.859</td>
+                                        <td>+3.226%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>41.848</td>
+                                        <td>39.278</td>
+                                        <td>+6.543%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>42.505</td>
+                                        <td>45.026</td>
+                                        <td>-5.931%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>42.086</td>
+                                        <td>38.533</td>
+                                        <td>+9.221%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>34.566</td>
+                                        <td>35.473</td>
+                                        <td>-2.624%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>42.326</td>
+                                        <td>39.878</td>
+                                        <td>+6.139%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>33.868</td>
+                                        <td>38.341</td>
+                                        <td>-13.207%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>34.903</td>
+                                        <td>38.177</td>
+                                        <td>-9.38%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>41.6</td>
+                                        <td>43.76</td>
+                                        <td>-5.192%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>211.792</td>
+                                        <td>194.897</td>
+                                        <td>+8.669%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>162.112</td>
+                                        <td>146.054</td>
+                                        <td>+10.995%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>152.504</td>
+                                        <td>199.813</td>
+                                        <td>-31.021%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>142.811</td>
+                                        <td>128.855</td>
+                                        <td>+10.831%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>146.344</td>
+                                        <td>114.251</td>
+                                        <td>+28.09%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>139.319</td>
+                                        <td>224.929</td>
+                                        <td>-61.449%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>165.758</td>
+                                        <td>162.968</td>
+                                        <td>+1.712%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>122.494</td>
+                                        <td>187.104</td>
+                                        <td>-52.745%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>135.043</td>
+                                        <td>181.127</td>
+                                        <td>-34.125%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Throughput of all requests by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>2.08</td>
+                                        <td>1.935</td>
+                                        <td>+7.494%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/agents</td>
+                                        <td>1.818</td>
+                                        <td>1.0</td>
+                                        <td>+81.8%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>2.06</td>
+                                        <td>1.961</td>
+                                        <td>+5.048%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>2.024</td>
+                                        <td>1.925</td>
+                                        <td>+5.143%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>4.92</td>
+                                        <td>6.423</td>
+                                        <td>-30.549%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>2.044</td>
+                                        <td>1.906</td>
+                                        <td>+7.24%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>2.106</td>
+                                        <td>1.896</td>
+                                        <td>+11.076%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>2.99</td>
+                                        <td>4.828</td>
+                                        <td>-61.472%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_filters?filter_type=conversation</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/dialogs/labels?dialogId[]=(dialog_id)</td>
+                                        <td>2.071</td>
+                                        <td>1.955</td>
+                                        <td>+5.934%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members</td>
+                                        <td>10.0</td>
+                                        <td>10.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>2.085</td>
+                                        <td>1.935</td>
+                                        <td>+7.752%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inboxes</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/labels</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings/global</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notifications/unread_count</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</td>
+                                        <td>10.0</td>
+                                        <td>10.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/notification_subscriptions</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/profile/availability</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/app/login</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/active_providers</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/sign_in</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/validate_token</td>
+                                        <td>1.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>2.151</td>
+                                        <td>2.035</td>
+                                        <td>+5.7%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>2.074</td>
+                                        <td>1.992</td>
+                                        <td>+4.116%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>2.098</td>
+                                        <td>2.035</td>
+                                        <td>+3.096%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>2.127</td>
+                                        <td>1.971</td>
+                                        <td>+7.915%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>2.125</td>
+                                        <td>2.019</td>
+                                        <td>+5.25%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>2.085</td>
+                                        <td>1.891</td>
+                                        <td>+10.259%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>3.993</td>
+                                        <td>4.232</td>
+                                        <td>-5.985%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>4.082</td>
+                                        <td>4.189</td>
+                                        <td>-2.621%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>4.018</td>
+                                        <td>4.1</td>
+                                        <td>-2.041%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>2.065</td>
+                                        <td>1.925</td>
+                                        <td>+7.273%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>2.197</td>
+                                        <td>1.976</td>
+                                        <td>+11.184%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>2.146</td>
+                                        <td>1.966</td>
+                                        <td>+9.156%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>2.142</td>
+                                        <td>1.981</td>
+                                        <td>+8.127%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>2.125</td>
+                                        <td>1.935</td>
+                                        <td>+9.819%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>2.084</td>
+                                        <td>1.976</td>
+                                        <td>+5.466%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>2.112</td>
+                                        <td>1.987</td>
+                                        <td>+6.291%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>2.033</td>
+                                        <td>1.961</td>
+                                        <td>+3.672%</td>
+                                </tr>
+                                <tr>
+                                        <td>host/</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>2.098</td>
+                                        <td>1.971</td>
+                                        <td>+6.443%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Throughput of all Agent messages by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>2.151</td>
+                                        <td>2.035</td>
+                                        <td>+5.7%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>2.074</td>
+                                        <td>1.992</td>
+                                        <td>+4.116%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>2.098</td>
+                                        <td>2.035</td>
+                                        <td>+3.096%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>2.127</td>
+                                        <td>1.971</td>
+                                        <td>+7.915%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>2.125</td>
+                                        <td>2.019</td>
+                                        <td>+5.25%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>2.085</td>
+                                        <td>1.891</td>
+                                        <td>+10.259%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Errors by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>2.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>0.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>2.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>0.0</td>
+                                        <td>3.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>2.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>0.0</td>
+                                        <td>1.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>3.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>0.0</td>
+                                        <td>2.0</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                        </table>
+
+        <h3 id="Sub_paragraph_4_2">1.4.2 Spread by transaction table</h3>
+        <table>
+                                                                        <thead>
+                        <tr>
+                                <th>Transaction Name</th>
+                                <th>2023_R3-1_master</th>
+                                <th>2023_R4-1_master</th>
+                                <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Total Database query ET spread mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get agents tokens</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last agent data</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last contact id</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>DB - Get last conversation id</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Create Agents ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/agents</td>
+                                        <td>416.0</td>
+                                        <td>337.6</td>
+                                        <td>+23.223%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members</td>
+                                        <td>43.6</td>
+                                        <td>27.1</td>
+                                        <td>+60.886%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</td>
+                                        <td>30.7</td>
+                                        <td>0.9</td>
+                                        <td>+3311.111%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Log In ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/app/login</td>
+                                        <td>1879.8</td>
+                                        <td>489.6</td>
+                                        <td>+283.946%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/sign_in</td>
+                                        <td>270.4</td>
+                                        <td>866.0</td>
+                                        <td>-220.266%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/validate_token</td>
+                                        <td>306.0</td>
+                                        <td>540.4</td>
+                                        <td>-76.601%</td>
+                                </tr>
+                                <tr>
+                                        <td>host/</td>
+                                        <td>598.0</td>
+                                        <td>60.3</td>
+                                        <td>+891.708%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Dashboard requests ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/</td>
+                                        <td>267.5</td>
+                                        <td>408.4</td>
+                                        <td>-52.673%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions</td>
+                                        <td>274.2</td>
+                                        <td>332.0</td>
+                                        <td>-21.08%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/labels</td>
+                                        <td>243.4</td>
+                                        <td>493.2</td>
+                                        <td>-102.629%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings</td>
+                                        <td>256.8</td>
+                                        <td>200.2</td>
+                                        <td>+28.272%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings/global</td>
+                                        <td>224.4</td>
+                                        <td>256.1</td>
+                                        <td>-14.127%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/profile/availability</td>
+                                        <td>999.0</td>
+                                        <td>1395.4</td>
+                                        <td>-39.68%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/active_providers</td>
+                                        <td>86.1</td>
+                                        <td>98.3</td>
+                                        <td>-14.17%</td>
+                                </tr>
+                                <tr>
+                                        <td>/brand-assets/logo-small.png</td>
+                                        <td>251.7</td>
+                                        <td>4.9</td>
+                                        <td>+5036.735%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Workflow Actions ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>1261.4</td>
+                                        <td>1961.6</td>
+                                        <td>-55.51%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>861.7</td>
+                                        <td>1082.5</td>
+                                        <td>-25.624%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>1261.9</td>
+                                        <td>1939.8</td>
+                                        <td>-53.721%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>1369.2</td>
+                                        <td>2089.3</td>
+                                        <td>-52.593%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>783.1</td>
+                                        <td>1173.6</td>
+                                        <td>-49.866%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>1007.8</td>
+                                        <td>1159.9</td>
+                                        <td>-15.092%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>2173.9</td>
+                                        <td>3484.4</td>
+                                        <td>-60.283%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions?filter=all</td>
+                                        <td>576.7</td>
+                                        <td>999.8</td>
+                                        <td>-73.366%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>933.4</td>
+                                        <td>1288.6</td>
+                                        <td>-38.054%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>1160.0</td>
+                                        <td>1893.7</td>
+                                        <td>-63.25%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>1287.5</td>
+                                        <td>1974.7</td>
+                                        <td>-53.375%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>1578.3</td>
+                                        <td>3717.9</td>
+                                        <td>-135.564%</td>
+                                </tr>
+                                <tr>
+                                        <td>update_last_seen</td>
+                                        <td>1095.4</td>
+                                        <td>1354.1</td>
+                                        <td>-23.617%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Workflow Actions ET spread max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>1773.0</td>
+                                        <td>2544.0</td>
+                                        <td>-43.486%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>1601.0</td>
+                                        <td>1686.0</td>
+                                        <td>-5.309%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>1985.0</td>
+                                        <td>2289.0</td>
+                                        <td>-15.315%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>1882.0</td>
+                                        <td>2778.0</td>
+                                        <td>-47.609%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>1346.0</td>
+                                        <td>1703.0</td>
+                                        <td>-26.523%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>1399.0</td>
+                                        <td>1419.0</td>
+                                        <td>-1.43%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>3070.0</td>
+                                        <td>4203.0</td>
+                                        <td>-36.906%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions?filter=all</td>
+                                        <td>1183.0</td>
+                                        <td>1240.0</td>
+                                        <td>-4.818%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>1160.0</td>
+                                        <td>2308.0</td>
+                                        <td>-98.966%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>1739.0</td>
+                                        <td>2867.0</td>
+                                        <td>-64.865%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>1703.0</td>
+                                        <td>2176.0</td>
+                                        <td>-27.775%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>2331.0</td>
+                                        <td>5109.0</td>
+                                        <td>-119.176%</td>
+                                </tr>
+                                <tr>
+                                        <td>update_last_seen</td>
+                                        <td>1570.0</td>
+                                        <td>1765.0</td>
+                                        <td>-12.42%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET spread mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>733.27</td>
+                                        <td>1280.14</td>
+                                        <td>-74.58%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>725.66</td>
+                                        <td>1272.9</td>
+                                        <td>-75.413%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>748.87</td>
+                                        <td>1258.15</td>
+                                        <td>-68.006%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>769.55</td>
+                                        <td>1362.2</td>
+                                        <td>-77.013%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>808.843</td>
+                                        <td>1288.18</td>
+                                        <td>-59.262%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>611.11</td>
+                                        <td>1511.67</td>
+                                        <td>-147.365%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>1451.6</td>
+                                        <td>2283.3</td>
+                                        <td>-57.295%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>1362.1</td>
+                                        <td>2438.3</td>
+                                        <td>-79.01%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>1540.7</td>
+                                        <td>2253.2</td>
+                                        <td>-46.245%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>1552.1</td>
+                                        <td>2429.0</td>
+                                        <td>-56.498%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>1672.4</td>
+                                        <td>2525.5</td>
+                                        <td>-51.011%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>1367.0</td>
+                                        <td>2699.3</td>
+                                        <td>-97.462%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Agent Messages ET spread max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>2506.0</td>
+                                        <td>2946.0</td>
+                                        <td>-17.558%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>2812.0</td>
+                                        <td>3685.0</td>
+                                        <td>-31.046%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>2661.0</td>
+                                        <td>3428.0</td>
+                                        <td>-28.824%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>2692.0</td>
+                                        <td>3678.0</td>
+                                        <td>-36.627%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>2463.0</td>
+                                        <td>3687.0</td>
+                                        <td>-49.695%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>2436.0</td>
+                                        <td>7241.0</td>
+                                        <td>-197.25%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET spread mean by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>50.867</td>
+                                        <td>43.29</td>
+                                        <td>+17.503%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>40.135</td>
+                                        <td>29.99</td>
+                                        <td>+33.828%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>37.593</td>
+                                        <td>34.06</td>
+                                        <td>+10.373%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>40.84</td>
+                                        <td>37.42</td>
+                                        <td>+9.139%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>26.97</td>
+                                        <td>22.847</td>
+                                        <td>+18.046%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>74.3</td>
+                                        <td>13.65</td>
+                                        <td>+444.322%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>32.05</td>
+                                        <td>11.262</td>
+                                        <td>+184.585%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>50.79</td>
+                                        <td>15.58</td>
+                                        <td>+225.995%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>56.59</td>
+                                        <td>29.24</td>
+                                        <td>+93.536%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET spread pct90 by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>126.4</td>
+                                        <td>114.9</td>
+                                        <td>+10.009%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>88.0</td>
+                                        <td>70.1</td>
+                                        <td>+25.535%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>92.1</td>
+                                        <td>106.0</td>
+                                        <td>-15.092%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>52.4</td>
+                                        <td>37.8</td>
+                                        <td>+38.624%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>31.0</td>
+                                        <td>48.0</td>
+                                        <td>-54.839%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>61.2</td>
+                                        <td>31.9</td>
+                                        <td>+91.85%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>43.9</td>
+                                        <td>37.1</td>
+                                        <td>+18.329%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>50.6</td>
+                                        <td>37.0</td>
+                                        <td>+36.757%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>54.2</td>
+                                        <td>79.0</td>
+                                        <td>-45.756%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Client Messages ET spread max by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>591.0</td>
+                                        <td>446.0</td>
+                                        <td>+32.511%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>444.0</td>
+                                        <td>497.0</td>
+                                        <td>-11.937%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>437.0</td>
+                                        <td>592.0</td>
+                                        <td>-35.469%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>281.0</td>
+                                        <td>199.0</td>
+                                        <td>+41.206%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>291.0</td>
+                                        <td>133.0</td>
+                                        <td>+118.797%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>215.0</td>
+                                        <td>285.0</td>
+                                        <td>-32.558%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>382.0</td>
+                                        <td>459.0</td>
+                                        <td>-20.157%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>277.0</td>
+                                        <td>566.0</td>
+                                        <td>-104.332%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>202.0</td>
+                                        <td>724.0</td>
+                                        <td>-258.416%</td>
+                                </tr>
+                                <tr class="subheader-row">
+                                        <td colspan="4">Metric name: Average Throughput of all requests spread by transaction</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/(accountId)/conversations/(conv_id)</td>
+                                        <td>8.0</td>
+                                        <td>5.0</td>
+                                        <td>+60.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/agents</td>
+                                        <td>10.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)</td>
+                                        <td>8.0</td>
+                                        <td>6.0</td>
+                                        <td>+33.333%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/contacts/(cont_id)/conversations</td>
+                                        <td>8.0</td>
+                                        <td>5.0</td>
+                                        <td>+60.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/meta?status=open&assignee_type=me</td>
+                                        <td>14.0</td>
+                                        <td>19.0</td>
+                                        <td>-35.714%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/labels</td>
+                                        <td>7.0</td>
+                                        <td>6.0</td>
+                                        <td>+16.667%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations/{conv_id}/messages?before={before_number}</td>
+                                        <td>7.0</td>
+                                        <td>6.0</td>
+                                        <td>+16.667%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</td>
+                                        <td>10.0</td>
+                                        <td>18.0</td>
+                                        <td>-80.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_attribute_definitions</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/custom_filters?filter_type=conversation</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/dialogs/labels?dialogId[]=(dialog_id)</td>
+                                        <td>8.0</td>
+                                        <td>5.0</td>
+                                        <td>+60.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members</td>
+                                        <td>2.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inbox_members/{inboxId}</td>
+                                        <td>8.0</td>
+                                        <td>5.0</td>
+                                        <td>+60.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/inboxes</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/labels</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notification_settings/global</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/notifications/unread_count</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</td>
+                                        <td>2.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/notification_subscriptions</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/api/v1/profile/availability</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/app/login</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/active_providers</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/sign_in</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>/auth/validate_token</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 1</td>
+                                        <td>8.0</td>
+                                        <td>7.0</td>
+                                        <td>+14.286%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 2</td>
+                                        <td>7.0</td>
+                                        <td>6.0</td>
+                                        <td>+16.667%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 3</td>
+                                        <td>8.0</td>
+                                        <td>6.0</td>
+                                        <td>+33.333%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 4</td>
+                                        <td>8.0</td>
+                                        <td>6.0</td>
+                                        <td>+33.333%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Reply msg 5</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Agent - Welcome msg</td>
+                                        <td>9.0</td>
+                                        <td>6.0</td>
+                                        <td>+50.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Agent request msg</td>
+                                        <td>10.0</td>
+                                        <td>8.0</td>
+                                        <td>+25.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Entry msg</td>
+                                        <td>9.0</td>
+                                        <td>8.0</td>
+                                        <td>+12.5%</td>
+                                </tr>
+                                <tr>
+                                        <td>Bot - Language menu msg</td>
+                                        <td>9.0</td>
+                                        <td>8.0</td>
+                                        <td>+12.5%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - CSAT answer</td>
+                                        <td>8.0</td>
+                                        <td>7.0</td>
+                                        <td>+14.286%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 1</td>
+                                        <td>7.0</td>
+                                        <td>6.0</td>
+                                        <td>+16.667%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 2</td>
+                                        <td>7.0</td>
+                                        <td>5.0</td>
+                                        <td>+40.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 3</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 4</td>
+                                        <td>8.0</td>
+                                        <td>5.0</td>
+                                        <td>+60.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>Client - Text msg 5</td>
+                                        <td>9.0</td>
+                                        <td>5.0</td>
+                                        <td>+80.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = open</td>
+                                        <td>7.0</td>
+                                        <td>5.0</td>
+                                        <td>+40.0%</td>
+                                </tr>
+                                <tr>
+                                        <td>check conversation status = resolved</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>host/</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>toggle_status resolved</td>
+                                        <td>7.0</td>
+                                        <td>7.0</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                        </table>
+
+        <h2 id="Sub_paragraph_5">1.5 Transaction data conclusions</h2>
+        <h3 id="Sub_paragraph_5_1">1.5.1 Data by transaction conclusions</h3>
+                <p>The best performer in the '<b>Average Total Database query</b>' group is the '<b>DB - Get last contact id</b>' transaction with a positive value '<b>+433.333%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>1.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The best performer in the '<b>Average Create Agents</b>' group is the '<b>/api/v1/accounts/{accountId}/inbox_members</b>' transaction with a positive value '<b>+148.917%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>8.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Create Agents</b>' group is the '<b>/api/v1/accounts/{accountId}/agents</b>' transaction with negative value '<b>-31.913%</b>' of worsened performance, which shows it as a bottleneck factor. Moreover, this is the most impactful transaction in the whole group with the '<b>70.6%</b>' weight portion of the total group's value, which is considered colossal.</p>
+                <p>The best performer in the '<b>Average Log In</b>' group is the '<b>host/</b>' transaction with a positive value '<b>+2357.247%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>2.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Log In</b>' group is the '<b>/auth/validate_token</b>' transaction with negative value '<b>-61.891%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.8%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Dashboard requests</b>' group is the '<b>/brand-assets/logo-small.png</b>' transaction with a positive value '<b>+293.362%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>0.7%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Dashboard requests</b>' group is the '<b>/api/v1/accounts/{accountId}/labels</b>' transaction with negative value '<b>-93.362%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>16.0%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Workflow Actions</b>' group is the '<b>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</b>' transaction with a positive value '<b>+17.095%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>6.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Workflow Actions</b>' group is the '<b>toggle_status resolved</b>' transaction with negative value '<b>-86.445%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>10.6%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The worst performer in the '<b>Average Agent Messages</b>' group is the '<b>Agent - Welcome msg</b>' transaction with negative value '<b>-45.192%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>11.9%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Client Messages</b>' group is the '<b>Client - Text msg 1</b>' transaction with a positive value '<b>+28.09%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>5.4%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Client Messages</b>' group is the '<b>Client - Text msg 2</b>' transaction with negative value '<b>-61.449%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>10.6%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Throughput of all requests</b>' group is the '<b>/api/v1/accounts/{accountId}/agents</b>' transaction with a positive value '<b>+81.8%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>0.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Throughput of all requests</b>' group is the '<b>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</b>' transaction with negative value '<b>-61.472%</b>' of worsened performance, which shows it as a bottleneck factor. But, this is the least impactful transaction in the whole group with the '<b>3.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p></p>
+                <p>In the '<b>Average Create Agents</b>' spread group the '<b>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</b>' is the least volatile transaction with positive value '<b>+3311.111%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>0.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Log In</b>' spread group the '<b>host/</b>' is the least volatile transaction with positive value '<b>+891.708%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>3.1%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Log In</b>' spread group the '<b>/auth/sign_in</b>' is the most volatile transaction with negative value '<b>-220.266%</b>' of increased volatility, which shows it as a bottleneck factor. The transaction has a big impact on the whole group with the '<b>44.3%</b>' weight portion of the total group's value, which is almost a half of the whole.</p>
+                <p>In the '<b>Average Dashboard requests</b>' spread group the '<b>/brand-assets/logo-small.png</b>' is the least volatile transaction with positive value '<b>+5036.735%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>0.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Dashboard requests</b>' spread group the '<b>/api/v1/accounts/{accountId}/labels</b>' is the most volatile transaction with negative value '<b>-102.629%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.5%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>In the '<b>Average Workflow Actions</b>' spread group the '<b>toggle_status resolved</b>' is the most volatile transaction with negative value '<b>-119.176%</b>' of increased volatility, which shows it as a bottleneck factor. But, this is the least impactful transaction in the whole group with the '<b>9.1%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Agent Messages</b>' spread group the '<b>Agent - Welcome msg</b>' is the most volatile transaction with negative value '<b>-197.25%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.3%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>In the '<b>Average Client Messages</b>' spread group the '<b>Client - Text msg 1</b>' is the least volatile transaction with positive value '<b>+118.797%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>2.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Client Messages</b>' spread group the '<b>Client - Text msg 5</b>' is the most volatile transaction with negative value '<b>-258.416%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.4%</b>' weight portion of the total group's value, which is a visible portion.</p>
+
+        <h3 id="Sub_paragraph_5_2">1.5.2 Spread by transaction conclusions</h3>
+                <p>The best performer in the '<b>Average Total Database query</b>' group is the '<b>DB - Get last contact id</b>' transaction with a positive value '<b>+433.333%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>1.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The best performer in the '<b>Average Create Agents</b>' group is the '<b>/api/v1/accounts/{accountId}/inbox_members</b>' transaction with a positive value '<b>+148.917%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>8.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Create Agents</b>' group is the '<b>/api/v1/accounts/{accountId}/agents</b>' transaction with negative value '<b>-31.913%</b>' of worsened performance, which shows it as a bottleneck factor. Moreover, this is the most impactful transaction in the whole group with the '<b>70.6%</b>' weight portion of the total group's value, which is considered colossal.</p>
+                <p>The best performer in the '<b>Average Log In</b>' group is the '<b>host/</b>' transaction with a positive value '<b>+2357.247%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>2.5%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Log In</b>' group is the '<b>/auth/validate_token</b>' transaction with negative value '<b>-61.891%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.8%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Dashboard requests</b>' group is the '<b>/brand-assets/logo-small.png</b>' transaction with a positive value '<b>+293.362%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>0.7%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Dashboard requests</b>' group is the '<b>/api/v1/accounts/{accountId}/labels</b>' transaction with negative value '<b>-93.362%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>16.0%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Workflow Actions</b>' group is the '<b>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</b>' transaction with a positive value '<b>+17.095%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>6.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Workflow Actions</b>' group is the '<b>toggle_status resolved</b>' transaction with negative value '<b>-86.445%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>10.6%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The worst performer in the '<b>Average Agent Messages</b>' group is the '<b>Agent - Welcome msg</b>' transaction with negative value '<b>-45.192%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>11.9%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Average Client Messages</b>' group is the '<b>Client - Text msg 1</b>' transaction with a positive value '<b>+28.09%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>5.4%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Average Client Messages</b>' group is the '<b>Client - Text msg 2</b>' transaction with negative value '<b>-61.449%</b>' of worsened performance, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>10.6%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>The best performer in the '<b>Throughput of all requests</b>' group is the '<b>/api/v1/accounts/{accountId}/agents</b>' transaction with a positive value '<b>+81.8%</b>' of improved performance. But, this is the least impactful transaction in the whole group with the '<b>0.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>The worst performer in the '<b>Throughput of all requests</b>' group is the '<b>/api/v1/accounts/{accountId}/conversations?status=open&assignee_type=me&page=1</b>' transaction with negative value '<b>-61.472%</b>' of worsened performance, which shows it as a bottleneck factor. But, this is the least impactful transaction in the whole group with the '<b>3.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p></p>
+                <p>In the '<b>Average Create Agents</b>' spread group the '<b>/api/v1/accounts/{accountId}/teams/{teamId}/team_members</b>' is the least volatile transaction with positive value '<b>+3311.111%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>0.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Log In</b>' spread group the '<b>host/</b>' is the least volatile transaction with positive value '<b>+891.708%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>3.1%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Log In</b>' spread group the '<b>/auth/sign_in</b>' is the most volatile transaction with negative value '<b>-220.266%</b>' of increased volatility, which shows it as a bottleneck factor. The transaction has a big impact on the whole group with the '<b>44.3%</b>' weight portion of the total group's value, which is almost a half of the whole.</p>
+                <p>In the '<b>Average Dashboard requests</b>' spread group the '<b>/brand-assets/logo-small.png</b>' is the least volatile transaction with positive value '<b>+5036.735%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>0.2%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Dashboard requests</b>' spread group the '<b>/api/v1/accounts/{accountId}/labels</b>' is the most volatile transaction with negative value '<b>-102.629%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.5%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>In the '<b>Average Workflow Actions</b>' spread group the '<b>toggle_status resolved</b>' is the most volatile transaction with negative value '<b>-119.176%</b>' of increased volatility, which shows it as a bottleneck factor. But, this is the least impactful transaction in the whole group with the '<b>9.1%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Agent Messages</b>' spread group the '<b>Agent - Welcome msg</b>' is the most volatile transaction with negative value '<b>-197.25%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.3%</b>' weight portion of the total group's value, which is a visible portion.</p>
+                <p>In the '<b>Average Client Messages</b>' spread group the '<b>Client - Text msg 1</b>' is the least volatile transaction with positive value '<b>+118.797%</b>' of decreased volatility, which shows stability of related actions. But, this is the least impactful transaction in the whole group with the '<b>2.8%</b>' weight portion of the total group's value, which is considered neglectable.</p>
+                <p>In the '<b>Average Client Messages</b>' spread group the '<b>Client - Text msg 5</b>' is the most volatile transaction with negative value '<b>-258.416%</b>' of increased volatility, which shows it as a bottleneck factor. And, this is quite impactful transaction in the whole group with the '<b>15.4%</b>' weight portion of the total group's value, which is a visible portion.</p>
+
+        <h2 id="Sub_paragraph_6">1.6 Resources consumption</h2>
+        <h3 id="Sub_paragraph_6_1">1.6.1 Resources consumption table</h3>
+        <table>
+                    <thead>
+                            <tr>
+                                    <th>Component</th>
+                                    <th>Resource</th>
+                                    <th>Type</th>
+                                    <th>2023_R3-1_master</th>
+                                    <th>2023_R4-1_master</th>
+                                    <th>Difference</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>CPU</td>
+                                        <td>Maximum</td>
+                                        <td>170.0099</td>
+                                        <td>168.6043</td>
+                                        <td>+0.8337%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>CPU</td>
+                                        <td>Mean</td>
+                                        <td>113.5953</td>
+                                        <td>111.8138</td>
+                                        <td>+1.5933%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>CPU</td>
+                                        <td>Minimum</td>
+                                        <td>0.378</td>
+                                        <td>0.378</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>CPU</td>
+                                        <td>Limit</td>
+                                        <td>600</td>
+                                        <td>600</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>Memory</td>
+                                        <td>Maximum</td>
+                                        <td>658.0742</td>
+                                        <td>683.3906</td>
+                                        <td>-3.847%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>Memory</td>
+                                        <td>Mean</td>
+                                        <td>571.7508</td>
+                                        <td>600.203</td>
+                                        <td>-4.9763%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>Memory</td>
+                                        <td>Minimum</td>
+                                        <td>484.332</td>
+                                        <td>484.332</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>botflow</td>
+                                        <td>Memory</td>
+                                        <td>Limit</td>
+                                        <td>1408</td>
+                                        <td>1408</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>CPU</td>
+                                        <td>Maximum</td>
+                                        <td>573.7797</td>
+                                        <td>567.4518</td>
+                                        <td>+1.1151%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>CPU</td>
+                                        <td>Mean</td>
+                                        <td>378.2062</td>
+                                        <td>384.9587</td>
+                                        <td>-1.7854%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>CPU</td>
+                                        <td>Minimum</td>
+                                        <td>0.2862</td>
+                                        <td>0.2862</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>CPU</td>
+                                        <td>Limit</td>
+                                        <td>1600</td>
+                                        <td>1600</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>Memory</td>
+                                        <td>Maximum</td>
+                                        <td>2497.4727</td>
+                                        <td>2587.1211</td>
+                                        <td>-3.5896%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>Memory</td>
+                                        <td>Mean</td>
+                                        <td>2052.339</td>
+                                        <td>1962.0632</td>
+                                        <td>+4.6011%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>Memory</td>
+                                        <td>Minimum</td>
+                                        <td>1619.1602</td>
+                                        <td>1619.1602</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>postgres</td>
+                                        <td>Memory</td>
+                                        <td>Limit</td>
+                                        <td>3000</td>
+                                        <td>3000</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>CPU</td>
+                                        <td>Maximum</td>
+                                        <td>991.7112</td>
+                                        <td>1023.9828</td>
+                                        <td>-3.2541%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>CPU</td>
+                                        <td>Mean</td>
+                                        <td>766.6619</td>
+                                        <td>779.5273</td>
+                                        <td>-1.6781%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>CPU</td>
+                                        <td>Minimum</td>
+                                        <td>4.7132</td>
+                                        <td>4.7132</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>CPU</td>
+                                        <td>Limit</td>
+                                        <td>1400</td>
+                                        <td>1400</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>Memory</td>
+                                        <td>Maximum</td>
+                                        <td>731.8828</td>
+                                        <td>2136.543</td>
+                                        <td>-191.9242%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>Memory</td>
+                                        <td>Mean</td>
+                                        <td>501.5108</td>
+                                        <td>581.5248</td>
+                                        <td>-15.9546%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>Memory</td>
+                                        <td>Minimum</td>
+                                        <td>277.3594</td>
+                                        <td>277.3594</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>engine</td>
+                                        <td>Memory</td>
+                                        <td>Limit</td>
+                                        <td>2560</td>
+                                        <td>2560</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>CPU</td>
+                                        <td>Maximum</td>
+                                        <td>21.5322</td>
+                                        <td>0.329</td>
+                                        <td>+6444.7416%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>CPU</td>
+                                        <td>Mean</td>
+                                        <td>2.6851</td>
+                                        <td>0.0244</td>
+                                        <td>+10904.5082%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>CPU</td>
+                                        <td>Minimum</td>
+                                        <td>0.1911</td>
+                                        <td>0.1911</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>CPU</td>
+                                        <td>Limit</td>
+                                        <td>50</td>
+                                        <td>50</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>Memory</td>
+                                        <td>Maximum</td>
+                                        <td>126.043</td>
+                                        <td>14.8438</td>
+                                        <td>+749.1289%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>Memory</td>
+                                        <td>Mean</td>
+                                        <td>117.787</td>
+                                        <td>14.3128</td>
+                                        <td>+722.9487%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>Memory</td>
+                                        <td>Minimum</td>
+                                        <td>111.8281</td>
+                                        <td>111.8281</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>ui</td>
+                                        <td>Memory</td>
+                                        <td>Limit</td>
+                                        <td>128</td>
+                                        <td>128</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>CPU</td>
+                                        <td>Maximum</td>
+                                        <td>41.4082</td>
+                                        <td>43.1679</td>
+                                        <td>-4.2496%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>CPU</td>
+                                        <td>Mean</td>
+                                        <td>28.7468</td>
+                                        <td>33.1655</td>
+                                        <td>-15.3711%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>CPU</td>
+                                        <td>Minimum</td>
+                                        <td>1.7799</td>
+                                        <td>1.7799</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>CPU</td>
+                                        <td>Limit</td>
+                                        <td>50</td>
+                                        <td>50</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+                    <tbody>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>Memory</td>
+                                        <td>Maximum</td>
+                                        <td>31.3906</td>
+                                        <td>29.082</td>
+                                        <td>+7.9382%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>Memory</td>
+                                        <td>Mean</td>
+                                        <td>23.6865</td>
+                                        <td>24.0863</td>
+                                        <td>-1.6879%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>Memory</td>
+                                        <td>Minimum</td>
+                                        <td>18.4805</td>
+                                        <td>18.4805</td>
+                                        <td>0%</td>
+                                </tr>
+                                <tr>
+                                        <td>redis</td>
+                                        <td>Memory</td>
+                                        <td>Limit</td>
+                                        <td>96</td>
+                                        <td>96</td>
+                                        <td>0%</td>
+                                </tr>
+                    </tbody>
+        </table>
+
+        <h3 id="Sub_paragraph_6_2">1.6.2 Resources consumption conclusions</h3>
+                <p>In the '<b>UI</b>' component is noted a colossal decrease in average CPU and Memory consumption: </b>+10904.5082%</b> and <b>+722.9487%</b>. The component's consumption values of resources is small and can be ignored.</p>
+                <p>In the '<b>Engine</b>' component is noted a colossal increase in maximum Memory consumption: </b>-191.9242%</b>. The component's maximum and average consumption values have a huge difference in values which points at volatility and problems. This is a bottleneck factor.</p>
+                <p>In the '<b>Engine</b>' component is noted a significant increase in average Momery consumption: </b>-15.9546%</b>. This value directly points at component's decreased performance and can be viewed as a bottleneck factor.</p>
+
+        <h2 id="Sub_paragraph_7">1.7 Test Anomalies</h2>
+        <p> <b>2023_R3-1_master</b> build has stable agent activity results with visible sinusoidal behaviour of transactions elapsed time. <p>
+		<p> These results are tightly tied with the same kind of <b>Postgres</b> and <b>Engine</b> CPU consumption which has the same visible sinusoidal behaviour. </p>
+        <p> The most striking <b>2023_R4-1_master</b> test anomaly was the <b>Log In</b> transaction group and it's two transactions: <b>/app/login</b> and <b>host/</b> </p>
+        <p> They have a horrifying high spread and elapsed time which isn't seen in any other transaction.</p>
+
+		<p> <b>2023_R4-1_master</b> has shown very unstable agent activity results under high load without any visible sinusoidal behaviour which was seen in <b>2023_R3-1_master</b> build.</p>
+        <p> The results instability can be advocated to the <b>Engine</b> component's abrupt spike in Memory consumption (3.8 times) without any foreseen reasons, with CPU consumption being on the same level without a spike.</p>
+		<p> After the <b>Engine</b> component's Memory consumtion spike, the agent's activity started to drop from 100% (all agents are working with conversations) to 10% (90% agents are idle and await for conversation) because of malfunction in autoassignment.</p>
+        <p> On better note, even with such instability, the <b>Agent Messages</b> transaction group has shown better performance results than <b>2023_R3-1_master</b>.</p>
+
+        <h1 id="Outro">Ending Conclusions</h1>
+		<p> Because of instability, the <b>2023_R4-1_master</b> build is not recomended to use. </p>
+
+    </div>
+
+    <!-- Return to top button -->
+    <a href="#top" id="return-to-top">^</a>
+
+  </body>
+</html>
