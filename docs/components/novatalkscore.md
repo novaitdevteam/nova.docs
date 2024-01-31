@@ -9,6 +9,268 @@
 ##Product Notices
 ***
 
+##2023R4
+
+###2023R4-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Increase the timeouts in the REST Interface to check the status of the Engine [:clipboard: NC2-937] [NC2-937]
+
+	- Redis and Postgres health check time increased to 5 seconds.
+
+- *NovaTalks.Core*: Redesigned project builds for the VUE branch from Vue-cli to Vite [:clipboard: NC2-898] [NC2-898]
+
+	- Added VITE_APP prefix to environment variables in builds
+	
+- *NovaTalks.Core*: Remove conversations in the "Snoozed" and "Pending" statuses from the Utilization calculation [:clipboard: NC2-950] [NC2-950]
+
+- *NovaTalks.Core*: Processing Agent and Team Assignment Changes [:clipboard: NC2-883] [NC2-883]
+
+- *NovaTalks.Core*: Updating the environment to Alpine 12.2.1_git20220924-r4 [:clipboard: NC2-943] [NC2-943]
+
+- *NovaTalks.Core*: Added migration tables for Wrap-up codes [:clipboard: NC2-724] [NC2-724]
+
+	 <details><summary>List of migrations</summary>
+		<p>
+		```
+		20230713152832-inboxes-add-default-wrapup_code-timeout
+		20230713154315-teams-add-default-wrapup_settings
+		20230714081716-create-wrapup_category
+		20230714135517-create-wrapup_codes
+		20230717083551-create-dialog_wrapup_codes
+		20230717105338-create-wrapup_codes_assigned
+		```
+		</p>
+		</details>
+
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed problem with socket connection drop issue when the tabs is inactive [:clipboard: NC2-920] [NC2-920]
+
+- *NovaTalks.Core*: Fixed distribution of queues [:clipboard: NC2-923] [NC2-923]
+
+	-> After some time of queue distribution, it stopped distributing dialogs to available agents.
+	
+- *NovaTalks.Core*: Fixed dialog duration timer when starting a conversation [:clipboard: NC2-922] [NC2-922]
+ 
+- *NovaTalks.Core*: Resource optimization [:clipboard: NC2-861] [NC2-861]
+
+- *NovaTalks.Core*: Fixed a bug in assigning a dialog when an incorrect date is sent to WS [:clipboard: NC2-971] [NC2-971]
+
+- *NovaTalks.Core*: Fixed for overwriting the token in the database when logging in [:clipboard: NC2-826] [NC2-826]
+
+	- Removed the uid:user.uid field from the jwt token's paleoad. Otherwise, a 269-character long token was generated, which did not allow writing to the database (limit 255).
+
+***
+
+
+##2023R4
+
+###2023R4-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Core*: Migration from NuxtJS/Router to file based routing [:clipboard: NC2-18] [NC2-18]
+	
+	> [@nuxtjs/router](https://www.npmjs.com/package/@nuxtjs/router) module was used instead of pages/ directory.
+	
+	> [file based routing](https://v2.nuxt.com/docs/features/file-system-routing/) now it allows to automatically generates the vue-router configuration based on the Vue file structure in the pages directory.
+	 
+- *NovaTalks.Core*: Optimized fetched messages from Email [:clipboard: NC2-739] [NC2-739]
+
+- *NovaTalks.Core*: Refactoring of sent data by web socket protocol for ChatWidget [:clipboard: NC2-795] [NC2-795]	 
+	 
+- *NovaTalks.Core*: Migration from Nuxt to Vue [:clipboard: NC2-837] [NC2-837]
+
+	The migration related to main following endpoints:
+	
+	Application Account:
+	
+	<details><summary>/api/v1/accounts</summary>
+	<p>
+	```
+	- /{accountId}
+	- /{accountId}/substatus
+	- /{accountId}/substatus/{substatusId}
+	- /{accountId}/notification_settings/global
+	- /{accountId}/notification_settings
+	```
+	</p>
+	</details>
+	
+	Authentication:
+	
+	<details><summary>/auth/</summary>
+	<p>
+	```
+	- /active_providers
+	- /sign_in
+	- /sign_out
+	- /confirmation
+	- /password
+	- /validate_token
+	- /get_token_info
+	```
+	</p>
+	</details>
+	
+	Application Inbox:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /inboxes
+	- /inboxes/{inboxId}
+	- /inboxes/{inboxId}/agent_bot
+	- /inboxes/{inboxId}/set_agent_bot
+	- /inbox_members/{inboxId}
+	- /inbox_members
+	- /inboxes/{inboxId}/restore
+	```
+	</p>
+	</details>
+	
+	Application AgentBots:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /agent_bots
+	- /agent_bots/{agentBotId}
+	```
+	</p>
+	</details>
+	
+	Application Agent:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /agents
+	- /agents/{userId}
+	- /agents/{userId}/deactivate
+	- /agents/{userId}/activate
+	- /agents/{userId}/restore
+	- /agents/recalculate_utilization
+	```
+	</p>
+	</details>
+	
+	Application Contact:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /contacts/import
+	- /contacts/contact_merge
+	- /contacts/filter
+	- /contacts/search
+	- /contacts/{contactId}/labels
+	- /contacts/{contactId}/labels/delete
+	- /contacts/{contactId}/notes
+	- /contacts/{contactId}/notes/{noteId}
+	- /contacts/{contactId}/contact_inboxes
+	- /contacts
+	- /contacts/{contactId}
+	- /contacts/{contactId}/conversations
+	- /contacts/{contactId}/attributes
+	```
+	</p>
+	</details>
+		
+	Application Team:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /teams
+	- /teams/{teamId}
+	- /teams/{teamId}/team_members
+	- /teams/{teamId}/restore
+	```
+	</p>
+	</details>
+	
+	Application Conversation:
+	
+	<details><summary>/api/v1/accounts/{accountId}</summary>
+	<p>
+	```
+	- /conversations/{conversationId}/messages
+	- /conversations/{conversationId}/messages/{messageId}
+	- /conversations/meta
+	- /conversations/filter
+	- /conversations/search
+	- /conversations
+	- /conversations/{conversationId}
+	- /conversations/{conversationId}/toggle_status
+	- /conversations/{conversationId}/assignments
+	- /conversations/{conversationId}/toggle_typing_status
+	- /conversations/{conversationId}/update_last_seen
+	- /conversations/{conversationId}/labels
+	- /conversations/{conversationId}/attributes
+	- /conversations/{conversationId}/pinned_messages
+	- /conversations/{conversationId}/labels/delete
+	- /conversations/send_outbound_messages	
+	- /conversations/{conversationId}/priority
+	- /conversations/{conversationId}/action
+	- /conversations/pool
+	- /conversations/queue
+	- /conversations/last_sender_messages
+	```
+	</p>
+	</details>
+	
+	[Specification](https://sd.novait.com.ua/browse/NC2-211)
+
+- *NovaTalks.Core*: Added keys for meta caching [:clipboard: NC2-746] [NC2-746]
+
+	The following keys in module Application Conversation:
+	<details><summary>/api/v1/accounts/{accountId}/conversations/meta</summary>
+	<p>
+	```
+	- **META_CACHE_ALL::** used for all_count, assigned_count, unassigned_count
+	- **META_CACHE_ASSIGNEE::** used for mine_count
+	```
+	</p>
+	</details>
+						
+- *NovaTalks.Core*: Added agent Skills functionality [:clipboard: NC2-755] [NC2-755]
+	
+	The agent Skills related to main following endpoints:
+	
+	Application Skill:
+	
+	<details><summary>/api/v1/accounts</summary>
+	<p>
+	```
+	- GET /skills
+	- POST /skills
+	- GET /skills/{skillId}
+	- PATCH /skills/{skillId}
+	- DELETE /skills/{skillId}
+	- POST /skills/{skillId}/restore
+	```
+	</p>
+	</details>
+	 
+ 	[Specification](https://docs.google.com/document/d/19o89397xXhMHm1fPAnHNKQK0becEEi2M?rtpof=true&usp=drive_fs)
+	
+####Bug Fixes
+
+- *NovaTalks.Core*: Fixed assigned calculate and filter "created_at" in reports [:clipboard: NC2-892] [NC2-892]
+
+- *NovaTalks.Core*: Fixed change of authentication type in channel "Email" [:clipboard: NC2-699] [NC2-699]
+
+	- Fixed the selection of the authentication type (plain/login) in the channel Email settings.			
+							
+- *NovaTalks.Core*: Fixed an issue when messages are not fetched from Email [:clipboard: NC2-876] [NC2-876]
+
+- *NovaTalks.Core*: Fixed problem with socket connection drop issue when an NovaTalks tab is open [:clipboard: NC2-796] [NC2-796]
+
+***
+
 ##2023R3
 
 ###2023R3-1 :briefcase: Epic

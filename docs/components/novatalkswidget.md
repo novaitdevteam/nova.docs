@@ -9,6 +9,72 @@
 ##Product Notices
 ***
 
+##2023R4
+
+###2023R4-2 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.Widget*: Added website language detection mechanism [:clipboard: NC2-849] [NC2-849]
+	
+	- Added two options in the inbox settings for the web widget to the UI.
+	
+	- In Engine the generation of html code for the widget for custom attributes language, browser_link.
+	
+	- Supported languages:
+		
+		- English
+		- Ukrainian
+		- Russian
+
+- *NovaTalks.Widget*: The name of the button is sent to the chat bot instead of its number [:clipboard: NC2-913] [NC2-913]
+
+- *NovaTalks.Widget*: Added environments for save files in PureConnect [:clipboard: NOV-537] [NOV-537]
+
+	- Environments:
+	
+		- GENESYS_PURECONNECT_STORE - the path where the files will be saved.
+		
+		- GENESYS_PURECONNECT_STORE_URL - BASE URL to receive files. An additional endpoint has been added to the BotFlow "/redbot/genesys-pureconnect/files/:date/:chatId/:fileName".
+		
+- *NovaTalks.Widget*: Update NodeRed version (3.1.3) [:clipboard: NOV-543] [NOV-543]
+
+####Bug Fixes
+
+- *NovaTalks.Widget*: Fixed a bug in the build when a folder with pictures was not created [:clipboard: NC2-951] [NC2-951]	
+
+***
+
+
+
+
+
+##2023R4
+
+###2023R4-1 :briefcase: Epic
+
+####New Features
+
+- *NovaTalks.ChatWidget*: Update Tailwind CSS module [:clipboard: NC2-711] [NC2-711]
+
+	- Upgrading from Tailwind CSS from v1.0 to v3.0.
+
+	> The Tailwind CSS module for styles was used in the widget.
+			
+- *NovaTalks.ChatWidget*: Migration from Vuex to Pinia [:clipboard: NC2-712] [NC2-712]
+
+	> **Vuex** is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+
+	> **Pinia**, which is a new default, is a store library for Vue, which allows to share a state across components/pages.
+									
+- *NovaTalks.ChatWidget*: Migration from Vue2 to vue3 [:clipboard: NC2-768] [NC2-768]
+
+####Bug Fixes
+
+- none
+
+***
+
 ##2023R3
 
 ###2023R3-1 :briefcase: Epic
